@@ -1,8 +1,13 @@
 require 'builder'
 require 'rubygems'
 require 'fileutils'
+require 'nokogiri'
 require "#{$path}ms-fasta/lib/ms/fasta.rb"
 
+#file == input file
+#database == type of fasta database to use, e.g. "human"
+#enzyme == the enzyme to use in the search
+#run == which run, or iteration, this is
 # options (All options's default to true):
 #     :omssa =>   true | false
 #     :xtandem => true | false
@@ -10,8 +15,11 @@ require "#{$path}ms-fasta/lib/ms/fasta.rb"
 #     :sequest => true | false
 #     :mascot =>  true | false
 class Search
-    def initialize(file, opts={})
+    def initialize(file, database, enzyme, run, opts={})
         @opts = opts
+        @run = run
+        @enzyme = enzyme
+        @database = database
         @file = file
         @fileName = @file.chomp(".mgf")
         @outputFiles = []
@@ -62,7 +70,7 @@ class Search
             
         notes = {'list path, default parameters' => "#{$path}tandem-win32-10-01-01-4/bin/default_input.xml",
                  'list path, taxonomy information' => "#{$vpath}data/taxonomy.xml",
-                 'protein, taxon' => 'human',
+                 'protein, taxon' => @database,
                  'spectrum, path' => "#{@file}",
                  'output, path' => "#{@fileName}-forward_tandem_output.xml"}
             
@@ -86,7 +94,7 @@ class Search
             
         notes = {'list path, default parameters' => "#{$path}tandem-win32-10-01-01-4/bin/default_input.xml",
                  'list path, taxonomy information' => "#{$vpath}data/taxonomy.xml",
-                 'protein, taxon' => 'human-r',
+                 'protein, taxon' => "#{@database}-r",
                  'spectrum, path' => "#{@file}",
                  'output, path' => "#{@fileName}-decoy_tandem_output.xml"}
             
@@ -106,7 +114,7 @@ class Search
     def runOmssa
         #Forward search
         exec("omssacl -fm #{@file} -op #{@fileName}-forward_omssa_output.pep.xml -d #{$path}ipi/ipi.HUMAN.v3.72.fasta") if fork == nil
-            
+        
         #Decoy search
         exec("omssacl -fm #{@file} -op #{@fileName}-decoy_omssa_output.pep.xml -d #{$path}ipi/reverse/ipi.HUMAN.v3.72.fasta.reverse") if fork == nil
         
@@ -116,7 +124,7 @@ class Search
     def waitForEverything
         begin
             Process.wait while true
-      
+        
         rescue SystemCallError
             #No need to do anything here, just go
         end
@@ -144,5 +152,10 @@ class Search
         
         exec("wine Tandem2XML #{newFile1} #{pepFile1}") if fork == nil
         exec("wine Tandem2XML #{newFile2} #{pepFile2}") if fork == nil
+    end
+    
+    def extractDatabase
+        doc = Nokogiri::XML(File.open("#{$vpath}data/taxonomy.xml"))
+        return doc.xpath("//taxon[@label=\"#{@database}\"]//file/@URL")
     end
 end

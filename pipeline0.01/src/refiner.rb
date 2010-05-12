@@ -21,18 +21,6 @@ class Refiner
         file = File.open("#{$vpath}data/refineTest.pep.xml", "w")
         file.puts doc
         file.close
-        
-        
-=begin
-        puts "Refine search? [Y/N]"
-        choice = gets
-        
-        if choice.chomp!.downcase === "y"
-            puts "fine"
-        elsif
-            puts "Thank you for making my job easier!"
-        end
-=end
     end
     
     def getQValue(value)

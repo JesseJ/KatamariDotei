@@ -15,7 +15,7 @@ class FalseRateDiscoverer
     
     def discoverFalseRate
         puts "\n----------------"
-        puts "Finding FDR..."
+        puts "Finding FDR...\n"
         
         @files.each do |files|
             targetArr = []
@@ -23,10 +23,10 @@ class FalseRateDiscoverer
             version = 0
             
             files.each do |file|
-                doc = Nokogiri::XML(File.open(file))
+                doc = Nokogiri::XML(IO.read(file))
                 #Obtains the score and charge values from the pepXML file. The expect score is used, and values are taken only where hit_rank=1
                 scoresAndCharges = doc.xpath("//search_hit[@hit_rank=\"1\"]//search_score[@name=\"expect\"]/@value|//spectrum_query/@assumed_charge")
-                
+                puts scoresAndCharges
                 i = 0
                 while i < scoresAndCharges.length
                     if version == 0
@@ -37,27 +37,11 @@ class FalseRateDiscoverer
                     
                     i += 2
                 end
-
+                
                 version += 1
             end
             
-            qValues = Ms::ErrorRate::Qvalue.target_decoy_qvalues(targetArr, decoyArr, :z_together => true)
-            precision = Ms::ErrorRate::Decoy.precision(targetArr.length, decoyArr.length)
-            
-            all = (targetArr + decoyArr).sort_by {|h| [h.charge, h.score, h.type]}
-            
-            i = 0
-            j = 0
-            all.each do |hit|
-                i += 1
-                if hit.type == "decoy"
-                    j += 1
-                    i -= 1
-                    #puts j.to_f / i.to_f
-                end
-            end
-            
-            return qValues
+            return Ms::ErrorRate::Qvalue.target_decoy_qvalues(targetArr, decoyArr, :z_together => true)
         end
     end
 end

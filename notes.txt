@@ -1,0 +1,39 @@
+1. INSTALLING TPP
+
+--------
+cd /usr/local/src/
+svn co https://sashimi.svn.sourceforge.net/svnroot/sashimi/tags/release_4-3-1/trans_proteomic_pipeline/
+cd installer_linux/
+sh ./install-prerequisites-ubuntu-9_04.sh
+
+cd ../trans_proteomic_pipeline/src/
+make
+make install
+--------
+
+This version of TPP comes with an outdated X! Tandem, so I downloaded the recent one from their web site. g++ complains at it though, so I had to add "#include <stdint.h>" to saxhandler.h. It also complains at several files, so I had to add "#include <string.h>" to those files. Also, X! Tandem automatically adds the exact date to the name of each output file, making it more difficult for automation. I fixed this by commenting out line 914 of tandem-linux-10-01-01-4/src/mreport.cpp and re-executing make.
+
+
+2. CHILD PROCESSES
+
+Since the pipeline relies on several programs, I chose to execute those programs by using the kernel::fork method. Handing these processes off to be handled by the computer's scheduler makes for more efficient use of time, and is very helpful when running multiple search engines. There are different ways to do this in Ruby, but I chose the fork method because you can choose to wait by calling Process.wait, or not call it and go on. In order to wait for several processes to finish, such as in the search class, I created a method to runs a while loop calling Process.wait. This way, it will keep waiting until all child processes have finished, throw an exception when there are none to wait on but be caught be an exception handler.
+
+
+3. HARDKLOR
+
+Hardklor's output is in a unique format and is thus cannot be used as input to the search engines. Can it be converted to an appropriate format?
+
+
+4. SELECTING AN ENZYME
+
+The search engines use different ways of selecting an enzyme in the command line. To handle this, I chose to have the name of the enzyme be the input to the pipeline, while nokogiri is parses an xml file to obtain the correct input for the search engine. X! Tandem didn't have such an xml file, so I made it myself.
+
+
+5. DECOY DATABASES
+
+I created a class to select and reverse a database to be used in decoy searches. The code to format the output may not be necessary. formatdb needs to be called to convert a database into the correct format for OMSSA, both on the normal and reversed databases. I have not at this time automated the database reversal.
+
+
+6. INSTALLING FROM JUST THE PIPELINE SOURCE CODE
+
+Seriously? There's a butt-load of dependencies, so, uh...have fun.

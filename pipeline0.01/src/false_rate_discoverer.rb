@@ -24,9 +24,9 @@ class FalseRateDiscoverer
             
             files.each do |file|
                 doc = Nokogiri::XML(IO.read(file))
-                #Obtains the score and charge values from the pepXML file. The expect score is used, and values are taken only where hit_rank=1
-                scoresAndCharges = doc.xpath("//search_hit[@hit_rank=\"1\"]//search_score[@name=\"expect\"]/@value|//spectrum_query/@assumed_charge")
-                puts scoresAndCharges
+                #Obtains the charge and score values from the pepXML file. The expect score is used, and values are taken only where hit_rank=1
+                scoresAndCharges = doc.xpath("//spectrum_query/@assumed_charge|//search_hit[@hit_rank=\"1\"]//search_score[@name=\"expect\"]/@value")
+                
                 i = 0
                 while i < scoresAndCharges.length
                     if version == 0

@@ -65,12 +65,12 @@ class Search
         #Forward search
         createTandemInput(false)
         
-        exec("wine #{$path}tandem-win32-10-01-01-4/bin/tandem.exe #{$vpath}data/forwardTandemInput.xml") if fork == nil
+        exec("#{$path}tandem-linux-10-01-01-4/bin/tandem.exe #{$vpath}data/forwardTandemInput.xml") if fork == nil
             
         #Decoy search
         createTandemInput(true)
         
-        exec("wine #{$path}tandem-win32-10-01-01-4/bin/tandem.exe #{$vpath}data/decoyTandemInput.xml") if fork == nil
+        exec("#{$path}tandem-linux-10-01-01-4/bin/tandem.exe #{$vpath}data/decoyTandemInput.xml") if fork == nil
     end
     
     def createTandemInput(decoy)
@@ -83,7 +83,7 @@ class Search
         xml = Builder::XmlMarkup.new(:target => file, :indent => 4)
         xml.instruct! :xml, :version => "1.0"
             
-        notes = {'list path, default parameters' => "#{$path}tandem-win32-10-01-01-4/bin/default_input.xml",
+        notes = {'list path, default parameters' => "#{$path}tandem-linux-10-01-01-4/bin/default_input.xml",
                  'list path, taxonomy information' => "#{$vpath}data/taxonomy.xml",
                  'spectrum, path' => "#{@file}",
                  'protein, cleavage site' => "#{getTandemEnzyme}",
@@ -129,27 +129,15 @@ class Search
     end
     
     def convertTandemOutput
-        #Forward output
-        mgFile = "#{@file}".chomp(".mgf")
-        oldFile1 = Dir["#{mgFile}-forward_tandem_output_#{@run}.*.xml"].first
-        size = "#{mgFile}-forward_tandem_output_#{@run}".length
-        newFile1 = oldFile1[0,size] + ".xml"
-        FileUtils.mv(oldFile1, newFile1)
-            
-        #Decoy output
-        mgFile = "#{@file}".chomp(".mgf")
-        oldFile2 = Dir["#{mgFile}-decoy_tandem_output_#{@run}.*.xml"].first
-        size = "#{mgFile}-decoy_tandem_output_#{@run}".length
-        newFile2 = oldFile2[0,size] + ".xml"
-        FileUtils.mv(oldFile2, newFile2)
-        
         #Convert to pepXML format
-        pepFile1 = newFile1.chomp(".xml") + ".pep.xml"
-        pepFile2 = newFile2.chomp(".xml") + ".pep.xml"
+        file1 = "#{@file}"[0,@file.length-4] + "-forward_tandem_output_#{@run}.xml"
+        file2 = "#{@file}"[0,@file.length-4] + "-decoy_tandem_output_#{@run}.xml"
+        pepFile1 = file1.chomp(".xml") + ".pep.xml"
+        pepFile2 = file2.chomp(".xml") + ".pep.xml"
         @outputFiles << [pepFile1, pepFile2]
         
-        exec("wine Tandem2XML #{newFile1} #{pepFile1}") if fork == nil
-        exec("wine Tandem2XML #{newFile2} #{pepFile2}") if fork == nil
+        exec("/usr/local/src/tpp-4.3.1/build/linux/Tandem2XML #{file1} #{pepFile1}") if fork == nil
+        exec("/usr/local/src/tpp-4.3.1/build/linux/Tandem2XML #{file2} #{pepFile2}") if fork == nil
     end
     
     def extractDatabase(database)
@@ -163,7 +151,7 @@ class Search
     end
     
     def getTandemEnzyme
-        doc = Nokogiri::XML(IO.read("#{$path}tandem-win32-10-01-01-4/enzymes.xml"))
+        doc = Nokogiri::XML(IO.read("#{$path}tandem-linux-10-01-01-4/enzymes.xml"))
         return doc.xpath("//enzyme[@name=\"#{@enzyme}\"]/@symbol")
     end
 end

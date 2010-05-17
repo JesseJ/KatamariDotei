@@ -1,0 +1,534 @@
+PIPELINE DOC
+
+Pipeline 0.01 (May 2010)
+
+This is a testing version and not meant for release, so there is no doc at the moment.
+
+
+_____________________________________________________________________________________________________________________________________
+
+DOCUMENTATION ON DEPENDENT PROGRAMS
+
+Pipeline uses many programs from the Trans-Proteomic Pipeline (TPP). The wiki can be viewed at http://tools.proteomecenter.org/wiki/index.php?title=Software:TPP
+
+----------------------------------------------------------------------------------------------------------------------
+
+*ReAdW (Converts raw file to mzXML format)*
+
+ReAdW 4.3.1(build Sep  9 2009 12:30:29)
+
+Usage: ReAdW [options] <raw file path> [<output file>]
+
+ Options
+  --mzXML:         mzXML mode (default)
+  --mzML:          mzML mode (will use msconvert)
+      one of --mzXML or --mzML must be selected
+
+  --centroid, -c: Centroid all scans (MS1 and MS2)
+      meaningful only if data was acquired in profile mode;
+      default: off
+  [Advanced option, default OFF] --precursorFromFilterLine: only
+      try to get the precursor MZ value from the Thermo
+      "filterline" text; only use this if you have a good reason!
+      Otherwise, the program first will try to obtain a more accurate
+       mass from the "Monoisotopic M/Z:" "trailer value"
+  --compress, -z: Use zlib for compressing peaks
+      default: off
+  --verbose, -v:   verbose
+  --gzip, -g:   gzip the output file (independent of peak compression)
+
+  output file: (Optional) Filename for output file;
+      if not supplied, the output file will be created
+      in the same directory as the input file.
+
+
+Example: convert input.raw file to output.mzXML, centroiding MS1 and MS2 scans
+
+      ReAdW --mzXML -c C:\test\input.raw c:\test\output.mzXML
+
+Author: Natalie Tasman (SPC/ISB), with Jimmy Eng, Brian Pratt, and Matt Chambers,
+      based on orignal work by Patrick Pedriolli.
+
+SEE MORE AT: http://tools.proteomecenter.org/wiki/index.php?title=Software:ReAdW
+
+----------------------------------------------------------------------------------------------------------------------
+
+*MzXML2Search (Converts mzXML file to a different format)*
+
+MzXML2Search (TPP v4.3 JETSTREAM rev 1, Build 201005141400 (linux))
+ Usage:  MzXML2Search [options] *.mzXML
+
+     options = -dta or -mgf or -pkl or -xdta or -odta or -ms2 output format (default dta)
+               -F<num>      where num is an int specifying the first scan
+               -L<num>      where num is an int specifying the last scan
+               -C<n1>[-<n2>]     "force charge(s)": where n1 is an integer
+                                 specifying the precursor charge state (or possible
+                                 charge range from n1 to n2 inclusive) to use; this option
+                                 forces input scans to be output with the user-specified
+                                 charge (or charge range)
+               -c<n1>[-<n2>]     "suggest charge(s)": for scans which do not have a
+                                 precursor charge (or charge range) already determined in the
+                                 input file, use the user-specified charge (or charge range)
+                                 for those scans.  Input scans which already have defined
+                                 charge (or charge range) are output with their original,
+                                 unchanged values.
+               -B<num>      where num is a float specifying minimum MH+ mass, default=600.0 Da
+               -T<num>      where num is a float specifying maximum MH+ scan, default=4200.0 Da
+               -P<num>      where num is an int specifying minimum peak count, default=5
+               -I<num>      where num is a float specifying minimum threshold for peak intensity, default=0.01
+               -M<n1>[-<n2>]where n1 is an int specifying MS level to export (default=2)
+                            and n2 specifies an optional range of MS levels to export
+               -A<str>      where str is the activation method, "CID" (default) or "ETD"
+                              if activation method not in scans of mzXML file, this option is ignored
+               -h           use hydrogen mass for charge ion (default is proton mass)
+
+SEE MORE AT: ??
+
+----------------------------------------------------------------------------------------------------------------------
+
+*Hardklor (Analysis of high- resolution mass spectra)*
+
+Hardklor v1.22
+Usage:		hardklor <MS1 file> <output file> [parameters]
+		hardklor -conf <config file>
+Parameters:	See documentation
+
+SEE MORE AT: http://proteome.gs.washington.edu/software/hardklor/
+
+----------------------------------------------------------------------------------------------------------------------
+
+*ms-msrun (Used to convert mzXML to mgf format)*
+
+A library for working with LC/MS runs.
+
+== Examples
+
+The following example works on any version of *mzXML*.
+
+    require "ms/msrun" 
+
+    Ms::Msrun.open("file.mzXML") do |ms|
+      
+      # Run level information:
+      ms.start_time       # in seconds
+      ms.end_time         # in seconds 
+
+      ms.scan_count       # number of scans
+      ms.scan_count(1)    # number of MS scans
+      ms.scan_count(2)    # number of MS/MS scans, etc.
+
+      ms.parent_basename_noext   # "file" (as recorded _in the xml_)
+      ms.filename                # "file.mzXML"
+
+      # Random scan access (very fast)
+      ms.scan(22)         # a scan object
+
+      # Complete scan access
+      ms.each do |scan|
+        scan.num          # scan number
+        scan.ms_level     # ms_level
+        scan.time         # retention time in seconds
+        scan.start_mz     # the first m/z value
+        scan.end_mz       # the last m/z value
+  
+        # Precursor information
+        pr = scan.precursor  # an Ms::Precursor object
+        pr.mz
+        pr.intensity      # does fast binary search if info not already given
+        pr.parent         # the parent scan
+        pr.charge_states  # Array of possible charge states
+
+        # Spectral information
+        spectrum = scan.spectrum
+        spectrum.mzs          # Array of m/z values
+        spectrum.intensities  # Array of m/z values
+        spectrum.peaks do |mz, inten|
+          puts "#{mz} #{inten}"   # print each peak on own line
+        end
+      end
+
+      # supports pre-filtering for faster access
+
+      ## get just precursor info:
+      ms.each(:ms_level => 2, :spectrum => false) {|scan| scan.precursor }
+
+      ## get just level one spectra:
+      ms.each(:ms_level => 1, :precursor => false) {|scan| scan.spectrum }
+    end
+
+    # Quicker way to get at scans:
+    Ms::Msrun.foreach("file.mzXML") {|scan|  scan <do something> }
+
+mzData support to be re-included in the future and mzML support planned.
+
+== Features
+
+[<b>Fast</b>] uses Nokogiri and a dash of regular expressions to achieve very fast random access of scans and full access.
+[<b>Unified</b>] one interface for all formats.
+[<b>Lazy evaluation at scan and spectrum level</b>] Scans are only read from IO when requested.  Spectra are also decoded only when explicitly accessed.
+
+== Installation
+
+    gem install ms-msrun
+
+== Copying
+
+    See LICENSE
+
+== See also
+
+mzml[http://github.com/delagoya/mzml]
+
+----------------------------------------------------------------------------------------------------------------------
+
+*X! Tandem (Search engine)*
+
+USAGE: tandem filename
+
+where filename is any valid path to an XML input file.
+
++-+-+-+-+-+-+
+
+X! TANDEM TORNADO (2010.01.01.4)
+
+Copyright (C) 2003-2008 Ronald C Beavis, all rights reserved
+This software is a component of the GPM  project.
+Use of this software governed by the Artistic license.
+If you do not have this license, you can get a copy at
+http://www.perl.com/pub/a/language/misc/Artistic.html
+
++-+-+-+-+-+-+
+
+(Pipeline uses a slightly modified version of this, which involves the naming of output files. See Notes for details)
+
+SEE MORE AT: http://www.thegpm.org/tandem/
+
+----------------------------------------------------------------------------------------------------------------------
+
+*OMSSA (Search engine)*
+
+USAGE
+  omssacl [-h] [-help] [-xmlhelp] [-pm param] [-d blastdb] [-umm] [-f infile]
+    [-fx xmlinfile] [-fb dtainfile] [-fp pklinfile] [-fm pklinfile]
+    [-foms omsinfile] [-fomx omxinfile] [-fbz2 bz2infile] [-fxml omxinfile]
+    [-o textasnoutfile] [-ob binaryasnoutfile] [-ox xmloutfile]
+    [-obz2 bz2outfile] [-op pepxmloutfile] [-oc csvfile] [-w] [-to pretol]
+    [-te protol] [-tom promass] [-tem premass] [-tez prozdep] [-ta autotol]
+    [-tex exact] [-i ions] [-cl cutlo] [-ch cuthi] [-ci cutinc]
+    [-cp precursorcull] [-v cleave] [-x taxid] [-w1 window1] [-w2 window2]
+    [-h1 hit1] [-h2 hit2] [-hl hitlist] [-ht tophitnum] [-hm minhit]
+    [-hs minspectra] [-he evalcut] [-mf fixedmod] [-mv variablemod] [-mnm]
+    [-mm maxmod] [-e enzyme] [-zh maxcharge] [-zl mincharge]
+    [-zoh maxprodcharge] [-zt chargethresh] [-z1 plusone] [-zc calcplusone]
+    [-zcc calccharge] [-pc pseudocount] [-sb1 searchb1] [-sct searchcterm]
+    [-sp productnum] [-scorr corrscore] [-scorp corrprob] [-no minno]
+    [-nox maxno] [-is subsetthresh] [-ir replacethresh] [-ii iterativethresh]
+    [-p prolineruleions] [-il] [-el] [-ml] [-mx modinputfile]
+    [-mux usermodinputfile] [-nt numthreads] [-ni] [-ns] [-os] [-nrs]
+    [-logfile File_Name] [-conffile File_Name] [-version] [-version-full]
+    [-dryrun]
+
+DESCRIPTION
+   Search engine for identifying MS/MS peptide spectra
+
+OPTIONAL ARGUMENTS
+ -h
+   Print USAGE and DESCRIPTION;  ignore other arguments
+ -help
+   Print USAGE, DESCRIPTION and ARGUMENTS description;  ignore other arguments
+ -xmlhelp
+   Print USAGE, DESCRIPTION and ARGUMENTS description in XML format;  ignore
+   other arguments
+ -pm <String>
+   search parameter input in xml format (overrides command line)
+   Default = `'
+ -d <String>
+   Blast sequence library to search. Do not include .p* filename suffixes.
+   Default = `nr'
+ -umm
+   use memory mapped sequence libraries
+ -f <String>
+   single dta file to search
+   Default = `'
+ -fx <String>
+   multiple xml-encapsulated dta files to search
+   Default = `'
+ -fb <String>
+   multiple dta files separated by blank lines to search
+   Default = `'
+ -fp <String>
+   pkl formatted file
+   Default = `'
+ -fm <String>
+   mgf formatted file
+   Default = `'
+ -foms <String>
+   omssa oms file
+   Default = `'
+ -fomx <String>
+   omssa omx file
+   Default = `'
+ -fbz2 <String>
+   omssa omx file compressed by bzip2
+   Default = `'
+ -fxml <String>
+   omssa xml search request file
+   Default = `'
+ -o <String>
+   filename for text asn.1 formatted search results
+   Default = `'
+ -ob <String>
+   filename for binary asn.1 formatted search results
+   Default = `'
+ -ox <String>
+   filename for xml formatted search results
+   Default = `'
+ -obz2 <String>
+   filename for bzip2 compressed xml formatted search results
+   Default = `'
+ -op <String>
+   filename for pepXML formatted search results
+   Default = `'
+ -oc <String>
+   filename for csv formatted search summary
+   Default = `'
+ -w
+   include spectra and search params in search results
+ -to <Real>
+   product ion m/z tolerance in Da
+   Default = `0.8'
+ -te <Real>
+   precursor ion m/z tolerance in Da
+   Default = `2.0'
+ -tom <Integer>
+   product ion search type (0 = mono, 1 = avg, 2 = N15, 3 = exact)
+   Default = `0'
+ -tem <Integer>
+   precursor ion search type (0 = mono, 1 = avg, 2 = N15, 3 = exact)
+   Default = `0'
+ -tez <Integer>
+   charge dependency of precursor mass tolerance (0 = none, 1 = linear)
+   Default = `0'
+ -ta <Real>
+   automatic mass tolerance adjustment fraction
+   Default = `1.0'
+ -tex <Real>
+   threshold in Da above which the mass of neutron should be added in exact
+   mass search
+   Default = `1446.94'
+ -i <String>
+   id numbers of ions to search (comma delimited, no spaces)
+   Default = `1,4'
+ -cl <Real>
+   low intensity cutoff as a fraction of max peak
+   Default = `0.0'
+ -ch <Real>
+   high intensity cutoff as a fraction of max peak
+   Default = `0.2'
+ -ci <Real>
+   intensity cutoff increment as a fraction of max peak
+   Default = `0.0005'
+ -cp <Integer>
+   eliminate charge reduced precursors in spectra (0=no, 1=yes)
+   Default = `0'
+ -v <Integer>
+   number of missed cleavages allowed
+   Default = `1'
+ -x <String>
+   comma delimited list of taxids to search (0 = all)
+   Default = `0'
+ -w1 <Integer>
+   single charge window in Da
+   Default = `20'
+ -w2 <Integer>
+   double charge window in Da
+   Default = `14'
+ -h1 <Integer>
+   number of peaks allowed in single charge window
+   Default = `2'
+ -h2 <Integer>
+   number of peaks allowed in double charge window
+   Default = `2'
+ -hl <Integer>
+   maximum number of hits retained per precursor charge state per spectrum
+   Default = `30'
+ -ht <Integer>
+   number of m/z values corresponding to the most intense peaks that must
+   include one match to the theoretical peptide
+   Default = `6'
+ -hm <Integer>
+   the minimum number of m/z matches a sequence library peptide must have for
+   the hit to the peptide to be recorded
+   Default = `2'
+ -hs <Integer>
+   the minimum number of m/z values a spectrum must have to be searched
+   Default = `4'
+ -he <Real>
+   the maximum evalue allowed in the hit list
+   Default = `1'
+ -mf <String>
+   comma delimited (no spaces) list of id numbers for fixed modifications
+   Default = `'
+ -mv <String>
+   comma delimited (no spaces) list of id numbers for variable modifications
+   Default = `'
+ -mnm
+   n-term methionine should not be cleaved
+ -mm <Integer>
+   the maximum number of mass ladders to generate per database peptide
+   Default = `128'
+ -e <Integer>
+   id number of enzyme to use
+   Default = `0'
+ -zh <Integer>
+   maximum precursor charge to search when not 1+
+   Default = `3'
+ -zl <Integer>
+   minimum precursor charge to search when not 1+
+   Default = `1'
+ -zoh <Integer>
+   maximum product charge to search
+   Default = `2'
+ -zt <Integer>
+   minimum precursor charge to start considering multiply charged products
+   Default = `3'
+ -z1 <Real>
+   fraction of peaks below precursor used to determine if spectrum is charge 1
+   Default = `0.95'
+ -zc <Integer>
+   should charge plus one be determined algorithmically? (1=yes)
+   Default = `1'
+ -zcc <Integer>
+   how should precursor charges be determined? (1=believe the input file,
+   2=use a range)
+   Default = `2'
+ -pc <Integer>
+   minimum number of precursors that match a spectrum
+   Default = `1'
+ -sb1 <Integer>
+   should first forward (b1) product ions be in search (1=no)
+   Default = `1'
+ -sct <Integer>
+   should c terminus ions be searched (1=no)
+   Default = `0'
+ -sp <Integer>
+   max number of ions in each series being searched (0=all)
+   Default = `100'
+ -scorr <Integer>
+   turn off correlation correction to score (1=off, 0=use correlation)
+   Default = `0'
+ -scorp <Real>
+   probability of consecutive ion (used in correlation correction)
+   Default = `0.5'
+ -no <Integer>
+   minimum size of peptides for no-enzyme and semi-tryptic searches
+   Default = `4'
+ -nox <Integer>
+   maximum size of peptides for no-enzyme and semi-tryptic searches (0=none)
+   Default = `40'
+ -is <Real>
+   evalue threshold to include a sequence in the iterative search, 0 = all
+   Default = `0.0'
+ -ir <Real>
+   evalue threshold to replace a hit, 0 = only if better
+   Default = `0.0'
+ -ii <Real>
+   evalue threshold to iteratively search a spectrum again, 0 = always
+   Default = `0.01'
+ -p <String>
+   id numbers of ion series to apply no product ions at proline rule at (comma
+   delimited, no spaces)
+   Default = `'
+ -il
+   print a list of ions and their corresponding id number
+ -el
+   print a list of enzymes and their corresponding id number
+ -ml
+   print a list of modifications and their corresponding id number
+ -mx <String>
+   file containing modification data
+   Default = `mods.xml'
+ -mux <String>
+   file containing user modification data
+   Default = `usermods.xml'
+ -nt <Integer>
+   number of search threads to use, 0=autodetect
+   Default = `0'
+ -ni
+   don't print informational messages
+ -ns
+   depreciated flag
+ -os
+   use omssa 1.0 scoring
+ -nrs
+   turn off rank score
+ -logfile <File_Out>
+   File to which the program log should be redirected
+ -conffile <File_In>
+   Program's configuration (registry) data file
+ -version
+   Print version number;  ignore other arguments
+ -version-full
+   Print extended version data;  ignore other arguments
+ -dryrun
+   Dry run the application: do nothing, only test all preconditions
+
+SEE MORE AT: http://pubchem.ncbi.nlm.nih.gov/omssa/
+
+----------------------------------------------------------------------------------------------------------------------
+
+*ms-error_rate*
+
+An {Mspire}[http://mspire.rubyforge.org] library for calculating or dealing
+with error rates.  These may be from target-decoy searches, sample bias
+validation, or other sources.  
+
+== Examples
+
+=== Target-Decoy with Mascot
+
+Generate q-values (right now only with Mascot and MascotPercolator):
+
+    require 'ms/error_rate/qvalue'
+    target_hits = Ms::ErrorRate::Qvalue::Mascot.qvalues(target_files, decoy_files)
+    # target_hit is a PeptideHit Struct (:filename, :query_title, :charge, :sequence, :mowse, :qvalue)
+
+    # or on the commandline:
+    % qvalues.rb <target>.dat <decoy>.dat
+
+The same output can be produced from Mascot-Percolator output:
+
+    require 'ms/error_rate/qvalue'
+    target_hits = Ms::ErrorRate::Qvalue::Mascot::Percolator.qvalues(datp_files, tab_dot_text_files)
+    # or commandline:
+    % qvalues.rb <target>.datp <target>.tab.txt
+
+=== Sample Bias Validation
+
+Sample Bias Validation allows error rate determination based on expected biases in sample composition.  Here is an example using transmembrane sequence content.  We will assume a fasta file called `proteins.fasta`:
+
+    # create a peptide-centric database
+    fasta_to_peptide_centric_db.rb proteins.fasta  # defaults 2 missed cleavages, min aaseq 4
+       # generates a file: proteins.msd_clvg2.min_aaseq4.yml
+
+    # create a transmembrane sequence prediction file
+    fasta_to_phobius.rb proteins.fasta     # => generates proteins.phobius
+
+    generate_sbv_input_hashes.rb proteins.msd_clvg2.min_aaseq4.yml --tm proteins.phobius,1
+       # creates two files:
+       # proteins.msd_clvg2.min_aaseq4.tm_min1.by_aaseq.yml
+       # proteins.msd_clvg2.min_aaseq4.tm_min1.freq_by_length.yml
+
+    # cytosolic fraction (transmembrane sequences not expected):
+    error_rate qvalues.yml --fp-sbv proteins.msd_clvg2.min_aaseq4.tm_min1.by_aaseq.yml,\
+        proteins.msd_clvg2.min_aaseq4.tm_min1.freq_by_length.yml,0.05
+
+== Installation
+
+  gem install ms-error_rate
+
+== Copyright
+
+See LICENSE
+
+

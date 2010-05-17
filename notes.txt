@@ -37,3 +37,8 @@ I created a class to select and reverse a database to be used in decoy searches.
 6. INSTALLING FROM JUST THE PIPELINE SOURCE CODE
 
 Seriously? There's a butt-load of dependencies, so, uh...have fun.
+
+
+7. MODIFIED X! TANDEM
+
+For some reason, X! Tandem automatically renamed the output files to include the date and time. This complicated automation, so I edited the source code to not add the date and time by commenting out line 914 of tandem-linux-10-01-01-4/src/mreport.cpp.

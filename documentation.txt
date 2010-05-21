@@ -1,8 +1,6 @@
 PIPELINE DOC
-
-Pipeline 0.01 (May 2010)
-
-This is a testing version and not meant for release, so there is no doc at the moment.
+	Pipeline 0.01 (May 2010): This is a testing version and not meant for release, so there is no doc at the moment. There is, however,
+								a "stable" version of this which can be run, but no guarantees are made.
 
 
 _____________________________________________________________________________________________________________________________________

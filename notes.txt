@@ -50,6 +50,8 @@ install ReAdW.exe and get XCalibur's Xrawfile2.dll, fileio.dll, fregistry.dll in
 install hardklor
 install X! Tandem. May need to add "#include <stdint.h>" to saxhandler.h. Make correction as noted in note 7.
 install OMSSA
+download search engine databases
+sudo apt-get install blast2. This is to use formatdb on the search engine databases to format them for OMSSA.
 
 
 7. MODIFIED X! TANDEM

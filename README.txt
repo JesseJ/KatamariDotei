@@ -7,4 +7,4 @@ DESCRIPTION:
 
 HOW TO RUN:
 
-	Pipeline0.01: ruby src/pipeline.rb
+	Pipeline0.01: src/pipeline.rb OR /stable/pipeline.rb inputFile type enzyme (outputFolder)

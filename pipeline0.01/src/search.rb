@@ -2,7 +2,6 @@ require 'builder'
 require 'rubygems'
 require 'fileutils'
 require 'nokogiri'
-require "#{$path}ms-fasta/lib/ms/fasta.rb"
 
 #file == input file
 #database == type of fasta database to use, e.g. "human"
@@ -111,10 +110,10 @@ class Search
         decoy = "#{@fileName}-decoy_omssa_output_#{@run}.pep.xml"
         
         #Forward search
-        exec("omssacl -fm #{@file} -op #{forward} -e #{getOMSSAEnzyme} -d #{extractDatabase(@database)}") if fork == nil
+        exec("#{$path}omssa-2.1.7.linux/omssacl -fm #{@file} -op #{forward} -e #{getOMSSAEnzyme} -d #{extractDatabase(@database)}") if fork == nil
         
         #Decoy search
-        exec("omssacl -fm #{@file} -op #{decoy} -e #{getOMSSAEnzyme} -d #{extractDatabase(@database + "-r")}") if fork == nil
+        exec("#{$path}omssa-2.1.7.linux/omssacl -fm #{@file} -op #{decoy} -e #{getOMSSAEnzyme} -d #{extractDatabase(@database + "-r")}") if fork == nil
         
         @outputFiles << [forward, decoy]
     end

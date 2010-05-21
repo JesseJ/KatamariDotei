@@ -1,12 +1,13 @@
 1. INSTALLING TPP
 
 --------
+#If admin permission is needed, enter the command: sudo bash
 cd /usr/local/src/
 svn co https://sashimi.svn.sourceforge.net/svnroot/sashimi/tags/release_4-3-1/trans_proteomic_pipeline/
-cd installer_linux/
+cd trans_proteomic_pipeline/installer_linux/
 sh ./install-prerequisites-ubuntu-9_04.sh
 
-cd ../trans_proteomic_pipeline/src/
+cd ../src/
 make
 make install
 --------
@@ -36,7 +37,19 @@ I created a class to select and reverse a database to be used in decoy searches.
 
 6. INSTALLING FROM JUST THE PIPELINE SOURCE CODE
 
-Seriously? There's a butt-load of dependencies, so, uh...have fun.
+As of 20 May 2010:
+cd pipeline/
+sudo aptitude install ruby1.9.1-full
+sudo aptitude install rubygems1.9.1
+git clone http://github.com/jtprince/ms-msrun.git
+*Crazy stuff happened
+gem install builder
+git clone http://github.com/jtprince/ms-error_rate.git
+sudo aptitude install wine
+install ReAdW.exe and get XCalibur's Xrawfile2.dll, fileio.dll, fregistry.dll into the same folder as ReAdW.exe, along with zlib1.dll
+install hardklor
+install X! Tandem. May need to add "#include <stdint.h>" to saxhandler.h. Make correction as noted in note 7.
+install OMSSA
 
 
 7. MODIFIED X! TANDEM

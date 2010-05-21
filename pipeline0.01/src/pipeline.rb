@@ -18,12 +18,12 @@ class Pipeline
     def run
         puts "\nHere we go!\n"
         
-        #RawTomzXML.new("#{@file}.raw").convert
-        #MzXMLToOther.new("mgf", "#{@file}.mzXML", false).convert
-        output = Search.new("#{@file}.mgf", "rat", "trypsin", 1, :omssa => true, :xtandem => true, :crux => true, :sequest => true, :mascot => true).run
-        #qValues = FalseRateDiscoverer.new([["#{@file}-forward_omssa_output_1.pep.xml", "#{@file}-decoy_omssa_output_1.pep.xml"]]).discoverFalseRate
+        RawTomzXML.new("#{@file}.raw").convert
+        MzXMLToOther.new("mgf", "#{@file}.mzXML", false).convert
+        output = Search.new("#{@file}.mgf", "human", "trypsin", 1, :omssa => true, :xtandem => true, :crux => true, :sequest => true, :mascot => true).run
+        qValues = FalseRateDiscoverer.new([["#{@file}-forward_omssa_output_1.pep.xml", "#{@file}-decoy_omssa_output_1.pep.xml"]]).discoverFalseRate
         #qValues = FalseRateDiscoverer.new(output).discoverFalseRate
-        #Refiner.new("#{@file}-forward_omssa_output_1.pep.xml", qValues, 0.01).refine
+        Refiner.new("#{@file}-forward_omssa_output_1.pep.xml", qValues, 0.01).refine
         #Refiner.new(output, qValues)
         
         notifyCompletion

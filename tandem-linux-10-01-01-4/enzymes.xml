@@ -1,0 +1,25 @@
+<enzymes>
+	<enzyme name="argc" symbol="[R]|{P}"/>
+	<enzyme name="aspn" symbol="[X]|[D]"/>
+	<enzyme name="chymotrypsin" symbol="[FMWY]|{P}"/>
+	<enzyme name="clostripain" symbol="[R]|[X]"/>
+	<enzyme name="cnbr" symbol="[M]|{P}"/>
+	<enzyme name="elastase" symbol="[AGILV]|{P}"/>
+	<enzyme name="formicacid" symbol="[D]|{P}"/>
+	<enzyme name="gluc" symbol="[DE]|{P}"/>
+	<enzyme name="gluc_bicarb" symbol="[E]|{P}"/>
+	<enzyme name="iodosobenzoate" symbol="[W]|[X]"/>
+	<enzyme name="lysc" symbol="[K]|[P]"/>
+	<enzyme name="lysc-p" symbol="[K]|[X]"/>
+	<enzyme name="lysn" symbol="[X]|[K]"/>
+	<enzyme name="lysn_promisc" symbol="[X]|[AKRS]"/>
+	<enzyme name="nonspecific" symbol="[X]|[X]"/>
+	<enzyme name="pepsina" symbol="[FL]|[X]"/>
+	<enzyme name="protein_endopeptidase" symbol="[P]|[X]"/>
+	<enzyme name="staph_protease" symbol="[E]|[X]"/>
+	<enzyme name="tca" symbol="[FMWY]|{P},[KR]|{P},[X]|[D]"/>
+	<enzyme name="trypsin" symbol="[KR]|{P}"/>
+	<enzyme name="trypsin/cnbr" symbol="[KR]|{P},[M]|{P}"/>
+	<enzyme name="trypsin_gluc" symbol="[DEKR]|{P}"/>
+	<enzyme name="trypsin_k" symbol="[K]|{P}"/>
+</enzymes>

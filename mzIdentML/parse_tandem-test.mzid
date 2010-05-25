@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mzIdentML xmlns="http://psidev.info/psi/pi/mzIdentML/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="" version="1.0.0" xsi:schemaLocation="http://psidev.info/psi/pi/mzIdentML/1.0 http://jp1.chem.byu.edu/mascot/xmlns/schema/mzIdentML/mzIdentML1.0.0.xsd" creationDate="2010:05:24:13:53:58">
+  <cvList>
+    <cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies" URI="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="2.32.0"/>
+    <cv id="UNIMOD" fullName="UNIMOD" URI="http://www.unimod.org/obo/unimod.obo"/>
+    <cv id="UO" fullName="UNIT-ONTOLOGY" URI="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
+  </cvList>
+  <Provider Software_ref="search2mzIdentML.rb" id="PROVIDER">
+    <ContactRole Contact_ref="PERSON_DOC_OWNER">
+      <role>
+        <cvParam accession="MS:1001271" name="researcher" cvRef="PSI-MS"/>
+      </role>
+    </ContactRole>
+  </Provider>
+  <SequenceCollection>
+    <DBSequence id="DBSeq_1_IPI:IPI00414676.6|SWISS-PROT:P08238|TREMBL:A8K3W9;B4DGL0;B4DMA2;Q6PK50;Q9H6X9|ENSEMBL:ENSP00000325875;ENSP00000360609;ENSP00000360709|REFSEQ:NP_031381|H-INV:HIT000253179|VEGA:OTTHUMP00000016517;OTTHUMP00000016518;OTTHUMP00000016519" SearchDatabase_ref="" accession="IPI:IPI00414676.6|SWISS-PROT:P08238|TREMBL:A8K3W9;B4DGL0;B4DMA2;Q6PK50;Q9H6X9|ENSEMBL:ENSP00000325875;ENSP00000360609;ENSP00000360709|REFSEQ:NP_031381|H-INV:HIT000253179|VEGA:OTTHUMP00000016517;OTTHUMP00000016518;OTTHUMP00000016519">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=HSP90AB1 Heat shock protein HSP 90-beta"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00382470.3|SWISS-PROT:P07900-2|TREMBL:Q86SX1|ENSEMBL:ENSP00000335153|REFSEQ:NP_001017963" SearchDatabase_ref="" accession="IPI:IPI00382470.3|SWISS-PROT:P07900-2|TREMBL:Q86SX1|ENSEMBL:ENSP00000335153|REFSEQ:NP_001017963">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=HSP90AA1 Isoform 2 of Heat shock protein HSP 90-alpha"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00470779.2|SWISS-PROT:P40222|TREMBL:D3DPP6|ENSEMBL:ENSP00000362711;ENSP00000362712|REFSEQ:NP_787048|H-INV:HIT000337375|VEGA:OTTHUMP00000004649;OTTHUMP00000004650" SearchDatabase_ref="" accession="IPI:IPI00470779.2|SWISS-PROT:P40222|TREMBL:D3DPP6|ENSEMBL:ENSP00000362711;ENSP00000362712|REFSEQ:NP_787048|H-INV:HIT000337375|VEGA:OTTHUMP00000004649;OTTHUMP00000004650">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=TXLNA Alpha-taxilin"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00219005.3|SWISS-PROT:Q02790|TREMBL:B2R9U2;D3DUQ1|ENSEMBL:ENSP00000001008|REFSEQ:NP_002005|H-INV:HIT000030649|VEGA:OTTHUMP00000115497;OTTHUMP00000166201" SearchDatabase_ref="" accession="IPI:IPI00219005.3|SWISS-PROT:Q02790|TREMBL:B2R9U2;D3DUQ1|ENSEMBL:ENSP00000001008|REFSEQ:NP_002005|H-INV:HIT000030649|VEGA:OTTHUMP00000115497;OTTHUMP00000166201">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=FKBP4 Peptidyl-prolyl cis-trans isomerase FKBP4"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00384444.6|SWISS-PROT:P02533|ENSEMBL:ENSP00000167586|REFSEQ:NP_000517|H-INV:HIT000052692|VEGA:OTTHUMP00000164624;OTTHUMP00000183330" SearchDatabase_ref="" accession="IPI:IPI00384444.6|SWISS-PROT:P02533|ENSEMBL:ENSP00000167586|REFSEQ:NP_000517|H-INV:HIT000052692|VEGA:OTTHUMP00000164624;OTTHUMP00000183330">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=KRT14 Keratin, type I cytoskeletal 14"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00793443.2|SWISS-PROT:O00410-1|TREMBL:B3KWG6;B4E0R6;Q9BVS9|ENSEMBL:ENSP00000350219;ENSP00000418393;ENSP00000420079|VEGA:OTTHUMP00000018583" SearchDatabase_ref="" accession="IPI:IPI00793443.2|SWISS-PROT:O00410-1|TREMBL:B3KWG6;B4E0R6;Q9BVS9|ENSEMBL:ENSP00000350219;ENSP00000418393;ENSP00000420079|VEGA:OTTHUMP00000018583">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=IPO5 Isoform 1 of Importin-5"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00007752.1|SWISS-PROT:P68371|TREMBL:Q8IWP6;Q8IZ29;Q8N6N5;Q96HX0|ENSEMBL:ENSP00000341289|REFSEQ:NP_006079|H-INV:HIT000009868|VEGA:OTTHUMP00000162590" SearchDatabase_ref="" accession="IPI:IPI00007752.1|SWISS-PROT:P68371|TREMBL:Q8IWP6;Q8IZ29;Q8N6N5;Q96HX0|ENSEMBL:ENSP00000341289|REFSEQ:NP_006079|H-INV:HIT000009868|VEGA:OTTHUMP00000162590">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=TUBB2C Tubulin beta-2C chain"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00438229.2|SWISS-PROT:Q13263-1|TREMBL:B2R8R5|ENSEMBL:ENSP00000253024|REFSEQ:NP_005753|H-INV:HIT000032127|VEGA:OTTHUMP00000078191" SearchDatabase_ref="" accession="IPI:IPI00438229.2|SWISS-PROT:Q13263-1|TREMBL:B2R8R5|ENSEMBL:ENSP00000253024|REFSEQ:NP_005753|H-INV:HIT000032127|VEGA:OTTHUMP00000078191">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=TRIM28 Isoform 1 of Transcription intermediary factor 1-beta"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00010740.1|SWISS-PROT:P23246-1|TREMBL:Q6PIX2;Q86VG2;Q9BSV4|ENSEMBL:ENSP00000349748|REFSEQ:NP_005057|H-INV:HIT000323115|VEGA:OTTHUMP00000004329" SearchDatabase_ref="" accession="IPI:IPI00010740.1|SWISS-PROT:P23246-1|TREMBL:Q6PIX2;Q86VG2;Q9BSV4|ENSEMBL:ENSP00000349748|REFSEQ:NP_005057|H-INV:HIT000323115|VEGA:OTTHUMP00000004329">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=SFPQ Isoform Long of Splicing factor, proline- and glutamine-rich"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00296337.2|SWISS-PROT:P78527-1|ENSEMBL:ENSP00000313420|REFSEQ:NP_008835|H-INV:HIT000220021|VEGA:OTTHUMP00000177651" SearchDatabase_ref="" accession="IPI:IPI00296337.2|SWISS-PROT:P78527-1|ENSEMBL:ENSP00000313420|REFSEQ:NP_008835|H-INV:HIT000220021|VEGA:OTTHUMP00000177651">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=PRKDC Isoform 1 of DNA-dependent protein kinase catalytic subunit"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00411639.1|TREMBL:Q96RS2|H-INV:HIT000076245" SearchDatabase_ref="" accession="IPI:IPI00411639.1|TREMBL:Q96RS2|H-INV:HIT000076245">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=RPSAP15;SNORA6;SNORA62;RPSA Laminin receptor-like protein LAMRL5"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00007765.5|SWISS-PROT:P38646|TREMBL:B7Z1V7;B7Z4V2;Q2F839;Q8N1C8|ENSEMBL:ENSP00000297185|REFSEQ:NP_004125|H-INV:HIT000192047|VEGA:OTTHUMP00000159494" SearchDatabase_ref="" accession="IPI:IPI00007765.5|SWISS-PROT:P38646|TREMBL:B7Z1V7;B7Z4V2;Q2F839;Q8N1C8|ENSEMBL:ENSP00000297185|REFSEQ:NP_004125|H-INV:HIT000192047|VEGA:OTTHUMP00000159494">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=HSPA9 Stress-70 protein, mitochondrial"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00009865.4|SWISS-PROT:P13645|ENSEMBL:ENSP00000269576|REFSEQ:NP_000412|H-INV:HIT000051206|VEGA:OTTHUMP00000165049;OTTHUMP00000181319" SearchDatabase_ref="" accession="IPI:IPI00009865.4|SWISS-PROT:P13645|ENSEMBL:ENSP00000269576|REFSEQ:NP_000412|H-INV:HIT000051206|VEGA:OTTHUMP00000165049;OTTHUMP00000181319">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=KRT10 Keratin, type I cytoskeletal 10"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00016910.1|SWISS-PROT:Q99613|TREMBL:A1KYQ7;B3KNZ4;B4DVQ5;B4E1D5;B4E2Z6;Q3B7B9|ENSEMBL:ENSP00000332604;ENSP00000378953|REFSEQ:NP_001032897;NP_003743|H-INV:HIT000030496|VEGA:OTTHUMP00000080486;OTTHUMP00000125295" SearchDatabase_ref="" accession="IPI:IPI00016910.1|SWISS-PROT:Q99613|TREMBL:A1KYQ7;B3KNZ4;B4DVQ5;B4E1D5;B4E2Z6;Q3B7B9|ENSEMBL:ENSP00000332604;ENSP00000378953|REFSEQ:NP_001032897;NP_003743|H-INV:HIT000030496|VEGA:OTTHUMP00000080486;OTTHUMP00000125295">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=EIF3C;EIF3CL Eukaryotic translation initiation factor 3 subunit C"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00064328.3|TREMBL:A8MZ91;B4DV00|ENSEMBL:ENSP00000380583|REFSEQ:NP_001034708" SearchDatabase_ref="" accession="IPI:IPI00064328.3|TREMBL:A8MZ91;B4DV00|ENSEMBL:ENSP00000380583|REFSEQ:NP_001034708">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=PRMT5 protein arginine N-methyltransferase 5 isoform b"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00069693.4|TREMBL:A6NIH1|ENSEMBL:ENSP00000350479|H-INV:HIT000296893" SearchDatabase_ref="" accession="IPI:IPI00069693.4|TREMBL:A6NIH1|ENSEMBL:ENSP00000350479|H-INV:HIT000296893">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=- Putative uncharacterized protein ENSP00000350479"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00290770.3|TREMBL:B3KX11;Q5SZY0|ENSEMBL:ENSP00000295688;ENSP00000412428|REFSEQ:NP_001008883|VEGA:OTTHUMP00000025736" SearchDatabase_ref="" accession="IPI:IPI00290770.3|TREMBL:B3KX11;Q5SZY0|ENSEMBL:ENSP00000295688;ENSP00000412428|REFSEQ:NP_001008883|VEGA:OTTHUMP00000025736">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=CCT3 T-complex protein 1 subunit gamma isoform b"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00479786.5|SWISS-PROT:Q92945-1|ENSEMBL:ENSP00000381216|REFSEQ:NP_003676|VEGA:OTTHUMP00000077049" SearchDatabase_ref="" accession="IPI:IPI00479786.5|SWISS-PROT:Q92945-1|ENSEMBL:ENSP00000381216|REFSEQ:NP_003676|VEGA:OTTHUMP00000077049">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=KHSRP KH-type splicing regulatory protein"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00025491.1|SWISS-PROT:P60842|TREMBL:A8K088;A8K7F6;B4DKP9;B4DNH2;B4E047;D3DTP9;Q59F68|ENSEMBL:ENSP00000293831|REFSEQ:NP_001407|H-INV:HIT000281563;HIT000333951|VEGA:OTTHUMP00000135288;OTTHUMP00000182828" SearchDatabase_ref="" accession="IPI:IPI00025491.1|SWISS-PROT:P60842|TREMBL:A8K088;A8K7F6;B4DKP9;B4DNH2;B4E047;D3DTP9;Q59F68|ENSEMBL:ENSP00000293831|REFSEQ:NP_001407|H-INV:HIT000281563;HIT000333951|VEGA:OTTHUMP00000135288;OTTHUMP00000182828">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=EIF4A1 Eukaryotic initiation factor 4A-I"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00298994.6|SWISS-PROT:Q9Y490|TREMBL:Q5TCU6|ENSEMBL:ENSP00000316029|REFSEQ:NP_006280|H-INV:HIT000000744|VEGA:OTTHUMP00000021350" SearchDatabase_ref="" accession="IPI:IPI00298994.6|SWISS-PROT:Q9Y490|TREMBL:Q5TCU6|ENSEMBL:ENSP00000316029|REFSEQ:NP_006280|H-INV:HIT000000744|VEGA:OTTHUMP00000021350">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=TLN1 Talin-1"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00302592.2|SWISS-PROT:P21333-2|TREMBL:Q60FE6;Q6NXF2;Q8TES4|ENSEMBL:ENSP00000353467;ENSP00000416926|REFSEQ:NP_001447|VEGA:OTTHUMP00000024320" SearchDatabase_ref="" accession="IPI:IPI00302592.2|SWISS-PROT:P21333-2|TREMBL:Q60FE6;Q6NXF2;Q8TES4|ENSEMBL:ENSP00000353467;ENSP00000416926|REFSEQ:NP_001447|VEGA:OTTHUMP00000024320">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=FLNA Isoform 2 of Filamin-A"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00009104.7|SWISS-PROT:Q9Y230|TREMBL:B3KNL2;B3KQ59|ENSEMBL:ENSP00000221413|REFSEQ:NP_006657|H-INV:HIT000292648|VEGA:OTTHUMP00000078001" SearchDatabase_ref="" accession="IPI:IPI00009104.7|SWISS-PROT:Q9Y230|TREMBL:B3KNL2;B3KQ59|ENSEMBL:ENSP00000221413|REFSEQ:NP_006657|H-INV:HIT000292648|VEGA:OTTHUMP00000078001">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=RUVBL2 RuvB-like 2"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00021439.1|SWISS-PROT:P60709|TREMBL:B4DW52;B7ZAP6;Q1KLZ0;Q53G76;Q53G99;Q562L5;Q562L6;Q562L9;Q562M3;Q562M5;Q562N0;Q562N2;Q562N8;Q562P0;Q562R8;Q562S0;Q562U2;Q562V5;Q562X9;Q562Y6;Q562Y8;Q562Z4;Q562Z6;Q562Z7;Q6PJ43;Q8WVW5|ENSEMBL:ENSP00000349960|REFSEQ:NP_001092|H-INV:HIT000276298|VEGA:OTTHUMP00000024886" SearchDatabase_ref="" accession="IPI:IPI00021439.1|SWISS-PROT:P60709|TREMBL:B4DW52;B7ZAP6;Q1KLZ0;Q53G76;Q53G99;Q562L5;Q562L6;Q562L9;Q562M3;Q562M5;Q562N0;Q562N2;Q562N8;Q562P0;Q562R8;Q562S0;Q562U2;Q562V5;Q562X9;Q562Y6;Q562Y8;Q562Z4;Q562Z6;Q562Z7;Q6PJ43;Q8WVW5|ENSEMBL:ENSP00000349960|REFSEQ:NP_001092|H-INV:HIT000276298|VEGA:OTTHUMP00000024886">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=ACTB Actin, cytoplasmic 1"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00004092.2|SWISS-PROT:Q93084-1|ENSEMBL:ENSP00000301387|REFSEQ:NP_777615|VEGA:OTTHUMP00000183047" SearchDatabase_ref="" accession="IPI:IPI00004092.2|SWISS-PROT:Q93084-1|ENSEMBL:ENSP00000301387|REFSEQ:NP_777615|VEGA:OTTHUMP00000183047">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=ATP2A3 Isoform SERCA3B of Sarcoplasmic/endoplasmic reticulum calcium ATPase 3"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00465028.7|TREMBL:D3DUS9;Q53HE2|ENSEMBL:ENSP00000229270|REFSEQ:NP_001152759|H-INV:HIT000194072|VEGA:OTTHUMP00000165244;OTTHUMP00000166407" SearchDatabase_ref="" accession="IPI:IPI00465028.7|TREMBL:D3DUS9;Q53HE2|ENSEMBL:ENSP00000229270|REFSEQ:NP_001152759|H-INV:HIT000194072|VEGA:OTTHUMP00000165244;OTTHUMP00000166407">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=TPI1;TPI1P1 triosephosphate isomerase 1 isoform 2"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00031801.4|SWISS-PROT:P16989-1|ENSEMBL:ENSP00000228251|REFSEQ:NP_003642|H-INV:HIT000037186|VEGA:OTTHUMP00000166640" SearchDatabase_ref="" accession="IPI:IPI00031801.4|SWISS-PROT:P16989-1|ENSEMBL:ENSP00000228251|REFSEQ:NP_003642|H-INV:HIT000037186|VEGA:OTTHUMP00000166640">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=CSDA Isoform 1 of DNA-binding protein A"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00010720.1|SWISS-PROT:P48643|TREMBL:A8K2X8;B4DDU6;B4DE30;B4DX08;B4DXI1;B4DZT5;B7ZAR1;Q9BU08|ENSEMBL:ENSP00000280326|REFSEQ:NP_036205|H-INV:HIT000095964|VEGA:OTTHUMP00000161671" SearchDatabase_ref="" accession="IPI:IPI00010720.1|SWISS-PROT:P48643|TREMBL:A8K2X8;B4DDU6;B4DE30;B4DX08;B4DXI1;B4DZT5;B7ZAR1;Q9BU08|ENSEMBL:ENSP00000280326|REFSEQ:NP_036205|H-INV:HIT000095964|VEGA:OTTHUMP00000161671">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=CCT5 T-complex protein 1 subunit epsilon"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00003881.5|SWISS-PROT:P52597|TREMBL:B4DKS8;Q8NI96|ENSEMBL:ENSP00000338477;ENSP00000348345;ENSP00000349573;ENSP00000400433;ENSP00000407648;ENSP00000413867|REFSEQ:NP_001091674;NP_001091675;NP_001091676;NP_001091677;NP_001091678;NP_004957|H-INV:HIT000003838|VEGA:OTTHUMP00000019482;OTTHUMP00000043413;OTTHUMP00000043414" SearchDatabase_ref="" accession="IPI:IPI00003881.5|SWISS-PROT:P52597|TREMBL:B4DKS8;Q8NI96|ENSEMBL:ENSP00000338477;ENSP00000348345;ENSP00000349573;ENSP00000400433;ENSP00000407648;ENSP00000413867|REFSEQ:NP_001091674;NP_001091675;NP_001091676;NP_001091677;NP_001091678;NP_004957|H-INV:HIT000003838|VEGA:OTTHUMP00000019482;OTTHUMP00000043413;OTTHUMP00000043414">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=HNRNPF Heterogeneous nuclear ribonucleoprotein F"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00022202.3|SWISS-PROT:Q00325-1|ENSEMBL:ENSP00000228318|REFSEQ:NP_005879|H-INV:HIT000017556|VEGA:OTTHUMP00000168834" SearchDatabase_ref="" accession="IPI:IPI00022202.3|SWISS-PROT:Q00325-1|ENSEMBL:ENSP00000228318|REFSEQ:NP_005879|H-INV:HIT000017556|VEGA:OTTHUMP00000168834">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=SLC25A3 Isoform A of Phosphate carrier protein, mitochondrial"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00013894.1|SWISS-PROT:P31948|ENSEMBL:ENSP00000305958|REFSEQ:NP_006810|H-INV:HIT000031338" SearchDatabase_ref="" accession="IPI:IPI00013894.1|SWISS-PROT:P31948|ENSEMBL:ENSP00000305958|REFSEQ:NP_006810|H-INV:HIT000031338">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=STIP1 Stress-induced-phosphoprotein 1"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00013384.4|SWISS-PROT:Q8IVT5-2|ENSEMBL:ENSP00000323178" SearchDatabase_ref="" accession="IPI:IPI00013384.4|SWISS-PROT:Q8IVT5-2|ENSEMBL:ENSP00000323178">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=KSR1 Isoform 2 of Kinase suppressor of Ras 1"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00171199.5|SWISS-PROT:P25788-2|ENSEMBL:ENSP00000390491|REFSEQ:NP_687033" SearchDatabase_ref="" accession="IPI:IPI00171199.5|SWISS-PROT:P25788-2|ENSEMBL:ENSP00000390491|REFSEQ:NP_687033">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=PSMA3 Isoform 2 of Proteasome subunit alpha type-3"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00329389.8|SWISS-PROT:Q02878|TREMBL:B4DRX3;Q8N5Z7|ENSEMBL:ENSP00000202773;ENSP00000403172|REFSEQ:NP_000961;NP_001019833|H-INV:HIT000031725|VEGA:OTTHUMP00000169279;OTTHUMP00000169280" SearchDatabase_ref="" accession="IPI:IPI00329389.8|SWISS-PROT:Q02878|TREMBL:B4DRX3;Q8N5Z7|ENSEMBL:ENSP00000202773;ENSP00000403172|REFSEQ:NP_000961;NP_001019833|H-INV:HIT000031725|VEGA:OTTHUMP00000169279;OTTHUMP00000169280">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=RPL6 60S ribosomal protein L6"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00000816.1|SWISS-PROT:P62258|TREMBL:B7ZA86;D3DTH5;Q4VJB6|ENSEMBL:ENSP00000264335|REFSEQ:NP_006752|H-INV:HIT000048658|VEGA:OTTHUMP00000166035;OTTHUMP00000182972" SearchDatabase_ref="" accession="IPI:IPI00000816.1|SWISS-PROT:P62258|TREMBL:B7ZA86;D3DTH5;Q4VJB6|ENSEMBL:ENSP00000264335|REFSEQ:NP_006752|H-INV:HIT000048658|VEGA:OTTHUMP00000166035;OTTHUMP00000182972">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=YWHAE 14-3-3 protein epsilon"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00003783.1|SWISS-PROT:P36507|TREMBL:Q7Z370|ENSEMBL:ENSP00000262948|REFSEQ:NP_109587|H-INV:HIT000029656|VEGA:OTTHUMP00000077502;OTTHUMP00000165826" SearchDatabase_ref="" accession="IPI:IPI00003783.1|SWISS-PROT:P36507|TREMBL:Q7Z370|ENSEMBL:ENSP00000262948|REFSEQ:NP_109587|H-INV:HIT000029656|VEGA:OTTHUMP00000077502;OTTHUMP00000165826">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=MAP2K2 Dual specificity mitogen-activated protein kinase kinase 2"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00007320.3|SWISS-PROT:Q9BQ70|ENSEMBL:ENSP00000263346|REFSEQ:NP_055787|H-INV:HIT000035513|VEGA:OTTHUMP00000080893;OTTHUMP00000176847" SearchDatabase_ref="" accession="IPI:IPI00007320.3|SWISS-PROT:Q9BQ70|ENSEMBL:ENSP00000263346|REFSEQ:NP_055787|H-INV:HIT000035513|VEGA:OTTHUMP00000080893;OTTHUMP00000176847">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=TCF25 Transcription factor 25"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00000875.7|TREMBL:B4DTG2|ENSEMBL:ENSP00000367258" SearchDatabase_ref="" accession="IPI:IPI00000875.7|TREMBL:B4DTG2|ENSEMBL:ENSP00000367258">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=EEF1G;TUT1 cDNA FLJ56389, highly similar to Elongation factor 1-gamma"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00013452.11|SWISS-PROT:P07814|TREMBL:B4DP50;Q3KQZ8|ENSEMBL:ENSP00000355890|REFSEQ:NP_004437|H-INV:HIT000388867|VEGA:OTTHUMP00000035562" SearchDatabase_ref="" accession="IPI:IPI00013452.11|SWISS-PROT:P07814|TREMBL:B4DP50;Q3KQZ8|ENSEMBL:ENSP00000355890|REFSEQ:NP_004437|H-INV:HIT000388867|VEGA:OTTHUMP00000035562">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=EPRS Bifunctional aminoacyl-tRNA synthetase"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00023048.4|SWISS-PROT:P29692-1|TREMBL:D3DWK3|ENSEMBL:ENSP00000317399;ENSP00000338323;ENSP00000378551;ENSP00000388261|REFSEQ:NP_001123527;NP_001123529;NP_001951|VEGA:OTTHUMP00000178393;OTTHUMP00000178406" SearchDatabase_ref="" accession="IPI:IPI00023048.4|SWISS-PROT:P29692-1|TREMBL:D3DWK3|ENSEMBL:ENSP00000317399;ENSP00000338323;ENSP00000378551;ENSP00000388261|REFSEQ:NP_001123527;NP_001123529;NP_001951|VEGA:OTTHUMP00000178393;OTTHUMP00000178406">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=EEF1D Isoform 1 of Elongation factor 1-delta"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00168184.8|TREMBL:Q8NB89|ENSEMBL:ENSP00000375668|VEGA:OTTHUMP00000174393" SearchDatabase_ref="" accession="IPI:IPI00168184.8|TREMBL:Q8NB89|ENSEMBL:ENSP00000375668|VEGA:OTTHUMP00000174393">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=PPP2R1A cDNA FLJ34068 fis, clone FCBBF3001918, highly similar to SERINE/THREONINE PROTEIN PHOSPHATASE 2A, 65 kDa REGULATORY SUBUNIT A, ALPHA ISOFORM"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00302927.6|SWISS-PROT:P50991|TREMBL:A8K3C3|ENSEMBL:ENSP00000377958|REFSEQ:NP_006421|H-INV:HIT000062814|VEGA:OTTHUMP00000201357" SearchDatabase_ref="" accession="IPI:IPI00302927.6|SWISS-PROT:P50991|TREMBL:A8K3C3|ENSEMBL:ENSP00000377958|REFSEQ:NP_006421|H-INV:HIT000062814|VEGA:OTTHUMP00000201357">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=CCT4;ILK-2 T-complex protein 1 subunit delta"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00216049.1|SWISS-PROT:P61978-1|ENSEMBL:ENSP00000317788;ENSP00000353552;ENSP00000365440|REFSEQ:NP_112552|H-INV:HIT000036940|VEGA:OTTHUMP00000021553;OTTHUMP00000021558" SearchDatabase_ref="" accession="IPI:IPI00216049.1|SWISS-PROT:P61978-1|ENSEMBL:ENSP00000317788;ENSP00000353552;ENSP00000365440|REFSEQ:NP_112552|H-INV:HIT000036940|VEGA:OTTHUMP00000021553;OTTHUMP00000021558">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=HNRNPK;MIR7-1 Isoform 1 of Heterogeneous nuclear ribonucleoprotein K"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00219604.3|SWISS-PROT:Q02750|TREMBL:A4QPA9;B4DFY5|ENSEMBL:ENSP00000302486|REFSEQ:NP_002746|H-INV:HIT000192051|VEGA:OTTHUMP00000164252;OTTHUMP00000175899" SearchDatabase_ref="" accession="IPI:IPI00219604.3|SWISS-PROT:Q02750|TREMBL:A4QPA9;B4DFY5|ENSEMBL:ENSP00000302486|REFSEQ:NP_002746|H-INV:HIT000192051|VEGA:OTTHUMP00000164252;OTTHUMP00000175899">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=MAP2K1 Dual specificity mitogen-activated protein kinase kinase 1"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00301263.2|SWISS-PROT:P27708|TREMBL:Q53SY7|ENSEMBL:ENSP00000264705|REFSEQ:NP_004332|H-INV:HIT000261917|VEGA:OTTHUMP00000122585" SearchDatabase_ref="" accession="IPI:IPI00301263.2|SWISS-PROT:P27708|TREMBL:Q53SY7|ENSEMBL:ENSP00000264705|REFSEQ:NP_004332|H-INV:HIT000261917|VEGA:OTTHUMP00000122585">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=CAD CAD protein"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00013917.3|SWISS-PROT:P25398|ENSEMBL:ENSP00000230050;ENSP00000356881|REFSEQ:NP_001007|H-INV:HIT000335217|VEGA:OTTHUMP00000017230" SearchDatabase_ref="" accession="IPI:IPI00013917.3|SWISS-PROT:P25398|ENSEMBL:ENSP00000230050;ENSP00000356881|REFSEQ:NP_001007|H-INV:HIT000335217|VEGA:OTTHUMP00000017230">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=RPS12 40S ribosomal protein S12"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00166522.2|SWISS-PROT:Q8N394|TREMBL:B7Z639|ENSEMBL:ENSP00000322300|REFSEQ:NP_689801|H-INV:HIT000029239|VEGA:OTTHUMP00000168634" SearchDatabase_ref="" accession="IPI:IPI00166522.2|SWISS-PROT:Q8N394|TREMBL:B7Z639|ENSEMBL:ENSP00000322300|REFSEQ:NP_689801|H-INV:HIT000029239|VEGA:OTTHUMP00000168634">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=TMTC2 Transmembrane and TPR repeat-containing protein 2"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00550746.4|SWISS-PROT:Q9Y266|ENSEMBL:ENSP00000319664|REFSEQ:NP_006591|H-INV:HIT000033115|VEGA:OTTHUMP00000004405" SearchDatabase_ref="" accession="IPI:IPI00550746.4|SWISS-PROT:Q9Y266|ENSEMBL:ENSP00000319664|REFSEQ:NP_006591|H-INV:HIT000033115|VEGA:OTTHUMP00000004405">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=NUDC Nuclear migration protein nudC"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00012190.1|SWISS-PROT:O60774|TREMBL:B5MDN4|ENSEMBL:ENSP00000236166;ENSP00000356728|H-INV:HIT000049782|VEGA:OTTHUMP00000033538" SearchDatabase_ref="" accession="IPI:IPI00012190.1|SWISS-PROT:O60774|TREMBL:B5MDN4|ENSEMBL:ENSP00000236166;ENSP00000356728|H-INV:HIT000049782|VEGA:OTTHUMP00000033538">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=FMO6P Putative dimethylaniline monooxygenase [N-oxide-forming] 6"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00013068.1|SWISS-PROT:P60228|TREMBL:B2R806;B3KW56;Q6IAX5|ENSEMBL:ENSP00000220849|REFSEQ:NP_001559|H-INV:HIT000294580|VEGA:OTTHUMP00000178196" SearchDatabase_ref="" accession="IPI:IPI00013068.1|SWISS-PROT:P60228|TREMBL:B2R806;B3KW56;Q6IAX5|ENSEMBL:ENSP00000220849|REFSEQ:NP_001559|H-INV:HIT000294580|VEGA:OTTHUMP00000178196">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=EIF3E Eukaryotic translation initiation factor 3 subunit E"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00294696.4|TREMBL:Q5TZP9|ENSEMBL:ENSP00000370229" SearchDatabase_ref="" accession="IPI:IPI00294696.4|TREMBL:Q5TZP9|ENSEMBL:ENSP00000370229">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=CCNB1 Cyclin B1"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_IPI:IPI00186290.6|SWISS-PROT:P13639|TREMBL:B4DMC6;B4DRE8;Q6PK56;Q8TA90|ENSEMBL:ENSP00000307940|REFSEQ:NP_001952|H-INV:HIT000326370|VEGA:OTTHUMP00000076424" SearchDatabase_ref="" accession="IPI:IPI00186290.6|SWISS-PROT:P13639|TREMBL:B4DMC6;B4DRE8;Q6PK56;Q8TA90|ENSEMBL:ENSP00000307940|REFSEQ:NP_001952|H-INV:HIT000326370|VEGA:OTTHUMP00000076424">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tax_Id=9606 Gene_Symbol=EEF2 Elongation factor 2"/>
+    </DBSequence>
+    <Peptide id="#peptide_1_1">
+      <peptideSequence>IRYESLTDPSK</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_1_2">
+      <peptideSequence>YESLTDPSKLDSGK</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_1_3">
+      <peptideSequence>EQVANSAFVER</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_1_4">
+      <peptideSequence>EGLELPEDEEEKKK</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_1_5">
+      <peptideSequence>HIYYITGETK</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_1_6">
+      <peptideSequence>VQDLSAGGQGSLTDSGPER</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_1_7">
+      <peptideSequence>VGEVCHITCKPEYAYGSAGSPPK</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_1_8">
+      <peptideSequence>APSTYGGGLSVSSSR</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_1_9">
+      <peptideSequence>ENVNATENCISAVGK</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_1_10">
+      <peptideSequence>EIVHLQAGQCGNQIGAK</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_2_1">
+      <peptideSequence>IVAERPGTNSTGPAPMAPPR</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_2_2">
+      <peptideSequence>FATHAAALSVR</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_2_3">
+      <peptideSequence>SLGPPQGEEDSVPR</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_2_4">
+      <peptideSequence>FAAATGATPIAGR</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_2_5">
+      <peptideSequence>QAVTNPNNTFYATK</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_2_6">
+      <peptideSequence>ALEESNYELEGK</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_2_7">
+      <peptideSequence>GTEITHAVVIK</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_2_8">
+      <peptideSequence>YSQYQQAIYK</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_2_9">
+      <peptideSequence>ALVDGPCTQVR</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_2_10">
+      <peptideSequence>TLIQNCGASTIR</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_3_1">
+      <peptideSequence>SVSLTGAPESVQK</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_3_2">
+      <peptideSequence>KGVAINMVTEEDKR</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_3_3">
+      <peptideSequence>LAQAAQSSVATITR</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_3_4">
+      <peptideSequence>VTAQGPGLEPSGNIANK</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_3_5">
+      <peptideSequence>AVLIAGQPGTGK</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_3_6">
+      <peptideSequence>GYSFTTTAER</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_3_7">
+      <peptideSequence>TGTLTTNQMSVCR</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_3_8">
+      <peptideSequence>IIYGGSVTGATCK</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_3_9">
+      <peptideSequence>NDTKEDVFVHQTAIK</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_3_10">
+      <peptideSequence>HKLDVTSVEDYK</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_4_1">
+      <peptideSequence>VHIEIGPDGR</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_4_2">
+      <peptideSequence>IQTQPGYANTLR</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_4_3">
+      <peptideSequence>KAAALEAMKDYTK</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_4_4">
+      <peptideSequence>LSHPGHFWK</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_4_5">
+      <peptideSequence>AVENSSTAIGIR</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_4_6">
+      <peptideSequence>YYPTEDVPR</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_4_7">
+      <peptideSequence>EAAENSLVAYK</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_4_8">
+      <peptideSequence>KLEELELDEQQKK</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_4_9">
+      <peptideSequence>IEDSTGLNRPGPAPLSSR</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_4_10">
+      <peptideSequence>KLDPGSEETQTLVR</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_5_1">
+      <peptideSequence>DQDLEPGAPSMGAK</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_5_2">
+      <peptideSequence>SLAGSSGPGASSGTSGDHGELVVR</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_5_3">
+      <peptideSequence>NLCSDDTPMVR</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_5_4">
+      <peptideSequence>LVIEEAER</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_5_5">
+      <peptideSequence>TDYNASVSVPDSSGPER</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_5_6">
+      <peptideSequence>KLEELELDEQQRK</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_5_7">
+      <peptideSequence>IIAHAQLLEQHR</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_5_8">
+      <peptideSequence>TALIHDGLAR</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_5_9">
+      <peptideSequence>IKQILPTIYK</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_5_10">
+      <peptideSequence>LITQTFSHHNQLAQK</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_6_1">
+      <peptideSequence>YIQFETLVSGIKK</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_6_2">
+      <peptideSequence>QLQAETEPIVK</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_6_3">
+      <peptideSequence>IGEVDVEQHTLAK</peptideSequence>
+    </Peptide>
+    <Peptide id="#peptide_6_4">
+      <peptideSequence>TGTITTFEHAHNMR</peptideSequence>
+    </Peptide>
+  </SequenceCollection>
+  <AnalysisCollection>
+    <SpectrumIdentification id="SI" SpectrumIdentificationProtocol_ref="SIP" SpectrumIdentificationList_ref="SIL_1" activityDate="2010:05:24:13:53:58">
+      <InputSpectra SpectraData_ref="SD_1"/>
+      <SearchDatabase SearchDatabase_ref=""/>
+    </SpectrumIdentification>
+  </AnalysisCollection>
+  <AnalysisProtocolCollection/>
+</mzIdentML>

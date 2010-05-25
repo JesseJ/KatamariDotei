@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<mzIdentML xmlns="http://psidev.info/psi/pi/mzIdentML/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="" version="1.0.0" xsi:schemaLocation="http://psidev.info/psi/pi/mzIdentML/1.0 http://jp1.chem.byu.edu/mascot/xmlns/schema/mzIdentML/mzIdentML1.0.0.xsd" creationDate="2010-05-24T13:54:07">
+  <cvList>
+    <cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies" URI="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="2.32.0"/>
+    <cv id="UNIMOD" fullName="UNIMOD" URI="http://www.unimod.org/obo/unimod.obo"/>
+    <cv id="UO" fullName="UNIT-ONTOLOGY" URI="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
+  </cvList>
+  <Provider Software_ref="search2mzIdentML.rb" id="PROVIDER">
+    <ContactRole Contact_ref="PERSON_DOC_OWNER">
+      <role>
+        <cvParam accession="MS:1001271" name="researcher" cvRef="PSI-MS"/>
+      </role>
+    </ContactRole>
+  </Provider>
+  <SequenceCollection/>
+  <AnalysisCollection>
+    <SpectrumIdentification id="SI" SpectrumIdentificationProtocol_ref="SIP" SpectrumIdentificationList_ref="SIL_1" activityDate="2010-05-24T13:54:07">
+      <InputSpectra SpectraData_ref="SD_1"/>
+      <SearchDatabase SearchDatabase_ref=""/>
+    </SpectrumIdentification>
+  </AnalysisCollection>
+</mzIdentML>

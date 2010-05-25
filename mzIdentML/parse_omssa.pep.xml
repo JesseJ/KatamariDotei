@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!DOCTYPE msms_pipeline_analysis PUBLIC "-//NCBI//pepXML/EN" "pepXML.dtd">
+<msms_pipeline_analysis date="2010-05-24T13:54:07" summary_xml="/home/jashi/pipeline/pipeline0.01/data/test-forward_omssa_output_1.pep.xml">
+  <msms_run_summary base_name="/home/jashi/pipeline/pipeline0.01/data/test-forward_omssa_output_1.pep.xml" raw_data_type="raw" raw_data=".mzXML">
+    <sample_enzyme name="Trypsin">
+      <specificity sense="C" cut="KR" no_cut="P"/>
+    </sample_enzyme>
+  </msms_run_summary>
+</msms_pipeline_analysis>

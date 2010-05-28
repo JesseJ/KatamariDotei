@@ -1,4 +1,4 @@
-require "#{$vpath}src/false_rate_discoverer.rb"
+require "#{$path}false_rate_discoverer.rb"
 
 class Refiner
     def initialize(files, qValues, cutoff)
@@ -19,7 +19,7 @@ class Refiner
             node.parent.parent.remove if getQValue(node.xpath("search_score[@name=\"expect\"]//@value").to_s.to_f) == true
         end
         
-        file = File.open("#{$vpath}data/refineTest.pep.xml", "w")
+        file = File.open("#{$path}../data/refineTest.pep.xml", "w")
         file.puts doc
         file.close
     end

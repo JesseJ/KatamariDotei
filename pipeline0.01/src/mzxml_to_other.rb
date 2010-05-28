@@ -1,5 +1,5 @@
 require 'rubygems'
-require "#{$path}ms-msrun/lib/ms/msrun"
+require "#{$path}../../ms-msrun/lib/ms/msrun"
 
 class MzXMLToOther
     def initialize(type, file, hardklor)
@@ -33,9 +33,9 @@ class MzXMLToOther
     
     def runHardklor
         puts "Running Hardklor..."
-        Dir.chdir("#{$path}hardklor/") do
+        Dir.chdir("#{$path}../../hardklor/") do
             outputFile = @file.chomp(".mzXML")
-            exec("hardklor #{@file} #{outputFile}.hardklor") if fork == nil
+            exec("./hardklor #{@file} #{outputFile}.hk") if fork == nil
             Process.wait
         end
     end

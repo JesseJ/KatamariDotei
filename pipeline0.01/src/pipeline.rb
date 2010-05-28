@@ -1,14 +1,16 @@
-$path = "/home/jashi/pipeline/"
-$vpath = "/home/jashi/pipeline/pipeline0.01/"
+#!/usr/bin/ruby
 
-require "#{$vpath}src/raw_to_mzxml.rb"
-require "#{$vpath}src/mzxml_to_other.rb"
-require "#{$vpath}src/search.rb"
-require "#{$vpath}src/false_rate_discoverer.rb"
-require "#{$vpath}src/refiner.rb"
+$path = "#{File.dirname($0)}/"
 
-file = "#{$vpath}data/fast"
-#file = "#{$vpath}data/test"
+require "#{$path}raw_to_mzxml.rb"
+require "#{$path}mzxml_to_other.rb"
+require "#{$path}search.rb"
+require "#{$path}false_rate_discoverer.rb"
+require "#{$path}refiner.rb"
+
+file = "#{$path}../data/fast"
+#file = "#{$path}../data/test"
+#file = "#{$path}../data/BSA_std02_100520173525_mwavetrypsin_DTT_IAA"
 
 class Pipeline
     def initialize(file)
@@ -19,7 +21,7 @@ class Pipeline
         puts "\nHere we go!\n"
         
         RawTomzXML.new("#{@file}.raw").convert
-        MzXMLToOther.new("mgf", "#{@file}.mzXML", false).convert
+        MzXMLToOther.new("mgf", "#{@file}.mzXML", true).convert
         output = Search.new("#{@file}.mgf", "human", "trypsin", 1, :omssa => true, :xtandem => true, :crux => true, :sequest => true, :mascot => true).run
         qValues = FalseRateDiscoverer.new([["#{@file}-forward_omssa_output_1.pep.xml", "#{@file}-decoy_omssa_output_1.pep.xml"]]).discoverFalseRate
         #qValues = FalseRateDiscoverer.new(output).discoverFalseRate

@@ -2,6 +2,7 @@ require 'builder'
 require 'rubygems'
 require 'fileutils'
 require 'nokogiri'
+#require "#{$path}/ms-mascot/lib/ms/mascot/submit.rb"
 
 #file == input file
 #database == type of fasta database to use, e.g. "human"
@@ -64,26 +65,26 @@ class Search
         #Forward search
         createTandemInput(false)
         
-        exec("#{$path}tandem-linux-10-01-01-4/bin/tandem.exe #{$vpath}data/forwardTandemInput.xml") if fork == nil
+        exec("#{$path}../../tandem-linux-10-01-01-4/bin/tandem.exe #{$path}../data/forwardTandemInput.xml") if fork == nil
             
         #Decoy search
         createTandemInput(true)
         
-        exec("#{$path}tandem-linux-10-01-01-4/bin/tandem.exe #{$vpath}data/decoyTandemInput.xml") if fork == nil
+        exec("#{$path}../../tandem-linux-10-01-01-4/bin/tandem.exe #{$path}../data/decoyTandemInput.xml") if fork == nil
     end
     
     def createTandemInput(decoy)
         if decoy
-            file = File.new("#{$vpath}data/decoyTandemInput.xml", "w+")
+            file = File.new("#{$path}../data/decoyTandemInput.xml", "w+")
         else
-            file = File.new("#{$vpath}data/forwardTandemInput.xml", "w+")
+            file = File.new("#{$path}../data/forwardTandemInput.xml", "w+")
         end
             
         xml = Builder::XmlMarkup.new(:target => file, :indent => 4)
         xml.instruct! :xml, :version => "1.0"
             
-        notes = {'list path, default parameters' => "#{$path}tandem-linux-10-01-01-4/bin/default_input.xml",
-                 'list path, taxonomy information' => "#{$vpath}data/taxonomy.xml",
+        notes = {'list path, default parameters' => "#{$path}../../tandem-linux-10-01-01-4/bin/default_input.xml",
+                 'list path, taxonomy information' => "#{$path}../data/taxonomy.xml",
                  'spectrum, path' => "#{@file}",
                  'protein, cleavage site' => "#{getTandemEnzyme}",
                  'scoring, maximum missed cleavage sites' => 50}
@@ -110,10 +111,10 @@ class Search
         decoy = "#{@fileName}-decoy_omssa_output_#{@run}.pep.xml"
         
         #Forward search
-        exec("#{$path}omssa-2.1.7.linux/omssacl -fm #{@file} -op #{forward} -e #{getOMSSAEnzyme} -d #{extractDatabase(@database)}") if fork == nil
+        exec("#{$path}../../omssa-2.1.7.linux/omssacl -fm #{@file} -op #{forward} -e #{getOMSSAEnzyme} -d #{extractDatabase(@database)}") if fork == nil
         
         #Decoy search
-        exec("#{$path}omssa-2.1.7.linux/omssacl -fm #{@file} -op #{decoy} -e #{getOMSSAEnzyme} -d #{extractDatabase(@database + "-r")}") if fork == nil
+        exec("#{$path}../../omssa-2.1.7.linux/omssacl -fm #{@file} -op #{decoy} -e #{getOMSSAEnzyme} -d #{extractDatabase(@database + "-r")}") if fork == nil
         
         @outputFiles << [forward, decoy]
     end
@@ -140,17 +141,17 @@ class Search
     end
     
     def extractDatabase(database)
-        doc = Nokogiri::XML(IO.read("#{$vpath}data/taxonomy.xml"))
+        doc = Nokogiri::XML(IO.read("#{$path}../data/taxonomy.xml"))
         return doc.xpath("//taxon[@label=\"#{database}\"]//file/@URL")
     end
     
     def getOMSSAEnzyme
-        doc = Nokogiri::XML(IO.read("#{$path}omssa-2.1.7.linux/OMSSA.xsd"))
+        doc = Nokogiri::XML(IO.read("#{$path}../../omssa-2.1.7.linux/OMSSA.xsd"))
         return doc.xpath("//xs:enumeration[@value=\"#{@enzyme}\"]/@ncbi:intvalue")
     end
     
     def getTandemEnzyme
-        doc = Nokogiri::XML(IO.read("#{$path}tandem-linux-10-01-01-4/enzymes.xml"))
+        doc = Nokogiri::XML(IO.read("#{$path}../../tandem-linux-10-01-01-4/enzymes.xml"))
         return doc.xpath("//enzyme[@name=\"#{@enzyme}\"]/@symbol")
     end
 end

@@ -1,5 +1,5 @@
 require 'optparse'
-require "/home/jashi/pipeline/ms-fasta/lib/ms/fasta.rb"
+require "#{File.dirname($0)}/../../ms-fasta/lib/ms/fasta.rb"
 
 if ARGV.size != 2
     puts "usage: #{File.basename(__FILE__)} inputFile outputFile"

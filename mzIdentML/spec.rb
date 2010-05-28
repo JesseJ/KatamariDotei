@@ -5,7 +5,7 @@ require "#{File.dirname($0)}/search2mzIdentML.rb"
 
 describe 'PepXML2mzIdentML' do
     before do
-        @p2m = Search2mzIdentML.new(PepXML.new("#{File.dirname($0)}/test.pep.xml"))
+        @p2m = Search2mzIdentML.new(PepXML.new("#{File.dirname($0)}/test.pep.xml", "#{File.dirname($0)}/../databases/uni_human_var_100517_fwd.fasta"))
     end
 	
     it 'takes a pepXML file and outputs an mzIdentML file' do

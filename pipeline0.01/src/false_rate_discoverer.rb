@@ -1,6 +1,6 @@
 require 'nokogiri'
-require "#{$path}ms-error_rate/lib/ms/error_rate/decoy.rb"
-require "#{$path}ms-error_rate/lib/ms/error_rate/qvalue.rb"
+require "#{$path}../../ms-error_rate/lib/ms/error_rate/decoy.rb"
+require "#{$path}../../ms-error_rate/lib/ms/error_rate/qvalue.rb"
 
 #:type => "target" or "decoy"
 #:score => The score of the hit

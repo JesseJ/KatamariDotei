@@ -24,7 +24,7 @@ class MzXMLToOther
                 end
             end
         else
-            exec("/usr/local/src/tpp-4.3.1/build/linux/MzXML2Search #{@type} #{@file}") if fork == nil
+            exec("/usr/local/src/tpp-4.3.1/build/linux/MzXML2Search -#{@type} #{@file}") if fork == nil
             Process.wait
         end
     end

@@ -6,7 +6,7 @@ require 'nokogiri'
 
 #file == input file
 #database == type of fasta database to use, e.g. "human"
-#enzyme == the enzyme to use in the search
+#enzyme == the enzyme to use in the search, e.g. trypsin
 #run == which run, or iteration, this is
 # options (All options's default to true):
 #     :omssa =>   true | false
@@ -21,7 +21,6 @@ class Search
         @enzyme = enzyme
         @database = database
         @file = file
-        @fileName = @file.chomp(".mgf")
         @outputFiles = []
     end
     
@@ -85,7 +84,7 @@ class Search
             
         notes = {'list path, default parameters' => "#{$path}../../tandem-linux-10-01-01-4/bin/default_input.xml",
                  'list path, taxonomy information' => "#{$path}../data/taxonomy.xml",
-                 'spectrum, path' => "#{@file}",
+                 'spectrum, path' => "#{@file}.mgf",
                  'protein, cleavage site' => "#{getTandemEnzyme}",
                  'scoring, maximum missed cleavage sites' => 50}
         
@@ -107,14 +106,14 @@ class Search
     end
     
     def runOMSSA
-        forward = "#{@fileName}-forward_omssa_output_#{@run}.pep.xml"
-        decoy = "#{@fileName}-decoy_omssa_output_#{@run}.pep.xml"
+        forward = "#{@file}-forward_omssa_output_#{@run}.pep.xml"
+        decoy = "#{@file}-decoy_omssa_output_#{@run}.pep.xml"
         
         #Forward search
-        exec("#{$path}../../omssa-2.1.7.linux/omssacl -fm #{@file} -op #{forward} -e #{getOMSSAEnzyme} -d #{extractDatabase(@database)}") if fork == nil
+        exec("#{$path}../../omssa-2.1.7.linux/omssacl -fm #{@file}.mgf -op #{forward} -e #{getOMSSAEnzyme} -d #{extractDatabase(@database)}") if fork == nil
         
         #Decoy search
-        exec("#{$path}../../omssa-2.1.7.linux/omssacl -fm #{@file} -op #{decoy} -e #{getOMSSAEnzyme} -d #{extractDatabase(@database + "-r")}") if fork == nil
+        exec("#{$path}../../omssa-2.1.7.linux/omssacl -fm #{@file}.mgf -op #{decoy} -e #{getOMSSAEnzyme} -d #{extractDatabase(@database + "-r")}") if fork == nil
         
         @outputFiles << [forward, decoy]
     end
@@ -130,8 +129,8 @@ class Search
     
     def convertTandemOutput
         #Convert to pepXML format
-        file1 = "#{@file}"[0,@file.length-4] + "-forward_tandem_output_#{@run}.xml"
-        file2 = "#{@file}"[0,@file.length-4] + "-decoy_tandem_output_#{@run}.xml"
+        file1 = "#{@file}-forward_tandem_output_#{@run}.xml"
+        file2 = "#{@file}-decoy_tandem_output_#{@run}.xml"
         pepFile1 = file1.chomp(".xml") + ".pep.xml"
         pepFile2 = file2.chomp(".xml") + ".pep.xml"
         @outputFiles << [pepFile1, pepFile2]

@@ -1,0 +1,1255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mzIdentML xmlns="http://psidev.info/psi/pi/mzIdentML/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="" version="1.0.0" xsi:schemaLocation="http://psidev.info/psi/pi/mzIdentML/1.0 ../schema/mzIdentML1.0.0.xsd" creationDate="2010:06:01:14:28:58">
+  <cvList>
+    <cv id="PSI-MS" fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies" URI="http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo" version="2.32.0"/>
+    <cv id="UNIMOD" fullName="UNIMOD" URI="http://www.unimod.org/obo/unimod.obo"/>
+    <cv id="UO" fullName="UNIT-ONTOLOGY" URI="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo"/>
+  </cvList>
+  <Provider Software_ref="search2mzIdentML.rb" id="PROVIDER">
+    <ContactRole Contact_ref="PERSON_DOC_OWNER">
+      <role>
+        <cvParam accession="MS:1001271" name="researcher" cvRef="PSI-MS"/>
+      </role>
+    </ContactRole>
+  </Provider>
+  <SequenceCollection>
+    <DBSequence id="DBSeq_1_sp|P07900|HS90A_HUMAN" SearchDatabase_ref="" accession="sp|P07900|HS90A_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Heat shock protein HSP 90-alpha OS=Homo sapiens GN=HSP90AA1 PE=1 SV=5"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|Q58FF7|H90B3_HUMAN" SearchDatabase_ref="" accession="sp|Q58FF7|H90B3_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Putative heat shock protein HSP 90-beta-3 OS=Homo sapiens GN=HSP90AB3P PE=5 SV=1"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|P40222|TXLNA_HUMAN" SearchDatabase_ref="" accession="sp|P40222|TXLNA_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Alpha-taxilin OS=Homo sapiens GN=TXLNA PE=1 SV=3"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|Q02790|FKBP4_HUMAN" SearchDatabase_ref="" accession="sp|Q02790|FKBP4_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Peptidyl-prolyl cis-trans isomerase FKBP4 OS=Homo sapiens GN=FKBP4 PE=1 SV=3"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|P02533|K1C14_HUMAN" SearchDatabase_ref="" accession="sp|P02533|K1C14_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Keratin, type I cytoskeletal 14 OS=Homo sapiens GN=KRT14 PE=1 SV=4"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|Q13885|TBB2A_HUMAN" SearchDatabase_ref="" accession="sp|Q13885|TBB2A_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Tubulin beta-2A chain OS=Homo sapiens GN=TUBB2A PE=1 SV=1"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|O00410|IPO5_HUMAN" SearchDatabase_ref="" accession="sp|O00410|IPO5_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Importin-5 OS=Homo sapiens GN=IPO5 PE=1 SV=4"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|Q13263|TIF1B_HUMAN" SearchDatabase_ref="" accession="sp|Q13263|TIF1B_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Transcription intermediary factor 1-beta OS=Homo sapiens GN=TRIM28 PE=1 SV=5"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|P23246|SFPQ_HUMAN" SearchDatabase_ref="" accession="sp|P23246|SFPQ_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Splicing factor, proline- and glutamine-rich OS=Homo sapiens GN=SFPQ PE=1 SV=2"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|P78527|PRKDC_HUMAN" SearchDatabase_ref="" accession="sp|P78527|PRKDC_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="DNA-dependent protein kinase catalytic subunit OS=Homo sapiens GN=PRKDC PE=1 SV=3"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|P13645|K1C10_HUMAN" SearchDatabase_ref="" accession="sp|P13645|K1C10_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Keratin, type I cytoskeletal 10 OS=Homo sapiens GN=KRT10 PE=1 SV=6"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|P08865|RSSA_HUMAN" SearchDatabase_ref="" accession="sp|P08865|RSSA_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="40S ribosomal protein SA OS=Homo sapiens GN=RPSA PE=1 SV=4"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|Q99613|EIF3C_HUMAN" SearchDatabase_ref="" accession="sp|Q99613|EIF3C_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Eukaryotic translation initiation factor 3 subunit C OS=Homo sapiens GN=EIF3C PE=1 SV=1"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|P38646|GRP75_HUMAN" SearchDatabase_ref="" accession="sp|P38646|GRP75_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Stress-70 protein, mitochondrial OS=Homo sapiens GN=HSPA9 PE=1 SV=2"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|P50914|RL14_HUMAN" SearchDatabase_ref="" accession="sp|P50914|RL14_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="60S ribosomal protein L14 OS=Homo sapiens GN=RPL14 PE=1 SV=4"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|O14744|ANM5_HUMAN" SearchDatabase_ref="" accession="sp|O14744|ANM5_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Protein arginine N-methyltransferase 5 OS=Homo sapiens GN=PRMT5 PE=1 SV=4"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|P49368|TCPG_HUMAN" SearchDatabase_ref="" accession="sp|P49368|TCPG_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="T-complex protein 1 subunit gamma OS=Homo sapiens GN=CCT3 PE=1 SV=4"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|Q92945|FUBP2_HUMAN" SearchDatabase_ref="" accession="sp|Q92945|FUBP2_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Far upstream element-binding protein 2 OS=Homo sapiens GN=KHSRP PE=1 SV=3"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|P60842|IF4A1_HUMAN" SearchDatabase_ref="" accession="sp|P60842|IF4A1_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Eukaryotic initiation factor 4A-I OS=Homo sapiens GN=EIF4A1 PE=1 SV=1"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|P60709|ACTB_HUMAN" SearchDatabase_ref="" accession="sp|P60709|ACTB_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Actin, cytoplasmic 1 OS=Homo sapiens GN=ACTB PE=1 SV=1"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|Q9Y230|RUVB2_HUMAN" SearchDatabase_ref="" accession="sp|Q9Y230|RUVB2_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="RuvB-like 2 OS=Homo sapiens GN=RUVBL2 PE=1 SV=3"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|Q9Y490|TLN1_HUMAN" SearchDatabase_ref="" accession="sp|Q9Y490|TLN1_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Talin-1 OS=Homo sapiens GN=TLN1 PE=1 SV=3"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|P60174|TPIS_HUMAN" SearchDatabase_ref="" accession="sp|P60174|TPIS_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Triosephosphate isomerase OS=Homo sapiens GN=TPI1 PE=1 SV=2"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|P16615|AT2A2_HUMAN" SearchDatabase_ref="" accession="sp|P16615|AT2A2_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Sarcoplasmic/endoplasmic reticulum calcium ATPase 2 OS=Homo sapiens GN=ATP2A2 PE=1 SV=1"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|P21333|FLNA_HUMAN" SearchDatabase_ref="" accession="sp|P21333|FLNA_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Filamin-A OS=Homo sapiens GN=FLNA PE=1 SV=4"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|P48643|TCPE_HUMAN" SearchDatabase_ref="" accession="sp|P48643|TCPE_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="T-complex protein 1 subunit epsilon OS=Homo sapiens GN=CCT5 PE=1 SV=1"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|P16989|DBPA_HUMAN" SearchDatabase_ref="" accession="sp|P16989|DBPA_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="DNA-binding protein A OS=Homo sapiens GN=CSDA PE=1 SV=4"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|P31943|HNRH1_HUMAN" SearchDatabase_ref="" accession="sp|P31943|HNRH1_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Heterogeneous nuclear ribonucleoprotein H OS=Homo sapiens GN=HNRNPH1 PE=1 SV=4"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|Q00325|MPCP_HUMAN" SearchDatabase_ref="" accession="sp|Q00325|MPCP_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Phosphate carrier protein, mitochondrial OS=Homo sapiens GN=SLC25A3 PE=1 SV=2"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|Q8IVT5|KSR1_HUMAN" SearchDatabase_ref="" accession="sp|Q8IVT5|KSR1_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Kinase suppressor of Ras 1 OS=Homo sapiens GN=KSR1 PE=1 SV=2"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|P25788|PSA3_HUMAN" SearchDatabase_ref="" accession="sp|P25788|PSA3_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Proteasome subunit alpha type-3 OS=Homo sapiens GN=PSMA3 PE=1 SV=2"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|P31948|STIP1_HUMAN" SearchDatabase_ref="" accession="sp|P31948|STIP1_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Stress-induced-phosphoprotein 1 OS=Homo sapiens GN=STIP1 PE=1 SV=1"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|Q02878|RL6_HUMAN" SearchDatabase_ref="" accession="sp|Q02878|RL6_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="60S ribosomal protein L6 OS=Homo sapiens GN=RPL6 PE=1 SV=3"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|P62258|1433E_HUMAN" SearchDatabase_ref="" accession="sp|P62258|1433E_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="14-3-3 protein epsilon OS=Homo sapiens GN=YWHAE PE=1 SV=1"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|P36507|MP2K2_HUMAN" SearchDatabase_ref="" accession="sp|P36507|MP2K2_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Dual specificity mitogen-activated protein kinase kinase 2 OS=Homo sapiens GN=MAP2K2 PE=1 SV=1"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|Q9BQ70|TCF25_HUMAN" SearchDatabase_ref="" accession="sp|Q9BQ70|TCF25_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Transcription factor 25 OS=Homo sapiens GN=TCF25 PE=1 SV=1"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|P07814|SYEP_HUMAN" SearchDatabase_ref="" accession="sp|P07814|SYEP_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Bifunctional aminoacyl-tRNA synthetase OS=Homo sapiens GN=EPRS PE=1 SV=5"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|P26641|EF1G_HUMAN" SearchDatabase_ref="" accession="sp|P26641|EF1G_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Elongation factor 1-gamma OS=Homo sapiens GN=EEF1G PE=1 SV=3"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|P30153|2AAA_HUMAN" SearchDatabase_ref="" accession="sp|P30153|2AAA_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Serine/threonine-protein phosphatase 2A 65 kDa regulatory subunit A alpha isoform OS=Homo sapiens GN=PPP2R1A PE=1 SV=4"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|P29692|EF1D_HUMAN" SearchDatabase_ref="" accession="sp|P29692|EF1D_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Elongation factor 1-delta OS=Homo sapiens GN=EEF1D PE=1 SV=5"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|P50991|TCPD_HUMAN" SearchDatabase_ref="" accession="sp|P50991|TCPD_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="T-complex protein 1 subunit delta OS=Homo sapiens GN=CCT4 PE=1 SV=4"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|P27708|PYR1_HUMAN" SearchDatabase_ref="" accession="sp|P27708|PYR1_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="CAD protein OS=Homo sapiens GN=CAD PE=1 SV=3"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|Q02750|MP2K1_HUMAN" SearchDatabase_ref="" accession="sp|Q02750|MP2K1_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Dual specificity mitogen-activated protein kinase kinase 1 OS=Homo sapiens GN=MAP2K1 PE=1 SV=2"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|P61978|HNRPK_HUMAN" SearchDatabase_ref="" accession="sp|P61978|HNRPK_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Heterogeneous nuclear ribonucleoprotein K OS=Homo sapiens GN=HNRNPK PE=1 SV=1"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|P25398|RS12_HUMAN" SearchDatabase_ref="" accession="sp|P25398|RS12_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="40S ribosomal protein S12 OS=Homo sapiens GN=RPS12 PE=1 SV=3"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|Q8N394|TMTC2_HUMAN" SearchDatabase_ref="" accession="sp|Q8N394|TMTC2_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Transmembrane and TPR repeat-containing protein 2 OS=Homo sapiens GN=TMTC2 PE=2 SV=1"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|P60228|EIF3E_HUMAN" SearchDatabase_ref="" accession="sp|P60228|EIF3E_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Eukaryotic translation initiation factor 3 subunit E OS=Homo sapiens GN=EIF3E PE=1 SV=1"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|Q9Y266|NUDC_HUMAN" SearchDatabase_ref="" accession="sp|Q9Y266|NUDC_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Nuclear migration protein nudC OS=Homo sapiens GN=NUDC PE=1 SV=1"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|O14576|DC1I1_HUMAN" SearchDatabase_ref="" accession="sp|O14576|DC1I1_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Cytoplasmic dynein 1 intermediate chain 1 OS=Homo sapiens GN=DYNC1I1 PE=1 SV=2"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|P14635|CCNB1_HUMAN" SearchDatabase_ref="" accession="sp|P14635|CCNB1_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="G2/mitotic-specific cyclin-B1 OS=Homo sapiens GN=CCNB1 PE=1 SV=1"/>
+    </DBSequence>
+    <DBSequence id="DBSeq_1_sp|O15027|SC16A_HUMAN" SearchDatabase_ref="" accession="sp|O15027|SC16A_HUMAN">
+      <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="Protein transport protein Sec16A OS=Homo sapiens GN=SEC16A PE=1 SV=3"/>
+    </DBSequence>
+    <Peptide id="peptide_1_1">
+      <peptideSequence>IRYESLTDPSK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_1_2">
+      <peptideSequence>YESLTDPSKLDSGK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_1_3">
+      <peptideSequence>HIYYITGETK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_1_4">
+      <peptideSequence>EGLELPEDEEEKKK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_1_5">
+      <peptideSequence>EQVANSAFVER</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_1_6">
+      <peptideSequence>VQDLSAGGQGSLTDSGPER</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_1_7">
+      <peptideSequence>VGEVCHITCKPEYAYGSAGSPPK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_1_8">
+      <peptideSequence>APSTYGGGLSVSSSR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_1_9">
+      <peptideSequence>EIVHIQAGQCGNQIGAK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_1_10">
+      <peptideSequence>ENVNATENCISAVGK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_2_1">
+      <peptideSequence>IVAERPGTNSTGPAPMAPPR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_2_2">
+      <peptideSequence>FATHAAALSVR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_2_3">
+      <peptideSequence>SLGPPQGEEDSVPR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_2_4">
+      <peptideSequence>ALEESNYELEGK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_2_5">
+      <peptideSequence>FAAATGATPIAGR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_2_6">
+      <peptideSequence>GTEITHAVVIK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_2_7">
+      <peptideSequence>QAVTNPNNTFYATK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_2_8">
+      <peptideSequence>ALVDGPCTQVR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_2_9">
+      <peptideSequence>YSQYQQAIYK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_2_10">
+      <peptideSequence>TLIQNCGASTIR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_3_1">
+      <peptideSequence>SVSLTGAPESVQK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_3_2">
+      <peptideSequence>KGVAINMVTEEDKR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_3_3">
+      <peptideSequence>GYSFTTTAER</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_3_4">
+      <peptideSequence>AVLIAGQPGTGK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_3_5">
+      <peptideSequence>LAQAAQSSVATITR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_3_6">
+      <peptideSequence>IIYGGSVTGATCK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_3_7">
+      <peptideSequence>TGTLTTNQMSVCR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_3_8">
+      <peptideSequence>VTAQGPGLEPSGNIANK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_3_9">
+      <peptideSequence>HKLDVTSVEDYK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_3_10">
+      <peptideSequence>NDTKEDVFVHQTAIK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_4_1">
+      <peptideSequence>VHIEIGPDGR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_4_2">
+      <peptideSequence>IQTQPGYANTLR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_4_3">
+      <peptideSequence>LSHPGHFWK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_4_4">
+      <peptideSequence>AVENSSTAIGIR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_4_5">
+      <peptideSequence>KAAALEAMKDYTK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_4_6">
+      <peptideSequence>YYPTEDVPR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_4_7">
+      <peptideSequence>EAAENSLVAYK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_4_8">
+      <peptideSequence>KLEELELDEQQKK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_4_9">
+      <peptideSequence>IEDSTGLNRPGPAPLSSR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_4_10">
+      <peptideSequence>DQDLEPGAPSMGAK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_5_1">
+      <peptideSequence>KLDPGSEETQTLVR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_5_2">
+      <peptideSequence>NLCSDDTPMVR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_5_3">
+      <peptideSequence>SLAGSSGPGASSGTSGDHGELVVR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_5_4">
+      <peptideSequence>LVIEEAER</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_5_5">
+      <peptideSequence>IIAHAQLLEQHR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_5_6">
+      <peptideSequence>KLEELELDEQQRK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_5_7">
+      <peptideSequence>TDYNASVSVPDSSGPER</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_5_8">
+      <peptideSequence>TALIHDGLAR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_5_9">
+      <peptideSequence>IKQILPTIYK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_5_10">
+      <peptideSequence>QLQAETEPIVK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_6_1">
+      <peptideSequence>LITQTFSHHNQLAQK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_6_2">
+      <peptideSequence>EPVQDDSDLDRKR</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_6_3">
+      <peptideSequence>IGEVDVEQHTLAK</peptideSequence>
+    </Peptide>
+    <Peptide id="peptide_6_4">
+      <peptideSequence>GGIGASENLENPPK</peptideSequence>
+    </Peptide>
+  </SequenceCollection>
+  <AnalysisCollection>
+    <SpectrumIdentification id="SI" SpectrumIdentificationProtocol_ref="SIP" SpectrumIdentificationList_ref="SIL_1" activityDate="2010:06:01:14:28:58">
+      <InputSpectra SpectraData_ref="SD_1"/>
+      <SearchDatabase SearchDatabase_ref=""/>
+    </SpectrumIdentification>
+  </AnalysisCollection>
+  <AnalysisProtocolCollection>
+    <SpectrumIdentificationProtocol id="SIP" AnalysisSoftware_ref="AS_mascot_server">
+      <SearchType>
+        <cvParam accession="MS:1001083" name="ms-ms search" cvRef="PSI-MS" value=""/>
+      </SearchType>
+      <Threshold>
+        <cvParam accession="MS:1001316" name="mascot:SigThreshold" cvRef="PSI-MS" value="0.05"/>
+      </Threshold>
+    </SpectrumIdentificationProtocol>
+  </AnalysisProtocolCollection>
+  <DataCollection>
+    <Inputs/>
+    <AnalysisData>
+      <SpectrumIdentificationList id="SIL_1" numSequencesSearched="106159">
+        <SpectrumIdentificationResult id="SIR_1" spectrumID="index=11" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_1_1" calculatedMassToCharge="654.84333" chargeState="2" experimentalMassToCharge="654.84333" Peptide_ref="peptide_1_1" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_1_sp|P07900|HS90A_HUMAN" start="0" end="0" pre="K" post="L" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P07900|HS90A_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="27.9"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="19.3"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="13.6"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="11.4"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.018"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_2" spectrumID="index=78" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_2_1" calculatedMassToCharge="770.38048" chargeState="2" experimentalMassToCharge="770.38148" Peptide_ref="peptide_1_2" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_2_sp|P07900|HS90A_HUMAN" start="0" end="0" pre="R" post="E" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P07900|HS90A_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="64.8"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="19.8"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="11.2"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="13.9"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="1.2e-12"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_3" spectrumID="index=76" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_3_1" calculatedMassToCharge="513.92274" chargeState="3" experimentalMassToCharge="513.92308" Peptide_ref="peptide_1_2" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_3_sp|P07900|HS90A_HUMAN" start="0" end="0" pre="R" post="E" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P07900|HS90A_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="26.8"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="17.6"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="9.0"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="12.7"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.0048"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_4" spectrumID="index=79" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_4_1" calculatedMassToCharge="770.38048" chargeState="2" experimentalMassToCharge="770.37998" Peptide_ref="peptide_1_2" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_4_sp|P07900|HS90A_HUMAN" start="0" end="0" pre="R" post="E" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P07900|HS90A_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="64.8"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="18.6"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="11.1"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="13.9"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="6.3e-10"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_5" spectrumID="index=74" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_5_1" calculatedMassToCharge="513.92274" chargeState="3" experimentalMassToCharge="513.92241" Peptide_ref="peptide_1_2" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_5_sp|P07900|HS90A_HUMAN" start="0" end="0" pre="R" post="E" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P07900|HS90A_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="28.7"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="17.5"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="8.9"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="12.7"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.053"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_6" spectrumID="index=35" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_6_1" calculatedMassToCharge="612.81658" chargeState="2" experimentalMassToCharge="612.81558" Peptide_ref="peptide_1_3" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_6_sp|P07900|HS90A_HUMAN" start="0" end="0" pre="K" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P07900|HS90A_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="42.0"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="17.4"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="9.6"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="11.9"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.00014"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_7" spectrumID="index=33" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_7_1" calculatedMassToCharge="612.81658" chargeState="2" experimentalMassToCharge="612.81608" Peptide_ref="peptide_1_3" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_7_sp|P07900|HS90A_HUMAN" start="0" end="0" pre="K" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P07900|HS90A_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="41.9"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="19.9"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="9.5"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="11.9"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="4.0e-05"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_8" spectrumID="index=18" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_8_1" calculatedMassToCharge="836.91743" chargeState="2" experimentalMassToCharge="836.91893" Peptide_ref="peptide_1_4" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_8_sp|P07900|HS90A_HUMAN" start="0" end="0" pre="K" post="Q" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P07900|HS90A_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="39.3"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="22.2"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="6.9"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="11.4"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.00035"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_9" spectrumID="index=20" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_9_1" calculatedMassToCharge="836.91743" chargeState="2" experimentalMassToCharge="836.91893" Peptide_ref="peptide_1_4" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_9_sp|P07900|HS90A_HUMAN" start="0" end="0" pre="K" post="Q" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P07900|HS90A_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="45.0"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="24.4"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="7.2"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="11.2"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="9.1e-06"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_10" spectrumID="index=14" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_10_1" calculatedMassToCharge="558.28071" chargeState="3" experimentalMassToCharge="558.28071" Peptide_ref="peptide_1_4" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_10_sp|P07900|HS90A_HUMAN" start="0" end="0" pre="K" post="Q" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P07900|HS90A_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="27.8"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="21.1"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="3.7"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="13.0"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.082"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_11" spectrumID="index=47" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_11_1" calculatedMassToCharge="625.31213" chargeState="2" experimentalMassToCharge="625.80463" Peptide_ref="peptide_1_5" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_11_sp|Q58FF7|H90B3_HUMAN" start="0" end="0" pre="K" post="V" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|Q58FF7|H90B3_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="37.0"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="18.4"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="0.0"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="10.8"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="7.1e-05"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_12" spectrumID="index=34" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_12_1" calculatedMassToCharge="937.44793" chargeState="2" experimentalMassToCharge="937.44943" Peptide_ref="peptide_1_6" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_12_sp|P40222|TXLNA_HUMAN" start="0" end="0" pre="R" post="R" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P40222|TXLNA_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="101.8"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="25.3"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="10.6"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="12.7"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="4.2e-17"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_13" spectrumID="index=32" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_13_1" calculatedMassToCharge="937.44793" chargeState="2" experimentalMassToCharge="937.44993" Peptide_ref="peptide_1_6" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_13_sp|P40222|TXLNA_HUMAN" start="0" end="0" pre="R" post="R" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P40222|TXLNA_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="111.8"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="25.1"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="10.4"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="12.7"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="5.0e-16"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_14" spectrumID="index=62" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_14_1" calculatedMassToCharge="836.39498" chargeState="3" experimentalMassToCharge="836.39598" Peptide_ref="peptide_1_7" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_14_sp|Q02790|FKBP4_HUMAN" start="0" end="0" pre="K" post="I" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|Q02790|FKBP4_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="82.4"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="24.0"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="12.8"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="13.0"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="2.7e-12"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_15" spectrumID="index=61" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_15_1" calculatedMassToCharge="836.39498" chargeState="3" experimentalMassToCharge="836.39631" Peptide_ref="peptide_1_7" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_15_sp|Q02790|FKBP4_HUMAN" start="0" end="0" pre="K" post="I" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|Q02790|FKBP4_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="77.7"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="27.2"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="12.6"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="12.9"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="1.0e-10"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_16" spectrumID="index=7" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_16_1" calculatedMassToCharge="713.35203" chargeState="2" experimentalMassToCharge="713.35453" Peptide_ref="peptide_1_8" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_16_sp|P02533|K1C14_HUMAN" start="0" end="0" pre="R" post="F" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P02533|K1C14_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="58.1"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="39.6"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="5.9"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="11.2"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="3.8e-10"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_17" spectrumID="index=5" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_17_1" calculatedMassToCharge="713.35203" chargeState="2" experimentalMassToCharge="713.35503" Peptide_ref="peptide_1_8" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_17_sp|P02533|K1C14_HUMAN" start="0" end="0" pre="R" post="F" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P02533|K1C14_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="60.7"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="31.5"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="6.8"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="11.3"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="5.0e-10"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_18" spectrumID="index=82" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_18_1" calculatedMassToCharge="911.96533" chargeState="2" experimentalMassToCharge="911.96733" Peptide_ref="peptide_1_9" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_18_sp|Q13885|TBB2A_HUMAN" start="0" end="0" pre="R" post="F" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|Q13885|TBB2A_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="63.8"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="63.8"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="8.2"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="10.2"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="6.3e-08"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_19" spectrumID="index=80" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_19_1" calculatedMassToCharge="911.96533" chargeState="2" experimentalMassToCharge="911.96633" Peptide_ref="peptide_1_9" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_19_sp|Q13885|TBB2A_HUMAN" start="0" end="0" pre="R" post="F" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|Q13885|TBB2A_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="64.8"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="64.8"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="8.8"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="11.3"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="1.3e-09"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_20" spectrumID="index=39" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_20_1" calculatedMassToCharge="803.38073" chargeState="2" experimentalMassToCharge="803.38073" Peptide_ref="peptide_1_10" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_20_sp|O00410|IPO5_HUMAN" start="0" end="0" pre="K" post="I" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|O00410|IPO5_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="61.6"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="25.1"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="9.0"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="10.3"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="2.6e-09"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_21" spectrumID="index=36" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_21_1" calculatedMassToCharge="803.38073" chargeState="2" experimentalMassToCharge="803.38023" Peptide_ref="peptide_1_10" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_21_sp|O00410|IPO5_HUMAN" start="0" end="0" pre="K" post="I" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|O00410|IPO5_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="48.4"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="20.2"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="8.4"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="10.2"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="5.9e-08"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_22" spectrumID="index=16" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_22_1" calculatedMassToCharge="673.68618" chargeState="3" experimentalMassToCharge="673.68618" Peptide_ref="peptide_2_1" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_22_sp|Q13263|TIF1B_HUMAN" start="0" end="0" pre="K" post="A" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|Q13263|TIF1B_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="46.0"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="32.3"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="10.4"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="12.6"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="6.7e-05"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_23" spectrumID="index=13" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_23_1" calculatedMassToCharge="673.68618" chargeState="3" experimentalMassToCharge="673.68551" Peptide_ref="peptide_2_1" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_23_sp|Q13263|TIF1B_HUMAN" start="0" end="0" pre="K" post="A" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|Q13263|TIF1B_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="72.3"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="26.8"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="10.7"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="12.7"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="9.5e-09"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_24" spectrumID="index=26" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_24_1" calculatedMassToCharge="572.31708" chargeState="2" experimentalMassToCharge="572.31658" Peptide_ref="peptide_2_2" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_24_sp|P23246|SFPQ_HUMAN" start="0" end="0" pre="R" post="N" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P23246|SFPQ_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="51.5"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="26.8"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="7.8"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="10.0"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="1.7e-07"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_25" spectrumID="index=27" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_25_1" calculatedMassToCharge="734.35733" chargeState="2" experimentalMassToCharge="734.36033" Peptide_ref="peptide_2_3" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_25_sp|P78527|PRKDC_HUMAN" start="0" end="0" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P78527|PRKDC_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="66.4"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="23.7"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="8.8"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="12.2"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="1.7e-07"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_26" spectrumID="index=30" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_26_1" calculatedMassToCharge="734.35733" chargeState="2" experimentalMassToCharge="734.35883" Peptide_ref="peptide_2_3" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_26_sp|P78527|PRKDC_HUMAN" start="0" end="0" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P78527|PRKDC_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="58.5"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="23.5"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="9.1"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="12.0"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="7.3e-07"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_27" spectrumID="index=71" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_27_1" calculatedMassToCharge="691.32773" chargeState="2" experimentalMassToCharge="691.32923" Peptide_ref="peptide_2_4" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_27_sp|P13645|K1C10_HUMAN" start="0" end="0" pre="R" post="I" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P13645|K1C10_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="58.0"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="27.7"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="10.1"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="12.3"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="2.5e-07"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_28" spectrumID="index=68" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_28_1" calculatedMassToCharge="691.32773" chargeState="2" experimentalMassToCharge="691.33123" Peptide_ref="peptide_2_4" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_28_sp|P13645|K1C10_HUMAN" start="0" end="0" pre="R" post="I" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P13645|K1C10_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="35.4"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="18.0"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="6.9"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="9.7"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.004"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_29" spectrumID="index=63" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_29_1" calculatedMassToCharge="602.32763" chargeState="2" experimentalMassToCharge="602.77013" Peptide_ref="peptide_2_5" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_29_sp|P08865|RSSA_HUMAN" start="0" end="0" pre="K" post="F" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P08865|RSSA_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="38.9"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="16.2"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="7.2"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="8.7"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="8.4e-05"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_30" spectrumID="index=52" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_30_1" calculatedMassToCharge="602.32763" chargeState="2" experimentalMassToCharge="602.32763" Peptide_ref="peptide_2_5" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_30_sp|P08865|RSSA_HUMAN" start="0" end="0" pre="K" post="F" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P08865|RSSA_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="50.4"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="19.2"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="7.3"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="9.2"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="3.8e-07"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_31" spectrumID="index=65" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_31_1" calculatedMassToCharge="602.32763" chargeState="2" experimentalMassToCharge="602.77013" Peptide_ref="peptide_2_5" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_31_sp|P08865|RSSA_HUMAN" start="0" end="0" pre="K" post="F" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P08865|RSSA_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="29.3"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="22.9"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="6.4"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="8.5"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.0096"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_32" spectrumID="index=48" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_32_1" calculatedMassToCharge="602.32763" chargeState="2" experimentalMassToCharge="602.32763" Peptide_ref="peptide_2_5" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_32_sp|P08865|RSSA_HUMAN" start="0" end="0" pre="K" post="F" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P08865|RSSA_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="50.8"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="21.3"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="7.8"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="9.6"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="2.3e-06"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_33" spectrumID="index=57" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_33_1" calculatedMassToCharge="584.34023" chargeState="2" experimentalMassToCharge="584.34023" Peptide_ref="peptide_2_6" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_33_sp|Q99613|EIF3C_HUMAN" start="0" end="0" pre="K" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|Q99613|EIF3C_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="51.6"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="29.1"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="8.8"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="9.8"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="5.8e-07"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_34" spectrumID="index=51" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_34_1" calculatedMassToCharge="784.88878" chargeState="2" experimentalMassToCharge="784.88928" Peptide_ref="peptide_2_7" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_34_sp|P38646|GRP75_HUMAN" start="0" end="0" pre="R" post="R" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P38646|GRP75_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="64.0"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="21.5"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="7.0"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="11.8"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="7.4e-07"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_35" spectrumID="index=54" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_35_1" calculatedMassToCharge="784.88878" chargeState="2" experimentalMassToCharge="784.88928" Peptide_ref="peptide_2_7" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_35_sp|P38646|GRP75_HUMAN" start="0" end="0" pre="R" post="R" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P38646|GRP75_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="67.1"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="24.6"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="7.0"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="11.8"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.00035"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_36" spectrumID="index=28" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_36_1" calculatedMassToCharge="608.31143" chargeState="2" experimentalMassToCharge="608.31043" Peptide_ref="peptide_2_8" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_36_sp|P50914|RL14_HUMAN" start="0" end="0" pre="R" post="R" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P50914|RL14_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="53.7"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="33.3"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="8.6"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="11.6"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="2.0e-06"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_37" spectrumID="index=8" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_37_1" calculatedMassToCharge="646.31948" chargeState="2" experimentalMassToCharge="646.31948" Peptide_ref="peptide_2_9" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_37_sp|O14744|ANM5_HUMAN" start="0" end="0" pre="K" post="C" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|O14744|ANM5_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="43.5"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="20.8"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="7.4"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="9.4"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="6.3e-06"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_38" spectrumID="index=6" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_38_1" calculatedMassToCharge="646.31948" chargeState="2" experimentalMassToCharge="646.31948" Peptide_ref="peptide_2_9" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_38_sp|O14744|ANM5_HUMAN" start="0" end="0" pre="K" post="C" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|O14744|ANM5_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="37.7"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="16.2"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="7.4"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="9.5"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="3.4e-06"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_39" spectrumID="index=85" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_39_1" calculatedMassToCharge="667.34853" chargeState="2" experimentalMassToCharge="667.34753" Peptide_ref="peptide_2_10" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_39_sp|P49368|TCPG_HUMAN" start="0" end="0" pre="R" post="L" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P49368|TCPG_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="61.4"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="26.6"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="8.1"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="11.6"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="1.6e-05"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_40" spectrumID="index=89" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_40_1" calculatedMassToCharge="667.34853" chargeState="2" experimentalMassToCharge="667.34803" Peptide_ref="peptide_2_10" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_40_sp|P49368|TCPG_HUMAN" start="0" end="0" pre="R" post="L" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P49368|TCPG_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="73.5"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="26.0"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="8.5"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="11.9"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="3.8e-06"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_41" spectrumID="index=41" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_41_1" calculatedMassToCharge="651.84863" chargeState="2" experimentalMassToCharge="651.84863" Peptide_ref="peptide_3_1" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_41_sp|Q92945|FUBP2_HUMAN" start="0" end="0" pre="R" post="A" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|Q92945|FUBP2_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="50.8"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="24.2"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="9.0"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="11.8"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="4.2e-06"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_42" spectrumID="index=38" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_42_1" calculatedMassToCharge="651.84863" chargeState="2" experimentalMassToCharge="651.84863" Peptide_ref="peptide_3_1" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_42_sp|Q92945|FUBP2_HUMAN" start="0" end="0" pre="R" post="A" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|Q92945|FUBP2_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="45.8"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="29.3"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="9.3"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="11.8"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.0013"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_43" spectrumID="index=46" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_43_1" calculatedMassToCharge="530.61538" chargeState="3" experimentalMassToCharge="530.61638" Peptide_ref="peptide_3_2" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_43_sp|P60842|IF4A1_HUMAN" start="0" end="0" pre="R" post="T" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P60842|IF4A1_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="45.7"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="27.2"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="8.3"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="10.4"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.0002"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_44" spectrumID="index=45" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_44_1" calculatedMassToCharge="530.61538" chargeState="3" experimentalMassToCharge="530.61638" Peptide_ref="peptide_3_2" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_44_sp|P60842|IF4A1_HUMAN" start="0" end="0" pre="R" post="T" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P60842|IF4A1_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="50.3"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="29.7"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="8.4"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="10.5"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="5.0e-06"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_45" spectrumID="index=60" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_45_1" calculatedMassToCharge="566.76708" chargeState="2" experimentalMassToCharge="566.76708" Peptide_ref="peptide_3_3" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_45_sp|P60709|ACTB_HUMAN" start="0" end="0" pre="R" post="E" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P60709|ACTB_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="41.8"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="19.2"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="5.5"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="8.2"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="1.3e-05"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_46" spectrumID="index=2" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_46_1" calculatedMassToCharge="556.32713" chargeState="2" experimentalMassToCharge="556.32763" Peptide_ref="peptide_3_4" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_46_sp|Q9Y230|RUVB2_HUMAN" start="0" end="0" pre="R" post="T" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|Q9Y230|RUVB2_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="57.6"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="22.1"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="11.1"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="12.2"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="2.6e-05"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_47" spectrumID="index=0" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_47_1" calculatedMassToCharge="556.32713" chargeState="2" experimentalMassToCharge="556.32713" Peptide_ref="peptide_3_4" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_47_sp|Q9Y230|RUVB2_HUMAN" start="0" end="0" pre="R" post="T" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|Q9Y230|RUVB2_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="46.3"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="27.8"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="11.3"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="12.4"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="3.1e-05"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_48" spectrumID="index=81" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_48_1" calculatedMassToCharge="708.89388" chargeState="2" experimentalMassToCharge="708.89288" Peptide_ref="peptide_3_5" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_48_sp|Q9Y490|TLN1_HUMAN" start="0" end="0" pre="K" post="L" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|Q9Y490|TLN1_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="37.6"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="18.8"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="7.3"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="9.4"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="2.7e-05"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_49" spectrumID="index=43" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_49_1" calculatedMassToCharge="663.83998" chargeState="2" experimentalMassToCharge="663.83898" Peptide_ref="peptide_3_6" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_49_sp|P60174|TPIS_HUMAN" start="0" end="0" pre="R" post="E" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P60174|TPIS_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="52.5"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="22.7"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="8.3"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="12.1"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="3.3e-05"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_50" spectrumID="index=4" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_50_1" calculatedMassToCharge="734.84803" chargeState="2" experimentalMassToCharge="734.84853" Peptide_ref="peptide_3_7" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_50_sp|P16615|AT2A2_HUMAN" start="0" end="0" pre="K" post="M" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P16615|AT2A2_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="33.9"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="18.3"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="4.6"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="10.4"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="7.1e-05"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_51" spectrumID="index=42" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_51_1" calculatedMassToCharge="826.93373" chargeState="2" experimentalMassToCharge="826.93473" Peptide_ref="peptide_3_8" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_51_sp|P21333|FLNA_HUMAN" start="0" end="0" pre="K" post="T" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P21333|FLNA_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="48.0"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="24.2"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="10.1"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="13.1"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="9.5e-05"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_52" spectrumID="index=40" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_52_1" calculatedMassToCharge="826.93373" chargeState="2" experimentalMassToCharge="826.93423" Peptide_ref="peptide_3_8" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_52_sp|P21333|FLNA_HUMAN" start="0" end="0" pre="K" post="T" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P21333|FLNA_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="48.0"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="21.0"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="10.5"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="13.1"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="7.2e-05"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_53" spectrumID="index=86" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_53_1" calculatedMassToCharge="478.58054" chargeState="3" experimentalMassToCharge="478.58088" Peptide_ref="peptide_3_9" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_53_sp|P48643|TCPE_HUMAN" start="0" end="0" pre="K" post="A" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P48643|TCPE_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="48.3"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="29.4"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="11.0"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="9.9"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="8.0e-05"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_54" spectrumID="index=83" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_54_1" calculatedMassToCharge="478.58054" chargeState="3" experimentalMassToCharge="478.58054" Peptide_ref="peptide_3_9" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_54_sp|P48643|TCPE_HUMAN" start="0" end="0" pre="K" post="A" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P48643|TCPE_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="37.9"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="24.9"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="11.1"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="10.3"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.00069"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_55" spectrumID="index=66" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_55_1" calculatedMassToCharge="582.30031" chargeState="3" experimentalMassToCharge="582.30164" Peptide_ref="peptide_3_10" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_55_sp|P16989|DBPA_HUMAN" start="0" end="0" pre="R" post="K" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P16989|DBPA_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="47.2"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="22.2"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="10.1"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="12.7"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.00016"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_56" spectrumID="index=84" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_56_1" calculatedMassToCharge="546.79343" chargeState="2" experimentalMassToCharge="546.79343" Peptide_ref="peptide_4_1" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_56_sp|P31943|HNRH1_HUMAN" start="0" end="0" pre="R" post="V" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P31943|HNRH1_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="38.8"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="18.6"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="10.9"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="11.8"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.0006"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_57" spectrumID="index=87" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_57_1" calculatedMassToCharge="546.79343" chargeState="2" experimentalMassToCharge="546.79293" Peptide_ref="peptide_4_1" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_57_sp|P31943|HNRH1_HUMAN" start="0" end="0" pre="R" post="V" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P31943|HNRH1_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="38.8"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="16.4"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="10.9"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="11.7"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.00018"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_58" spectrumID="index=24" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_58_1" calculatedMassToCharge="681.36223" chargeState="2" experimentalMassToCharge="681.36223" Peptide_ref="peptide_4_2" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_58_sp|Q00325|MPCP_HUMAN" start="0" end="0" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|Q00325|MPCP_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="53.2"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="27.5"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="8.5"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="12.0"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.00046"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_59" spectrumID="index=23" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_59_1" calculatedMassToCharge="681.36223" chargeState="2" experimentalMassToCharge="681.36223" Peptide_ref="peptide_4_2" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_59_sp|Q00325|MPCP_HUMAN" start="0" end="0" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|Q00325|MPCP_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="49.8"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="24.0"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="8.3"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="12.0"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.00029"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_60" spectrumID="index=15" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_60_1" calculatedMassToCharge="554.78798" chargeState="2" experimentalMassToCharge="554.78798" Peptide_ref="peptide_4_3" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_60_sp|Q8IVT5|KSR1_HUMAN" start="0" end="0" pre="R" post="S" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|Q8IVT5|KSR1_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="43.1"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="27.7"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="8.2"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="11.0"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.00033"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_61" spectrumID="index=17" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_61_1" calculatedMassToCharge="554.78798" chargeState="2" experimentalMassToCharge="554.78848" Peptide_ref="peptide_4_3" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_61_sp|Q8IVT5|KSR1_HUMAN" start="0" end="0" pre="R" post="S" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|Q8IVT5|KSR1_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="43.3"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="30.1"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="8.3"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="11.3"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.0011"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_62" spectrumID="index=12" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_62_1" calculatedMassToCharge="609.32783" chargeState="2" experimentalMassToCharge="609.33083" Peptide_ref="peptide_4_4" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_62_sp|P25788|PSA3_HUMAN" start="0" end="0" pre="K" post="C" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P25788|PSA3_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="34.2"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="20.6"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="7.5"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="10.5"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.00037"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_63" spectrumID="index=73" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_63_1" calculatedMassToCharge="480.59028" chargeState="3" experimentalMassToCharge="480.59028" Peptide_ref="peptide_4_5" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_63_sp|P31948|STIP1_HUMAN" start="0" end="0" pre="R" post="A" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P31948|STIP1_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="37.3"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="20.8"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="7.8"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="10.5"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.0018"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_64" spectrumID="index=77" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_64_1" calculatedMassToCharge="480.59028" chargeState="3" experimentalMassToCharge="480.59028" Peptide_ref="peptide_4_5" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_64_sp|P31948|STIP1_HUMAN" start="0" end="0" pre="R" post="A" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P31948|STIP1_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="37.2"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="22.3"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="7.5"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="10.4"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.00043"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_65" spectrumID="index=49" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_65_1" calculatedMassToCharge="570.27203" chargeState="2" experimentalMassToCharge="570.27153" Peptide_ref="peptide_4_6" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_65_sp|Q02878|RL6_HUMAN" start="0" end="0" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|Q02878|RL6_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="37.4"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="20.1"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="10.3"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="13.2"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.00073"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_66" spectrumID="index=67" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_66_1" calculatedMassToCharge="597.80368" chargeState="2" experimentalMassToCharge="597.80368" Peptide_ref="peptide_4_7" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_66_sp|P62258|1433E_HUMAN" start="0" end="0" pre="K" post="A" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P62258|1433E_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="31.5"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="19.6"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="5.2"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="9.9"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.0034"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_67" spectrumID="index=69" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_67_1" calculatedMassToCharge="597.80368" chargeState="2" experimentalMassToCharge="597.80318" Peptide_ref="peptide_4_7" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_67_sp|P62258|1433E_HUMAN" start="0" end="0" pre="K" post="A" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P62258|1433E_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="34.4"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="20.1"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="5.8"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="10.9"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.00078"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_68" spectrumID="index=31" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_68_1" calculatedMassToCharge="543.96131" chargeState="3" experimentalMassToCharge="543.96131" Peptide_ref="peptide_4_8" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_68_sp|P36507|MP2K2_HUMAN" start="0" end="0" pre="K" post="R" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P36507|MP2K2_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="40.2"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="24.1"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="7.5"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="11.4"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.0025"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_69" spectrumID="index=29" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_69_1" calculatedMassToCharge="543.96131" chargeState="3" experimentalMassToCharge="543.96131" Peptide_ref="peptide_4_8" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_69_sp|P36507|MP2K2_HUMAN" start="0" end="0" pre="K" post="R" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P36507|MP2K2_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="43.8"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="24.5"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="7.7"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="11.4"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.00086"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_70" spectrumID="index=75" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_70_1" calculatedMassToCharge="622.99378" chargeState="3" experimentalMassToCharge="622.99311" Peptide_ref="peptide_4_9" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_70_sp|Q9BQ70|TCF25_HUMAN" start="0" end="0" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|Q9BQ70|TCF25_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="51.9"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="36.5"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="9.1"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="12.5"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.00089"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_71" spectrumID="index=25" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_71_1" calculatedMassToCharge="708.32718" chargeState="2" experimentalMassToCharge="708.32668" Peptide_ref="peptide_4_10" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_71_sp|P07814|SYEP_HUMAN" start="0" end="0" pre="R" post="S" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P07814|SYEP_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="39.8"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="28.8"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="11.7"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="12.9"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.028"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_72" spectrumID="index=22" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_72_1" calculatedMassToCharge="708.32718" chargeState="2" experimentalMassToCharge="708.32768" Peptide_ref="peptide_4_10" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_72_sp|P07814|SYEP_HUMAN" start="0" end="0" pre="R" post="S" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P07814|SYEP_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="40.3"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="28.8"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="11.5"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="12.9"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.0026"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_73" spectrumID="index=53" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_73_1" calculatedMassToCharge="524.94578" chargeState="3" experimentalMassToCharge="524.94678" Peptide_ref="peptide_5_1" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_73_sp|P26641|EF1G_HUMAN" start="0" end="0" pre="R" post="E" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P26641|EF1G_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="43.8"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="29.0"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="10.6"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="9.5"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.015"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_74" spectrumID="index=50" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_74_1" calculatedMassToCharge="524.94578" chargeState="3" experimentalMassToCharge="524.94711" Peptide_ref="peptide_5_1" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_74_sp|P26641|EF1G_HUMAN" start="0" end="0" pre="R" post="E" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P26641|EF1G_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="40.9"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="26.7"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="10.5"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="9.6"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.004"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_75" spectrumID="index=72" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_75_1" calculatedMassToCharge="654.28983" chargeState="2" experimentalMassToCharge="654.29083" Peptide_ref="peptide_5_2" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_75_sp|P30153|2AAA_HUMAN" start="0" end="0" pre="R" post="R" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P30153|2AAA_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="36.1"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="22.4"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="10.6"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="12.5"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.0043"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_76" spectrumID="index=58" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_76_1" calculatedMassToCharge="729.02084" chargeState="3" experimentalMassToCharge="729.02051" Peptide_ref="peptide_5_3" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_76_sp|P29692|EF1D_HUMAN" start="0" end="0" pre="K" post="I" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P29692|EF1D_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="40.2"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="29.1"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="4.6"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="11.5"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.0047"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_77" spectrumID="index=55" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_77_1" calculatedMassToCharge="729.02084" chargeState="3" experimentalMassToCharge="729.02118" Peptide_ref="peptide_5_3" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_77_sp|P29692|EF1D_HUMAN" start="0" end="0" pre="K" post="I" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P29692|EF1D_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="39.8"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="29.8"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="4.6"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="12.0"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.016"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_78" spectrumID="index=3" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_78_1" calculatedMassToCharge="479.76383" chargeState="2" experimentalMassToCharge="479.76433" Peptide_ref="peptide_5_4" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_78_sp|P50991|TCPD_HUMAN" start="0" end="0" pre="K" post="S" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P50991|TCPD_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="42.2"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="27.6"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="9.1"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="12.1"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.0048"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_79" spectrumID="index=1" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_79_1" calculatedMassToCharge="479.76383" chargeState="2" experimentalMassToCharge="479.76433" Peptide_ref="peptide_5_4" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_79_sp|P50991|TCPD_HUMAN" start="0" end="0" pre="K" post="S" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P50991|TCPD_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="38.7"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="29.6"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="9.3"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="12.1"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.031"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_80" spectrumID="index=21" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_80_1" calculatedMassToCharge="476.94051" chargeState="3" experimentalMassToCharge="476.94118" Peptide_ref="peptide_5_5" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_80_sp|P27708|PYR1_HUMAN" start="0" end="0" pre="R" post="G" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P27708|PYR1_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="41.2"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="31.3"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="7.4"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="12.0"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.0079"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_81" spectrumID="index=59" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_81_1" calculatedMassToCharge="553.29668" chargeState="3" experimentalMassToCharge="553.29668" Peptide_ref="peptide_5_6" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_81_sp|Q02750|MP2K1_HUMAN" start="0" end="0" pre="K" post="R" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|Q02750|MP2K1_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="37.4"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="37.4"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="6.8"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="11.4"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.021"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_82" spectrumID="index=56" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_82_1" calculatedMassToCharge="553.29668" chargeState="3" experimentalMassToCharge="553.29634" Peptide_ref="peptide_5_6" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_82_sp|Q02750|MP2K1_HUMAN" start="0" end="0" pre="K" post="R" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|Q02750|MP2K1_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="41.2"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="41.2"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="7.5"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="12.1"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.0084"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_83" spectrumID="index=70" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_83_1" calculatedMassToCharge="890.90283" chargeState="2" experimentalMassToCharge="890.90533" Peptide_ref="peptide_5_7" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_83_sp|P61978|HNRPK_HUMAN" start="0" end="0" pre="R" post="I" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P61978|HNRPK_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="27.4"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="16.4"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="7.8"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="11.2"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.0084"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_84" spectrumID="index=37" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_84_1" calculatedMassToCharge="533.80383" chargeState="2" experimentalMassToCharge="533.80283" Peptide_ref="peptide_5_8" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_84_sp|P25398|RS12_HUMAN" start="0" end="0" pre="K" post="G" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P25398|RS12_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="38.7"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="31.2"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="8.7"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="11.6"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.016"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_85" spectrumID="index=19" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_85_1" calculatedMassToCharge="608.88663" chargeState="2" experimentalMassToCharge="609.33313" Peptide_ref="peptide_5_9" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_85_sp|Q8N394|TMTC2_HUMAN" start="0" end="0" pre="K" post="R" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|Q8N394|TMTC2_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="29.2"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="21.0"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="10.6"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="9.3"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.031"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_86" spectrumID="index=88" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_86_1" calculatedMassToCharge="628.34823" chargeState="2" experimentalMassToCharge="628.34823" Peptide_ref="peptide_5_10" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_86_sp|P60228|EIF3E_HUMAN" start="0" end="0" pre="K" post="M" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P60228|EIF3E_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="25.8"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="16.2"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="5.9"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="9.6"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.044"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_87" spectrumID="index=10" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_87_1" calculatedMassToCharge="589.31631" chargeState="3" experimentalMassToCharge="589.31631" Peptide_ref="peptide_6_1" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_87_sp|Q9Y266|NUDC_HUMAN" start="0" end="0" pre="K" post="T" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|Q9Y266|NUDC_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="33.5"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="20.9"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="6.8"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="11.9"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.048"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_88" spectrumID="index=44" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_88_1" calculatedMassToCharge="777.87913" chargeState="2" experimentalMassToCharge="777.81113" Peptide_ref="peptide_6_2" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_88_sp|O14576|DC1I1_HUMAN" start="0" end="0" pre="K" post="R" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|O14576|DC1I1_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="29.3"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="19.1"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="10.9"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="9.1"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.07"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_89" spectrumID="index=64" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_89_1" calculatedMassToCharge="480.25604" chargeState="3" experimentalMassToCharge="480.25638" Peptide_ref="peptide_6_3" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_89_sp|P14635|CCNB1_HUMAN" start="0" end="0" pre="K" post="Y" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|P14635|CCNB1_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="29.6"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="22.9"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="6.2"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="11.6"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.072"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+        <SpectrumIdentificationResult id="SIR_90" spectrumID="index=9" SpectraData_ref="SD_1">
+          <SpectrumIdentificationItem id="SII_90_1" calculatedMassToCharge="691.84913" chargeState="2" experimentalMassToCharge="692.35763" Peptide_ref="peptide_6_4" rank="1" passThreshold="true">
+            <PeptideEvidence id="PE_90_sp|O15027|SC16A_HUMAN" start="0" end="0" pre="R" post="M" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_sp|O15027|SC16A_HUMAN"/>
+            <cvParam accession="MS:?" name="hyperscore" cvRef="PSI-MS" value="33.9"/>
+            <cvParam accession="MS:?" name="nextscore" cvRef="PSI-MS" value="31.0"/>
+            <cvParam accession="MS:?" name="bscore" cvRef="PSI-MS" value="8.4"/>
+            <cvParam accession="MS:?" name="yscore" cvRef="PSI-MS" value="9.1"/>
+            <cvParam accession="MS:?" name="expect" cvRef="PSI-MS" value="0.092"/>
+          </SpectrumIdentificationItem>
+        </SpectrumIdentificationResult>
+      </SpectrumIdentificationList>
+    </AnalysisData>
+  </DataCollection>
+</mzIdentML>

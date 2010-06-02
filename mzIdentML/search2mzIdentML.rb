@@ -15,13 +15,13 @@ class Search2mzIdentML
 		builder = Nokogiri::XML::Builder.new(:encoding => 'UTF-8') do |xml|
 			xml.mzIdentML(:id => "",
 				:version => "1.0.0",
-				'xsi:schemaLocation' => "http://psidev.info/psi/pi/mzIdentML/1.0 http://jp1.chem.byu.edu/mascot/xmlns/schema/mzIdentML/mzIdentML1.0.0.xsd",
+				'xsi:schemaLocation' => "http://psidev.info/psi/pi/mzIdentML/1.0 ../schema/mzIdentML1.0.0.xsd",
 				'xmlns' => "http://psidev.info/psi/pi/mzIdentML/1.0",
 				'xmlns:xsi' => "http://www.w3.org/2001/XMLSchema-instance",
 				:creationDate => @format.date) {
 					cvList(xml)
 					provider(xml)
-					#sequenceCollection(xml)
+					sequenceCollection(xml)
 					analysisCollection(xml)
 					analysisProtocolCollection(xml)
 					dataCollection(xml)
@@ -72,7 +72,7 @@ class Search2mzIdentML
 	def dBSequences(xml)
 		proteins = @format.proteins
 		proteins.each do |protein|
-			xml.DBSequence(:id => "DBSeq_1_#{protein[0]}", :SearchDatabase_ref => @format.databaseName, :accession => protein[0]) {
+			xml.DBSequence(:id => protein[2], :SearchDatabase_ref => @format.databaseName, :accession => protein[0]) {
 				xml.cvParam(:accession => "MS:1001088", :name => "protein description", :cvRef => "PSI-MS", :value => protein[1])
 			}
 		end
@@ -107,12 +107,13 @@ class Search2mzIdentML
 	
 	#Depth 2
 	def SpectrumIdentificationProtocol(xml)
-		xml.SpectrumIdentificationProtocol(:id => "SIP", :AnalysisSoftware_ref => "AS_mascot_server") {
+		xml.SpectrumIdentificationProtocol(:id => "SIP", :AnalysisSoftware_ref => @format.searchEngine) {
 			xml.SearchType {
-				xml.cvParam(:accession => "MS:1001083", :name => "ms-ms search", :cvRef => "PSI-MS", :value => "")
+				#Don't know of any value other than "ms-ms search"
+				xml.cvParam(:accession => "MS:?", :name => "ms-ms search", :cvRef => "PSI-MS", :value => "")
 			}
 			xml.Threshold {
-				xml.cvParam(:accession => "MS:1001316", :name => "mascot:SigThreshold", :cvRef => "PSI-MS", :value => "0.05")
+				xml.cvParam(:accession => "MS:?", :name => "?", :cvRef => "PSI-MS", :value => @format.threshold)
 			}
 		}
 	end
@@ -122,7 +123,7 @@ class Search2mzIdentML
 		xml.DataCollection {
 			xml.Inputs {}
 			xml.AnalysisData {
-				xml.SpectrumIdentificationList(:id => "SIL_1", :numSequencesSearched => "106159") {
+				xml.SpectrumIdentificationList(:id => "SIL_1", :numSequencesSearched => @format.numberOfSequences) {
 					spectrumIdentificationResult(xml)
 				}
 			}
@@ -132,23 +133,25 @@ class Search2mzIdentML
 	#Depth 4
 	def spectrumIdentificationResult(xml)
 		results = @format.results
+		i = 1
 		
 		results.each do |result|
-			xml.SpectrumIdentificationResult(:id => "SIR_1", :spectrumID => "index=#{result.index}", :SpectraData_ref => "SD_1") {
+			xml.SpectrumIdentificationResult(:id => "SIR_#{i}", :spectrumID => "index=#{result.index}", :SpectraData_ref => "SD_1") {
 				result.items.each do |item|
 					ident = item.ident
 					xml.SpectrumIdentificationItem(
-						:id => ident.id,
-						:calculatedMassToCharge => ident.mass,
+						:id => "SII_#{i}_#{ident.id}",
+						:calculatedMassToCharge => '%.8f' % ident.mass,
 						:chargeState => ident.charge,
-						:experimentalMassToCharge => ident.experi,
+						:experimentalMassToCharge => '%.8f' % ident.experi,
 						:Peptide_ref => ident.pep,
 						:rank => ident.rank,
 						:passThreshold => ident.pass) {
 							spectrumIdentificationItemVals(xml, item)
 						}
 				end
-			}
+			}	if result.items.length > 0	#Schema says that SpectrumIdentificationResult can't be empty
+			i += 1
 		end
 	end
 	
@@ -168,7 +171,7 @@ class Search2mzIdentML
 		end
 		
 		item.vals.each do |val|
-			xml.cvParam(:accession => val[0], :name => val[1], :vRef => "PSI-MS", :value => val[2])
+			xml.cvParam(:accession => val[0], :name => val[1], :cvRef => "PSI-MS", :value => val[2])
 		end
 	end
 end

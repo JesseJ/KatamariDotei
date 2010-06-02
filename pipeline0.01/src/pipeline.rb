@@ -8,13 +8,15 @@ require "#{$path}search.rb"
 require "#{$path}false_rate_discoverer.rb"
 require "#{$path}refiner.rb"
 
-file = "#{$path}../data/fast"
-#file = "#{$path}../data/test"
-#file = "#{$path}../data/BSA_std02_100520173525_mwavetrypsin_DTT_IAA"
+file = "#{File.expand_path($path)}/../data/fast"
+#file = "#{File.expand_path($path)}/../data/test"
+
+type = "human"
 
 class Pipeline
-    def initialize(file)
+    def initialize(file, type)
         @file = file
+        @type = type
     end
     
     def run
@@ -22,7 +24,8 @@ class Pipeline
         
         RawTomzXML.new("#{@file}.raw").convert
         MzXMLToOther.new("mgf", "#{@file}.mzXML", true).convert
-        output = Search.new("#{@file}.mgf", "human", "trypsin", 1, :omssa => true, :xtandem => true, :crux => true, :sequest => true, :mascot => true).run
+        MzXMLToOther.new("ms2", "#{@file}.mzXML", false).convert
+        output = Search.new("#{@file}", @type, "trypsin", 1, :omssa => true, :xtandem => true, :crux => true, :sequest => true, :mascot => true).run
         qValues = FalseRateDiscoverer.new([["#{@file}-forward_omssa_output_1.pep.xml", "#{@file}-decoy_omssa_output_1.pep.xml"]]).discoverFalseRate
         #qValues = FalseRateDiscoverer.new(output).discoverFalseRate
         Refiner.new("#{@file}-forward_omssa_output_1.pep.xml", qValues, 0.01).refine
@@ -48,4 +51,4 @@ class Pipeline
     end
 end
 
-Pipeline.new(file).run
+Pipeline.new(file, type).run

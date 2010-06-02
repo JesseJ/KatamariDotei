@@ -2,7 +2,9 @@ require 'builder'
 require 'rubygems'
 require 'fileutils'
 require 'nokogiri'
+require "#{$path}tide_converter.rb"
 #require "#{$path}/ms-mascot/lib/ms/mascot/submit.rb"
+include Process
 
 #file == input file
 #database == type of fasta database to use, e.g. "human"
@@ -33,11 +35,24 @@ class Search
         end
         
         if @opts[:omssa] == true
-            runOMSSA
+			runOMSSA
         end
-        
-        if @opts[:crux] == true
-            #exec("") if fork == nil
+		
+        if @opts[:tide] == true
+        	database = extractDatabase(@database)
+        	path = "#{$path}../../crux/tide/"
+			
+        	#pid = fork {exec("#{path}tide-index --fasta #{database} --enzyme #{@enzyme} --digestion full-digest")}
+			#waitpid(pid, 0)
+			
+			#Forward
+            pid = fork {exec("#{path}tide-import-spectra --in #{@file}.ms2 -out #{@file}-forward_tide.spectrumrecords")}
+			waitpid(pid, 0)
+			
+            pid = fork {exec("#{path}tide-search --proteins #{database}.protix --peptides #{database}.pepix --spectra #{@file}-forward_tide.spectrumrecords > #{@file}-forward_tide_#{@run}.results")}
+			waitpid(pid, 0)
+			
+			TideConverter.new("#{@file}-forward_tide_#{@run}", @database, @enzyme).convert
         end
         
         if @opts[:sequest] == true
@@ -90,10 +105,10 @@ class Search
         
         if decoy
             notes['protein, taxon'] = "#{@database}-r"
-            notes['output, path'] = "#{@fileName}-decoy_tandem_output_#{@run}.xml"
+            notes['output, path'] = "#{@file}-decoy_tandem_#{@run}.xml"
         else
             notes['protein, taxon'] = "#{@database}"
-            notes['output, path'] = "#{@fileName}-forward_tandem_output_#{@run}.xml"
+            notes['output, path'] = "#{@file}-forward_tandem_#{@run}.xml"
         end
                  
         xml.bioml do 
@@ -106,8 +121,8 @@ class Search
     end
     
     def runOMSSA
-        forward = "#{@file}-forward_omssa_output_#{@run}.pep.xml"
-        decoy = "#{@file}-decoy_omssa_output_#{@run}.pep.xml"
+        forward = "#{@file}-forward_omssa_#{@run}.pep.xml"
+        decoy = "#{@file}-decoy_omssa_#{@run}.pep.xml"
         
         #Forward search
         exec("#{$path}../../omssa-2.1.7.linux/omssacl -fm #{@file}.mgf -op #{forward} -e #{getOMSSAEnzyme} -d #{extractDatabase(@database)}") if fork == nil
@@ -129,8 +144,8 @@ class Search
     
     def convertTandemOutput
         #Convert to pepXML format
-        file1 = "#{@file}-forward_tandem_output_#{@run}.xml"
-        file2 = "#{@file}-decoy_tandem_output_#{@run}.xml"
+        file1 = "#{@file}-forward_tandem_#{@run}.xml"
+        file2 = "#{@file}-decoy_tandem_#{@run}.xml"
         pepFile1 = file1.chomp(".xml") + ".pep.xml"
         pepFile2 = file2.chomp(".xml") + ".pep.xml"
         @outputFiles << [pepFile1, pepFile2]

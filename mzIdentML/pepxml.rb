@@ -9,7 +9,6 @@ class PepXML < Format
 		@database = database
 		@type = "pepxml"
 		@doc = Nokogiri::XML(IO.read(file))
-		@databaseName = ""
 		@xmlns = ""
 		@tempSolution = 0
 		@sequences = 0
@@ -18,6 +17,11 @@ class PepXML < Format
 		@xmlns = "xmlns:" if hasNamespace
 		
 		findAllPepLocations
+		
+		temp = database.split("/")
+		@databaseName = temp[temp.length-1]
+		
+		@engine = @doc.xpath("//#{@xmlns}search_summary/@search_engine").to_s
 	end
 	
 	def file
@@ -44,12 +48,12 @@ class PepXML < Format
 	
 	#Retrieves the name of the search engine
 	def searchEngine
-		@doc.xpath("//#{@xmlns}search_summary/@search_engine").to_s
+		@engine
 	end
 	
-	#Simply returns 0.05 because threshold can't be obtained from pepXML
+	#Simply returns 0 because threshold can't be obtained from pepXML
 	def threshold
-		0.05
+		0
 	end
 	
 	#Retrieves all the proteins. Not sure if this is correct.
@@ -57,14 +61,15 @@ class PepXML < Format
 		allHits = @doc.xpath("//#{@xmlns}search_hit/@protein|//#{@xmlns}search_hit/@protein_descr")
 		pros = []
 		i = 0
+		
 		while i < allHits.length
-			pros << [allHits[i].to_s, allHits[i+1].to_s, "DBSeq_1_#{allHits[i].to_s}"]
+			pro = proteinID(allHits[i].to_s)
+			pros << [pro, allHits[i+1].to_s, "DBSeq_1_#{pro}"]
 			i += 2
 		end
 		
-		pros.uniq!
-		@pros = pros
-		pros
+		@pros = pros.uniq
+		@pros
 	end
 	
 	#Retrieves all the peptides. Not sure if this is correct.
@@ -93,17 +98,12 @@ class PepXML < Format
 		peps
 	end
 	
-	#Retrieves the name of the search database that was used
+	#Retrieves the name of the search database that was used.
 	def databaseName
-		if @databaseName != ""
-			return @databaseName
-		else
-			@databaseName = @doc.xpath("//#{@xmlns}search_database/@database_name").to_s
-			return @databaseName
-		end
+		@databaseName
 	end
 	
-	#Retrieves the spectrum queries.
+	#Retrieves the spectrum queries. Spectrum indexs not guarenteed to be correct.
 	def results
 		queries = @doc.xpath("//#{@xmlns}spectrum_query")
 		indicies = @doc.xpath("//#{@xmlns}spectrum_query/@spectrum").collect {|index| index.to_s}
@@ -159,7 +159,7 @@ class PepXML < Format
 		scoreArr = []
 		
 		scores.each do |score|
-			name = score.xpath("./@name").to_s
+			name = conformScoreName(score.xpath("./@name").to_s, @engine)
 			scoreArr << [findAccession(name), name, score.xpath("./@value").to_s.to_f]
 		end
 		
@@ -173,7 +173,7 @@ class PepXML < Format
 		pre = hit.xpath("./@peptide_prev_aa").to_s
 		post = hit.xpath("./@peptide_next_aa").to_s
 		missedCleavages = hit.xpath("./@num_missed_cleavages").to_s
-		pro = hit.xpath("./@protein").to_s
+		pro = proteinID(hit.xpath("./@protein").to_s)
 		startVal, endVal = pepLocation(hit, pro)
 		ref = ""
 		
@@ -217,30 +217,19 @@ class PepXML < Format
 		end
 		
 		all.uniq!
+		dataHash = Hash.new
 		
-		#Cycles through each fasta entry in the database
 		Ms::Fasta.foreach(@database) do |entry|
-			i = 0
-			@sequences += 1
-			
-			#Cycles through each peptide/protein
-			while i < all.length
-				set = all[i]
+			dataHash[proteinID(entry.header)] = entry.sequence
+		end
+		
+		all.each do |set|
+			if dataHash[set[1]] != nil
+				startVal = dataHash[set[1]].scan_i(set[0])[0]
 				
-				#Checks if the header has the protein. 1..40 is used to limit the amount of characters
-				#it compares to, and | is used to mark the end of the comparison
-				if entry.header[1..40].include? set[1]
-					startVal = entry.sequence.scan_i(set[0])[0]
-					
-					if startVal != nil
-						@locations << [set[0], set[1], startVal + 1, startVal + set[0].length]
-						all.delete_at(i)	#Greatly speeds up this method
-						i -= 1
-						p all.length
-					end
+				if startVal != nil
+					@locations << [set[0], set[1], startVal + 1, startVal + set[0].length]
 				end
-				
-				i += 1
 			end
 		end
 	end
@@ -248,9 +237,15 @@ class PepXML < Format
 	#Not all pepXML files simply list the protein ID, so this method obtains it
 	#Needs to be expanded to cover other cases
 	def proteinID(protein)
-		#A protein ID is 6 characters long, so if it's longer than that, then it contains more than just the ID
-		if protein.length > 6
-			protein[3..8]	#Only works for the uniprot fasta format. Needs to be expanded.
+		#A protein ID is 6-8 characters long, so if it's longer than that, then it contains more than just the ID
+		if protein.length > 8
+			arr = protein.split("|")[1].split(":")
+			
+			if arr.length == 1
+				arr[0]
+			else
+				arr[1]
+			end
 		#If it's less than 6, then it must be a number
 		elsif protein.length < 6
 			protein		#Somehow need to match this number to an ID

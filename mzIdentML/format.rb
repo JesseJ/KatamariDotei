@@ -6,7 +6,7 @@ require 'nokogiri'
 #Takes a string containing the search output file location and a string containing the FASTA  database that was used.
 class Format
 	def initialize(file, database)
-		@doc = Nokogiri::XML(IO.read("#{File.dirname($0)}/obo.xml"))
+		@obo
 	end
 	
 	def file
@@ -71,8 +71,24 @@ class Format
 		((mass + diff) + (charge.to_f * 1.00727646677)) / charge
 	end
 	
-	#Determines the accession number for the score type.
+	#Determines the accession number for the score type. For some reason, this has become the slowest part of the conversion.
+	#Might be able to increase speed by switching to hash, or removing uneeded terms.
 	def findAccession(name)
-		@doc.xpath("//term[@name=\"#{name}\"]/@id").to_s
+		@obo = Nokogiri::XML(IO.read("#{File.dirname($0)}/oboe.xml")) if @obo == nil
+		
+		@obo.xpath("//term[@name=\"#{name}\"]/@id").to_s
+	end
+	
+	#Conforms score name to mzIdentML format
+	def conformScoreName(name, engine)
+		if engine == "X! Tandem"
+			name = "xtandem:" + name
+		elsif engine == "MASCOT"
+			name = "mascot:" + name
+		elsif engine == "OMSSA"
+			name = "OMSSA:" + name
+		end
+		
+		name
 	end
 end

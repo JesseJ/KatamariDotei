@@ -110,10 +110,14 @@ class Search2mzIdentML
 		xml.SpectrumIdentificationProtocol(:id => "SIP", :AnalysisSoftware_ref => @format.searchEngine) {
 			xml.SearchType {
 				#Don't know of any value other than "ms-ms search"
-				xml.cvParam(:accession => "MS:?", :name => "ms-ms search", :cvRef => "PSI-MS", :value => "")
+				xml.cvParam(:accession => "MS:1001083", :name => "ms-ms search", :cvRef => "PSI-MS", :value => "")
 			}
 			xml.Threshold {
-				xml.cvParam(:accession => "MS:?", :name => "?", :cvRef => "PSI-MS", :value => @format.threshold)
+				if @format.threshold == 0
+					xml.cvParam(:accession => "MS:1001494", :name => "no threshold", :cvRef => "PSI-MS")
+				else
+					xml.cvParam(:accession => "MS:?", :name => "?", :cvRef => "PSI-MS", :value => @format.threshold)
+				end
 			}
 		}
 	end

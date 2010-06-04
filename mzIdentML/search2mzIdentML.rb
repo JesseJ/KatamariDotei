@@ -92,7 +92,7 @@ class Search2mzIdentML
 	def analysisCollection(xml)
 		xml.AnalysisCollection {
 			xml.SpectrumIdentification(:id => "SI", :SpectrumIdentificationProtocol_ref => "SIP", :SpectrumIdentificationList_ref => "SIL_1", :activityDate => @format.date) {
-				xml.InputSpectra(:SpectraData_ref => "SD_1")
+				xml.InputSpectra(:SpectraData_ref => @format.file)
 				xml.SearchDatabase(:SearchDatabase_ref => @format.databaseName)
 			}
 		}
@@ -140,7 +140,7 @@ class Search2mzIdentML
 		i = 1
 		
 		results.each do |result|
-			xml.SpectrumIdentificationResult(:id => "SIR_#{i}", :spectrumID => "index=#{result.index}", :SpectraData_ref => "SD_1") {
+			xml.SpectrumIdentificationResult(:id => "SIR_#{i}", :spectrumID => "index=#{result.index}", :SpectraData_ref => @format.file) {
 				result.items.each do |item|
 					ident = item.ident
 					xml.SpectrumIdentificationItem(
@@ -175,7 +175,8 @@ class Search2mzIdentML
 		end
 		
 		item.vals.each do |val|
-			xml.cvParam(:accession => val[0], :name => val[1], :cvRef => "PSI-MS", :value => val[2])
+			#Not all pepxml score names have a corresponding mzIdentML value, so those are left out.
+			xml.cvParam(:accession => val[0], :name => val[1], :cvRef => "PSI-MS", :value => val[2]) if val[0] != ""
 		end
 	end
 end

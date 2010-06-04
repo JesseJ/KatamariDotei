@@ -159,8 +159,8 @@ class PepXML < Format
 		scoreArr = []
 		
 		scores.each do |score|
-			name = conformScoreName(score.xpath("./@name").to_s, @engine)
-			scoreArr << [findAccession(name), name, score.xpath("./@value").to_s.to_f]
+			id, name = findAccession(conformScoreName(score.xpath("./@name").to_s, @engine))
+			scoreArr << [id, name, score.xpath("./@value").to_s.to_f]
 		end
 		
 		item.vals = scoreArr

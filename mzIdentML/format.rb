@@ -75,8 +75,9 @@ class Format
 	#Might be able to increase speed by switching to hash, or removing uneeded terms.
 	def findAccession(name)
 		@obo = Nokogiri::XML(IO.read("#{File.dirname($0)}/oboe.xml")) if @obo == nil
+		term = @obo.xpath("//term[@pepxml_name=\"#{name}\"]")
 		
-		@obo.xpath("//term[@name=\"#{name}\"]/@id").to_s
+		return term.xpath("./@id").to_s, term.xpath("./@mzid_name").to_s
 	end
 	
 	#Conforms score name to mzIdentML format

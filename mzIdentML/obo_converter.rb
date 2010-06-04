@@ -1,5 +1,9 @@
 require 'nokogiri'
 
+#This program will convert the psi-ms.obo file into a format that's easier to parse, currently xml to be parsed by nokogiri.
+#Creates the mzid_name and the pepxml_name to allow for conversion from pepxml names to mzid names. Sadly, pepxml names which
+#differ from mzid names will have to be set by hand.
+
 file = File.new("#{File.dirname($0)}/obo.xml", "w+")
 obo = File.open("#{File.dirname($0)}/psi-ms.obo", "r")
 
@@ -10,7 +14,7 @@ builder = Nokogiri::XML::Builder.new(:encoding => 'UTF-8') do |xml|
 		while !(line.include? "[Typedef]")
 			if line[0..2] == "id:"
 				name = obo.readline
-				xml.term(:id => line[4...line.length-1], :name => name[6...name.length-1])
+				xml.term(:id => line[4...line.length-1], :pepxml_name => name[6...name.length-1], :mzid_name => name[6...name.length-1])
 			end
 			
 			line = obo.readline

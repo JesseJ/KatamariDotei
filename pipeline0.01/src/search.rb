@@ -41,18 +41,31 @@ class Search
         if @opts[:tide] == true
         	database = extractDatabase(@database)
         	path = "#{$path}../../crux/tide/"
+        	fFile = "#{@file}-forward_tide_#{@run}"
+        	dFile = "#{@file}-decoy_tide_#{@run}"
 			
         	#pid = fork {exec("#{path}tide-index --fasta #{database} --enzyme #{@enzyme} --digestion full-digest")}
 			#waitpid(pid, 0)
 			
-			#Forward
+			#Forward search
             pid = fork {exec("#{path}tide-import-spectra --in #{@file}.ms2 -out #{@file}-forward_tide.spectrumrecords")}
 			waitpid(pid, 0)
 			
-            pid = fork {exec("#{path}tide-search --proteins #{database}.protix --peptides #{database}.pepix --spectra #{@file}-forward_tide.spectrumrecords > #{@file}-forward_tide_#{@run}.results")}
+            pid = fork {exec("#{path}tide-search --proteins #{database}.protix --peptides #{database}.pepix --spectra #{@file}-forward_tide.spectrumrecords > #{fFile}.results")}
 			waitpid(pid, 0)
 			
-			TideConverter.new("#{@file}-forward_tide_#{@run}", @database, @enzyme).convert
+			#Decoy search
+            pid = fork {exec("#{path}tide-import-spectra --in #{@file}.ms2 -out #{@file}-decoy_tide.spectrumrecords")}
+			waitpid(pid, 0)
+			
+            pid = fork {exec("#{path}tide-search --proteins #{database}.protix --peptides #{database}.pepix --spectra #{@file}-decoy_tide.spectrumrecords > #{dFile}.results")}
+			waitpid(pid, 0)
+			
+			#Convert
+			TideConverter.new(fFile, @database, @enzyme).convert
+			TideConverter.new(dFile, @database, @enzyme).convert
+			
+			@outputFiles << ["#{fFile}.pep.xml", "#{dFile}.pep.xml"]
         end
         
         if @opts[:sequest] == true

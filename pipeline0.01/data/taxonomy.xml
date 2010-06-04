@@ -18,7 +18,7 @@
 		<file format="peptide" URL="/home/jashi/pipeline/databases/ipi.DANRE.v3.71.fasta" />
 	</taxon>
 	<taxon label="human">
-		<file format="peptide" URL="/home/jashi/pipeline/databases/ipi.HUMAN.v3.72.fasta" />
+		<file format="peptide" URL="/home/jashi/pipeline/databases/uni_human_var_100517_fwd.fasta" />
 	</taxon>
 	<taxon label="mouse">
 		<file format="peptide" URL="/home/jashi/pipeline/databases/ipi.MOUSE.v3.72.fasta" />
@@ -40,7 +40,7 @@
 		<file format="peptide" URL="/home/jashi/pipeline/databases/reverse/ipi.DANRE.v3.71.fasta.reverse" />
 	</taxon>
 	<taxon label="human-r">
-		<file format="peptide" URL="/home/jashi/pipeline/databases/reverse/ipi.HUMAN.v3.72.fasta.reverse" />
+		<file format="peptide" URL="/home/jashi/pipeline/databases/reverse/uni_human_var_100517_fwd.fasta.reverse" />
 	</taxon>
 	<taxon label="mouse-r">
 		<file format="peptide" URL="/home/jashi/pipeline/databases/reverse/ipi.MOUSE.v3.72.fasta.reverse" />

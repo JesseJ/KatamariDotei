@@ -17,15 +17,18 @@ class FalseRateDiscoverer
         puts "\n----------------"
         puts "Finding FDR...\n"
         
+		targetArr = []
+		decoyArr = []
+        
         @files.each do |files|
-            targetArr = []
-            decoyArr = []
             version = 0
-            
+			
             files.each do |file|
                 doc = Nokogiri::XML(IO.read(file))
+               	xmlns = "xmlns:" if hasNamespace(doc)
+               	
                 #Obtains the charge and score values from the pepXML file. The expect score is used, and values are taken only where hit_rank=1
-                scoresAndCharges = doc.xpath("//spectrum_query/@assumed_charge|//search_hit[@hit_rank=\"1\"]//search_score[@name=\"expect\"]/@value")
+				scoresAndCharges = doc.xpath("//#{@xmlns}spectrum_query/@assumed_charge|//#{@xmlns}search_hit[@hit_rank=\"1\"]//search_score[@name=\"expect\"]/@value")
                 
                 i = 0
                 while i < scoresAndCharges.length
@@ -38,10 +41,19 @@ class FalseRateDiscoverer
                     i += 2
                 end
                 
-                version += 1
-            end
-            
-            return Ms::ErrorRate::Qvalue.target_decoy_qvalues(targetArr, decoyArr, :z_together => true)
-        end
-    end
+				version += 1
+			end
+		end
+		
+		return Ms::ErrorRate::Qvalue.target_decoy_qvalues(targetArr, decoyArr, :z_together => true)
+	end
+    
+	#Checks if the pepXML file used namespaces
+	def hasNamespace(doc)
+		if doc.xpath("msms_pipeline_analysis").to_s.length == 0
+			true
+		else
+			false
+		end
+	end
 end

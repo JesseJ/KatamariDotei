@@ -1,5 +1,9 @@
 require 'nokogiri'
 
+#Converts Tide output to pepXML.
+#file: A string containing the location of the tide output file
+#database: A string containing the location of the database
+#enzyme: The name of the enzyme
 class TideConverter
 	def initialize(file, database, enzyme)
         @file = file

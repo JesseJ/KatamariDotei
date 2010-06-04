@@ -236,8 +236,8 @@ class PepXML < Format
 		end
 	end
 	
-	#Not all pepXML files simply list the protein ID, so this method obtains it
-	#Needs to be expanded to cover other cases
+	#Not all pepXML files simply list the protein ID, so this method obtains it.
+	#Are there other cases to cover?
 	def proteinID(protein)
 		#A protein ID is 6-8 characters long, so if it's longer than that, then it contains more than just the ID
 		if protein.length > 8
@@ -248,7 +248,7 @@ class PepXML < Format
 			else
 				arr[1]
 			end
-		#If it's less than 6, then it must be a number
+		#If there's no characters, then it's an index. I don't fully understand regexp, but this works.
 		elsif (protein =~ /[A-Z]/) == nil
 			@proteinIndices[protein.to_i]
 		else

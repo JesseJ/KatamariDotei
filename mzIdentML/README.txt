@@ -1,5 +1,5 @@
 Search2mzIdentML.rb
-Version: 0.8
+Version: 0.87
 Status: Incomplete
 
 Search2mzIdentML.rb will transform a search engine output file into an mzIdentML file. Currently only writes that which is required for mzIdentML.

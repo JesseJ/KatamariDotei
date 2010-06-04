@@ -10,6 +10,8 @@ class Search2mzIdentML
 	
 	#Starts the Nokogiri build process. Other methods build the different parts of the file. Root is depth 0
 	def convert
+		puts "Creating file..."
+		
 		file = createFile
 		
 		builder = Nokogiri::XML::Builder.new(:encoding => 'UTF-8') do |xml|
@@ -71,6 +73,7 @@ class Search2mzIdentML
 	#Depth 2
 	def dBSequences(xml)
 		proteins = @format.proteins
+		
 		proteins.each do |protein|
 			xml.DBSequence(:id => protein[2], :SearchDatabase_ref => @format.databaseName, :accession => protein[0]) {
 				xml.cvParam(:accession => "MS:1001088", :name => "protein description", :cvRef => "PSI-MS", :value => protein[1])
@@ -81,6 +84,7 @@ class Search2mzIdentML
 	#Depth 2
 	def peptides(xml)
 		peptides = @format.peptides
+		
 		peptides.each do |peptide|
 			xml.Peptide(:id => peptide[0]) {
 				xml.peptideSequence peptide[1]

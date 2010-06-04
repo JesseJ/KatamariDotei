@@ -13,124 +13,124 @@
     </ContactRole>
   </Provider>
   <SequenceCollection>
-    <DBSequence id="DBSeq_1_43024" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="43024">
+    <DBSequence id="DBSeq_1_B3KNL2" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="B3KNL2">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="tr|B3KNL2|B3KNL2_HUMAN RuvB-like 2 (E. coli), isoform CRA_d OS=Homo sapiens GN=RUVBL2 PE=2 SV=1"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_29886" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="29886">
+    <DBSequence id="DBSeq_1_P50991" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="P50991">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="sp|P50991|TCPD_HUMAN T-complex protein 1 subunit delta OS=Homo sapiens GN=CCT4 PE=1 SV=4"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_72202" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="72202">
+    <DBSequence id="DBSeq_1_B7Z8B1" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="B7Z8B1">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="tr|B7Z8B1|B7Z8B1_HUMAN T-complex protein 1 subunit delta OS=Homo sapiens PE=2 SV=1"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_15337" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="15337">
+    <DBSequence id="DBSeq_1_P02533" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="P02533">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="sp|P02533|K1C14_HUMAN Keratin, type I cytoskeletal 14 OS=Homo sapiens GN=KRT14 PE=1 SV=4"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_76129" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="76129">
+    <DBSequence id="DBSeq_1_B4DY30" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="B4DY30">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="tr|B4DY30|B4DY30_HUMAN cDNA FLJ54078, highly similar to Protein arginine N-methyltransferase 5 (EC 2.1.1.-) OS=Homo sapiens PE=2 SV=1"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_87684" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="87684">
+    <DBSequence id="DBSeq_1_Q9H2R7" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="Q9H2R7">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="tr|Q9H2R7|Q9H2R7_HUMAN NPD011 OS=Homo sapiens GN=NUDC PE=2 SV=1"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_71277" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="71277">
+    <DBSequence id="DBSeq_1_B2R8R5" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="B2R8R5">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="tr|B2R8R5|B2R8R5_HUMAN cDNA, FLJ94025, highly similar to Homo sapiens tripartite motif-containing 28 (TRIM28), mRNA OS=Homo sapiens PE=2 SV=1"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_98430" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="98430">
+    <DBSequence id="DBSeq_1_A6NMH8" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="A6NMH8">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="tr|A6NMH8|A6NMH8_HUMAN Putative uncharacterized protein CD81 OS=Homo sapiens GN=CD81 PE=4 SV=1"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_86314" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="86314">
+    <DBSequence id="DBSeq_1_Q53SY7" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="Q53SY7">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="tr|Q53SY7|Q53SY7_HUMAN Putative uncharacterized protein CAD (Fragment) OS=Homo sapiens GN=CAD PE=2 SV=1"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_4799" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="4799">
+    <DBSequence id="DBSeq_1_P60033" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="P60033">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="sp|P60033|CD81_HUMAN CD81 antigen OS=Homo sapiens GN=CD81 PE=1 SV=1"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_29218" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="29218">
+    <DBSequence id="DBSeq_1_P07814" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="P07814">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="sp|P07814|SYEP_HUMAN Bifunctional aminoacyl-tRNA synthetase OS=Homo sapiens GN=EPRS PE=1 SV=5"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_63835" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="63835">
+    <DBSequence id="DBSeq_1_B2RE88" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="B2RE88">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="tr|B2RE88|B2RE88_HUMAN cDNA, FLJ96465, highly similar to Homo sapiens solute carrier family 25 (mitochondrial carrier;phosphate carrier), member 3 (SLC25A3), nuclear gene encodingmitochondrial protein, transcript variant 1b, mRNA OS=Homo sapiens PE=2 SV=1"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_18656" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="18656">
+    <DBSequence id="DBSeq_1_Q00325" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="Q00325">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="sp|Q00325|MPCP_HUMAN Phosphate carrier protein, mitochondrial OS=Homo sapiens GN=SLC25A3 PE=1 SV=2"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_72684" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="72684">
+    <DBSequence id="DBSeq_1_A8MY87" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="A8MY87">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="tr|A8MY87|A8MY87_HUMAN Putative uncharacterized protein KSR1 OS=Homo sapiens GN=KSR1 PE=4 SV=1"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_62463" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="62463">
+    <DBSequence id="DBSeq_1_Q9BSV4" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="Q9BSV4">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="tr|Q9BSV4|Q9BSV4_HUMAN SFPQ protein (Fragment) OS=Homo sapiens GN=SFPQ PE=2 SV=2"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_23865" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="23865">
+    <DBSequence id="DBSeq_1_P78527-2" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="P78527-2">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="sp|P78527-2|PRKDC_HUMAN Isoform 2 of DNA-dependent protein kinase catalytic subunit OS=Homo sapiens GN=PRKDC"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_31823" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="31823">
+    <DBSequence id="DBSeq_1_P40222" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="P40222">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="sp|P40222|TXLNA_HUMAN Alpha-taxilin OS=Homo sapiens GN=TXLNA PE=1 SV=3"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_57396" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="57396">
+    <DBSequence id="DBSeq_1_Q86U12" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="Q86U12">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="tr|Q86U12|Q86U12_HUMAN Full-length cDNA clone CS0CAP007YF18 of Thymus of Homo sapiens (human) OS=Homo sapiens PE=2 SV=1"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_61346" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="61346">
+    <DBSequence id="DBSeq_1_Q2VPJ6" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="Q2VPJ6">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="tr|Q2VPJ6|Q2VPJ6_HUMAN HSP90AA1 protein (Fragment) OS=Homo sapiens GN=HSP90AA1 PE=2 SV=1"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_11724" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="11724">
+    <DBSequence id="DBSeq_1_Q92945" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="Q92945">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="sp|Q92945|FUBP2_HUMAN Far upstream element-binding protein 2 OS=Homo sapiens GN=KHSRP PE=1 SV=3"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_65007" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="65007">
+    <DBSequence id="DBSeq_1_Q96RS2" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="Q96RS2">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="tr|Q96RS2|Q96RS2_HUMAN Laminin receptor-like protein LAMRL5 OS=Homo sapiens GN=LAMR1P15 PE=2 SV=1"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_9552" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="9552">
+    <DBSequence id="DBSeq_1_P26641" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="P26641">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="sp|P26641|EF1G_HUMAN Elongation factor 1-gamma OS=Homo sapiens GN=EEF1G PE=1 SV=3"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_13020" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="13020">
+    <DBSequence id="DBSeq_1_P38646" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="P38646">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="sp|P38646|GRP75_HUMAN Stress-70 protein, mitochondrial OS=Homo sapiens GN=HSPA9 PE=1 SV=2"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_26217" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="26217">
+    <DBSequence id="DBSeq_1_P08865" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="P08865">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="sp|P08865|RSSA_HUMAN 40S ribosomal protein SA OS=Homo sapiens GN=RPSA PE=1 SV=4"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_58817" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="58817">
+    <DBSequence id="DBSeq_1_B4DUP0" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="B4DUP0">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="tr|B4DUP0|B4DUP0_HUMAN cDNA FLJ59433, highly similar to Elongation factor 1-gamma OS=Homo sapiens PE=2 SV=1"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_45821" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="45821">
+    <DBSequence id="DBSeq_1_B7Z4V2" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="B7Z4V2">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="tr|B7Z4V2|B7Z4V2_HUMAN cDNA FLJ51907, highly similar to Stress-70 protein, mitochondrial OS=Homo sapiens PE=2 SV=1"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_36149" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="36149">
+    <DBSequence id="DBSeq_1_D3DWK3" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="D3DWK3">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="tr|D3DWK3|D3DWK3_HUMAN Eukaryotic translation elongation factor 1 delta (Guanine nucleotide exchange protein), isoform CRA_c OS=Homo sapiens GN=EEF1D PE=3 SV=1"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_8699" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="8699">
+    <DBSequence id="DBSeq_1_Q9BTC0" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="Q9BTC0">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="sp|Q9BTC0|DIDO1_HUMAN Death-inducer obliterator 1 OS=Homo sapiens GN=DIDO1 PE=1 SV=5"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_105958" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="105958">
+    <DBSequence id="DBSeq_1_C9J1F3" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="C9J1F3">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="tr|C9J1F3|C9J1F3_HUMAN Putative uncharacterized protein EIF3CL OS=Homo sapiens GN=EIF3CL PE=4 SV=1"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_73032" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="73032">
+    <DBSequence id="DBSeq_1_A6NE09" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="A6NE09">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="tr|A6NE09|A6NE09_HUMAN Putative uncharacterized protein ENSP00000346598 OS=Homo sapiens PE=3 SV=1"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_49526" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="49526">
+    <DBSequence id="DBSeq_1_C9JHJ9" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="C9JHJ9">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="tr|C9JHJ9|C9JHJ9_HUMAN Putative uncharacterized protein ENSP00000403004 OS=Homo sapiens PE=4 SV=1"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_15332" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="15332">
+    <DBSequence id="DBSeq_1_P13645" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="P13645">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="sp|P13645|K1C10_HUMAN Keratin, type I cytoskeletal 10 OS=Homo sapiens GN=KRT10 PE=1 SV=6"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_29845" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="29845">
+    <DBSequence id="DBSeq_1_Q9BQ70" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="Q9BQ70">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="sp|Q9BQ70|TCF25_HUMAN Transcription factor 25 OS=Homo sapiens GN=TCF25 PE=1 SV=1"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_81427" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="81427">
+    <DBSequence id="DBSeq_1_B5MDL9" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="B5MDL9">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="tr|B5MDL9|B5MDL9_HUMAN Putative uncharacterized protein ENSP00000371882 OS=Homo sapiens PE=4 SV=2"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_57588" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="57588">
+    <DBSequence id="DBSeq_1_Q5T9W8" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="Q5T9W8">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="tr|Q5T9W8|Q5T9W8_HUMAN Heat shock protein 90kDa alpha (Cytosolic), class B member 1 (Fragment) OS=Homo sapiens GN=HSP90AB1 PE=2 SV=1"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_30399" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="30399">
+    <DBSequence id="DBSeq_1_Q9Y490" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="Q9Y490">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="sp|Q9Y490|TLN1_HUMAN Talin-1 OS=Homo sapiens GN=TLN1 PE=1 SV=3"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_57362" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="57362">
+    <DBSequence id="DBSeq_1_B4DZY9" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="B4DZY9">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="tr|B4DZY9|B4DZY9_HUMAN cDNA FLJ59103, highly similar to T-complex protein 1 subunit epsilon OS=Homo sapiens PE=2 SV=1"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_47035" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="47035">
+    <DBSequence id="DBSeq_1_D3DWQ2" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="D3DWQ2">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="tr|D3DWQ2|D3DWQ2_HUMAN Heterogeneous nuclear ribonucleoprotein H1 (H), isoform CRA_a OS=Homo sapiens GN=HNRPH1 PE=4 SV=1"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_29887" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="29887">
+    <DBSequence id="DBSeq_1_P48643" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="P48643">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="sp|P48643|TCPE_HUMAN T-complex protein 1 subunit epsilon OS=Homo sapiens GN=CCT5 PE=1 SV=1"/>
     </DBSequence>
-    <DBSequence id="DBSeq_1_13716" SearchDatabase_ref="ipi.HUMAN.v3.72.fasta" accession="13716">
+    <DBSequence id="DBSeq_1_P31943" SearchDatabase_ref="uni_human_var_100517_fwd.fasta" accession="P31943">
       <cvParam accession="MS:1001088" name="protein description" cvRef="PSI-MS" value="sp|P31943|HNRH1_HUMAN Heterogeneous nuclear ribonucleoprotein H OS=Homo sapiens GN=HNRNPH1 PE=1 SV=4"/>
     </DBSequence>
     <Peptide id="peptide_1_1">
@@ -226,8 +226,8 @@
   </SequenceCollection>
   <AnalysisCollection>
     <SpectrumIdentification id="SI" SpectrumIdentificationProtocol_ref="SIP" SpectrumIdentificationList_ref="SIL_1" activityDate="2010-06-01T15:22:23">
-      <InputSpectra SpectraData_ref="SD_1"/>
-      <SearchDatabase SearchDatabase_ref="ipi.HUMAN.v3.72.fasta"/>
+      <InputSpectra SpectraData_ref="mzIdentML/test-omssa.pep.xml"/>
+      <SearchDatabase SearchDatabase_ref="uni_human_var_100517_fwd.fasta"/>
     </SpectrumIdentification>
   </AnalysisCollection>
   <AnalysisProtocolCollection>
@@ -244,361 +244,310 @@
     <Inputs/>
     <AnalysisData>
       <SpectrumIdentificationList id="SIL_1" numSequencesSearched="0">
-        <SpectrumIdentificationResult id="SIR_1" spectrumID="index=0" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_1" spectrumID="index=0" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_1_1" calculatedMassToCharge="556.32677647" chargeState="2" experimentalMassToCharge="556.32677647" Peptide_ref="peptide_1_1" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_1_43024" start="0" end="0" pre="R" post="T" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_43024"/>
+            <PeptideEvidence id="PE_1_B3KNL2" start="0" end="0" pre="R" post="T" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_B3KNL2"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="8.66069e-09"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.00010530533398"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_2" spectrumID="index=1" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_2" spectrumID="index=1" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_2_1" calculatedMassToCharge="479.76427647" chargeState="2" experimentalMassToCharge="479.76377647" Peptide_ref="peptide_1_2" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_2_29886" start="0" end="0" pre="K" post="S" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_29886"/>
+            <PeptideEvidence id="PE_2_P50991" start="0" end="0" pre="K" post="S" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_P50991"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="9.34401735e-07"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.016537976300074"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_3" spectrumID="index=2" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_3" spectrumID="index=2" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_3_1" calculatedMassToCharge="556.32677647" chargeState="2" experimentalMassToCharge="556.32677647" Peptide_ref="peptide_1_1" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_3_43024" start="0" end="0" pre="R" post="T" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_43024"/>
+            <PeptideEvidence id="PE_3_B3KNL2" start="0" end="0" pre="R" post="T" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_B3KNL2"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="4.7444e-10"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="5.768720605e-06"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_4" spectrumID="index=3" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_4" spectrumID="index=3" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_4_1" calculatedMassToCharge="479.76427647" chargeState="2" experimentalMassToCharge="479.76377647" Peptide_ref="peptide_1_2" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_4_72202" start="0" end="0" pre="K" post="S" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_72202"/>
+            <PeptideEvidence id="PE_4_B7Z8B1" start="0" end="0" pre="K" post="S" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_B7Z8B1"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="4.31142475e-07"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.007630790660759"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_5" spectrumID="index=4" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_5" spectrumID="index=4" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_5_1" calculatedMassToCharge="713.35127647" chargeState="2" experimentalMassToCharge="713.35477647" Peptide_ref="peptide_1_3" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_5_15337" start="0" end="0" pre="R" post="F" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_15337"/>
+            <PeptideEvidence id="PE_5_P02533" start="0" end="0" pre="R" post="F" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_P02533"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="9.586248007e-06"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.10359858221198"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_6" spectrumID="index=5" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_6" spectrumID="index=5" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_6_1" calculatedMassToCharge="646.31977647" chargeState="2" experimentalMassToCharge="646.31877647" Peptide_ref="peptide_1_4" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_6_76129" start="0" end="0" pre="K" post="C" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_76129"/>
+            <PeptideEvidence id="PE_6_B4DY30" start="0" end="0" pre="K" post="C" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_B4DY30"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="8.53862248e-06"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.11180472274661"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_7" spectrumID="index=6" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_7" spectrumID="index=6" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_7_1" calculatedMassToCharge="713.35127647" chargeState="2" experimentalMassToCharge="713.35477647" Peptide_ref="peptide_1_3" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_7_15337" start="0" end="0" pre="R" post="F" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_15337"/>
+            <PeptideEvidence id="PE_7_P02533" start="0" end="0" pre="R" post="F" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_P02533"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="6.162010746e-06"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.066592850127093"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_8" spectrumID="index=7" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_8" spectrumID="index=7" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_8_1" calculatedMassToCharge="646.31977647" chargeState="2" experimentalMassToCharge="646.31877647" Peptide_ref="peptide_1_4" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_8_76129" start="0" end="0" pre="K" post="C" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_76129"/>
+            <PeptideEvidence id="PE_8_B4DY30" start="0" end="0" pre="K" post="C" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_B4DY30"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="7.4841643e-08"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.000979976476426"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_9" spectrumID="index=8" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_9" spectrumID="index=8" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_9_1" calculatedMassToCharge="589.31694313" chargeState="3" experimentalMassToCharge="589.31594313" Peptide_ref="peptide_1_5" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_9_87684" start="0" end="0" pre="K" post="T" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_87684"/>
+            <PeptideEvidence id="PE_9_Q9H2R7" start="0" end="0" pre="K" post="T" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_Q9H2R7"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="1.95063668e-07"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.001628391503959"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_10" spectrumID="index=9" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_10" spectrumID="index=9" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_10_1" calculatedMassToCharge="673.68627647" chargeState="3" experimentalMassToCharge="673.68594313" Peptide_ref="peptide_1_6" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_10_71277" start="0" end="0" pre="K" post="A" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_71277"/>
+            <PeptideEvidence id="PE_10_B2R8R5" start="0" end="0" pre="K" post="A" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_B2R8R5"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="0.0"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="2.19e-13"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_11" spectrumID="index=10" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_11" spectrumID="index=10" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_11_1" calculatedMassToCharge="673.68627647" chargeState="3" experimentalMassToCharge="673.68594313" Peptide_ref="peptide_1_6" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_11_71277" start="0" end="0" pre="K" post="A" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_71277"/>
+            <PeptideEvidence id="PE_11_B2R8R5" start="0" end="0" pre="K" post="A" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_B2R8R5"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="2.65405639e-07"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.001915167094628"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_12" spectrumID="index=11" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_12" spectrumID="index=11" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_12_1" calculatedMassToCharge="574.29427647" chargeState="3" experimentalMassToCharge="574.78494313" Peptide_ref="peptide_1_7" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_12_98430" start="0" end="0" pre="K" post="E" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_98430"/>
+            <PeptideEvidence id="PE_12_A6NMH8" start="0" end="0" pre="K" post="E" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_A6NMH8"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="5.886228717e-06"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.056231142936783"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_13" spectrumID="index=12" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_13" spectrumID="index=12" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_13_1" calculatedMassToCharge="476.94094313" chargeState="3" experimentalMassToCharge="476.94094313" Peptide_ref="peptide_1_8" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_13_86314" start="0" end="0" pre="R" post="G" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_86314"/>
+            <PeptideEvidence id="PE_13_Q53SY7" start="0" end="0" pre="R" post="G" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_Q53SY7"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="1.0502e-11"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="1.24547896e-07"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_14" spectrumID="index=13" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_14" spectrumID="index=13" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_14_1" calculatedMassToCharge="574.29427647" chargeState="3" experimentalMassToCharge="574.78394313" Peptide_ref="peptide_1_7" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_14_4799" start="0" end="0" pre="K" post="E" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_4799"/>
+            <PeptideEvidence id="PE_14_P60033" start="0" end="0" pre="K" post="E" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_P60033"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="7.0854203e-08"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.00067687019777"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_15" spectrumID="index=14" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_15" spectrumID="index=14" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_15_1" calculatedMassToCharge="708.32727647" chargeState="2" experimentalMassToCharge="708.32777647" Peptide_ref="peptide_1_9" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_15_29218" start="0" end="0" pre="R" post="S" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_29218"/>
+            <PeptideEvidence id="PE_15_P07814" start="0" end="0" pre="R" post="S" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_P07814"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="8.2364308885e-05"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.92256262382332"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_16" spectrumID="index=15" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_16" spectrumID="index=15" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_16_1" calculatedMassToCharge="681.36277647" chargeState="2" experimentalMassToCharge="681.36177647" Peptide_ref="peptide_1_10" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_16_63835" start="0" end="0" pre="R" post="D" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_63835"/>
+            <PeptideEvidence id="PE_16_B2RE88" start="0" end="0" pre="R" post="D" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_B2RE88"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="3.310050681e-06"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.037072567622669"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_17" spectrumID="index=16" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_17" spectrumID="index=16" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_17_1" calculatedMassToCharge="681.36277647" chargeState="2" experimentalMassToCharge="681.36177647" Peptide_ref="peptide_1_10" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_17_18656" start="0" end="0" pre="R" post="D" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_18656"/>
+            <PeptideEvidence id="PE_17_Q00325" start="0" end="0" pre="R" post="D" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_Q00325"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="2.06407452e-07"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.002311763466174"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_18" spectrumID="index=17" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_18" spectrumID="index=17" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_18_1" calculatedMassToCharge="517.25260980" chargeState="3" experimentalMassToCharge="517.58194313" Peptide_ref="peptide_2_1" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_18_72684" start="0" end="0" pre="R" post="L" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_72684"/>
+            <PeptideEvidence id="PE_18_A8MY87" start="0" end="0" pre="R" post="L" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_A8MY87"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="2.77646913e-07"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.003402840562409"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_19" spectrumID="index=18" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_19" spectrumID="index=18" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_19_1" calculatedMassToCharge="572.31677647" chargeState="2" experimentalMassToCharge="572.31677647" Peptide_ref="peptide_2_2" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_19_62463" start="0" end="0" pre="R" post="N" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_62463"/>
+            <PeptideEvidence id="PE_19_Q9BSV4" start="0" end="0" pre="R" post="N" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_Q9BSV4"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="6.163494302e-06"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.093906999185093"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_20" spectrumID="index=19" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_20" spectrumID="index=19" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_20_1" calculatedMassToCharge="734.35777647" chargeState="2" experimentalMassToCharge="734.35977647" Peptide_ref="peptide_2_3" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_20_23865" start="0" end="0" pre="R" post="D" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_23865"/>
+            <PeptideEvidence id="PE_20_P78527-2" start="0" end="0" pre="R" post="D" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_P78527-2"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="1.01072384e-07"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.001104114720663"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_21" spectrumID="index=20" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_21" spectrumID="index=20" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_21_1" calculatedMassToCharge="734.35777647" chargeState="2" experimentalMassToCharge="734.35877647" Peptide_ref="peptide_2_3" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_21_23865" start="0" end="0" pre="R" post="D" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_23865"/>
+            <PeptideEvidence id="PE_21_P78527-2" start="0" end="0" pre="R" post="D" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_P78527-2"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="3.9003069e-08"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.000427434632494"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_22" spectrumID="index=21" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_22" spectrumID="index=21" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_22_1" calculatedMassToCharge="937.44777647" chargeState="2" experimentalMassToCharge="937.44977647" Peptide_ref="peptide_2_4" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_22_31823" start="0" end="0" pre="R" post="R" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_31823"/>
+            <PeptideEvidence id="PE_22_P40222" start="0" end="0" pre="R" post="R" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_P40222"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="0.0"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="1.0e-15"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_23" spectrumID="index=22" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_23" spectrumID="index=22" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_23_1" calculatedMassToCharge="612.81677647" chargeState="2" experimentalMassToCharge="612.81577647" Peptide_ref="peptide_2_5" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_23_57396" start="0" end="0" pre="K" post="D" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_57396"/>
+            <PeptideEvidence id="PE_23_Q86U12" start="0" end="0" pre="K" post="D" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_Q86U12"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="1.90775146e-07"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.002247712773585"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_24" spectrumID="index=23" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_24" spectrumID="index=23" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_24_1" calculatedMassToCharge="937.44777647" chargeState="2" experimentalMassToCharge="937.44977647" Peptide_ref="peptide_2_4" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_24_31823" start="0" end="0" pre="R" post="R" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_31823"/>
+            <PeptideEvidence id="PE_24_P40222" start="0" end="0" pre="R" post="R" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_P40222"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="0.0"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="2.4e-14"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_25" spectrumID="index=24" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_25" spectrumID="index=24" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_25_1" calculatedMassToCharge="612.81677647" chargeState="2" experimentalMassToCharge="612.81577647" Peptide_ref="peptide_2_5" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_25_61346" start="0" end="0" pre="K" post="D" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_61346"/>
+            <PeptideEvidence id="PE_25_Q2VPJ6" start="0" end="0" pre="K" post="D" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_Q2VPJ6"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="2.8249815e-08"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.000332839324092"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_26" spectrumID="index=25" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_26" spectrumID="index=25" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_26_1" calculatedMassToCharge="651.84877647" chargeState="2" experimentalMassToCharge="651.84877647" Peptide_ref="peptide_2_6" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_26_11724" start="0" end="0" pre="R" post="A" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_11724"/>
+            <PeptideEvidence id="PE_26_Q92945" start="0" end="0" pre="R" post="A" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_Q92945"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="3.1562421e-08"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.000413783339982"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_27" spectrumID="index=26" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_27" spectrumID="index=26" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_27_1" calculatedMassToCharge="651.84877647" chargeState="2" experimentalMassToCharge="651.84877647" Peptide_ref="peptide_2_6" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_27_11724" start="0" end="0" pre="R" post="A" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_11724"/>
+            <PeptideEvidence id="PE_27_Q92945" start="0" end="0" pre="R" post="A" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_Q92945"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="3.6110605e-08"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.000473410027098"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_28" spectrumID="index=27" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_28" spectrumID="index=27" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_28_1" calculatedMassToCharge="602.32727647" chargeState="2" experimentalMassToCharge="602.32677647" Peptide_ref="peptide_2_7" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_28_65007" start="0" end="0" pre="K" post="F" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_65007"/>
+            <PeptideEvidence id="PE_28_Q96RS2" start="0" end="0" pre="K" post="F" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_Q96RS2"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="1.461391e-09"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="2.0653833319e-05"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_29" spectrumID="index=28" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_29" spectrumID="index=28" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_29_1" calculatedMassToCharge="524.94627647" chargeState="3" experimentalMassToCharge="524.94694313" Peptide_ref="peptide_2_8" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_29_9552" start="0" end="0" pre="R" post="E" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_9552"/>
+            <PeptideEvidence id="PE_29_P26641" start="0" end="0" pre="R" post="E" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_P26641"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="9.42023799e-07"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.009824366195059"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_30" spectrumID="index=29" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_30" spectrumID="index=29" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_30_1" calculatedMassToCharge="784.88927647" chargeState="2" experimentalMassToCharge="784.88877647" Peptide_ref="peptide_2_9" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_30_13020" start="0" end="0" pre="R" post="R" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_13020"/>
+            <PeptideEvidence id="PE_30_P38646" start="0" end="0" pre="R" post="R" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_P38646"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="4.792536e-09"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="5.1543725255e-05"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_31" spectrumID="index=30" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_31" spectrumID="index=30" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_31_1" calculatedMassToCharge="602.32727647" chargeState="2" experimentalMassToCharge="602.32777647" Peptide_ref="peptide_2_7" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_31_26217" start="0" end="0" pre="K" post="F" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_26217"/>
+            <PeptideEvidence id="PE_31_P08865" start="0" end="0" pre="K" post="F" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_P08865"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="1.074432e-09"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="1.5181725645e-05"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_32" spectrumID="index=31" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_32" spectrumID="index=31" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_32_1" calculatedMassToCharge="524.94627647" chargeState="3" experimentalMassToCharge="524.94694313" Peptide_ref="peptide_2_8" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_32_58817" start="0" end="0" pre="R" post="E" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_58817"/>
+            <PeptideEvidence id="PE_32_B4DUP0" start="0" end="0" pre="R" post="E" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_B4DUP0"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="1.0473696e-08"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.000109230174608"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_33" spectrumID="index=32" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_33" spectrumID="index=32" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_33_1" calculatedMassToCharge="784.88927647" chargeState="2" experimentalMassToCharge="784.88877647" Peptide_ref="peptide_2_9" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_33_45821" start="0" end="0" pre="R" post="R" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_45821"/>
+            <PeptideEvidence id="PE_33_B7Z4V2" start="0" end="0" pre="R" post="R" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_B7Z4V2"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="3.575969e-09"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="3.8459546215e-05"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_34" spectrumID="index=33" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_34" spectrumID="index=33" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_34_1" calculatedMassToCharge="729.01994313" chargeState="3" experimentalMassToCharge="729.02094313" Peptide_ref="peptide_2_10" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_34_36149" start="0" end="0" pre="K" post="I" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_36149"/>
+            <PeptideEvidence id="PE_34_D3DWK3" start="0" end="0" pre="K" post="I" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_D3DWK3"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="1.1128794168e-05"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.066182938917088"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_35" spectrumID="index=34" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_35" spectrumID="index=34" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_35_1" calculatedMassToCharge="552.94927647" chargeState="3" experimentalMassToCharge="553.29694313" Peptide_ref="peptide_3_1" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_35_8699" start="0" end="0" pre="R" post="A" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_8699"/>
+            <PeptideEvidence id="PE_35_Q9BTC0" start="0" end="0" pre="R" post="A" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_Q9BTC0"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="6.7490768804e-05"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.62847403910689"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_36" spectrumID="index=35" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_36" spectrumID="index=35" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_36_1" calculatedMassToCharge="584.34027647" chargeState="2" experimentalMassToCharge="584.33977647" Peptide_ref="peptide_3_2" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_36_105958" start="0" end="0" pre="K" post="K" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_105958"/>
+            <PeptideEvidence id="PE_36_C9J1F3" start="0" end="0" pre="K" post="K" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_C9J1F3"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="3.9366073e-07"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.005223484230845"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_37" spectrumID="index=36" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_37" spectrumID="index=36" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_37_1" calculatedMassToCharge="729.01994313" chargeState="3" experimentalMassToCharge="729.01994313" Peptide_ref="peptide_2_10" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_37_36149" start="0" end="0" pre="K" post="I" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_36149"/>
+            <PeptideEvidence id="PE_37_D3DWK3" start="0" end="0" pre="K" post="I" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_D3DWK3"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="1.3022227884e-05"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.077859900520199"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_38" spectrumID="index=37" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_38" spectrumID="index=37" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_38_1" calculatedMassToCharge="602.32727647" chargeState="2" experimentalMassToCharge="602.76977647" Peptide_ref="peptide_2_7" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_38_73032" start="0" end="0" pre="K" post="F" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_73032"/>
+            <PeptideEvidence id="PE_38_A6NE09" start="0" end="0" pre="K" post="F" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_A6NE09"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="1.06237697e-07"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.001464805365005"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_39" spectrumID="index=38" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_39" spectrumID="index=38" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_39_1" calculatedMassToCharge="602.32727647" chargeState="2" experimentalMassToCharge="602.76977647" Peptide_ref="peptide_2_7" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_39_65007" start="0" end="0" pre="K" post="F" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_65007"/>
+            <PeptideEvidence id="PE_39_Q96RS2" start="0" end="0" pre="K" post="F" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_Q96RS2"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="2.3461999157e-05"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.323494044375677"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_40" spectrumID="index=39" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_40" spectrumID="index=39" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_40_1" calculatedMassToCharge="582.30060980" chargeState="3" experimentalMassToCharge="582.30194313" Peptide_ref="peptide_3_3" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_40_49526" start="0" end="0" pre="R" post="N" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_49526"/>
+            <PeptideEvidence id="PE_40_C9JHJ9" start="0" end="0" pre="R" post="N" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_C9JHJ9"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="3.520919e-09"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="3.1818544038e-05"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_41" spectrumID="index=40" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_41" spectrumID="index=40" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_41_1" calculatedMassToCharge="691.32827647" chargeState="2" experimentalMassToCharge="691.33077647" Peptide_ref="peptide_3_4" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_41_15332" start="0" end="0" pre="R" post="I" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_15332"/>
+            <PeptideEvidence id="PE_41_P13645" start="0" end="0" pre="R" post="I" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_P13645"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="4.8258574056e-05"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.569306398135112"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_42" spectrumID="index=41" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_42" spectrumID="index=41" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_42_1" calculatedMassToCharge="691.32827647" chargeState="2" experimentalMassToCharge="691.32877647" Peptide_ref="peptide_3_4" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_42_15332" start="0" end="0" pre="R" post="I" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_15332"/>
+            <PeptideEvidence id="PE_42_P13645" start="0" end="0" pre="R" post="I" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_P13645"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="1.19747e-10"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="1.411340728e-06"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_43" spectrumID="index=42" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_43" spectrumID="index=42" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_43_1" calculatedMassToCharge="622.99394313" chargeState="3" experimentalMassToCharge="622.99294313" Peptide_ref="peptide_3_5" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_43_29845" start="0" end="0" pre="R" post="K" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_29845"/>
+            <PeptideEvidence id="PE_43_Q9BQ70" start="0" end="0" pre="R" post="K" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_Q9BQ70"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="9.009721e-09"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="7.422208054e-05"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_44" spectrumID="index=43" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_44" spectrumID="index=43" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_44_1" calculatedMassToCharge="770.38077647" chargeState="2" experimentalMassToCharge="770.38177647" Peptide_ref="peptide_3_6" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_44_81427" start="0" end="0" pre="R" post="E" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_81427"/>
+            <PeptideEvidence id="PE_44_B5MDL9" start="0" end="0" pre="R" post="E" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_B5MDL9"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="5.993203e-09"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="6.0813033839e-05"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_45" spectrumID="index=44" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_45" spectrumID="index=44" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_45_1" calculatedMassToCharge="770.38077647" chargeState="2" experimentalMassToCharge="770.37977647" Peptide_ref="peptide_3_6" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_45_57588" start="0" end="0" pre="R" post="E" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_57588"/>
+            <PeptideEvidence id="PE_45_Q5T9W8" start="0" end="0" pre="R" post="E" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_Q5T9W8"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="4.4152469e-08"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.000447661882608"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_46" spectrumID="index=45" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_46" spectrumID="index=45" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_46_1" calculatedMassToCharge="708.89427647" chargeState="2" experimentalMassToCharge="708.89277647" Peptide_ref="peptide_3_7" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_46_30399" start="0" end="0" pre="K" post="L" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_30399"/>
+            <PeptideEvidence id="PE_46_Q9Y490" start="0" end="0" pre="K" post="L" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_Q9Y490"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="4.295761697e-06"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.049053302822964"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_47" spectrumID="index=46" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_47" spectrumID="index=46" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_47_1" calculatedMassToCharge="478.58060980" chargeState="3" experimentalMassToCharge="478.58094313" Peptide_ref="peptide_3_8" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_47_57362" start="0" end="0" pre="K" post="A" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_57362"/>
+            <PeptideEvidence id="PE_47_B4DZY9" start="0" end="0" pre="K" post="A" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_B4DZY9"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="5.87313577e-07"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.006594356843794"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_48" spectrumID="index=47" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_48" spectrumID="index=47" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_48_1" calculatedMassToCharge="546.79327647" chargeState="2" experimentalMassToCharge="546.79277647" Peptide_ref="peptide_3_9" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_48_47035" start="0" end="0" pre="R" post="V" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_47035"/>
+            <PeptideEvidence id="PE_48_D3DWQ2" start="0" end="0" pre="R" post="V" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_D3DWQ2"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="4.786941e-08"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.000663182805429"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_49" spectrumID="index=48" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_49" spectrumID="index=48" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_49_1" calculatedMassToCharge="535.81977647" chargeState="2" experimentalMassToCharge="535.81877647" Peptide_ref="peptide_3_10" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_49_29218" start="0" end="0" pre="K" post="R" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_29218"/>
+            <PeptideEvidence id="PE_49_P07814" start="0" end="0" pre="K" post="R" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_P07814"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="2.152849921e-06"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.034073155697778"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_50" spectrumID="index=49" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_50" spectrumID="index=49" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_50_1" calculatedMassToCharge="478.58060980" chargeState="3" experimentalMassToCharge="478.58094313" Peptide_ref="peptide_3_8" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_50_29887" start="0" end="0" pre="K" post="A" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_29887"/>
+            <PeptideEvidence id="PE_50_P48643" start="0" end="0" pre="K" post="A" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_P48643"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="9.992661e-09"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.000112197592814"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
-        <SpectrumIdentificationResult id="SIR_51" spectrumID="index=50" SpectraData_ref="SD_1">
+        <SpectrumIdentificationResult id="SIR_51" spectrumID="index=50" SpectraData_ref="mzIdentML/test-omssa.pep.xml">
           <SpectrumIdentificationItem id="SII_51_1" calculatedMassToCharge="546.79327647" chargeState="2" experimentalMassToCharge="546.79277647" Peptide_ref="peptide_3_9" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_51_13716" start="0" end="0" pre="R" post="V" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_13716"/>
+            <PeptideEvidence id="PE_51_P31943" start="0" end="0" pre="R" post="V" missedCleavages="" isDecoy="false" DBSequence_Ref="DBSeq_1_P31943"/>
             <cvParam accession="MS:1001329" name="OMSSA:pvalue" cvRef="PSI-MS" value="2.76173213e-07"/>
-            <cvParam accession="" name="OMSSA:expect" cvRef="PSI-MS" value="0.003826103695345"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
       </SpectrumIdentificationList>

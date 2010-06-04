@@ -5,13 +5,13 @@ require 'natural_sort_kernel'
 
 class PepXML < Format
 	def initialize(file, database)
-		@file = file
-		@database = database
+		super
 		@type = "pepxml"
 		@doc = Nokogiri::XML(IO.read(file))
 		@xmlns = ""
 		@tempSolution = 0
 		@sequences = 0
+		@proteinIndices = []
 		
 		#Nokogiri won't parse out the information of an XML file that uses namespaces unless you add xmlns, and vice versa.
 		@xmlns = "xmlns:" if hasNamespace
@@ -220,7 +220,9 @@ class PepXML < Format
 		dataHash = Hash.new
 		
 		Ms::Fasta.foreach(@database) do |entry|
-			dataHash[proteinID(entry.header)] = entry.sequence
+			pID = proteinID(entry.header)
+			dataHash[pID] = entry.sequence
+			@proteinIndices << pID
 		end
 		
 		all.each do |set|
@@ -247,8 +249,8 @@ class PepXML < Format
 				arr[1]
 			end
 		#If it's less than 6, then it must be a number
-		elsif protein.length < 6
-			protein		#Somehow need to match this number to an ID
+		elsif (protein =~ /[A-Z]/) == nil
+			@proteinIndices[protein.to_i]
 		else
 			protein
 		end

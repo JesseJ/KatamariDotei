@@ -1,12 +1,18 @@
 require "#{File.dirname($0)}/spect_id_result.rb"
 require 'nokogiri'
 
-#A base class for other file formats. Other formats are meant to inherit from this class, thus Format is useless by itself.
+#A base class for other file formats. Other formats are meant to inherit from this class, thus Format is basically useless by itself.
 #Classes that inherit from Format are used as the means of obtaining information from a file to be used in Search2mzIdentML.
 #Takes a string containing the search output file location and a string containing the FASTA  database that was used.
 class Format
 	def initialize(file, database)
-		@obo
+		puts "\nPreparing..."
+		
+		@file = file
+		@database = database
+		@obo = {}
+		yml = YAML.load_file "#{File.dirname($0)}/oboe.yaml"
+		yml.each {|x| @obo[x[:pepxml_name]] = [x[:id], x[:mzid_name]]}
 	end
 	
 	def file
@@ -74,10 +80,10 @@ class Format
 	#Determines the accession number for the score type. For some reason, this has become the slowest part of the conversion.
 	#Might be able to increase speed by switching to hash, or removing uneeded terms.
 	def findAccession(name)
-		@obo = Nokogiri::XML(IO.read("#{File.dirname($0)}/oboe.xml")) if @obo == nil
-		term = @obo.xpath("//term[@pepxml_name=\"#{name}\"]")
+		arr = @obo[name]
 		
-		return term.xpath("./@id").to_s, term.xpath("./@mzid_name").to_s
+		return arr[0], arr[1] if arr != nil
+		return "", ""
 	end
 	
 	#Conforms score name to mzIdentML format

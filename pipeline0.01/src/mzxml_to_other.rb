@@ -1,6 +1,7 @@
 require 'rubygems'
-require "#{$path}../../ms-msrun/lib/ms/msrun"
+require "ms/msrun"
 
+#Converts mzXML files to a different format.
 class MzXMLToOther
     def initialize(type, file, hardklor)
         @type = type
@@ -14,6 +15,7 @@ class MzXMLToOther
         
         runHardklor if @hardklor
         
+        #For mgf files, Prince's to_mgf method is used. Why? Because we can.
         if @type == "mgf"
             Ms::Msrun.open(@file) do |ms|
                 file = @file.chomp(".mzXML")
@@ -31,6 +33,7 @@ class MzXMLToOther
     
     private
     
+    #Optional. Currently, nothing is done with Hardklor output.
     def runHardklor
         puts "Running Hardklor..."
         Dir.chdir("#{$path}../../hardklor/") do

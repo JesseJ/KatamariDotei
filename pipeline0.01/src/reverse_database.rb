@@ -7,7 +7,8 @@ if ARGV.size != 2
 end
 
 
-
+#This will reverse the given protein database so it can be used for decoy searches.
+#Does some possibly unnecessary sequence text formatting
 class ReverseDatabase
     def reverseDatabase(input, output)
         File.open("#{output}", 'w') do |out|

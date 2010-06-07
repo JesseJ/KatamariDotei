@@ -13,6 +13,7 @@ file = "#{File.expand_path($path)}/../data/test"
 
 type = "human"
 
+#This is the main class of the pipeline.
 class Pipeline
     def initialize(file, type)
         @file = file
@@ -32,6 +33,7 @@ class Pipeline
         notifyCompletion
     end
     
+    #Displays a randomly chosen exclamation of joy
     def notifyCompletion
         done = rand(11)
         puts "\nBoo-yah!" if done == 0

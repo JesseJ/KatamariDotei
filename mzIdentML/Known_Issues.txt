@@ -11,5 +11,5 @@ The following is a list of known issues with Search2mzIdentML:
 -PepXML.findAllPepLocations doesn't completely match Mascot's mzid file. Mascot's mzid file sometimes uses the alternative protein instead. Don't know why.
 -PepXML.proteinID(protein) there may be other forms of protein IDs to handle that I haven't seen.
 -PepXML.getItem(hit, rank, charge) is hard-coded to say passThreshold="true" because I don't know how to tell if it passed or not.
--Search2mzIdentML currently does a strict conversion, meaning it has no options and only writes to the mzIdentML file that which is required. Might be able to expand its abilities, but I'm not considering it until I can even get this working correctly.
+-Search2mzIdentML currently does a strict conversion, meaning it has no options and only writes to the mzIdentML file that which is required. Might be able to expand its abilities, but I'm not considering it until I can even get this working correctly. Doesn't pass the validator.
 

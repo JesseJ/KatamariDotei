@@ -147,15 +147,17 @@ class Search2mzIdentML
 			xml.SpectrumIdentificationResult(:id => "SIR_#{i}", :spectrumID => "index=#{result.index}", :SpectraData_ref => @format.file) {
 				result.items.each do |item|
 					ident = item.ident
+					siiID = "SII_#{i}_#{ident.id}"
+					
 					xml.SpectrumIdentificationItem(
-						:id => "SII_#{i}_#{ident.id}",
+						:id => siiID,
 						:calculatedMassToCharge => '%.8f' % ident.mass,
 						:chargeState => ident.charge,
 						:experimentalMassToCharge => '%.8f' % ident.experi,
 						:Peptide_ref => ident.pep,
 						:rank => ident.rank,
 						:passThreshold => ident.pass) {
-							spectrumIdentificationItemVals(xml, item)
+							spectrumIdentificationItemVals(xml, item, siiID)
 						}
 				end
 			}	if result.items.length > 0	#Schema says that SpectrumIdentificationResult can't be empty
@@ -164,11 +166,12 @@ class Search2mzIdentML
 	end
 	
 	#Depth 6
-	def spectrumIdentificationItemVals(xml, item)
+	def spectrumIdentificationItemVals(xml, item, siiID)
 		pepEv = item.pepEvidence
+		
 		if pepEv != nil
 			xml.PeptideEvidence(
-				:id => pepEv.id,
+				:id => "#{pepEv.id}_#{siiID}",	#The SII ID is added because IDs must be unique.
 				:start => pepEv.start,
 				:end => pepEv.end,
 				:pre => pepEv.pre,

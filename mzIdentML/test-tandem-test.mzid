@@ -348,633 +348,633 @@
   <DataCollection>
     <Inputs/>
     <AnalysisData>
-      <SpectrumIdentificationList id="SIL_1" numSequencesSearched="0">
+      <SpectrumIdentificationList id="SIL_1" numSequencesSearched="106159">
         <SpectrumIdentificationResult id="SIR_1" spectrumID="index=11" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_1_1" calculatedMassToCharge="654.84332647" chargeState="2" experimentalMassToCharge="654.84332647" Peptide_ref="peptide_1_1" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_1_P07900" start="59" end="69" pre="K" post="L" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_P07900"/>
+            <PeptideEvidence id="peptide_1_1" start="59" end="69" pre="K" post="L" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_P07900"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="27.9"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.018"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_2" spectrumID="index=78" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_2_1" calculatedMassToCharge="770.38047647" chargeState="2" experimentalMassToCharge="770.38147647" Peptide_ref="peptide_1_2" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_2_P07900" start="61" end="74" pre="R" post="E" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_P07900"/>
+            <PeptideEvidence id="peptide_1_2" start="61" end="74" pre="R" post="E" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_P07900"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="64.8"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="1.2e-12"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_3" spectrumID="index=76" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_3_1" calculatedMassToCharge="513.92274313" chargeState="3" experimentalMassToCharge="513.92307647" Peptide_ref="peptide_1_2" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_3_P07900" start="61" end="74" pre="R" post="E" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_P07900"/>
+            <PeptideEvidence id="peptide_1_2" start="61" end="74" pre="R" post="E" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_P07900"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="26.8"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.0048"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_4" spectrumID="index=79" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_4_1" calculatedMassToCharge="770.38047647" chargeState="2" experimentalMassToCharge="770.37997647" Peptide_ref="peptide_1_2" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_4_P07900" start="61" end="74" pre="R" post="E" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_P07900"/>
+            <PeptideEvidence id="peptide_1_2" start="61" end="74" pre="R" post="E" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_P07900"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="64.8"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="6.3e-10"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_5" spectrumID="index=74" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_5_1" calculatedMassToCharge="513.92274313" chargeState="3" experimentalMassToCharge="513.92240980" Peptide_ref="peptide_1_2" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_5_P07900" start="61" end="74" pre="R" post="E" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_P07900"/>
+            <PeptideEvidence id="peptide_1_2" start="61" end="74" pre="R" post="E" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_P07900"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="28.7"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.053"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_6" spectrumID="index=35" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_6_1" calculatedMassToCharge="612.81657647" chargeState="2" experimentalMassToCharge="612.81557647" Peptide_ref="peptide_1_3" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_6_P07900" start="490" end="499" pre="K" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P07900"/>
+            <PeptideEvidence id="peptide_1_3" start="490" end="499" pre="K" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P07900"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="42.0"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.00014"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_7" spectrumID="index=33" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_7_1" calculatedMassToCharge="612.81657647" chargeState="2" experimentalMassToCharge="612.81607647" Peptide_ref="peptide_1_3" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_7_P07900" start="490" end="499" pre="K" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P07900"/>
+            <PeptideEvidence id="peptide_1_3" start="490" end="499" pre="K" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P07900"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="41.9"/>
-            <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="4.0e-05"/>
+            <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="4e-05"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_8" spectrumID="index=18" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_8_1" calculatedMassToCharge="836.91742647" chargeState="2" experimentalMassToCharge="836.91892647" Peptide_ref="peptide_1_4" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_8_P07900" start="547" end="560" pre="K" post="Q" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_P07900"/>
+            <PeptideEvidence id="peptide_1_4" start="547" end="560" pre="K" post="Q" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_P07900"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="39.3"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.00035"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_9" spectrumID="index=20" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_9_1" calculatedMassToCharge="836.91742647" chargeState="2" experimentalMassToCharge="836.91892647" Peptide_ref="peptide_1_4" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_9_P07900" start="547" end="560" pre="K" post="Q" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_P07900"/>
+            <PeptideEvidence id="peptide_1_4" start="547" end="560" pre="K" post="Q" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_P07900"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="45.0"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="9.1e-06"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_10" spectrumID="index=14" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_10_1" calculatedMassToCharge="558.28070980" chargeState="3" experimentalMassToCharge="558.28070980" Peptide_ref="peptide_1_4" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_10_P07900" start="547" end="560" pre="K" post="Q" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_P07900"/>
+            <PeptideEvidence id="peptide_1_4" start="547" end="560" pre="K" post="Q" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_P07900"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="27.8"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.082"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_11" spectrumID="index=47" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_11_1" calculatedMassToCharge="625.31212647" chargeState="2" experimentalMassToCharge="625.80462647" Peptide_ref="peptide_1_5" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_11_Q58FF7" start="365" end="375" pre="K" post="V" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q58FF7"/>
+            <PeptideEvidence id="peptide_1_5" start="365" end="375" pre="K" post="V" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q58FF7"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="37.0"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="7.1e-05"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_12" spectrumID="index=34" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_12_1" calculatedMassToCharge="937.44792647" chargeState="2" experimentalMassToCharge="937.44942647" Peptide_ref="peptide_1_6" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_12_P40222" start="485" end="503" pre="R" post="R" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P40222"/>
+            <PeptideEvidence id="peptide_1_6" start="485" end="503" pre="R" post="R" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P40222"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="101.8"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="4.2e-17"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_13" spectrumID="index=32" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_13_1" calculatedMassToCharge="937.44792647" chargeState="2" experimentalMassToCharge="937.44992647" Peptide_ref="peptide_1_6" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_13_P40222" start="485" end="503" pre="R" post="R" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P40222"/>
+            <PeptideEvidence id="peptide_1_6" start="485" end="503" pre="R" post="R" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P40222"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="111.8"/>
-            <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="5.0e-16"/>
+            <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="5e-16"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_14" spectrumID="index=62" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_14_1" calculatedMassToCharge="836.39497647" chargeState="3" experimentalMassToCharge="836.39597647" Peptide_ref="peptide_1_7" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_14_Q02790" start="99" end="121" pre="K" post="I" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q02790"/>
+            <PeptideEvidence id="peptide_1_7" start="99" end="121" pre="K" post="I" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q02790"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="82.4"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="2.7e-12"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_15" spectrumID="index=61" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_15_1" calculatedMassToCharge="836.39497647" chargeState="3" experimentalMassToCharge="836.39630980" Peptide_ref="peptide_1_7" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_15_Q02790" start="99" end="121" pre="K" post="I" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q02790"/>
+            <PeptideEvidence id="peptide_1_7" start="99" end="121" pre="K" post="I" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q02790"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="77.7"/>
-            <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="1.0e-10"/>
+            <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="1e-10"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_16" spectrumID="index=7" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_16_1" calculatedMassToCharge="713.35202647" chargeState="2" experimentalMassToCharge="713.35452647" Peptide_ref="peptide_1_8" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_16_P02533" start="42" end="56" pre="R" post="F" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P02533"/>
+            <PeptideEvidence id="peptide_1_8" start="42" end="56" pre="R" post="F" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P02533"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="58.1"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="3.8e-10"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_17" spectrumID="index=5" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_17_1" calculatedMassToCharge="713.35202647" chargeState="2" experimentalMassToCharge="713.35502647" Peptide_ref="peptide_1_8" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_17_P02533" start="42" end="56" pre="R" post="F" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P02533"/>
+            <PeptideEvidence id="peptide_1_8" start="42" end="56" pre="R" post="F" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P02533"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="60.7"/>
-            <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="5.0e-10"/>
+            <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="5e-10"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_18" spectrumID="index=82" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_18_1" calculatedMassToCharge="911.96532647" chargeState="2" experimentalMassToCharge="911.96732647" Peptide_ref="peptide_1_9" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_18_Q13885" start="3" end="19" pre="R" post="F" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q13885"/>
+            <PeptideEvidence id="peptide_1_9" start="3" end="19" pre="R" post="F" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q13885"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="63.8"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="6.3e-08"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_19" spectrumID="index=80" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_19_1" calculatedMassToCharge="911.96532647" chargeState="2" experimentalMassToCharge="911.96632647" Peptide_ref="peptide_1_9" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_19_Q13885" start="3" end="19" pre="R" post="F" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q13885"/>
+            <PeptideEvidence id="peptide_1_9" start="3" end="19" pre="R" post="F" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q13885"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="64.8"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="1.3e-09"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_20" spectrumID="index=39" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_20_1" calculatedMassToCharge="803.38072647" chargeState="2" experimentalMassToCharge="803.38072647" Peptide_ref="peptide_1_10" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_20_O00410" start="964" end="978" pre="K" post="I" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_O00410"/>
+            <PeptideEvidence id="peptide_1_10" start="964" end="978" pre="K" post="I" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_O00410"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="61.6"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="2.6e-09"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_21" spectrumID="index=36" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_21_1" calculatedMassToCharge="803.38072647" chargeState="2" experimentalMassToCharge="803.38022647" Peptide_ref="peptide_1_10" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_21_O00410" start="964" end="978" pre="K" post="I" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_O00410"/>
+            <PeptideEvidence id="peptide_1_10" start="964" end="978" pre="K" post="I" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_O00410"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="48.4"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="5.9e-08"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_22" spectrumID="index=16" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_22_1" calculatedMassToCharge="673.68617647" chargeState="3" experimentalMassToCharge="673.68617647" Peptide_ref="peptide_2_1" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_22_Q13263" start="408" end="427" pre="K" post="A" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q13263"/>
+            <PeptideEvidence id="peptide_2_1" start="408" end="427" pre="K" post="A" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q13263"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="46.0"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="6.7e-05"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_23" spectrumID="index=13" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_23_1" calculatedMassToCharge="673.68617647" chargeState="3" experimentalMassToCharge="673.68550980" Peptide_ref="peptide_2_1" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_23_Q13263" start="408" end="427" pre="K" post="A" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q13263"/>
+            <PeptideEvidence id="peptide_2_1" start="408" end="427" pre="K" post="A" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q13263"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="72.3"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="9.5e-09"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_24" spectrumID="index=26" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_24_1" calculatedMassToCharge="572.31707647" chargeState="2" experimentalMassToCharge="572.31657647" Peptide_ref="peptide_2_2" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_24_P23246" start="366" end="376" pre="R" post="N" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P23246"/>
+            <PeptideEvidence id="peptide_2_2" start="366" end="376" pre="R" post="N" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P23246"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="51.5"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="1.7e-07"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_25" spectrumID="index=27" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_25_1" calculatedMassToCharge="734.35732647" chargeState="2" experimentalMassToCharge="734.36032647" Peptide_ref="peptide_2_3" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_25_P78527" start="2107" end="2120" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P78527"/>
+            <PeptideEvidence id="peptide_2_3" start="2107" end="2120" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P78527"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="66.4"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="1.7e-07"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_26" spectrumID="index=30" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_26_1" calculatedMassToCharge="734.35732647" chargeState="2" experimentalMassToCharge="734.35882647" Peptide_ref="peptide_2_3" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_26_P78527" start="2107" end="2120" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P78527"/>
+            <PeptideEvidence id="peptide_2_3" start="2107" end="2120" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P78527"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="58.5"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="7.3e-07"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_27" spectrumID="index=71" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_27_1" calculatedMassToCharge="691.32772647" chargeState="2" experimentalMassToCharge="691.32922647" Peptide_ref="peptide_2_4" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_27_P13645" start="166" end="177" pre="R" post="I" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P13645"/>
+            <PeptideEvidence id="peptide_2_4" start="166" end="177" pre="R" post="I" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P13645"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="58.0"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="2.5e-07"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_28" spectrumID="index=68" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_28_1" calculatedMassToCharge="691.32772647" chargeState="2" experimentalMassToCharge="691.33122647" Peptide_ref="peptide_2_4" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_28_P13645" start="166" end="177" pre="R" post="I" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P13645"/>
+            <PeptideEvidence id="peptide_2_4" start="166" end="177" pre="R" post="I" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P13645"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="35.4"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.004"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_29" spectrumID="index=63" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_29_1" calculatedMassToCharge="602.32762647" chargeState="2" experimentalMassToCharge="602.77012647" Peptide_ref="peptide_2_5" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_29_P08865" start="90" end="102" pre="K" post="F" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P08865"/>
+            <PeptideEvidence id="peptide_2_5" start="90" end="102" pre="K" post="F" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P08865"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="38.9"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="8.4e-05"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_30" spectrumID="index=52" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_30_1" calculatedMassToCharge="602.32762647" chargeState="2" experimentalMassToCharge="602.32762647" Peptide_ref="peptide_2_5" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_30_P08865" start="90" end="102" pre="K" post="F" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P08865"/>
+            <PeptideEvidence id="peptide_2_5" start="90" end="102" pre="K" post="F" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P08865"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="50.4"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="3.8e-07"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_31" spectrumID="index=65" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_31_1" calculatedMassToCharge="602.32762647" chargeState="2" experimentalMassToCharge="602.77012647" Peptide_ref="peptide_2_5" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_31_P08865" start="90" end="102" pre="K" post="F" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P08865"/>
+            <PeptideEvidence id="peptide_2_5" start="90" end="102" pre="K" post="F" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P08865"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="29.3"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.0096"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_32" spectrumID="index=48" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_32_1" calculatedMassToCharge="602.32762647" chargeState="2" experimentalMassToCharge="602.32762647" Peptide_ref="peptide_2_5" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_32_P08865" start="90" end="102" pre="K" post="F" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P08865"/>
+            <PeptideEvidence id="peptide_2_5" start="90" end="102" pre="K" post="F" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P08865"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="50.8"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="2.3e-06"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_33" spectrumID="index=57" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_33_1" calculatedMassToCharge="584.34022647" chargeState="2" experimentalMassToCharge="584.34022647" Peptide_ref="peptide_2_6" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_33_Q99613" start="321" end="331" pre="K" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q99613"/>
+            <PeptideEvidence id="peptide_2_6" start="321" end="331" pre="K" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q99613"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="51.6"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="5.8e-07"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_34" spectrumID="index=51" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_34_1" calculatedMassToCharge="784.88877647" chargeState="2" experimentalMassToCharge="784.88927647" Peptide_ref="peptide_2_7" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_34_P38646" start="108" end="121" pre="R" post="R" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P38646"/>
+            <PeptideEvidence id="peptide_2_7" start="108" end="121" pre="R" post="R" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P38646"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="64.0"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="7.4e-07"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_35" spectrumID="index=54" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_35_1" calculatedMassToCharge="784.88877647" chargeState="2" experimentalMassToCharge="784.88927647" Peptide_ref="peptide_2_7" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_35_P38646" start="108" end="121" pre="R" post="R" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P38646"/>
+            <PeptideEvidence id="peptide_2_7" start="108" end="121" pre="R" post="R" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P38646"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="67.1"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.00035"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_36" spectrumID="index=28" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_36_1" calculatedMassToCharge="608.31142647" chargeState="2" experimentalMassToCharge="608.31042647" Peptide_ref="peptide_2_8" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_36_P50914" start="36" end="46" pre="R" post="R" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P50914"/>
+            <PeptideEvidence id="peptide_2_8" start="36" end="46" pre="R" post="R" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P50914"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="53.7"/>
-            <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="2.0e-06"/>
+            <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="2e-06"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_37" spectrumID="index=8" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_37_1" calculatedMassToCharge="646.31947647" chargeState="2" experimentalMassToCharge="646.31947647" Peptide_ref="peptide_2_9" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_37_O14744" start="334" end="343" pre="K" post="C" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_O14744"/>
+            <PeptideEvidence id="peptide_2_9" start="334" end="343" pre="K" post="C" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_O14744"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="43.5"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="6.3e-06"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_38" spectrumID="index=6" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_38_1" calculatedMassToCharge="646.31947647" chargeState="2" experimentalMassToCharge="646.31947647" Peptide_ref="peptide_2_9" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_38_O14744" start="334" end="343" pre="K" post="C" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_O14744"/>
+            <PeptideEvidence id="peptide_2_9" start="334" end="343" pre="K" post="C" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_O14744"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="37.7"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="3.4e-06"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_39" spectrumID="index=85" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_39_1" calculatedMassToCharge="667.34852647" chargeState="2" experimentalMassToCharge="667.34752647" Peptide_ref="peptide_2_10" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_39_P49368" start="450" end="461" pre="R" post="L" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P49368"/>
+            <PeptideEvidence id="peptide_2_10" start="450" end="461" pre="R" post="L" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P49368"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="61.4"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="1.6e-05"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_40" spectrumID="index=89" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_40_1" calculatedMassToCharge="667.34852647" chargeState="2" experimentalMassToCharge="667.34802647" Peptide_ref="peptide_2_10" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_40_P49368" start="450" end="461" pre="R" post="L" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P49368"/>
+            <PeptideEvidence id="peptide_2_10" start="450" end="461" pre="R" post="L" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P49368"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="73.5"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="3.8e-06"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_41" spectrumID="index=41" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_41_1" calculatedMassToCharge="651.84862647" chargeState="2" experimentalMassToCharge="651.84862647" Peptide_ref="peptide_3_1" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_41_Q92945" start="191" end="203" pre="R" post="A" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q92945"/>
+            <PeptideEvidence id="peptide_3_1" start="191" end="203" pre="R" post="A" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q92945"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="50.8"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="4.2e-06"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_42" spectrumID="index=38" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_42_1" calculatedMassToCharge="651.84862647" chargeState="2" experimentalMassToCharge="651.84862647" Peptide_ref="peptide_3_1" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_42_Q92945" start="191" end="203" pre="R" post="A" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q92945"/>
+            <PeptideEvidence id="peptide_3_1" start="191" end="203" pre="R" post="A" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q92945"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="45.8"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.0013"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_43" spectrumID="index=46" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_43_1" calculatedMassToCharge="530.61537647" chargeState="3" experimentalMassToCharge="530.61637647" Peptide_ref="peptide_3_2" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_43_P60842" start="369" end="382" pre="R" post="T" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P60842"/>
+            <PeptideEvidence id="peptide_3_2" start="369" end="382" pre="R" post="T" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P60842"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="45.7"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.0002"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_44" spectrumID="index=45" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_44_1" calculatedMassToCharge="530.61537647" chargeState="3" experimentalMassToCharge="530.61637647" Peptide_ref="peptide_3_2" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_44_P60842" start="369" end="382" pre="R" post="T" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P60842"/>
+            <PeptideEvidence id="peptide_3_2" start="369" end="382" pre="R" post="T" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P60842"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="50.3"/>
-            <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="5.0e-06"/>
+            <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="5e-06"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_45" spectrumID="index=60" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_45_1" calculatedMassToCharge="566.76707647" chargeState="2" experimentalMassToCharge="566.76707647" Peptide_ref="peptide_3_3" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_45_P60709" start="197" end="206" pre="R" post="E" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P60709"/>
+            <PeptideEvidence id="peptide_3_3" start="197" end="206" pre="R" post="E" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P60709"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="41.8"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="1.3e-05"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_46" spectrumID="index=2" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_46_1" calculatedMassToCharge="556.32712647" chargeState="2" experimentalMassToCharge="556.32762647" Peptide_ref="peptide_3_4" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_46_Q9Y230" start="72" end="83" pre="R" post="T" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q9Y230"/>
+            <PeptideEvidence id="peptide_3_4" start="72" end="83" pre="R" post="T" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q9Y230"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="57.6"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="2.6e-05"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_47" spectrumID="index=0" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_47_1" calculatedMassToCharge="556.32712647" chargeState="2" experimentalMassToCharge="556.32712647" Peptide_ref="peptide_3_4" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_47_Q9Y230" start="72" end="83" pre="R" post="T" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q9Y230"/>
+            <PeptideEvidence id="peptide_3_4" start="72" end="83" pre="R" post="T" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q9Y230"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="46.3"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="3.1e-05"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_48" spectrumID="index=81" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_48_1" calculatedMassToCharge="708.89387647" chargeState="2" experimentalMassToCharge="708.89287647" Peptide_ref="peptide_3_5" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_48_Q9Y490" start="2044" end="2057" pre="K" post="L" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q9Y490"/>
+            <PeptideEvidence id="peptide_3_5" start="2044" end="2057" pre="K" post="L" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q9Y490"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="37.6"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="2.7e-05"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_49" spectrumID="index=43" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_49_1" calculatedMassToCharge="663.83997647" chargeState="2" experimentalMassToCharge="663.83897647" Peptide_ref="peptide_3_6" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_49_P60174" start="207" end="219" pre="R" post="E" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P60174"/>
+            <PeptideEvidence id="peptide_3_6" start="207" end="219" pre="R" post="E" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P60174"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="52.5"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="3.3e-05"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_50" spectrumID="index=4" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_50_1" calculatedMassToCharge="734.84802647" chargeState="2" experimentalMassToCharge="734.84852647" Peptide_ref="peptide_3_7" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_50_P16615" start="353" end="365" pre="K" post="M" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P16615"/>
+            <PeptideEvidence id="peptide_3_7" start="353" end="365" pre="K" post="M" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P16615"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="33.9"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="7.1e-05"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_51" spectrumID="index=42" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_51_1" calculatedMassToCharge="826.93372647" chargeState="2" experimentalMassToCharge="826.93472647" Peptide_ref="peptide_3_8" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_51_P21333" start="384" end="400" pre="K" post="T" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P21333"/>
+            <PeptideEvidence id="peptide_3_8" start="384" end="400" pre="K" post="T" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P21333"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="48.0"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="9.5e-05"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_52" spectrumID="index=40" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_52_1" calculatedMassToCharge="826.93372647" chargeState="2" experimentalMassToCharge="826.93422647" Peptide_ref="peptide_3_8" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_52_P21333" start="384" end="400" pre="K" post="T" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P21333"/>
+            <PeptideEvidence id="peptide_3_8" start="384" end="400" pre="K" post="T" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P21333"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="48.0"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="7.2e-05"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_53" spectrumID="index=86" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_53_1" calculatedMassToCharge="478.58054313" chargeState="3" experimentalMassToCharge="478.58087647" Peptide_ref="peptide_3_9" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_53_P48643" start="264" end="275" pre="K" post="A" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_P48643"/>
+            <PeptideEvidence id="peptide_3_9" start="264" end="275" pre="K" post="A" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_P48643"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="48.3"/>
-            <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="8.0e-05"/>
+            <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="8e-05"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_54" spectrumID="index=83" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_54_1" calculatedMassToCharge="478.58054313" chargeState="3" experimentalMassToCharge="478.58054313" Peptide_ref="peptide_3_9" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_54_P48643" start="264" end="275" pre="K" post="A" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_P48643"/>
+            <PeptideEvidence id="peptide_3_9" start="264" end="275" pre="K" post="A" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_P48643"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="37.9"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.00069"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_55" spectrumID="index=66" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_55_1" calculatedMassToCharge="582.30030980" chargeState="3" experimentalMassToCharge="582.30164313" Peptide_ref="peptide_3_10" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_55_P16989" start="110" end="124" pre="R" post="K" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_P16989"/>
+            <PeptideEvidence id="peptide_3_10" start="110" end="124" pre="R" post="K" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_P16989"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="47.2"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.00016"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_56" spectrumID="index=84" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_56_1" calculatedMassToCharge="546.79342647" chargeState="2" experimentalMassToCharge="546.79342647" Peptide_ref="peptide_4_1" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_56_P31943" start="317" end="326" pre="R" post="V" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P31943"/>
+            <PeptideEvidence id="peptide_4_1" start="317" end="326" pre="R" post="V" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P31943"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="38.8"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.0006"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_57" spectrumID="index=87" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_57_1" calculatedMassToCharge="546.79342647" chargeState="2" experimentalMassToCharge="546.79292647" Peptide_ref="peptide_4_1" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_57_P31943" start="317" end="326" pre="R" post="V" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P31943"/>
+            <PeptideEvidence id="peptide_4_1" start="317" end="326" pre="R" post="V" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P31943"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="38.8"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.00018"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_58" spectrumID="index=24" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_58_1" calculatedMassToCharge="681.36222647" chargeState="2" experimentalMassToCharge="681.36222647" Peptide_ref="peptide_4_2" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_58_Q00325" start="190" end="201" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q00325"/>
+            <PeptideEvidence id="peptide_4_2" start="190" end="201" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q00325"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="53.2"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.00046"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_59" spectrumID="index=23" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_59_1" calculatedMassToCharge="681.36222647" chargeState="2" experimentalMassToCharge="681.36222647" Peptide_ref="peptide_4_2" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_59_Q00325" start="190" end="201" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q00325"/>
+            <PeptideEvidence id="peptide_4_2" start="190" end="201" pre="R" post="D" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q00325"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="49.8"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.00029"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_60" spectrumID="index=15" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_60_1" calculatedMassToCharge="554.78797647" chargeState="2" experimentalMassToCharge="554.78797647" Peptide_ref="peptide_4_3" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_60_Q8IVT5" start="885" end="893" pre="R" post="S" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q8IVT5"/>
+            <PeptideEvidence id="peptide_4_3" start="885" end="893" pre="R" post="S" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q8IVT5"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="43.1"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.00033"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_61" spectrumID="index=17" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_61_1" calculatedMassToCharge="554.78797647" chargeState="2" experimentalMassToCharge="554.78847647" Peptide_ref="peptide_4_3" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_61_Q8IVT5" start="885" end="893" pre="R" post="S" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q8IVT5"/>
+            <PeptideEvidence id="peptide_4_3" start="885" end="893" pre="R" post="S" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q8IVT5"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="43.3"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.0011"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_62" spectrumID="index=12" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_62_1" calculatedMassToCharge="609.32782647" chargeState="2" experimentalMassToCharge="609.33082647" Peptide_ref="peptide_4_4" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_62_P25788" start="30" end="41" pre="K" post="C" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P25788"/>
+            <PeptideEvidence id="peptide_4_4" start="30" end="41" pre="K" post="C" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P25788"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="34.2"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.00037"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_63" spectrumID="index=73" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_63_1" calculatedMassToCharge="480.59027647" chargeState="3" experimentalMassToCharge="480.59027647" Peptide_ref="peptide_4_5" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_63_P31948" start="434" end="446" pre="R" post="A" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_P31948"/>
+            <PeptideEvidence id="peptide_4_5" start="434" end="446" pre="R" post="A" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_P31948"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="37.3"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.0018"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_64" spectrumID="index=77" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_64_1" calculatedMassToCharge="480.59027647" chargeState="3" experimentalMassToCharge="480.59027647" Peptide_ref="peptide_4_5" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_64_P31948" start="434" end="446" pre="R" post="A" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_P31948"/>
+            <PeptideEvidence id="peptide_4_5" start="434" end="446" pre="R" post="A" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_P31948"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="37.2"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.00043"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_65" spectrumID="index=49" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_65_1" calculatedMassToCharge="570.27202647" chargeState="2" experimentalMassToCharge="570.27152647" Peptide_ref="peptide_4_6" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_65_Q02878" start="115" end="123" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q02878"/>
+            <PeptideEvidence id="peptide_4_6" start="115" end="123" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q02878"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="37.4"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.00073"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_66" spectrumID="index=67" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_66_1" calculatedMassToCharge="597.80367647" chargeState="2" experimentalMassToCharge="597.80367647" Peptide_ref="peptide_4_7" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_66_P62258" start="143" end="153" pre="K" post="A" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P62258"/>
+            <PeptideEvidence id="peptide_4_7" start="143" end="153" pre="K" post="A" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P62258"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="31.5"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.0034"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_67" spectrumID="index=69" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_67_1" calculatedMassToCharge="597.80367647" chargeState="2" experimentalMassToCharge="597.80317647" Peptide_ref="peptide_4_7" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_67_P62258" start="143" end="153" pre="K" post="A" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P62258"/>
+            <PeptideEvidence id="peptide_4_7" start="143" end="153" pre="K" post="A" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P62258"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="34.4"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.00078"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_68" spectrumID="index=31" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_68_1" calculatedMassToCharge="543.96130980" chargeState="3" experimentalMassToCharge="543.96130980" Peptide_ref="peptide_4_8" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_68_P36507" start="40" end="52" pre="K" post="R" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P36507"/>
+            <PeptideEvidence id="peptide_4_8" start="40" end="52" pre="K" post="R" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P36507"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="40.2"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.0025"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_69" spectrumID="index=29" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_69_1" calculatedMassToCharge="543.96130980" chargeState="3" experimentalMassToCharge="543.96130980" Peptide_ref="peptide_4_8" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_69_P36507" start="40" end="52" pre="K" post="R" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P36507"/>
+            <PeptideEvidence id="peptide_4_8" start="40" end="52" pre="K" post="R" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P36507"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="43.8"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.00086"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_70" spectrumID="index=75" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_70_1" calculatedMassToCharge="622.99377647" chargeState="3" experimentalMassToCharge="622.99310980" Peptide_ref="peptide_4_9" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_70_Q9BQ70" start="157" end="174" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q9BQ70"/>
+            <PeptideEvidence id="peptide_4_9" start="157" end="174" pre="R" post="K" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q9BQ70"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="51.9"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.00089"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_71" spectrumID="index=25" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_71_1" calculatedMassToCharge="708.32717647" chargeState="2" experimentalMassToCharge="708.32667647" Peptide_ref="peptide_4_10" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_71_P07814" start="1464" end="1477" pre="R" post="S" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P07814"/>
+            <PeptideEvidence id="peptide_4_10" start="1464" end="1477" pre="R" post="S" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P07814"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="39.8"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.028"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_72" spectrumID="index=22" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_72_1" calculatedMassToCharge="708.32717647" chargeState="2" experimentalMassToCharge="708.32767647" Peptide_ref="peptide_4_10" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_72_P07814" start="1464" end="1477" pre="R" post="S" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P07814"/>
+            <PeptideEvidence id="peptide_4_10" start="1464" end="1477" pre="R" post="S" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P07814"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="40.3"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.0026"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_73" spectrumID="index=53" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_73_1" calculatedMassToCharge="524.94577647" chargeState="3" experimentalMassToCharge="524.94677647" Peptide_ref="peptide_5_1" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_73_P26641" start="401" end="414" pre="R" post="E" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P26641"/>
+            <PeptideEvidence id="peptide_5_1" start="401" end="414" pre="R" post="E" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P26641"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="43.8"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.015"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_74" spectrumID="index=50" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_74_1" calculatedMassToCharge="524.94577647" chargeState="3" experimentalMassToCharge="524.94710980" Peptide_ref="peptide_5_1" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_74_P26641" start="401" end="414" pre="R" post="E" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P26641"/>
+            <PeptideEvidence id="peptide_5_1" start="401" end="414" pre="R" post="E" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P26641"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="40.9"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.004"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_75" spectrumID="index=72" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_75_1" calculatedMassToCharge="654.28982647" chargeState="2" experimentalMassToCharge="654.29082647" Peptide_ref="peptide_5_2" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_75_P30153" start="172" end="182" pre="R" post="R" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P30153"/>
+            <PeptideEvidence id="peptide_5_2" start="172" end="182" pre="R" post="R" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P30153"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="36.1"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.0043"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_76" spectrumID="index=58" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_76_1" calculatedMassToCharge="729.02084313" chargeState="3" experimentalMassToCharge="729.02050980" Peptide_ref="peptide_5_3" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_76_P29692" start="60" end="83" pre="K" post="I" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P29692"/>
+            <PeptideEvidence id="peptide_5_3" start="60" end="83" pre="K" post="I" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P29692"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="40.2"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.0047"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_77" spectrumID="index=55" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_77_1" calculatedMassToCharge="729.02084313" chargeState="3" experimentalMassToCharge="729.02117647" Peptide_ref="peptide_5_3" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_77_P29692" start="60" end="83" pre="K" post="I" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P29692"/>
+            <PeptideEvidence id="peptide_5_3" start="60" end="83" pre="K" post="I" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P29692"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="39.8"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.016"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_78" spectrumID="index=3" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_78_1" calculatedMassToCharge="479.76382647" chargeState="2" experimentalMassToCharge="479.76432647" Peptide_ref="peptide_5_4" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_78_P50991" start="396" end="403" pre="K" post="S" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P50991"/>
+            <PeptideEvidence id="peptide_5_4" start="396" end="403" pre="K" post="S" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P50991"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="42.2"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.0048"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_79" spectrumID="index=1" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_79_1" calculatedMassToCharge="479.76382647" chargeState="2" experimentalMassToCharge="479.76432647" Peptide_ref="peptide_5_4" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_79_P50991" start="396" end="403" pre="K" post="S" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P50991"/>
+            <PeptideEvidence id="peptide_5_4" start="396" end="403" pre="K" post="S" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P50991"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="38.7"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.031"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_80" spectrumID="index=21" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_80_1" calculatedMassToCharge="476.94050980" chargeState="3" experimentalMassToCharge="476.94117647" Peptide_ref="peptide_5_5" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_80_P27708" start="843" end="854" pre="R" post="G" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P27708"/>
+            <PeptideEvidence id="peptide_5_5" start="843" end="854" pre="R" post="G" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P27708"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="41.2"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.0079"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_81" spectrumID="index=59" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_81_1" calculatedMassToCharge="553.29667647" chargeState="3" experimentalMassToCharge="553.29667647" Peptide_ref="peptide_5_6" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_81_Q02750" start="36" end="48" pre="K" post="R" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q02750"/>
+            <PeptideEvidence id="peptide_5_6" start="36" end="48" pre="K" post="R" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q02750"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="37.4"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.021"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_82" spectrumID="index=56" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_82_1" calculatedMassToCharge="553.29667647" chargeState="3" experimentalMassToCharge="553.29634313" Peptide_ref="peptide_5_6" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_82_Q02750" start="36" end="48" pre="K" post="R" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q02750"/>
+            <PeptideEvidence id="peptide_5_6" start="36" end="48" pre="K" post="R" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q02750"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="41.2"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.0084"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_83" spectrumID="index=70" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_83_1" calculatedMassToCharge="890.90282647" chargeState="2" experimentalMassToCharge="890.90532647" Peptide_ref="peptide_5_7" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_83_P61978" start="70" end="86" pre="R" post="I" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P61978"/>
+            <PeptideEvidence id="peptide_5_7" start="70" end="86" pre="R" post="I" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P61978"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="27.4"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.0084"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_84" spectrumID="index=37" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_84_1" calculatedMassToCharge="533.80382647" chargeState="2" experimentalMassToCharge="533.80282647" Peptide_ref="peptide_5_8" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_84_P25398" start="24" end="33" pre="K" post="G" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P25398"/>
+            <PeptideEvidence id="peptide_5_8" start="24" end="33" pre="K" post="G" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P25398"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="38.7"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.016"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_85" spectrumID="index=19" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_85_1" calculatedMassToCharge="608.88662647" chargeState="2" experimentalMassToCharge="609.33312647" Peptide_ref="peptide_5_9" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_85_Q8N394" start="209" end="218" pre="K" post="R" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_Q8N394"/>
+            <PeptideEvidence id="peptide_5_9" start="209" end="218" pre="K" post="R" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_Q8N394"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="29.2"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.031"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_86" spectrumID="index=88" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_86_1" calculatedMassToCharge="628.34822647" chargeState="2" experimentalMassToCharge="628.34822647" Peptide_ref="peptide_5_10" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_86_P60228" start="83" end="93" pre="K" post="M" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P60228"/>
+            <PeptideEvidence id="peptide_5_10" start="83" end="93" pre="K" post="M" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P60228"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="25.8"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.044"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_87" spectrumID="index=10" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_87_1" calculatedMassToCharge="589.31630980" chargeState="3" experimentalMassToCharge="589.31630980" Peptide_ref="peptide_6_1" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_87_Q9Y266" start="54" end="68" pre="K" post="T" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q9Y266"/>
+            <PeptideEvidence id="peptide_6_1" start="54" end="68" pre="K" post="T" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_Q9Y266"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="33.5"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.048"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_88" spectrumID="index=44" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_88_1" calculatedMassToCharge="777.87912647" chargeState="2" experimentalMassToCharge="777.81112647" Peptide_ref="peptide_6_2" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_88_O14576" start="44" end="56" pre="K" post="R" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_O14576"/>
+            <PeptideEvidence id="peptide_6_2" start="44" end="56" pre="K" post="R" missedCleavages="1" isDecoy="false" DBSequence_Ref="DBSeq_1_O14576"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="29.3"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.07"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_89" spectrumID="index=64" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_89_1" calculatedMassToCharge="480.25604313" chargeState="3" experimentalMassToCharge="480.25637647" Peptide_ref="peptide_6_3" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_89_P14635" start="312" end="324" pre="K" post="Y" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P14635"/>
+            <PeptideEvidence id="peptide_6_3" start="312" end="324" pre="K" post="Y" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_P14635"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="29.6"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.072"/>
           </SpectrumIdentificationItem>
         </SpectrumIdentificationResult>
         <SpectrumIdentificationResult id="SIR_90" spectrumID="index=9" SpectraData_ref="mzIdentML/test-tandem.pep.xml">
           <SpectrumIdentificationItem id="SII_90_1" calculatedMassToCharge="691.84912647" chargeState="2" experimentalMassToCharge="692.35762647" Peptide_ref="peptide_6_4" rank="1" passThreshold="true">
-            <PeptideEvidence id="PE_90_O15027" start="605" end="618" pre="R" post="M" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_O15027"/>
+            <PeptideEvidence id="peptide_6_4" start="605" end="618" pre="R" post="M" missedCleavages="0" isDecoy="false" DBSequence_Ref="DBSeq_1_O15027"/>
             <cvParam accession="MS:1001331" name="xtandem:hyperscore" cvRef="PSI-MS" value="33.9"/>
             <cvParam accession="MS:1001330" name="xtandem:expect" cvRef="PSI-MS" value="0.092"/>
           </SpectrumIdentificationItem>

@@ -20,7 +20,8 @@ class TideConverter
     	tide.each_line {|line| hits << line.split}
     	
     	#Sort by spectrum index
-    	hits.sort! {|x,y| x[0].to_i <=> y[0].to_i}
+    	#hits.sort! {|x,y| x[0].to_i <=> y[0].to_i}
+    	hits = hits.sort_by {|x| [x[0].to_i, x[2].to_i]}
     	
     	#Group by spectrum
     	i = 0
@@ -28,7 +29,8 @@ class TideConverter
     		spectrum = []
     		hit = hits[i]
     		
-    		while i < hits.length && hits[i][0] == hit[0]
+    		#hit = [spectrum, pre_mass, charge, xCorr, peptide]
+    		while i < hits.length && hits[i][0] == hit[0] && hits[i][2] == hit[2]
     			spectrum << hits[i]
     			i += 1
     		end
@@ -50,7 +52,7 @@ class TideConverter
 				xml.msms_run_summary(:base_name => "#{@file}.pep.xml", :raw_data_type => "raw", :raw_data => ".mzXML") {
 					xml.sample_enzyme(:name => @enzyme)
 					xml.search_summary(:base_name => "#{@file}.pep.xml", :search_engine => "Tide") {
-						xml.search_database(:local_path => @database, :size_in_db_entries => "lots")
+						xml.search_database(:local_path => @database)
 						xml.enzymatic_search_constraint(:enzyme => @enzyme)
 					}
 					
@@ -67,7 +69,7 @@ class TideConverter
     
     def buildSpectrumQueries(xml, data)
     	data.each do |spectrum|
-			xml.spectrum_query(:spectrum => spectrum[0][0], 
+			xml.spectrum_query(:spectrum => spectrum[0][0].to_s + "." + spectrum[0][2].to_s, 
 				:start_scan => "0", 
 				:end_scan => "0", 
 				:precursor_neutral_mass => calcMass(spectrum[0][1].to_f, spectrum[0][2].to_f), 

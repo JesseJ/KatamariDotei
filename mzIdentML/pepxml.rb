@@ -9,7 +9,6 @@ class PepXML < Format
 		@type = "pepxml"
 		@doc = Nokogiri::XML(IO.read(file))
 		@xmlns = ""
-		@tempSolution = 0
 		@sequences = 0
 		@proteinIndices = []
 		
@@ -160,7 +159,7 @@ class PepXML < Format
 		
 		scores.each do |score|
 			id, name = findAccession(conformScoreName(score.xpath("./@name").to_s, @engine))
-			scoreArr << [id, name, score.xpath("./@value").to_s.to_f]
+			scoreArr << [id, name, score.xpath("./@value").to_s]
 		end
 		
 		item.vals = scoreArr
@@ -174,8 +173,10 @@ class PepXML < Format
 		post = hit.xpath("./@peptide_next_aa").to_s
 		missedCleavages = hit.xpath("./@num_missed_cleavages").to_s
 		pro = proteinID(hit.xpath("./@protein").to_s)
-		startVal, endVal = pepLocation(hit, pro)
+		pep = hit.xpath("./@peptide").to_s
+		startVal, endVal = pepLocation(hit, pro, pep)
 		ref = ""
+		id = ""
 		
 		@pros.each do |thisPro|
 			if pro == thisPro[0]
@@ -184,15 +185,19 @@ class PepXML < Format
 			end
 		end
 		
-		@tempSolution += 1
+		@peps.each do |thisPep|
+			if pep == thisPep[1]
+				id = thisPep[0]
+				break
+			end
+		end
+		
 		#(:id, :start, :end, :pre, :post, :missedCleavages, :isDecoy, :DBSequence_Ref)
-		PepEvidence.new("PE_#{@tempSolution}_#{pro}", startVal, endVal, pre, post, missedCleavages, false, ref)
+		PepEvidence.new(id, startVal, endVal, pre, post, missedCleavages, false, ref)
 	end
 	
 	#Gets the start and end location of the peptide
-	def pepLocation(hit, pro)
-		pep = hit.xpath("./@peptide").to_s
-		
+	def pepLocation(hit, pro, pep)
 		@locations.each do |location|
 			if location[0] == pep && location[1] == pro
 				return location[2], location[3]
@@ -220,6 +225,7 @@ class PepXML < Format
 		dataHash = Hash.new
 		
 		Ms::Fasta.foreach(@database) do |entry|
+			@sequences += 1
 			pID = proteinID(entry.header)
 			dataHash[pID] = entry.sequence
 			@proteinIndices << pID

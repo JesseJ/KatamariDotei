@@ -10,12 +10,7 @@ include Process
 #database == type of fasta database to use, e.g. "human"
 #enzyme == the enzyme to use in the search, e.g. trypsin
 #run == which run, or iteration, this is
-# options (All options's default to true):
-#     :omssa =>   true | false
-#     :xtandem => true | false
-#     :crux =>    true | false
-#     :sequest => true | false
-#     :mascot =>  true | false
+#opts: All option values are either true or false.
 class Search
     def initialize(file, database, enzyme, run, opts={})
         @opts = opts
@@ -28,62 +23,17 @@ class Search
     
     def run
         puts "\n----------------"
-        puts "Running search engines..."
-        
-        if @opts[:xtandem] == true
-            runTandem
-        end
-        
-        if @opts[:omssa] == true
-			runOMSSA
-        end
+		puts "Running search engines..."
 		
-        if @opts[:tide] == true
-        	database = extractDatabase(@database)
-        	path = "#{$path}../../crux/tide/"
-        	fFile = "#{@file}-forward_tide_#{@run}"
-        	dFile = "#{@file}-decoy_tide_#{@run}"
-			
-        	#pid = fork {exec("#{path}tide-index --fasta #{database} --enzyme #{@enzyme} --digestion full-digest")}
-			#waitpid(pid, 0)
-			
-			#Forward search
-            pid = fork {exec("#{path}tide-import-spectra --in #{@file}.ms2 -out #{@file}-forward_tide.spectrumrecords")}
-			waitpid(pid, 0)
-			
-            pid = fork {exec("#{path}tide-search --proteins #{database}.protix --peptides #{database}.pepix --spectra #{@file}-forward_tide.spectrumrecords > #{fFile}.results")}
-			waitpid(pid, 0)
-			
-			#Decoy search
-            pid = fork {exec("#{path}tide-import-spectra --in #{@file}.ms2 -out #{@file}-decoy_tide.spectrumrecords")}
-			waitpid(pid, 0)
-			
-            pid = fork {exec("#{path}tide-search --proteins #{database}.protix --peptides #{database}.pepix --spectra #{@file}-decoy_tide.spectrumrecords > #{dFile}.results")}
-			waitpid(pid, 0)
-			
-			#Convert
-			TideConverter.new(fFile, @database, @enzyme).convert
-			TideConverter.new(dFile, @database, @enzyme).convert
-			
-			@outputFiles << ["#{fFile}.pep.xml", "#{dFile}.pep.xml"]
-        end
-        
-        if @opts[:sequest] == true
-            #exec("") if fork == nil
-        end
-        
-        if @opts[:mascot] == true
-            #exec("") if fork == nil
-        end
-        
-        #Wait for all the processes to finish before moving on
-        waitForEverything
-        
-        #Convert X!Tandem files
-        if @opts[:xtandem] == true
-            convertTandemOutput
-            waitForEverything
-        end
+		threads = []
+		
+		threads << Thread.new {runOMSSA} if @opts[:omssa] == true
+		threads << Thread.new {runTide} if @opts[:tide] == true
+		threads << Thread.new {runTandem} if @opts[:xtandem] == true
+		
+        #Wait for all the processes and threads to finish before moving on
+		waitForAllProcesses
+		threads.each {|thread| thread.join}
         
         @outputFiles
     end
@@ -92,21 +42,26 @@ class Search
         #Forward search
         createTandemInput(false)
         
-        exec("#{$path}../../tandem-linux-10-01-01-4/bin/tandem.exe #{$path}../data/forwardTandemInput.xml") if fork == nil
+        pid1 = fork {exec("#{$path}../../tandem-linux-10-01-01-4/bin/tandem.exe #{$path}../data/forwardTandemInput.xml")}
             
         #Decoy search
-        createTandemInput(true)
+		createTandemInput(true)
         
-        exec("#{$path}../../tandem-linux-10-01-01-4/bin/tandem.exe #{$path}../data/decoyTandemInput.xml") if fork == nil
+		pid2 = fork {exec("#{$path}../../tandem-linux-10-01-01-4/bin/tandem.exe #{$path}../data/decoyTandemInput.xml")}
+        waitForProcess(pid1)
+        waitForProcess(pid2)
+		
+		convertTandemOutput
     end
     
+    #This is what I made before learning nokogiri. I could use nokogiri instead, but this is less code.
     def createTandemInput(decoy)
         if decoy
             file = File.new("#{$path}../data/decoyTandemInput.xml", "w+")
         else
             file = File.new("#{$path}../data/forwardTandemInput.xml", "w+")
         end
-            
+        
         xml = Builder::XmlMarkup.new(:target => file, :indent => 4)
         xml.instruct! :xml, :version => "1.0"
             
@@ -146,14 +101,55 @@ class Search
         @outputFiles << [forward, decoy]
     end
     
-    def waitForEverything
-        begin
-            Process.wait while true
-        
-        rescue SystemCallError
-            #No need to do anything here, just go
-        end
+    def runTide
+    	database = extractDatabase(@database)
+    	databaseR = extractDatabase(@database + "-r")
+        path = "#{$path}../../crux/tide/"
+        fFile = "#{@file}-forward_tide_#{@run}"
+        dFile = "#{@file}-decoy_tide_#{@run}"
+		
+        pidF = fork {exec("#{path}tide-index --fasta #{database} --enzyme #{@enzyme} --digestion full-digest")}
+        pidR = fork {exec("#{path}tide-index --fasta #{databaseR} --enzyme #{@enzyme} --digestion full-digest")}
+		
+		#tide-import-spectra
+		pidB = fork {exec("#{path}tide-import-spectra --in #{@file}.ms2 -out #{@file}-forward_tide.spectrumrecords")}
+		
+		#Forward tide-search
+		waitForProcess(pidF)
+		waitForProcess(pidB)
+		pidF = fork {exec("#{path}tide-search --proteins #{database}.protix --peptides #{database}.pepix --spectra #{@file}-forward_tide.spectrumrecords > #{fFile}.results")}
+		
+		#Decoy tide-search
+		waitForProcess(pidR)
+		waitForProcess(pidB)
+		pidR = fork {exec("#{path}tide-search --proteins #{databaseR}.protix --peptides #{database}.pepix --spectra #{@file}-decoy_tide.spectrumrecords > #{dFile}.results")}
+		
+		waitForProcess(pidF)
+		waitForProcess(pidR)
+		
+		#Convert
+		TideConverter.new(fFile, database, @enzyme).convert
+		TideConverter.new(dFile, databaseR, @enzyme).convert
+		
+		@outputFiles << ["#{fFile}.pep.xml", "#{dFile}.pep.xml"]
     end
+    
+	def waitForAllProcesses
+		begin
+			Process.wait while true
+
+		rescue SystemCallError
+			#No need to do anything here, just go
+		end
+	end
+	
+	def waitForProcess(pid)
+		begin
+			waitpid(pid, 0)
+
+		rescue SystemCallError
+		end
+	end
     
     def convertTandemOutput
         #Convert to pepXML format
@@ -176,9 +172,9 @@ class Search
         doc = Nokogiri::XML(IO.read("#{$path}../../omssa-2.1.7.linux/OMSSA.xsd"))
         return doc.xpath("//xs:enumeration[@value=\"#{@enzyme}\"]/@ncbi:intvalue")
     end
-    
-    def getTandemEnzyme
-        doc = Nokogiri::XML(IO.read("#{$path}../../tandem-linux-10-01-01-4/enzymes.xml"))
-        return doc.xpath("//enzyme[@name=\"#{@enzyme}\"]/@symbol")
-    end
+	
+	def getTandemEnzyme
+		doc = Nokogiri::XML(IO.read("#{$path}../../tandem-linux-10-01-01-4/enzymes.xml"))
+		return doc.xpath("//enzyme[@name=\"#{@enzyme}\"]/@symbol")
+	end
 end

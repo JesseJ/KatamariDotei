@@ -37,7 +37,7 @@ I created a class to select and reverse a database to be used in decoy searches.
 
 6. INSTALLING FROM JUST THE PIPELINE SOURCE CODE
 
-As of 20 May 2010:
+As of 4 June 2010:
 cd pipeline/
 sudo aptitude install ruby1.9.1-full
 sudo aptitude install rubygems1.9.1
@@ -50,6 +50,7 @@ install ReAdW.exe and get XCalibur's Xrawfile2.dll, fileio.dll, fregistry.dll in
 install hardklor
 install X! Tandem. May need to add "#include <stdint.h>" to saxhandler.h. Make correction as noted in note 7.
 install OMSSA
+install Tide from http://noble.gs.washington.edu/proj/tide/
 download search engine databases
 sudo apt-get install blast2. This is to use formatdb on the search engine databases to format them for OMSSA.
 
@@ -57,3 +58,14 @@ sudo apt-get install blast2. This is to use formatdb on the search engine databa
 7. MODIFIED X! TANDEM
 
 For some reason, X! Tandem automatically renamed the output files to include the date and time. This complicated automation, so I edited the source code to not add the date and time by commenting out line 914 of tandem-linux-10-01-01-4/src/mreport.cpp.
+
+
+8. POSSIBLE NAMES
+
+ProjectZero: Because Zero kicks butt, and so should this. Megaman Zero reference.
+WarpPipe: Because, well, both pipeline and warp pipe have the word pipe in it. Super Mario reference.
+JPipe: Because my name starts with J, and so does John's. There's gotta be at least one narcissistic name, right?
+KatamariShiteki (Clod Identification) or KatamariBunkai (Clod Analysis): Because it's a wad of other programs. Katamari Damacy reference.
+SmartPipe: Because Smartball can whiz back and forth right through pipes. Smartball reference.
+MasterPipe: Zelda reference.
+PeptideBaton: Like a music conductor, the user simply waves his baton (Enters a command) and the the orchestra (Program) plays the parts of the song (Runs the different programs). Windwaker reference.

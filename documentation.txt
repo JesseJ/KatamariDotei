@@ -1,7 +1,16 @@
-PIPELINE DOC
-	Pipeline 0.01 (May 2010): This is a testing version and not meant for release, so there is no doc at the moment. There is, however,
-								a "stable" version of this which can be run, but no guarantees are made.
+PIPELINE DOC v0.01 (June 2010)
 
+Pipeline 0.01 (June 2010): This is a testing version and not meant for release. There is, however, a "stable" version of this which can be run, but no guarantees are made.
+
+Because this is version 0.01 this doc is limited and guaranteed to change.
+
+----------------------------------------------------------------------------------------------------------------------
+
+Functions
+
+1. Takes .raw file and creates mzXML file.
+2. Takes mzXML file and creates a file in the format needed by search engines. Can run Hardklor on the mzXML file.
+3. Runs X! Tandem, OMSSA, and Tide. Outputs pepXML files as their search results.
 
 _____________________________________________________________________________________________________________________________________
 
@@ -472,6 +481,41 @@ OPTIONAL ARGUMENTS
    Dry run the application: do nothing, only test all preconditions
 
 SEE MORE AT: http://pubchem.ncbi.nlm.nih.gov/omssa/
+
+----------------------------------------------------------------------------------------------------------------------
+
+*Tide*
+
+Tide is a tool for identifying peptides from tandem mass spectra. It is 
+an independent reimplementation of the SEQUEST algorithm, which identifies 
+peptides by comparing the observed spectra to a catalog of theoretical spectra
+derived in silico  from a database of known proteins. The immediate ancestor of
+Tide is Crux, but Tide has been completely re-engineered to achieve a
+thousandfold improvement in speed while exactly replicating Crux XCorr scores.
+
+Executables:
+
+tide-index          Convert a FASTA format file of protein sequences into a 
+                    format that can be read efficiently by tide-search
+
+tide-import-spectra Convert an MS2 file of tandem mass spectra into the format
+                    used by tide-search
+
+tide-search         Match the given set of observed spectra with the peptides 
+                    from the protein database.
+
+yeast-demo.sh       Shell script runing Tide on sample S. cerevisiae data
+
+worm-demo.sh        Shell script runing Tide on sample C. Elegans data
+
+Documentation:
+
+index.html               Overview of Tide
+tide-import-spectra.html Documentation for tide-import-spectra
+tide-index.html          Documentation for tide-index
+tide-search.html         Documentation for tide-search
+crux.css                 CSS style-sheet for HTML documentation
+images                   Directory containing image files.
 
 ----------------------------------------------------------------------------------------------------------------------
 

@@ -26,7 +26,7 @@ class Pipeline
 		RawTomzXML.new("#{@file}.raw").convert
 		MzXMLToOther.new("mgf", "#{@file}.mzXML", false).convert
 		MzXMLToOther.new("ms2", "#{@file}.mzXML", false).convert
-		output = Search.new("#{@file}", @type, "trypsin", 1, :omssa => true, :xtandem => true, :tide => true, :sequest => true, :mascot => true).run
+		output = Search.new("#{@file}", @type, "trypsin", 1, :omssa => false, :xtandem => false, :tide => false, :spectrast => true).run
 		#qValues = FalseRateDiscoverer.new(output).discoverFalseRate
 		#Refiner.new(output, qValues, 0.01).refine
         
@@ -52,3 +52,15 @@ class Pipeline
 end
 
 Pipeline.new(file, type).run
+
+
+
+
+
+
+
+
+
+
+
+#PeptideProphet -> iProphet -> ProteinProphet

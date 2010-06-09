@@ -9,6 +9,9 @@ class TideConverter
         @file = file
         @database = database
         @enzyme = enzyme
+        
+        temp = file.split("/")
+    	@fileName = temp[temp.length - 1]
     end
     
     def convert
@@ -69,16 +72,18 @@ class TideConverter
     
     def buildSpectrumQueries(xml, data)
     	data.each do |spectrum|
-			xml.spectrum_query(:spectrum => spectrum[0][0].to_s + "." + spectrum[0][2].to_s, 
+    		index = spectrum[0][0].to_s
+    		
+			xml.spectrum_query(:spectrum => @fileName + "." + index + "." + index + "." + spectrum[0][2].to_s, 
 				:start_scan => "0", 
 				:end_scan => "0", 
-				:precursor_neutral_mass => calcMass(spectrum[0][1].to_f, spectrum[0][2].to_f), 
+				:precursor_neutral_mass => (spectrum[0][1].to_f - 1.00727646677) * spectrum[0][2].to_f, 
 				:assumed_charge => spectrum[0][2]) {
 					xml.search_result {
 						i = 1
 						
 						spectrum.each do |hit|
-							xml.search_hit(:hit_rank => i, :peptide => hit[4], :calc_neutral_pep_mass => calcMass(hit[1].to_f, hit[2].to_f)) {
+							xml.search_hit(:hit_rank => i, :peptide => hit[4], :calc_neutral_pep_mass => hit[1].to_f) {
 							}
 							
 							i += 1
@@ -87,8 +92,4 @@ class TideConverter
 				}
 		end
     end
-    
-    def calcMass(mass, charge)
-		(charge * mass) - (charge * 1.00727646677)
-	end
 end

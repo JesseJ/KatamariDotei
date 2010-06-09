@@ -12,17 +12,20 @@ include Process
 #run == which run, or iteration, this is
 #opts: All option values are either true or false.
 class Search
-    def initialize(file, database, enzyme, run, opts={})
-        @opts = opts
-        @run = run
-        @enzyme = enzyme
-        @database = database
-        @file = file
-        @outputFiles = []
+	def initialize(file, database, enzyme, run, opts={})
+		@opts = opts
+		@run = run
+		@enzyme = enzyme
+		@database = database
+		@file = file
+        
+		temp = file.split("/")
+    	@fileName = temp[temp.length - 1]
+    	@outputFiles = []
     end
     
-    def run
-        puts "\n----------------"
+	def run
+		puts "\n----------------"
 		puts "Running search engines..."
 		
 		threads = []
@@ -30,10 +33,11 @@ class Search
 		threads << Thread.new {runOMSSA} if @opts[:omssa] == true
 		threads << Thread.new {runTide} if @opts[:tide] == true
 		threads << Thread.new {runTandem} if @opts[:xtandem] == true
+		threads << Thread.new {runSpectraST} if @opts[:spectrast] == true
 		
-        #Wait for all the processes and threads to finish before moving on
-		waitForAllProcesses
+		#Wait for all the processes and threads to finish before moving on
 		threads.each {|thread| thread.join}
+		waitForAllProcesses
         
         @outputFiles
     end
@@ -88,18 +92,18 @@ class Search
         file.close
     end
     
-    def runOMSSA
-        forward = "#{@file}-forward_omssa_#{@run}.pep.xml"
-        decoy = "#{@file}-decoy_omssa_#{@run}.pep.xml"
-        
-        #Forward search
-        exec("#{$path}../../omssa-2.1.7.linux/omssacl -fm #{@file}.mgf -op #{forward} -e #{getOMSSAEnzyme} -d #{extractDatabase(@database)}") if fork == nil
-        
-        #Decoy search
-        exec("#{$path}../../omssa-2.1.7.linux/omssacl -fm #{@file}.mgf -op #{decoy} -e #{getOMSSAEnzyme} -d #{extractDatabase(@database + "-r")}") if fork == nil
-        
-        @outputFiles << [forward, decoy]
-    end
+	def runOMSSA
+		forward = "#{@file}-forward_omssa_#{@run}.pep.xml"
+		decoy = "#{@file}-decoy_omssa_#{@run}.pep.xml"
+		
+		#Forward search
+		exec("#{$path}../../omssa-2.1.7.linux/omssacl -fm #{@file}.mgf -op #{forward} -e #{getOMSSAEnzyme} -d #{extractDatabase(@database)}") if fork == nil
+		
+		#Decoy search
+		exec("#{$path}../../omssa-2.1.7.linux/omssacl -fm #{@file}.mgf -op #{decoy} -e #{getOMSSAEnzyme} -d #{extractDatabase(@database + "-r")}") if fork == nil
+		
+		@outputFiles << [forward, decoy]
+	end
     
     def runTide
     	database = extractDatabase(@database)
@@ -133,7 +137,15 @@ class Search
 		
 		@outputFiles << ["#{fFile}.pep.xml", "#{dFile}.pep.xml"]
     end
-    
+	
+	def runSpectraST
+		#Forward search
+		pid = fork {exec("/usr/local/src/tpp-4.3.1/build/linux/spectrast -cN #{$path}../data/#{@fileName} #{@file}.ms2")}
+		
+		waitForProcess(pid)
+		exec("/usr/local/src/tpp-4.3.1/build/linux/spectrast -sD #{@database} -sL #{$path}../data/#{@fileName}.splib #{@file}.mzXML") if fork == nil
+	end
+	
 	def waitForAllProcesses
 		begin
 			Process.wait while true

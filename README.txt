@@ -8,3 +8,8 @@ DESCRIPTION:
 HOW TO RUN:
 
 	Pipeline0.01: src/pipeline.rb OR /stable/pipeline.rb inputFile type enzyme (outputFolder)
+
+
+CONTACT:
+
+	If you have any questions at all, please email me at firstblackphantom@gmail.com

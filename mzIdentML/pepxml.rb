@@ -50,7 +50,7 @@ class PepXML < Format
 		@engine
 	end
 	
-	#Simply returns 0 because threshold can't be obtained from pepXML
+	#Simply returns 0 because I don't know how to obtain the threshold from pepXML
 	def threshold
 		0
 	end
@@ -159,35 +159,26 @@ class PepXML < Format
 		
 		scores.each do |score|
 			id, name = findAccession(conformScoreName(score.xpath("./@name").to_s, @engine))
-			scoreArr << [id, name, score.xpath("./@value").to_s]
+			scoreArr << [id, name, score.xpath("./@value").to_s] if id != ""
 		end
 		
 		item.vals = scoreArr
-		item.pepEvidence = getEvidence(hit)
+		item.pepEvidence = getEvidence(hit, pep, ref)
 		item
 	end
 	
 	#Obtains the peptideEvidence
-	def getEvidence(hit)
+	def getEvidence(hit, pep, id)
 		pre = hit.xpath("./@peptide_prev_aa").to_s
 		post = hit.xpath("./@peptide_next_aa").to_s
 		missedCleavages = hit.xpath("./@num_missed_cleavages").to_s
 		pro = proteinID(hit.xpath("./@protein").to_s)
-		pep = hit.xpath("./@peptide").to_s
 		startVal, endVal = pepLocation(hit, pro, pep)
 		ref = ""
-		id = ""
 		
 		@pros.each do |thisPro|
 			if pro == thisPro[0]
 				ref = thisPro[2]
-				break
-			end
-		end
-		
-		@peps.each do |thisPep|
-			if pep == thisPep[1]
-				id = thisPep[0]
 				break
 			end
 		end
@@ -209,7 +200,6 @@ class PepXML < Format
 	
 	#Obtains all peptide locations and puts them in an array in the format: [[peptide, protein, start, end]]
 	def findAllPepLocations
-		#hits = @doc.xpath("//#{@xmlns}search_hit[@hit_rank=\"1\"]")
 		hits = @doc.xpath("//#{@xmlns}search_hit")
 		all = []
 		@locations = []

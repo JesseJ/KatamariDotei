@@ -151,7 +151,7 @@ class Search2mzIdentML
 					
 					xml.SpectrumIdentificationItem(
 						:id => siiID,
-						:calculatedMassToCharge => '%.8f' % ident.mass,
+						:calculatedMassToCharge => '%.8f' % ident.mass,	#The 8 decimal formatting is arbitrary. I just felt like it.
 						:chargeState => ident.charge,
 						:experimentalMassToCharge => '%.8f' % ident.experi,
 						:Peptide_ref => ident.pep,
@@ -183,7 +183,7 @@ class Search2mzIdentML
 		
 		item.vals.each do |val|
 			#Not all pepxml score names have a corresponding mzIdentML value, so those are left out.
-			xml.cvParam(:accession => val[0], :name => val[1], :cvRef => "PSI-MS", :value => val[2]) if val[0] != ""
+			xml.cvParam(:accession => val[0], :name => val[1], :cvRef => "PSI-MS", :value => val[2])
 		end
 	end
 end

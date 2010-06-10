@@ -1,6 +1,6 @@
 require 'spec/more'
 require 'fileutils'
-require "#{File.dirname($0)}/search2mzIdentML.rb"
+require "#{File.dirname($0)}/search2mzidentml.rb"
 
 
 describe 'PepXML2mzIdentML' do

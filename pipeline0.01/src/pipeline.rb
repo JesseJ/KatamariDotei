@@ -7,6 +7,8 @@ require "#{$path}mzxml_to_other.rb"
 require "#{$path}search.rb"
 require "#{$path}false_rate_discoverer.rb"
 require "#{$path}refiner.rb"
+require "#{$path}percolator.rb"
+require "#{$path}concurrency.rb"
 
 #file = "#{File.expand_path($path)}/../data/fast"
 file = "#{File.expand_path($path)}/../data/test"
@@ -15,52 +17,41 @@ type = "human"
 
 #This is the main class of the pipeline.
 class Pipeline
-    def initialize(file, type)
-        @file = file
-        @type = type
-    end
+  def initialize(file, type)
+    @file = file
+    @type = type
+  end
     
-    def run
-        puts "\nHere we go!\n"
-        
+  def run
+    puts "\nHere we go!\n"
+    
 		RawTomzXML.new("#{@file}.raw").convert
 		MzXMLToOther.new("mgf", "#{@file}.mzXML", false).convert
 		MzXMLToOther.new("ms2", "#{@file}.mzXML", false).convert
-		output = Search.new("#{@file}", @type, "trypsin", 1, :omssa => false, :xtandem => false, :tide => false, :spectrast => true).run
-		#qValues = FalseRateDiscoverer.new(output).discoverFalseRate
+		output = Search.new("#{@file}", @type, "trypsin", 1, :omssa => true, :xtandem => true, :tide => true, :spectrast => true).run
 		#Refiner.new(output, qValues, 0.01).refine
+    Percolator.new(output).run
         
-        notifyCompletion
-    end
+    notifyCompletion
+  end
     
-    #Displays a randomly chosen exclamation of joy
-    def notifyCompletion
-        done = rand(11)
-        puts "\nBoo-yah!" if done == 0
-        puts "\nOh-yeah!" if done == 1
-        puts "\nYah-hoo!" if done == 2
-        puts "\nYeah-yuh!" if done == 3
-        puts "\nRock on!" if done == 4
-        puts "\n^_^" if done == 5
-        puts "\nRadical!" if done == 6
-        puts "\nAwesome!" if done == 7
-        puts "\nTubular!" if done == 8
-        puts "\nYay!" if done == 9
-        puts "\nGnarly!" if done == 10
-        puts "----------------\n"
-    end
+  #Displays a randomly chosen exclamation of joy
+  def notifyCompletion
+    done = rand(12)
+    puts "\nBoo-yah!" if done == 0
+    puts "\nOh-yeah!" if done == 1
+    puts "\nYah-hoo!" if done == 2
+    puts "\nYeah-yuh!" if done == 3
+    puts "\nRock on!" if done == 4
+    puts "\n^_^" if done == 5
+    puts "\nRadical!" if done == 6
+    puts "\nAwesome!" if done == 7
+    puts "\nTubular!" if done == 8
+    puts "\nYay!" if done == 9
+    puts "\nGnarly!" if done == 10
+    puts "\nSweet!" if done == 11
+    puts "----------------\n"
+  end
 end
 
 Pipeline.new(file, type).run
-
-
-
-
-
-
-
-
-
-
-
-#PeptideProphet -> iProphet -> ProteinProphet

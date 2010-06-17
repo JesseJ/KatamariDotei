@@ -46,7 +46,7 @@ class Search
     #Forward search
     createTandemInput(false)
         
-    pid1 = fork {exec("#{$path}../../tandem-linux/bin/tandem.exe #{$path}../data/forwardTandemInput.xml")}
+    pid1 = fork {exec("#{$path}../../tandem-linux/bin/tandem.exe #{$path}../data/targetTandemInput.xml")}
             
     #Decoy search
 		createTandemInput(true)
@@ -63,7 +63,7 @@ class Search
     if decoy
       file = File.new("#{$path}../data/decoyTandemInput.xml", "w+")
     else
-      file = File.new("#{$path}../data/forwardTandemInput.xml", "w+")
+      file = File.new("#{$path}../data/targetTandemInput.xml", "w+")
     end
         
     xml = Builder::XmlMarkup.new(:target => file, :indent => 4)
@@ -80,7 +80,7 @@ class Search
       notes['output, path'] = "#{@file}-decoy_tandem_#{@run}.xml"
     else
       notes['protein, taxon'] = "#{@database}"
-      notes['output, path'] = "#{@file}-forward_tandem_#{@run}.xml"
+      notes['output, path'] = "#{@file}-target_tandem_#{@run}.xml"
     end
                  
     xml.bioml do 
@@ -93,49 +93,49 @@ class Search
   end
     
 	def runOMSSA
-		forward = "#{@file}-forward_omssa_#{@run}.pep.xml"
+		target = "#{@file}-target_omssa_#{@run}.pep.xml"
 		decoy = "#{@file}-decoy_omssa_#{@run}.pep.xml"
 		
 		#Forward search
-		exec("#{$path}../../omssa/omssacl -fm #{@file}.mgf -op #{forward} -e #{getOMSSAEnzyme} -d #{extractDatabase(@database)}") if fork == nil
+		exec("#{$path}../../omssa/omssacl -fm #{@file}.mgf -op #{target} -e #{getOMSSAEnzyme} -d #{extractDatabase(@database)}") if fork == nil
 		
 		#Decoy search
 		exec("#{$path}../../omssa/omssacl -fm #{@file}.mgf -op #{decoy} -e #{getOMSSAEnzyme} -d #{extractDatabase(@database + "-r")}") if fork == nil
 		
-		@outputFiles << [forward, decoy]
+		@outputFiles << [target, decoy]
 	end
     
   def runTide
   	database = extractDatabase(@database)
    	databaseR = extractDatabase(@database + "-r")
     path = "#{$path}../../crux/tide/"
-    fFile = "#{@file}-forward_tide_#{@run}"
+    tFile = "#{@file}-target_tide_#{@run}"
     dFile = "#{@file}-decoy_tide_#{@run}"
 		
     pidF = fork {exec("#{path}tide-index --fasta #{database} --enzyme #{@enzyme} --digestion full-digest")}
     pidR = fork {exec("#{path}tide-index --fasta #{databaseR} --enzyme #{@enzyme} --digestion full-digest")}
 		
 		#tide-import-spectra
-		pidB = fork {exec("#{path}tide-import-spectra --in #{@file}.ms2 -out #{@file}-forward_tide.spectrumrecords")}
+		pidB = fork {exec("#{path}tide-import-spectra --in #{@file}.ms2 -out #{@file}-tide.spectrumrecords")}
 		
 		#Forward tide-search
 		waitForProcess(pidF)
 		waitForProcess(pidB)
-		pidF = fork {exec("#{path}tide-search --proteins #{database}.protix --peptides #{database}.pepix --spectra #{@file}-forward_tide.spectrumrecords > #{fFile}.results")}
+		pidF = fork {exec("#{path}tide-search --proteins #{database}.protix --peptides #{database}.pepix --spectra #{@file}-tide.spectrumrecords > #{tFile}.results")}
 		
 		#Decoy tide-search
 		waitForProcess(pidR)
 		waitForProcess(pidB)
-		pidR = fork {exec("#{path}tide-search --proteins #{databaseR}.protix --peptides #{database}.pepix --spectra #{@file}-decoy_tide.spectrumrecords > #{dFile}.results")}
+		pidR = fork {exec("#{path}tide-search --proteins #{databaseR}.protix --peptides #{databaseR}.pepix --spectra #{@file}-tide.spectrumrecords > #{dFile}.results")}
 		
 		waitForProcess(pidF)
 		waitForProcess(pidR)
 		
 		#Convert
-		TideConverter.new(fFile, database, @enzyme).convert
+		TideConverter.new(tFile, database, @enzyme).convert
 		TideConverter.new(dFile, databaseR, @enzyme).convert
 		
-		@outputFiles << ["#{fFile}.pep.xml", "#{dFile}.pep.xml"]
+		@outputFiles << ["#{tFile}.pep.xml", "#{dFile}.pep.xml"]
   end
 	
 	def runSpectraST
@@ -148,7 +148,7 @@ class Search
     
   def convertTandemOutput
     #Convert to pepXML format
-    file1 = "#{@file}-forward_tandem_#{@run}.xml"
+    file1 = "#{@file}-target_tandem_#{@run}.xml"
     file2 = "#{@file}-decoy_tandem_#{@run}.xml"
     pepFile1 = file1.chomp(".xml") + ".pep.xml"
     pepFile2 = file2.chomp(".xml") + ".pep.xml"

@@ -13,9 +13,9 @@ class Format
     @decoyProteins = decoyProteins
   end
   
-  #Returns the file name without things like "forward" or ".pep.xml" in the name
+  #Returns the file name without things like "target" or ".pep.xml" in the name
   def file
-    @file = file
+    ""
   end
   
   def target

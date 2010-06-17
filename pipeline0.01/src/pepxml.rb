@@ -2,7 +2,7 @@ require "#{$path}format.rb"
 require 'nokogiri'
 
 class PepXML < Format
-  def initialize(target, decoy)
+  def initialize(target, decoy, database, revDatabase)
     super
   end
   
@@ -23,6 +23,23 @@ class PepXML < Format
     @decoy
   end
   
+  #Creates and returns a header for the tab file
+  def header
+    temp = ""
+    result = "SpecId\tLabel\tCharge\t"
+    
+    nokogiriDoc(@target).xpath("//#{@xmlns}search_hit").each do |hit|
+      temp = hit.xpath(".//#{@xmlns}search_score")
+      break
+    end
+    
+    temp.each do |score|
+      result += score.xpath("./@name").to_s + "\t"
+    end
+    
+    result += "Peptide\t" + "Proteins"
+  end
+
   def matches
     parse if @matches == []
     
@@ -61,6 +78,7 @@ class PepXML < Format
   
   #Parses the pepXML file and returns an PSM object (A line for the .tab file)
   def psm(query, label, rank)
+    #Required Stuff
     spect = query.xpath("./@spectrum").to_s.chomp(" ")    #X! Tandem has a space at the end that messes things up
     psm = "#{spect}.#{rank}" + "\t"
     psm += label + "\t"       #id = name.spectrum.spectrum.charge.rank
@@ -73,13 +91,14 @@ class PepXML < Format
       psm += score.xpath("./@value").to_s + "\t"
     end
     
-    psm += hit.xpath("./@peptide").to_s + "\t"
+    #Required Stuff
+    pep = hit.xpath("./@peptide").to_s
+    psm += pep + "\t"
     
-    hit.xpath("./@protein").each do |protein|
-      psm += protein.to_s + "\t"
-    end
+    psm += proteins(pep, :target) if label == "1"
+    psm += proteins(pep, :decoy) if label == "-1"
     
     #id <tab> label <tab> charge <tab> score1 <tab> ... <tab> scoreN <tab> peptide <tab> proteinId1 <tab> .. <tab> proteinIdM 
-    psm.chomp("\t")
+    psm
   end
 end

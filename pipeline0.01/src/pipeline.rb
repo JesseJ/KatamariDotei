@@ -8,7 +8,7 @@ require "#{$path}search.rb"
 require "#{$path}false_rate_discoverer.rb"
 require "#{$path}refiner.rb"
 require "#{$path}percolator.rb"
-require "#{$path}concurrency.rb"
+require "#{$path}helper_methods.rb"
 
 #file = "#{File.expand_path($path)}/../data/fast"
 file = "#{File.expand_path($path)}/../data/test"
@@ -29,9 +29,8 @@ class Pipeline
 		MzXMLToOther.new("mgf", "#{@file}.mzXML", false).convert
 		MzXMLToOther.new("ms2", "#{@file}.mzXML", false).convert
 		output = Search.new("#{@file}", @type, "trypsin", 1, :omssa => true, :xtandem => true, :tide => true, :spectrast => true).run
-		#Refiner.new(output, qValues, 0.01).refine
-    Percolator.new(output).run
-        
+    Percolator.new(output, @type).run
+    
     notifyCompletion
   end
     

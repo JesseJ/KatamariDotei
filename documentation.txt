@@ -11,6 +11,7 @@ Functions
 1. Takes .raw file and creates mzXML file.
 2. Takes mzXML file and creates a file in the format needed by search engines. Can run Hardklor on the mzXML file.
 3. Runs X! Tandem, OMSSA, and Tide. Outputs pepXML files as their search results.
+4. Runs Percolator on the search results.
 
 _____________________________________________________________________________________________________________________________________
 
@@ -573,4 +574,172 @@ Sample Bias Validation allows error rate determination based on expected biases 
 
 See LICENSE
 
+----------------------------------------------------------------------------------------------------------------------
 
+*Percolator*
+
+Percolator version 1.14, Build Date Jun 14 2010 14:18:47
+Copyright (c) 2006-9 University of Washington. All rights reserved.
+Written by Lukas Käll (lukall@u.washington.edu) in the
+Department of Genome Sciences at the University of Washington.
+
+Usage:
+   percolator [options] target.sqt decoy.sqt
+or percolator [options] -P pattern target_and_decoy.sqt
+or percolator [options] -g gist.data gist.label
+
+   where target.sqt is the target sqt-file,
+     and decoy.sqt is the decoy sqt-file,
+Small data sets may be merged by replace the sqt-files with meta
+files. Meta files are text files containing the paths of sqt-files, one path
+per line. For successful result, the different runs should be generated under
+similair condition.
+
+Options:
+ -h
+ --help                            Display this message
+ -o <filename>
+ --sqt-out <filename>              Create an SQT file with the specified name 
+                                   from the given target SQT file, replacing the 
+                                   XCorr value the learned score and Sp with the 
+                                   negated q-value.
+ -s <filename>
+ --shuffled <filename>             Same as -o, but for the decoy SQT file
+ -P <pattern>
+ --pattern <pattern>               Option for single SQT file mode defining the 
+                                   name pattern used for shuffled data base. 
+                                   Typically set to random_seq
+ -p <value>
+ --Cpos <value>                    Cpos, penalty for mistakes made on positive 
+                                   examples. Set by cross validation if not 
+                                   specified.
+ -n <value>
+ --Cneg <value>                    Cneg, penalty for mistakes made on negative 
+                                   examples. Set by cross validation if not 
+                                   specified or -p not specified.
+ -F <value>
+ --trainFDR <value>                False discovery rate threshold to define 
+                                   positive examples in training. Set by cross 
+                                   validation if 0. Default is 0.01.
+ -t <value>
+ --testFDR <value>                 False discovery rate threshold for evaluating 
+                                   best cross validation result and the reported 
+                                   end result. Default is 0.01.
+ -i <number>
+ --maxiter <number>                Maximal number of iterations
+ -m <number>
+ --matches <number>                Maximal number of matches to take in 
+                                   consideration per spectrum when using 
+                                   sqt-files
+ -f <value>
+ --train-ratio <value>             Fraction of the negative data set to be used 
+                                   as train set when only providing one negative 
+                                   set, remaining examples will be used as test 
+                                   set. Set to 0.6 by default.
+ -G <trunc name>
+ --gist-out <trunc name>           Output the computed features to the given 
+                                   file in tab-delimited format. A file with the 
+                                   features, named <trunc name>.data, and a file 
+                                   with the labels named <trunc name>.label will 
+                                   be created
+ -g
+ --gist-in                         Input files are given as gist files. In this 
+                                   case first argument should be a file name of 
+                                   the data file, the second the label file. 
+                                   Labels are interpreted as 1 -- positive train 
+                                   and test set, -1 -- negative train set, -2 -- 
+                                   negative in test set.
+ -J <file name>
+ --tab-out <file name>             Output the computed features to the given 
+                                   file in tab-delimited format. A file with the 
+                                   features with the given file name will be 
+                                   created
+ -j
+ --tab-in                          Input files are given as a tab delimited 
+                                   file. In this case the only argument should 
+                                   be a file name of the data file. The tab 
+                                   delimited fields should be id <tab> label 
+                                   <tab> feature1 <tab> ... <tab> featureN <tab> 
+                                   peptide <tab> proteinId1 <tab> .. <tab> 
+                                   proteinIdM Labels are interpreted as 1 -- 
+                                   positive set and test set, -1 -- negative 
+                                   set.When the --doc option the first and 
+                                   second feature (third and fourth column) 
+                                   should contain the retention time and 
+                                   difference between observed and calculated 
+                                   mass
+ -w <filename>
+ --weights <filename>              Output final weights to the given file
+ -W <filename>
+ --init-weights <filename>         Read initial weights from the given file
+ -V <featureNum>
+ --default-direction <featureNum>  The most informative feature given as feature 
+                                   number, can be negated to indicate that a 
+                                   lower value is better.
+ -v <level>
+ --verbose <level>                 Set verbosity of output: 0=no processing 
+                                   info, 5=all, default is 2
+ -u
+ --unitnorm                        Use unit normalization [0-1] instead of 
+                                   standard deviation normalization
+ -a
+ --aa-freq                         Calculate amino acid frequency features
+ -b
+ --PTM                             Calculate feature for number of 
+                                   post-translational modifications
+ -d
+ --DTASelect                       Add an extra hit to each spectra when writing 
+                                   sqt files
+ -R
+ --test-each-iteration             Measure performance on test set each 
+                                   iteration
+ -Q
+ --quadratic                       Calculate quadratic feature terms
+ -O
+ --override                        Override error check and do not fall back on 
+                                   default score vector in case of suspect score 
+                                   vector
+ -y
+ --notryptic                       Turn off calculation of tryptic/chymo-tryptic 
+                                   features.
+ -c
+ --chymo                           Replace tryptic features with chymo-tryptic 
+                                   features.
+ -e
+ --elastase                        Replace tryptic features with elastase 
+                                   features.
+ -N
+ --PNGaseF                         Calculate feature based on N-linked 
+                                   glycosylation pattern resulting from a 
+                                   PNGaseF treatment. (N[*].[ST])
+ -S <value>
+ --seed <value>                    Setting seed of the random number generator. 
+                                   Default value is 0
+ -2 <filename>
+ --ms2-file <filename>             File containing spectra and retention time. 
+                                   The file could be in mzXML, MS2 or compressed 
+                                   MS2 file.
+ -M
+ --isotope                         Mass difference calculated to closest isotope 
+                                   mass rather than to the average mass.
+ -K
+ --klammer                         Retention time features calculated as in 
+                                   Klammer et al.
+ -D
+ --doc                             Include description of correct features.
+ -r <filename>
+ --results <filename>              Output tab delimited results to a file 
+                                   instead of stdout
+ -B <filename>
+ --decoy-results <filename>        Output tab delimited results for decoys into 
+                                   a file
+ -X <filename>
+ --xml-output <filename>           Output results in xml-format into a file
+ -Z
+ --decoy-xml-output                Include decoys PSMs in the xml-output. Only 
+                                   available if -X is used.
+ -U
+ --unique-peptides                 Remove all redundant peptides and only keep 
+                                   the highest scoring PSM. q-values and PEPs 
+                                   are only calculated on peptide level in such 
+                                   case

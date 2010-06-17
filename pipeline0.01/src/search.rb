@@ -158,11 +158,6 @@ class Search
     exec("/usr/local/src/tpp-4.3.1/build/linux/Tandem2XML #{file2} #{pepFile2}") if fork == nil
   end
     
-  def extractDatabase(database)
-    doc = Nokogiri::XML(IO.read("#{$path}../data/taxonomy.xml"))
-    return doc.xpath("//taxon[@label=\"#{database}\"]//file/@URL")
-  end
-    
   def getOMSSAEnzyme
     doc = Nokogiri::XML(IO.read("#{$path}../../omssa/OMSSA.xsd"))
     return doc.xpath("//xs:enumeration[@value=\"#{@enzyme}\"]/@ncbi:intvalue")

@@ -1,11 +1,16 @@
+require 'yaml'
 
 #A base class for other file formats to be used in Search2Tab. Other formats are meant to inherit from this class, thus Format is basically useless by itself.
-#Takes strings containing the original file, target, and the decoy file locations and a string containing the FASTA database.
+#Contains methods that can be used by all formats.
+#Takes strings containing the target and decoy output file locations and the forward and reverse FASTA databases.
 class Format
-  def initialize(target, decoy)
+  def initialize(target, decoy, proteins, decoyProteins)
     @target = target
     @decoy = decoy
+    
     @matches = []
+    @proteins = proteins
+    @decoyProteins = decoyProteins
   end
   
   #Returns the file name without things like "forward" or ".pep.xml" in the name
@@ -21,7 +26,20 @@ class Format
     ""
   end
   
+  def scores
+    ""
+  end
+  
   def matches
     []
+  end
+  
+  #Obtains all the proteins the given peptide maps to.
+  def proteins(peptide, type)
+    if type == :target
+      @proteins[peptide]
+    elsif type == :decoy
+      @decoyProteins[peptide]
+    end
   end
 end

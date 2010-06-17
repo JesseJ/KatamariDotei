@@ -41,10 +41,10 @@ As of 4 June 2010:
 cd pipeline/
 sudo aptitude install ruby1.9.1-full
 sudo aptitude install rubygems1.9.1
-git clone http://github.com/jtprince/ms-msrun.git
+gem install ms-msrun
 *Crazy stuff happened
 gem install builder
-git clone http://github.com/jtprince/ms-error_rate.git
+gem install ms-error_rate
 sudo aptitude install wine
 install ReAdW.exe and get XCalibur's Xrawfile2.dll, fileio.dll, fregistry.dll into the same folder as ReAdW.exe, along with zlib1.dll
 install hardklor
@@ -53,11 +53,12 @@ install OMSSA
 install Tide from http://noble.gs.washington.edu/proj/tide/
 download search engine databases
 sudo apt-get install blast2. This is to use formatdb on the search engine databases to format them for OMSSA.
+install Percolator from http://github.com/downloads/percolator/percolator/percolator_1.14_src.tar.gz. May need to add "#include <stdint.h>" to Scores.h.
 
 
 7. MODIFIED X! TANDEM
 
-For some reason, X! Tandem automatically renamed the output files to include the date and time. This complicated automation, so I edited the source code to not add the date and time by commenting out line 914 of tandem-linux-10-01-01-4/src/mreport.cpp.
+For some reason, X! Tandem automatically renamed the output files to include the date and time. This complicated automation, so I edited the source code to not add the date and time by commenting out line 914 of tandem-linux/src/mreport.cpp.
 
 
 8. POSSIBLE NAMES
@@ -65,7 +66,16 @@ For some reason, X! Tandem automatically renamed the output files to include the
 ProjectZero: Because Zero kicks butt, and so should this. Megaman Zero reference.
 WarpPipe: Because, well, both pipeline and warp pipe have the word pipe in it. Super Mario reference.
 JPipe: Because my name starts with J, and so does John's. There's gotta be at least one narcissistic name, right?
-KatamariShiteki (Clod Identification) or KatamariBunkai (Clod Analysis): Because it's a wad of other programs. Katamari Damacy reference.
+KatamariShiteki (Clod Identification), KatamariDotei (Clod Identification) or KatamariBunkai (Clod Analysis): Because it's a wad of other programs. Katamari Damacy reference.
 SmartPipe: Because Smartball can whiz back and forth right through pipes. Smartball reference.
-MasterPipe: Zelda reference.
+MasterPipe: Eh, sounds cool. Zelda reference.
 PeptideBaton: Like a music conductor, the user simply waves his baton (Enters a command) and the the orchestra (Program) plays the parts of the song (Runs the different programs). Windwaker reference.
+
+
+9. DIFFERENT DATABASE FORMATS
+
+FASTA databases are used, but in addition to that, other formats of the FASTA files are used.
+	A. OMSSA requires a special format, which is done by running formatdb on the FASTA file.
+	B. The FASTA files are reversed and used for decoy searches. Reversed databases are obtained by running reverse_database.rb.
+	C. Tide uses a special format from the FASTA file to increase its search speed. search.rb handles this.
+	D. A YAML file is used as a quick means of grabbing the proteins for Percolator.

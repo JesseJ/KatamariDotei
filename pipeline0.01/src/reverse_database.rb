@@ -1,5 +1,6 @@
 require 'optparse'
-require "#{File.dirname($0)}/../../ms-fasta/lib/ms/fasta.rb"
+require "ms-fasta/lib/ms/fasta.rb"
+require "ms-error_rate/lib/ms/sbv/protein_based.rb"
 
 if ARGV.size != 2
     puts "usage: #{File.basename(__FILE__)} inputFile outputFile"

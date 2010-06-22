@@ -3,7 +3,8 @@ require 'rubygems'
 require 'fileutils'
 require 'nokogiri'
 require "#{$path}tide_converter.rb"
-#require "#{$path}/ms-mascot/lib/ms/mascot/submit.rb"
+require 'mechanize'
+
 include Process
 
 #file == input file
@@ -23,27 +24,27 @@ class Search
     @fileName = temp[temp.length - 1]
     @outputFiles = []
   end
-    
+  
 	def run
 		puts "\n----------------"
-		puts "Running search engines..."
+		puts "Running search engines...\n"
 		
 		threads = []
 		
 		threads << Thread.new {runOMSSA} if @opts[:omssa] == true
 		threads << Thread.new {runTide} if @opts[:tide] == true
 		threads << Thread.new {runTandem} if @opts[:xtandem] == true
-		threads << Thread.new {runSpectraST} if @opts[:spectrast] == true
+		threads << Thread.new {runMascot} if @opts[:mascot] == true
 		
 		#Wait for all the processes and threads to finish before moving on
 		threads.each {|thread| thread.join}
 		waitForAllProcesses
-        
+    
     @outputFiles
   end
-    
+  
   def runTandem
-    #Forward search
+    #Target search
     createTandemInput(false)
         
     pid1 = fork {exec("#{$path}../../tandem-linux/bin/tandem.exe #{$path}../data/targetTandemInput.xml")}
@@ -70,7 +71,7 @@ class Search
     xml.instruct! :xml, :version => "1.0"
             
     notes = {'list path, default parameters' => "#{$path}../../tandem-linux/bin/default_input.xml",
-             'list path, taxonomy information' => "#{$path}../data/taxonomy.xml",
+             'list path, taxonomy information' => "#{$path}../../databases/taxonomy.xml",
              'spectrum, path' => "#{@file}.mgf",
              'protein, cleavage site' => "#{getTandemEnzyme}",
              'scoring, maximum missed cleavage sites' => 50}
@@ -92,18 +93,18 @@ class Search
     file.close
   end
     
-	def runOMSSA
-		target = "#{@file}-target_omssa_#{@run}.pep.xml"
-		decoy = "#{@file}-decoy_omssa_#{@run}.pep.xml"
+  def runOMSSA
+    target = "#{@file}-target_omssa_#{@run}.pep.xml"
+    decoy = "#{@file}-decoy_omssa_#{@run}.pep.xml"
 		
-		#Forward search
-		exec("#{$path}../../omssa/omssacl -fm #{@file}.mgf -op #{target} -e #{getOMSSAEnzyme} -d #{extractDatabase(@database)}") if fork == nil
+    #Target search
+    exec("#{$path}../../omssa/omssacl -fm #{@file}.mgf -op #{target} -e #{getOMSSAEnzyme} -d #{extractDatabase(@database)}") if fork == nil
 		
-		#Decoy search
-		exec("#{$path}../../omssa/omssacl -fm #{@file}.mgf -op #{decoy} -e #{getOMSSAEnzyme} -d #{extractDatabase(@database + "-r")}") if fork == nil
+    #Decoy search
+    exec("#{$path}../../omssa/omssacl -fm #{@file}.mgf -op #{decoy} -e #{getOMSSAEnzyme} -d #{extractDatabase(@database + "-r")}") if fork == nil
 		
-		@outputFiles << [target, decoy]
-	end
+    @outputFiles << [target, decoy]
+  end
     
   def runTide
   	database = extractDatabase(@database)
@@ -118,7 +119,7 @@ class Search
 		#tide-import-spectra
 		pidB = fork {exec("#{path}tide-import-spectra --in #{@file}.ms2 -out #{@file}-tide.spectrumrecords")}
 		
-		#Forward tide-search
+		#Target tide-search
 		waitForProcess(pidF)
 		waitForProcess(pidB)
 		pidF = fork {exec("#{path}tide-search --proteins #{database}.protix --peptides #{database}.pepix --spectra #{@file}-tide.spectrumrecords > #{tFile}.results")}
@@ -138,8 +139,82 @@ class Search
 		@outputFiles << ["#{tFile}.pep.xml", "#{dFile}.pep.xml"]
   end
 	
+  def runMascot
+    yml = YAML.load_file "#{$path}../../mascot/mascot.yaml"
+    threads = []
+    
+    #Target search     
+    targetAgent = Mechanize.new { |agent| agent.user_agent_alias = 'Linux Firefox'}
+    
+    targetAgent.get(yml["URL"] + "search_form.pl?FORMVER=2&SEARCH=MIS") do |page|
+      threads << Thread.new {automateMascot(targetAgent, page, yml, :target)}
+    end
+    
+    #Decoy search
+    decoyAgent = Mechanize.new { |agent| agent.user_agent_alias = 'Linux Firefox'}
+    
+    decoyAgent.get(yml["URL"] + "search_form.pl?FORMVER=2&SEARCH=MIS") do |page|
+      threads << Thread.new {automateMascot(decoyAgent, page, yml, :decoy)}
+    end
+    
+    threads.each {|thread| thread.join}
+    @outputFiles << ["#{@file}-target_mascot_#{@run}.pep.xml", "#{@file}-decoy_mascot_#{@run}.pep.xml"]
+  end
+  
+  def automateMascot(a, page, yml, type)
+    form = page.form('mainSearch')
+    form.USERNAME = yml["USERNAME"]
+    form.USEREMAIL = yml["USEREMAIL"]
+    form.DB = getMascotDatabaseName(@database) if type == :target
+    form.DB = getMascotDatabaseName(@database + "-r") if type == :decoy
+    form.TAXONOMY = yml["TAXONOMY"]
+    form.CLE = yml["CLE"]
+    form.PFA = yml["PFA"]
+    form.MODS = yml["MODS"]
+    form.IT_MODS = yml["IT_MODS"]
+    form.QUANTITATION = yml["QUANTITATION"]
+    form.TOL = yml["TOL"]
+    form.TOLU = yml["TOLU"]
+    form.PEP_ISOTOPE_ERROR = yml["PEP_ISOTOPE_ERROR"]
+    form.ITOL = yml["ITOL"]
+    form.ITOLU = yml["ITOLU"]
+    form.CHARGE = yml["CHARGE"]
+    form.radiobuttons_with(:name => 'MASS')[yml["MASS"].to_i].check
+    form.FORMAT = yml["FORMAT"]
+    form.PRECURSOR = yml["PRECURSOR"]
+    form.INSTRUMENT = yml["INSTRUMENT"]
+    #form.checkbox_with(:name => 'DECOY').check if type == :decoy
+    #form.checkbox_with(:name => 'ERRORTOLERANT').check if yml["ERRORTOLERANT"] == "true"
+    form.REPORT = yml["REPORT"]
+    form.file_uploads.first.file_name = @file + ".mgf"
+    
+    puts "Running #{type} Mascot..."
+    page = a.submit(form, form.buttons.first)
+    uri = page.links[0].uri.to_s.split("=")
+    mascotFile = uri[uri.length-1].gsub("/", "%2F")
+    page = page.links[0].click
+    
+    puts "Transforming #{type} Mascot output..."
+    #Doesn't work for some reason
+#    form = page.form('Re-format')
+#    form.REPTYPE = "export"
+#    page = a.submit(form, form.buttons.first)
+    
+    #A lame solution
+    link = yml["URL"] + "export_dat_2.pl?file=#{mascotFile}&REPTYPE=export&_sigthreshold=0.05&REPORT=AUTO&_server_mudpit_switch=99999999&_ignoreionsscorebelow=0&_showsubsets=0&_showpopups=TRUE&_sortunassigned=scoredown&_requireboldred=0"
+    #p link
+    #p "http://jp1.chem.byu.edu/mascot/cgi/export_dat_2.pl?file=..%2Fdata%2F20100621%2FF001420.dat&REPTYPE=export&_sigthreshold=0.05&REPORT=AUTO&_server_mudpit_switch=0.000000001&_ignoreionsscorebelow=0&_showsubsets=0&_showpopups=TRUE&_sortunassigned=scoredown&_requireboldred=0"
+    a.get(link) do |export_page|
+      form = export_page.form('Re-format')
+      form.field_with(:name => 'export_format').options[2].select
+      page = a.submit(form, form.buttons[1])
+      File.open("#{@file}-target_mascot_#{@run}.pep.xml", 'w') {|f| f.write(page.body)} if type == :target
+      File.open("#{@file}-decoy_mascot_#{@run}.pep.xml", 'w') {|f| f.write(page.body)} if type == :decoy
+    end
+  end
+
 	def runSpectraST
-		#Forward search
+		#Target search
 		pid = fork {exec("/usr/local/src/tpp-4.3.1/build/linux/spectrast -cN #{$path}../data/#{@fileName} #{@file}.ms2")}
 		
 		waitForProcess(pid)
@@ -159,12 +234,14 @@ class Search
   end
     
   def getOMSSAEnzyme
-    doc = Nokogiri::XML(IO.read("#{$path}../../omssa/OMSSA.xsd"))
-    return doc.xpath("//xs:enumeration[@value=\"#{@enzyme}\"]/@ncbi:intvalue")
+    Nokogiri::XML(IO.read("#{$path}../../omssa/OMSSA.xsd")).xpath("//xs:enumeration[@value=\"#{@enzyme}\"]/@ncbi:intvalue").to_s
   end
 	
 	def getTandemEnzyme
-		doc = Nokogiri::XML(IO.read("#{$path}../../tandem-linux/enzymes.xml"))
-		return doc.xpath("//enzyme[@name=\"#{@enzyme}\"]/@symbol")
+		Nokogiri::XML(IO.read("#{$path}../../tandem-linux/enzymes.xml")).xpath("//enzyme[@name=\"#{@enzyme}\"]/@symbol").to_s
 	end
+	
+  def getMascotDatabaseName(id)
+    Nokogiri::XML(IO.read("#{$path}../../mascot/database-Mascot.xml")).xpath("//DB[@ID=\"#{id}\"]/@mascot_name").to_s
+  end
 end

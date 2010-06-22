@@ -28,7 +28,7 @@ class Pipeline
 		RawTomzXML.new("#{@file}.raw").convert
 		MzXMLToOther.new("mgf", "#{@file}.mzXML", false).convert
 		MzXMLToOther.new("ms2", "#{@file}.mzXML", false).convert
-		output = Search.new("#{@file}", @type, "trypsin", 1, :omssa => true, :xtandem => true, :tide => true, :spectrast => true).run
+		output = Search.new("#{@file}", @type, "trypsin", 1, :omssa => true, :xtandem => true, :tide => true, :mascot => true).run
     Percolator.new(output, @type).run
     
     notifyCompletion
@@ -36,7 +36,7 @@ class Pipeline
     
   #Displays a randomly chosen exclamation of joy
   def notifyCompletion
-    done = rand(12)
+    done = rand(13)
     puts "\nBoo-yah!" if done == 0
     puts "\nOh-yeah!" if done == 1
     puts "\nYah-hoo!" if done == 2
@@ -49,6 +49,7 @@ class Pipeline
     puts "\nYay!" if done == 9
     puts "\nGnarly!" if done == 10
     puts "\nSweet!" if done == 11
+    puts "\nGroovy!" if done == 12
     puts "----------------\n"
   end
 end

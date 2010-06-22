@@ -1,0 +1,31 @@
+URL : http://jp1.chem.byu.edu/mascot/cgi/
+INTERMEDIATE : ""
+FORMVER : 1.01
+SEARCH : MIS
+PEA: AUTO
+REPTYPE : peptide
+ErrTolRepeat : 0
+SHOWALLMODS : ""
+USERNAME : Mascot User
+USEREMAIL : me@some_mail_place.com
+TAXONOMY : All entries
+CLE : Trypsin
+PFA : 1
+# These are comma separated lists for the modifications.
+# If you want no mods, use []
+MODS : [Carbamidomethyl (C)]
+IT_MODS : [Oxidation (M)]
+QUANTITATION : None
+TOL : 50.0
+TOLU : ppm
+PEP_ISOTOPE_ERROR : 1
+ITOL : 0.8
+ITOLU : Da
+CHARGE : 1+, 2+ and 3+
+MASS : 0
+FORMAT : Mascot generic
+PRECURSOR : ""
+INSTRUMENT : ESI-TRAP
+ERRORTOLERANT : false
+REPORT : AUTO
+

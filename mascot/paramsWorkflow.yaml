@@ -1,0 +1,44 @@
+
+Mascot : 
+    URL : http://jp1.chem.byu.edu/mascot/cgi/nph-mascot.exe?1
+    INTERMEDIATE : ""
+    FORMVER : 1.01
+    SEARCH : MIS
+    PEA: AUTO
+    REPTYPE : peptide
+    ErrTolRepeat : 0
+    SHOWALLMODS : ""
+    # Put user name and email here for Mascot to use in the search info reports
+    USERNAME : Mascot User
+    USEREMAIL : me@some_mail_place.com
+    # This is the comment line that shows up in the Mascot search results
+    COM : Here is a comment that I can search in Mascot.
+    # If you are using a forward/reverse type  search, you need both DB and Flip_DB
+    # If you are using a concatenated DB or only doing a forward (and not running an FDR),
+    # Use just the DB and the Flip_DB may be left blank
+    DB : UNI_human
+    #DB : ipi_HUMAN_v3_55_FR
+    Flip_DB : UNI_human
+    #Flip_DB : 
+    TAXONOMY : All entries
+    CLE : Trypsin
+    PFA : 1
+    # These are comma separated lists for the modifications.
+    # If you want no mods, use []
+    MODS : [Carbamidomethyl (C)]
+    IT_MODS : [Oxidation (M)]
+    QUANTITATION : None
+    TOL : 50.0
+    TOLU : ppm
+    PEP_ISOTOPE_ERROR : 1
+    ITOL : 0.8
+    ITOLU : Da
+    CHARGE : 1+, 2+ and 3+
+    MASS : Monoisotopic
+    FORMAT : Mascot generic
+    PRECURSOR : ""
+    INSTRUMENT : ESI-TRAP
+    ERRORTOLERANT : 0
+    DECOY : 0
+    REPORT : AUTO
+

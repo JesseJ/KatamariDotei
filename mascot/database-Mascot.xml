@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<!-- Provides a mapping between database IDs and Mascot database names -->
+<map>
+	<DB ID="human" mascot_name="UNI_human"/>
+
+	<DB ID="human-r" mascot_name="UNI_human_rev"/>
+</map>

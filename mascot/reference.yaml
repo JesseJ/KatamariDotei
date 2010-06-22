@@ -1,0 +1,102 @@
+# Parameters for use in the overall workflow process
+Workflow :
+    Profile_mzXML : true
+    Chimera_Counter : true
+    Base_Mascot_data_dir : /data/mascot/data
+    Run_Flip_Search : true
+    Calculate_FDR : true
+    Run_MSPlus : true
+    Run_Isoform_Resolver : true
+    Should_Organize : true
+    # Leaving Logfile_Name blank or commenting it out will cause the log output to go to standard out.
+    Logfile_Name : workflow.log
+
+Calculate_FDR :
+    FDR_Percent : 1
+    Using_Concatenated_DB : false
+
+MSPlus :
+    Parameter_File : prep_filter_param_LTQ.txt
+    Experiment_Name : msplus
+
+Isoform_Resolver :
+    Parameter_File : prep_param_V3_55_LTQ.txt
+    Experiment_Name : isoforms
+    # If Sample_Sets_File is blank, then the default comparison will be used
+    # If you want to provide a custom sample sets file for a specific comparison,
+    # use the form of the second example 
+    Sample_Sets_File : Compare_Profile
+    #Sample_Sets_File : sets.txt
+
+Chimera_Counter :
+    Peak_Fraction : 0.2
+    Minimum_Distance : 0.01
+    Window_Width : 10.5
+    Maximum_Peaks : 350000
+
+MzXML_to_Mgf : 
+    # Using -1 means that all scans will be included.
+    Max_Scan_Number : -1
+    Min_Percentile : 0.0
+    # The Title prefix is appended to the title line that mascot will maintain.
+    Title_Prefix : None
+    # Setting this to 8 avoids the issue with mascot search erroring on charges above 8.
+    Max_Charge_Allowed : 8
+    Do_Retention_Time : true
+    Inline_MS3 : true
+    MS3_Mods : [Phospho (ST), Phospho (Y)]
+    Inline_MS4 : true
+    MS4_Mods : [Phospho (ST), Phospho (Y)]
+    Inline_MS5 : true
+    MS5_Mods : [Phospho (ST)]
+
+Dat_Parser :
+    # The standard title parser is ExtendedTitleParser
+    Title_Parser : ExtendedTitleParser
+    # Use_DAT_Name should probably be left to true. 
+    # This will avoid issues with name clashes between the normal and flipped DATs
+    Use_DAT_Name : true
+
+Mascot : 
+    URL : http://bluemoon.colorado.edu/mascot/cgi/nph-mascot.exe?1
+    INTERMEDIATE : ""
+    FORMVER : 1.01
+    SEARCH : MIS
+    PEA: AUTO
+    REPTYPE : peptide
+    ErrTolRepeat : 0
+    SHOWALLMODS : ""
+    # Put user name and email here for Mascot to use in the search info reports
+    USERNAME : Mascot User
+    USEREMAIL : me@some_mail_place.com
+    # This is the comment line that shows up in the Mascot search results
+    COM : Here is a comment that I can search in Mascot.
+    # If you are using a forward/reverse type  search, you need both DB and Flip_DB
+    # If you are using a concatenated DB or only doing a forward (and not running an FDR),
+    # Use just the DB and the Flip_DB may be left blank
+    DB : ipi_HUMAN_v3_55
+    #DB : ipi_HUMAN_v3_55_FR
+    Flip_DB : ipi_HUMAN_v3_55_rev
+    #Flip_DB : 
+    TAXONOMY : All entries
+    CLE : Trypsin
+    PFA : 1
+    # These are comma separated lists for the modifications.
+    # If you want no mods, use []
+    MODS : [Carbamidomethyl (C)]
+    IT_MODS : [Oxidation (M)]
+    QUANTITATION : None
+    TOL : 50.0
+    TOLU : ppm
+    PEP_ISOTOPE_ERROR : 1
+    ITOL : 0.8
+    ITOLU : Da
+    CHARGE : 1+, 2+ and 3+
+    MASS : Monoisotopic
+    FORMAT : Mascot generic
+    PRECURSOR : ""
+    INSTRUMENT : ESI-TRAP
+    ERRORTOLERANT : 0
+    DECOY : 0
+    REPORT : AUTO
+

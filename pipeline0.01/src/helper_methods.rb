@@ -21,6 +21,5 @@ end
 
 #Obtains the file location based on the database type, such as "human" or "mouse"
 def extractDatabase(type)
-  doc = Nokogiri::XML(IO.read("#{$path}../data/taxonomy.xml"))
-  return doc.xpath("//taxon[@label=\"#{type}\"]//file/@URL").to_s
+  Nokogiri::XML(IO.read("#{$path}../../databases/taxonomy.xml")).xpath("//taxon[@label=\"#{type}\"]//file/@URL").to_s
 end

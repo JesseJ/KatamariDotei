@@ -6,7 +6,7 @@ class Search2Tab
   end
     
   def convert
-    tab = File.new("#{@format.file}.tab", "w+")
+    tab = File.new("#{@format.fileWithoutExtras}.tab", "w")
     matches = @format.matches
     
     tab.puts @format.header
@@ -17,6 +17,6 @@ class Search2Tab
     
     tab.close
     
-    return "#{@format.file}"
+    return "#{@format.fileWithoutExtras}"
   end
 end

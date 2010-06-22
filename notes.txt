@@ -79,3 +79,7 @@ FASTA databases are used, but in addition to that, other formats of the FASTA fi
 	B. The FASTA files are reversed and used for decoy searches. Reversed databases are obtained by running reverse_database.rb.
 	C. Tide uses a special format from the FASTA file to increase its search speed. search.rb handles this.
 	D. A YAML file is used as a quick means of grabbing the proteins for Percolator.
+
+
+10. MASCOT DATABASE NAMES
+Because the name of a database from the Mascot's selection is not necessarily the same as the file name, I created a mapping between database ID and Mascot name located in pipeline/mascot/database-Mascot.xml

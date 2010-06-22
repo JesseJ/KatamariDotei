@@ -27,7 +27,7 @@ class Search
   
 	def run
 		puts "\n----------------"
-		puts "Running search engines...\n"
+		puts "Running search engines...\n\n"
 		
 		threads = []
 		
@@ -141,19 +141,20 @@ class Search
 	
   def runMascot
     yml = YAML.load_file "#{$path}../../mascot/mascot.yaml"
+    searchURI = "search_form.pl?FORMVER=2&SEARCH=MIS"
     threads = []
     
     #Target search     
-    targetAgent = Mechanize.new { |agent| agent.user_agent_alias = 'Linux Firefox'}
+    targetAgent = Mechanize.new {|agent| agent.user_agent_alias = 'Linux Firefox'}
     
-    targetAgent.get(yml["URL"] + "search_form.pl?FORMVER=2&SEARCH=MIS") do |page|
+    targetAgent.get(yml["URL"] + searchURI) do |page|
       threads << Thread.new {automateMascot(targetAgent, page, yml, :target)}
     end
     
     #Decoy search
-    decoyAgent = Mechanize.new { |agent| agent.user_agent_alias = 'Linux Firefox'}
+    decoyAgent = Mechanize.new {|agent| agent.user_agent_alias = 'Linux Firefox'}
     
-    decoyAgent.get(yml["URL"] + "search_form.pl?FORMVER=2&SEARCH=MIS") do |page|
+    decoyAgent.get(yml["URL"] + searchURI) do |page|
       threads << Thread.new {automateMascot(decoyAgent, page, yml, :decoy)}
     end
     
@@ -161,6 +162,7 @@ class Search
     @outputFiles << ["#{@file}-target_mascot_#{@run}.pep.xml", "#{@file}-decoy_mascot_#{@run}.pep.xml"]
   end
   
+  #Not the best name. Just a factored-out method runMascot.
   def automateMascot(a, page, yml, type)
     form = page.form('mainSearch')
     form.USERNAME = yml["USERNAME"]
@@ -183,8 +185,8 @@ class Search
     form.FORMAT = yml["FORMAT"]
     form.PRECURSOR = yml["PRECURSOR"]
     form.INSTRUMENT = yml["INSTRUMENT"]
-    #form.checkbox_with(:name => 'DECOY').check if type == :decoy
-    #form.checkbox_with(:name => 'ERRORTOLERANT').check if yml["ERRORTOLERANT"] == "true"
+    #form.checkbox_with(:name => 'DECOY').check if type == :decoy          #Not sure if this is needed
+    form.checkbox_with(:name => 'ERRORTOLERANT').check if yml["ERRORTOLERANT"] == "true"
     form.REPORT = yml["REPORT"]
     form.file_uploads.first.file_name = @file + ".mgf"
     
@@ -200,10 +202,9 @@ class Search
 #    form.REPTYPE = "export"
 #    page = a.submit(form, form.buttons.first)
     
-    #A lame solution
+    #An ugly solution
     link = yml["URL"] + "export_dat_2.pl?file=#{mascotFile}&REPTYPE=export&_sigthreshold=0.05&REPORT=AUTO&_server_mudpit_switch=99999999&_ignoreionsscorebelow=0&_showsubsets=0&_showpopups=TRUE&_sortunassigned=scoredown&_requireboldred=0"
-    #p link
-    #p "http://jp1.chem.byu.edu/mascot/cgi/export_dat_2.pl?file=..%2Fdata%2F20100621%2FF001420.dat&REPTYPE=export&_sigthreshold=0.05&REPORT=AUTO&_server_mudpit_switch=0.000000001&_ignoreionsscorebelow=0&_showsubsets=0&_showpopups=TRUE&_sortunassigned=scoredown&_requireboldred=0"
+    
     a.get(link) do |export_page|
       form = export_page.form('Re-format')
       form.field_with(:name => 'export_format').options[2].select

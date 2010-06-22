@@ -14,7 +14,7 @@ class Format
   end
   
   #Returns the file name without things like "target" or ".pep.xml" in the name
-  def file
+  def fileWithoutExtras
     ""
   end
   
@@ -34,7 +34,7 @@ class Format
     []
   end
   
-  #Obtains all the proteins the given peptide maps to.
+  #Obtains all the proteins that the given peptide maps to.
   def proteins(peptide, type)
     if type == :target
       @proteins[peptide]

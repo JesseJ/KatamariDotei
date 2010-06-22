@@ -7,7 +7,7 @@ class PepXML < Format
   end
   
   #This method can likely be simplified
-  def file
+  def fileWithoutExtras
     parts = @target.split("/")
     parts = parts[parts.length-1].split("-")
     fileName = "#{$path}../data/" + parts[0] + parts[1][6..parts[1].length-1].chomp(".pep.xml")
@@ -49,6 +49,7 @@ class PepXML < Format
   
   private
   
+  #Returns a Nokogiri object
   def nokogiriDoc(file)
     doc = Nokogiri::XML(IO.read("#{file}"))
         
@@ -58,6 +59,7 @@ class PepXML < Format
     doc
   end
   
+  #Parses out everyhting in the pepXML file
   def parse
     #Target
     doc = nokogiriDoc(@target)
@@ -80,8 +82,8 @@ class PepXML < Format
   def psm(query, label, rank)
     #Required Stuff
     spect = query.xpath("./@spectrum").to_s.chomp(" ")    #X! Tandem has a space at the end that messes things up
-    psm = "#{spect}.#{rank}" + "\t"
-    psm += label + "\t"       #id = name.spectrum.spectrum.charge.rank
+    psm = "#{spect}.#{rank}" + "\t"                       #id = name.spectrum.spectrum.charge.rank
+    psm += label + "\t"
     
     #Other stuff
     hit = query.xpath(".//#{@xmlns}search_hit[@hit_rank=\"#{rank}\"]")

@@ -9,7 +9,7 @@ class Percolator
   #Runs percolator on the given files
   def run
     puts "\n----------------"
-    puts "Running Percolator...\n"
+    puts "Running Percolator...\n\n"
     
     database = extractDatabase(@type).chomp("fasta") + "yml"
     revDatabase = extractDatabase(@type + "-r").chomp("fasta.reverse") + "yml"

@@ -140,12 +140,12 @@ class PepXML < Format
   
   #Obtains the result items
   def getItem(hit, rank, charge)
-		mass = hit.xpath("./@calc_neutral_pep_mass").to_s.to_f
-		diff = hit.xpath("./@massdiff").to_s.to_f
-		scores = hit.xpath(".//#{@xmlns}search_score")
-		pep = hit.xpath("./@peptide").to_s
-		ref = ""
-		
+    mass = hit.xpath("./@calc_neutral_pep_mass").to_s.to_f
+    diff = hit.xpath("./@massdiff").to_s.to_f
+    scores = hit.xpath(".//#{@xmlns}search_score")
+    pep = hit.xpath("./@peptide").to_s
+    ref = ""
+    
     @peps.each do |thisPep|
       if pep == thisPep[1]
         ref = thisPep[0]

@@ -6,4 +6,4 @@ Search2mzIdentML.rb will transform a search engine output file into an mzIdentML
 
 Currently supports: pepXML
 
-See spec.rb on how to run.
+See spec.rb on how to run from code, or use command line: search2mzidentml_cl.rb inputFile [outputFile]

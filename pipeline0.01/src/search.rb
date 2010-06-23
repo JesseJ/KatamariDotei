@@ -13,32 +13,32 @@ include Process
 #run == which run, or iteration, this is
 #opts: All option values are either true or false.
 class Search
-	def initialize(file, database, enzyme, run, opts={})
-		@opts = opts
-		@run = run
-		@enzyme = enzyme
-		@database = database
-		@file = file
-        
-		temp = file.split("/")
+  def initialize(file, database, enzyme, run, opts={})
+    @opts = opts
+    @run = run
+    @enzyme = enzyme
+    @database = database
+    @file = file
+    
+    temp = file.split("/")
     @fileName = temp[temp.length - 1]
     @outputFiles = []
   end
   
-	def run
-		puts "\n----------------"
-		puts "Running search engines...\n\n"
-		
-		threads = []
-		
-		threads << Thread.new {runOMSSA} if @opts[:omssa] == true
-		threads << Thread.new {runTide} if @opts[:tide] == true
-		threads << Thread.new {runTandem} if @opts[:xtandem] == true
-		threads << Thread.new {runMascot} if @opts[:mascot] == true
-		
-		#Wait for all the processes and threads to finish before moving on
-		threads.each {|thread| thread.join}
-		waitForAllProcesses
+  def run
+    puts "\n----------------"
+    puts "Running search engines...\n\n"
+    
+    threads = []
+    
+    threads << Thread.new {runOMSSA} if @opts[:omssa] == true
+    threads << Thread.new {runTide} if @opts[:tide] == true
+    threads << Thread.new {runTandem} if @opts[:xtandem] == true
+    threads << Thread.new {runMascot} if @opts[:mascot] == true
+    
+    #Wait for all the processes and threads to finish before moving on
+    threads.each {|thread| thread.join}
+    waitForAllProcesses
     
     @outputFiles
   end
@@ -50,13 +50,13 @@ class Search
     pid1 = fork {exec("#{$path}../../tandem-linux/bin/tandem.exe #{$path}../data/targetTandemInput.xml")}
             
     #Decoy search
-		createTandemInput(true)
-        
-		pid2 = fork {exec("#{$path}../../tandem-linux/bin/tandem.exe #{$path}../data/decoyTandemInput.xml")}
+    createTandemInput(true)
+    
+    pid2 = fork {exec("#{$path}../../tandem-linux/bin/tandem.exe #{$path}../data/decoyTandemInput.xml")}
     waitForProcess(pid1)
     waitForProcess(pid2)
 		
-		convertTandemOutput
+    convertTandemOutput
   end
     
   #This is what I made before learning nokogiri. I could use nokogiri instead, but this is less code.
@@ -112,31 +112,31 @@ class Search
     path = "#{$path}../../crux/tide/"
     tFile = "#{@file}-target_tide_#{@run}"
     dFile = "#{@file}-decoy_tide_#{@run}"
-		
+    
     pidF = fork {exec("#{path}tide-index --fasta #{database} --enzyme #{@enzyme} --digestion full-digest")}
     pidR = fork {exec("#{path}tide-index --fasta #{databaseR} --enzyme #{@enzyme} --digestion full-digest")}
+    
+    #tide-import-spectra
+    pidB = fork {exec("#{path}tide-import-spectra --in #{@file}.ms2 -out #{@file}-tide.spectrumrecords")}
+    
+    #Target tide-search
+    waitForProcess(pidF)
+    waitForProcess(pidB)
+    pidF = fork {exec("#{path}tide-search --proteins #{database}.protix --peptides #{database}.pepix --spectra #{@file}-tide.spectrumrecords > #{tFile}.results")}
 		
-		#tide-import-spectra
-		pidB = fork {exec("#{path}tide-import-spectra --in #{@file}.ms2 -out #{@file}-tide.spectrumrecords")}
-		
-		#Target tide-search
-		waitForProcess(pidF)
-		waitForProcess(pidB)
-		pidF = fork {exec("#{path}tide-search --proteins #{database}.protix --peptides #{database}.pepix --spectra #{@file}-tide.spectrumrecords > #{tFile}.results")}
-		
-		#Decoy tide-search
-		waitForProcess(pidR)
-		waitForProcess(pidB)
-		pidR = fork {exec("#{path}tide-search --proteins #{databaseR}.protix --peptides #{databaseR}.pepix --spectra #{@file}-tide.spectrumrecords > #{dFile}.results")}
-		
-		waitForProcess(pidF)
-		waitForProcess(pidR)
-		
-		#Convert
-		TideConverter.new(tFile, database, @enzyme).convert
-		TideConverter.new(dFile, databaseR, @enzyme).convert
-		
-		@outputFiles << ["#{tFile}.pep.xml", "#{dFile}.pep.xml"]
+    #Decoy tide-search
+    waitForProcess(pidR)
+    waitForProcess(pidB)
+    pidR = fork {exec("#{path}tide-search --proteins #{databaseR}.protix --peptides #{databaseR}.pepix --spectra #{@file}-tide.spectrumrecords > #{dFile}.results")}
+    
+    waitForProcess(pidF)
+    waitForProcess(pidR)
+    
+    #Convert
+    TideConverter.new(tFile, database, @enzyme).convert
+    TideConverter.new(dFile, databaseR, @enzyme).convert
+    
+    @outputFiles << ["#{tFile}.pep.xml", "#{dFile}.pep.xml"]
   end
 	
   def runMascot
@@ -213,13 +213,14 @@ class Search
       File.open("#{@file}-decoy_mascot_#{@run}.pep.xml", 'w') {|f| f.write(page.body)} if type == :decoy
     end
   end
-
-	def runSpectraST
-		#Target search
-		pid = fork {exec("/usr/local/src/tpp-4.3.1/build/linux/spectrast -cN #{$path}../data/#{@fileName} #{@file}.ms2")}
-		
-		waitForProcess(pid)
-		exec("/usr/local/src/tpp-4.3.1/build/linux/spectrast -sD #{@database} -sL #{$path}../data/#{@fileName}.splib #{@file}.mzXML") if fork == nil
+  
+  #Broken code
+  def runSpectraST
+    #Target search
+    pid = fork {exec("/usr/local/src/tpp-4.3.1/build/linux/spectrast -cN #{$path}../data/#{@fileName} #{@file}.ms2")}
+    
+    waitForProcess(pid)
+    exec("/usr/local/src/tpp-4.3.1/build/linux/spectrast -sD #{@database} -sL #{$path}../data/#{@fileName}.splib #{@file}.mzXML") if fork == nil
 	end
     
   def convertTandemOutput
@@ -238,9 +239,9 @@ class Search
     Nokogiri::XML(IO.read("#{$path}../../omssa/OMSSA.xsd")).xpath("//xs:enumeration[@value=\"#{@enzyme}\"]/@ncbi:intvalue").to_s
   end
 	
-	def getTandemEnzyme
-		Nokogiri::XML(IO.read("#{$path}../../tandem-linux/enzymes.xml")).xpath("//enzyme[@name=\"#{@enzyme}\"]/@symbol").to_s
-	end
+  def getTandemEnzyme
+    Nokogiri::XML(IO.read("#{$path}../../tandem-linux/enzymes.xml")).xpath("//enzyme[@name=\"#{@enzyme}\"]/@symbol").to_s
+  end
 	
   def getMascotDatabaseName(id)
     Nokogiri::XML(IO.read("#{$path}../../mascot/database-Mascot.xml")).xpath("//DB[@ID=\"#{id}\"]/@mascot_name").to_s

@@ -22,12 +22,20 @@ class MzXMLToOther
         file += ".mgf"
         File.new(file, "w+").close
         File.open(file, 'w') do |f|
-            f.puts ms.to_mgf() 
-          end
+          f.puts ms.to_mgf() 
         end
-      else
-        exec("/usr/local/src/tpp-4.3.1/build/linux/MzXML2Search -#{@type} #{@file}") if fork == nil
-        Process.wait
+      end
+    else
+#        exec("/usr/local/src/tpp-4.3.1/build/linux/MzXML2Search -#{@type} #{@file}") if fork == nil
+#        Process.wait
+      Ms::Msrun.open(@file) do |ms|
+        file = @file.chomp(".mzXML")
+        file += ".ms2"
+        File.new(file, "w+").close
+        File.open(file, 'w') do |f|
+          f.puts ms.to_ms2() 
+        end
+      end
     end
   end
     

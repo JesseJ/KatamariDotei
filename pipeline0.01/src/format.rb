@@ -37,9 +37,14 @@ class Format
   #Obtains all the proteins that the given peptide maps to.
   def proteins(peptide, type)
     if type == :target
-      @proteins[peptide]
+      proteins = @proteins[peptide]
+      return proteins if proteins != nil
     elsif type == :decoy
-      @decoyProteins[peptide]
+      proteins = @decoyProteins[peptide]
+      return proteins if proteins != nil
     end
+    
+    #Default value. Hopefully this case doesn't happen often.
+    "NOPEPMATCH"
   end
 end

@@ -14,12 +14,12 @@ yml = []
 line = obo.readline
 
 while !(line.include? "[Typedef]")
-	if line[0..2] == "id:"
-		name = obo.readline
-		yml << {:pepxml_name => name[6...name.length-1], :id => line[4...line.length-1], :mzid_name => name[6...name.length-1]}
-	end
-	
-	line = obo.readline
+  if line[0..2] == "id:"
+    name = obo.readline
+    yml << {:pepxml_name => name[6...name.length-1], :id => line[4...line.length-1], :mzid_name => name[6...name.length-1]}
+  end
+  
+  line = obo.readline
 end
 
 YAML.dump(yml, file)

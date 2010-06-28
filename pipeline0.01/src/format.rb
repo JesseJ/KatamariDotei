@@ -45,6 +45,6 @@ class Format
     end
     
     #Default value. Hopefully this case doesn't happen often.
-    "NOPEPMATCH"
+    "NOMATCH"
   end
 end

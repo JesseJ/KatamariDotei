@@ -8,8 +8,8 @@ Because this is version 0.01 this doc is limited and guaranteed to change.
 
 Functions
 
-1. Takes .raw file and creates mzXML file.
-2. Takes mzXML file and creates a file in the format needed by search engines. Can run Hardklor on the mzXML file.
+1. Takes .raw file and creates an mzXML or mzML file.
+2. Takes an mzXML file and creates a file in the format needed by search engines. Can run Hardklor on the mzXML file.
 3. Runs Mascot, X! Tandem, OMSSA, and Tide. Outputs pepXML files as their search results.
 4. Runs Percolator on the search results.
 

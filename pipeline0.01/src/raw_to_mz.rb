@@ -8,7 +8,7 @@ class RawToMz
   def to_mzXML
     puts "\n----------------"
     puts "Transforming raw file to mzXML format...\n\n"
-
+    
     system("wine readw.exe --mzXML #{@file}.raw 2>/dev/null")
   end
   
@@ -21,15 +21,15 @@ class RawToMz
     
     client = TCPSocket.open(host, port)
     parts = @file.split("/")
+    fileName = parts[parts.length-1]
     
     puts "Sending raw file"
-    client.puts parts[parts.length-1]
+    client.puts fileName
     client.print(File.open("#{@file}.raw", "rb") {|io| io.read})
     client.print("\r\r\n\n")  #This is the delimiter for the server
     
     puts "Receiving mzML file"
-    mzML_filename = client.gets("\n")
-    File.open("#{$path}../data/#{mzML_filename}", 'wb') {|io| io.print client.gets("\r\r\n\n")}
+    File.open("#{$path}../data/#{fileName}.mzML", 'wb') {|io| io.print client.gets("\r\r\n\n")}
     client.close
   end
 end

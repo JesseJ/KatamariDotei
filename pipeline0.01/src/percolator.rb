@@ -13,9 +13,18 @@ class Percolator
     
     database = extractDatabase(@type).chomp("fasta") + "yml"
     revDatabase = extractDatabase(@type + "-r").chomp("fasta.reverse") + "yml"
+    @proteins = Hash.new
+    @decoyProteins = Hash.new
     
-    @proteins = YAML.load_file(database)
-    @decoyProteins = YAML.load_file(revDatabase)
+    File.open(database, "r").each_line do |line|
+      parts = line.split(": ")
+      @proteins[parts[0]] = parts[1]
+    end
+    
+    File.open(revDatabase, "r").each_line do |line|
+      parts = line.split(": ")
+      @decoyProteins[parts[0]] = parts[1]
+    end
     
     @files.each do |pair|
       output = Search2Tab.new(PepXML.new(pair[0], pair[1], @proteins, @decoyProteins)).convert
@@ -25,3 +34,9 @@ class Percolator
     waitForAllProcesses
   end
 end
+
+#YAML: 4:41 +extra
+#Own w/YAML: 2:47 +extra
+#modified tsv: 1:54
+#* method: 4:39 +extra
+#Own split: 3:14

@@ -13,8 +13,6 @@ loop { # Servers run forever
   #It's lame to have a script run a script, but it's the only way to get this to work.
   system "scriptit.bat " + filename + ".raw"
   
-  puts "Sending filename"
-  client.print filename + ".mzML\n"
   puts "Sending contents of #{filename}.mzML"
   client.print IO.read(filename + ".mzML")
   client.print "\r\r\n\n"

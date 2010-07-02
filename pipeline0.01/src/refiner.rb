@@ -1,6 +1,7 @@
 require "#{$path}false_rate_discoverer.rb"
 
 #Is used to refine the input to search engines. A part of the iterative process of searching.
+#Unfinished and non-working.
 class Refiner
     def initialize(files, qValues, cutoff)
         @files = files

@@ -1,15 +1,19 @@
 require "#{$path}format.rb"
 require 'nokogiri'
 
+#A pepXML Format object.
 class PepXML < Format
+  #target == A string containing the file location of the target pepXML
+  #decoy == A string containing the file location of the decoy pepXML
+  #database == A hash of target {peptide => proteins}
+  #revDatabase == A hash of decoy {peptide => proteins}
   def initialize(target, decoy, database, revDatabase)
     super
   end
   
   #This method can likely be simplified
   def fileWithoutExtras
-    parts = @target.split("/")
-    parts = parts[parts.length-1].split("-")
+    parts = @target.split("/")[-1].split("-")
     fileName = "#{$path}../data/" + parts[0] + parts[1][6..parts[1].length-1].chomp(".pep.xml")
     
     fileName
@@ -23,7 +27,7 @@ class PepXML < Format
     @decoy
   end
   
-  #Creates and returns a header for the tab file
+  #Creates and returns a header for the tab file.
   def header
     temp = ""
     result = "SpecId\tLabel\tCharge\t"

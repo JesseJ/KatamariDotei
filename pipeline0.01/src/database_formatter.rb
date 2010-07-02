@@ -10,11 +10,14 @@ if ARGV.size != 1
     exit
 end
 
+#Performs all the necessary formatting of databases for the Pipeline.
 class DatabaseFormatter
+  #fileName == The name of the file in the databases folder
   def initialize(fileName)
     @fileName = fileName
   end
   
+  #Performs all the formatting.
   def formatDatabase
     puts "Creating reversed database..."
     targetDatabase = "#{$path}../../databases/#{@fileName}"

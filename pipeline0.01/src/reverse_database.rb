@@ -9,11 +9,14 @@ require "ms/fasta.rb"
 #This will reverse the given protein database so it can be used for decoy searches.
 #Does some possibly unnecessary sequence text formatting
 class ReverseDatabase
+  #input == The fasta file
+  #output == The name of the output file
   def initialize(input, output)
     @input = input
     @output = output
   end
   
+  #Creates a reversed database from input.
   def reverseDatabase
     File.open("#{@output}", 'w') do |out|
       fasta = Ms::Fasta.open("#{@input}")

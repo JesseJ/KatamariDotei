@@ -4,6 +4,10 @@ require 'yaml'
 #Contains methods that can be used by all formats.
 #Takes strings containing the target and decoy output file locations and the forward and reverse FASTA databases.
 class Format
+  #target == A string containing the file location of the target pepXML
+  #decoy == A string containing the file location of the decoy pepXML
+  #database == A hash of target {peptide => proteins}
+  #revDatabase == A hash of decoy {peptide => proteins}
   def initialize(target, decoy, proteins, decoyProteins)
     @target = target
     @decoy = decoy

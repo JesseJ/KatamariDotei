@@ -1,19 +1,18 @@
 require 'nokogiri'
 
 #Converts Tide output to pepXML.
-#file: A string containing the location of the tide output file
-#database: A string containing the location of the database
-#enzyme: The name of the enzyme
 class TideConverter
+  #file == A string containing the location of the tide output file
+  #database == A string containing the location of the database
+  #enzyme == The name of the enzyme
   def initialize(file, database, enzyme)
     @file = file
     @database = database
     @enzyme = enzyme
-    
-    temp = file.split("/")
-    @fileName = temp[temp.length - 1]
+    @fileName = file.split("/")[-1]
   end
-    
+  
+  #Converts file to pepXML
   def convert
     file = File.new("#{@file}.pep.xml", "w+")
     tide = File.open("#{@file}.results", "r")

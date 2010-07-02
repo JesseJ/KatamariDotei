@@ -7,24 +7,24 @@ require 'mechanize'
 
 include Process
 
-#file == input file
-#database == type of fasta database to use, e.g. "human"
-#enzyme == the enzyme to use in the search, e.g. trypsin
-#run == which run, or iteration, this is
-#opts: All option values are either true or false.
+#Runs the different search engines
 class Search
+  #file == input file
+  #database == type of fasta database to use, e.g. "human"
+  #enzyme == the enzyme to use in the search, e.g. trypsin
+  #run == which run, or iteration, this is
+  #opts: All option values are either true or false.
   def initialize(file, database, enzyme, run, opts={})
     @opts = opts
     @run = run
     @enzyme = enzyme
     @database = database
     @file = file
-    
-    temp = file.split("/")
-    @fileName = temp[temp.length - 1]
+    @fileName = file.split("/")[-1]
     @outputFiles = []
   end
   
+  #Runs all the selected search engines and returns the names of the output files.
   def run
     puts "\n----------------"
     puts "Running search engines...\n\n"
@@ -230,7 +230,7 @@ class Search
     pepFile1 = file1.chomp(".xml") + ".pep.xml"
     pepFile2 = file2.chomp(".xml") + ".pep.xml"
     @outputFiles << [pepFile1, pepFile2]
-        
+    
     exec("/usr/local/src/tpp-4.3.1/build/linux/Tandem2XML #{file1} #{pepFile1}") if fork == nil
     exec("/usr/local/src/tpp-4.3.1/build/linux/Tandem2XML #{file2} #{pepFile2}") if fork == nil
   end

@@ -8,6 +8,7 @@ require "#{$path}../../ms-error_rate/lib/ms/error_rate/qvalue.rb"
 Hit = Struct.new(:type, :score, :charge)
 
 #Expects an array of arrays of two files, first forward, second decoy. [[for-file1, dec-file2], [for-file3, dec-file4]]
+#Old code that's probably not even needed now that we have Percolator.
 class FalseRateDiscoverer
     def initialize(files)
         @files = files

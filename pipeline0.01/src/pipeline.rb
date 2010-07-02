@@ -3,7 +3,7 @@
 $path = "#{File.dirname($0)}/"
 
 require "#{$path}raw_to_mz.rb"
-require "#{$path}mzxml_to_other.rb"
+require "#{$path}mz_to_other.rb"
 require "#{$path}search.rb"
 require "#{$path}false_rate_discoverer.rb"
 require "#{$path}refiner.rb"
@@ -15,8 +15,11 @@ file = "#{File.expand_path($path)}/../data/test"
 
 type = "human"
 
-#This is the main class of the pipeline.
+#Main
 class Pipeline
+  #This is the main class of the pipeline.
+  #file == A string containing the location of the raw file
+  #type == The type of input, e.g. human or bovin
   def initialize(file, type)
     @file = file
     @type = type
@@ -26,9 +29,9 @@ class Pipeline
     puts "\nHere we go!\n"
     
     RawToMz.new("#{@file}").to_mzXML
-    RawToMz.new("#{@file}").to_mzML
-    MzXMLToOther.new("mgf", "#{@file}.mzXML", false).convert
-    MzXMLToOther.new("ms2", "#{@file}.mzXML", false).convert
+    #RawToMz.new("#{@file}").to_mzML
+    MzToOther.new("mgf", "#{@file}.mzXML", false).convert
+    MzToOther.new("ms2", "#{@file}.mzXML", false).convert
     output = Search.new("#{@file}", @type, "trypsin", 1, :omssa => true, :xtandem => true, :tide => true, :mascot => true).run
     Percolator.new(output, @type).run
     

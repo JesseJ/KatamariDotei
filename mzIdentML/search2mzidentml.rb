@@ -2,17 +2,17 @@ require "#{File.dirname($0)}/pepxml.rb"
 require 'nokogiri'
 
 #Creates an mzIdentML file from a file type created by a search engine, using the format classes such as PepXML.
-#Takes a Format object
+
 class Search2mzIdentML
+  # takes a Format object
   def initialize(format)
     @format = format
   end
   
   #Starts the Nokogiri build process. Other methods build the different parts of the file. Root is depth 0
-  def convert
-    puts "Creating file..."
-    
-    file = createFile
+  def convert(opts={})
+
+    puts "Creating file..." if $VERBOSE
     
     builder = Nokogiri::XML::Builder.new(:encoding => 'UTF-8') do |xml|
       xml.mzIdentML(:id => "",
@@ -30,15 +30,23 @@ class Search2mzIdentML
         }
     end
     
-    file.puts builder.to_xml
-    file.close
+    base = base_file(@format.file, @format.type)
+    File.open(base + ".mzid", 'w') {|io| io.puts builder.to_xml }
   end
   
   private
   
-  def createFile
-    if @format.type == "pepxml"
-      return File.new("#{@format.file.chomp('.pep.xml')}-test.mzid", "w+")
+  # takes the input filename and the filetype type (tp)
+  def base_file(file, tp)
+    case tp
+    when "pepxml"
+      if file =~ /\.pep\.xml$/
+        file.chomp('.pep.xml')
+      else
+        file.chomp(File.extname(file))
+      end
+    else
+      file.chomp(File.extname(file))
     end
   end
   

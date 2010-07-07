@@ -1,7 +1,6 @@
 require "#{File.dirname($0)}/format.rb"
 require "#{File.dirname($0)}/natcmp.rb"
-require "#{File.dirname($0)}/../ms-fasta/lib/ms/fasta.rb"
-require 'natural_sort_kernel'
+require "ms/fasta.rb"
 
 class PepXML < Format
   def initialize(file, database)

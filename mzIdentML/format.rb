@@ -4,8 +4,9 @@ require 'nokogiri'
 #A base class for other file formats. Other formats are meant to inherit from this class, thus Format is basically useless by itself.
 #Contains some methods that are applicable to all formats.
 #Classes that inherit from Format are used as the means of obtaining information from a file to be used in Search2mzIdentML.
-#Takes a string containing the search output file location and a string containing the FASTA  database that was used.
 class Format
+  #file == a string containing the search engine output file location
+  #database == a string containing the FASTA database that was used by the search engine
   def initialize(file, database)
     puts "\nPreparing..."
     

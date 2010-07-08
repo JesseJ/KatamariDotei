@@ -1,39 +1,8 @@
-<<<<<<< HEAD
 require "#{File.dirname($0)}/format.rb"
 require "#{File.dirname($0)}/natcmp.rb"
 require "ms/fasta.rb"
-=======
-require "format"
-require "natcmp"
-require "ms/fasta"
-#require 'natural_sort_kernel'
->>>>>>> a2d2d4fa4ea3fbda102536d2923358101c87cde3
 
 class PepXML < Format
-
-  module ProteinID
-    #Not all pepXML files simply list the protein ID, so this method obtains it.
-    #Are there other cases to cover?
-    def proteinID(protein)
-      #A protein ID is 6-8 characters long, so if it's longer than that, then it contains more than just the ID
-      if protein.include?('|')
-        arr = protein.split("|")[0].split(":")
-        if arr.length == 1
-          arr[0]
-        else
-          arr[1]
-        end
-        #If there's no characters, then it's an index. I don't fully understand regexp, but this works.
-      elsif (protein =~ /[^\d]/) == nil
-        @proteinIndices[protein.to_i]
-      else
-        protein
-      end
-    end
-  end
-  include ProteinID
-
-
   def initialize(file, database)
     super
     @type = "pepxml"
@@ -262,9 +231,27 @@ class PepXML < Format
     end
   end
   
+  #Not all pepXML files simply list the protein ID, so this method obtains it.
+  #Are there other cases to cover?
+  def proteinID(protein)
+    #If a protein ID contains a "|", then it contains more than just the ID
+    if protein.include?('|')
+      arr = protein.split("|")[1].split(":")
+      
+      if arr.length == 1
+        arr[0]
+      else
+        arr[1]
+      end
+    
+    #If there's no characters, then it's an index. I don't fully understand regexp, but this works.
+    elsif (protein =~ /[A-Z]/) == nil
+      @proteinIndices[protein.to_i]
+    else
+      protein
+    end
+  end
 end
-
-
 
 #For quickly getting the start and end indexes of a string
 class String

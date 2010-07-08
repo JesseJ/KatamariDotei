@@ -1,8 +1,6 @@
 require "#{File.dirname($0)}/spect_id_result.rb"
 require 'nokogiri'
 
-require 'pp'
-
 #A base class for other file formats. Other formats are meant to inherit from this class, thus Format is basically useless by itself.
 #Contains some methods that are applicable to all formats.
 #Classes that inherit from Format are used as the means of obtaining information from a file to be used in Search2mzIdentML.
@@ -10,7 +8,7 @@ class Format
   #file == a string containing the search engine output file location
   #database == a string containing the FASTA database that was used by the search engine
   def initialize(file, database)
-    puts "\nPreparing..." if $VERBOSE
+    puts "\nPreparing..."
     
     @file = file
     @database = database
@@ -82,7 +80,7 @@ class Format
     ((mass + diff) + (charge.to_f * 1.00727646677)) / charge
   end
   
-  # Determines the accession number for the score type. For some reason, this has become the slowest part of the conversion.
+  # Determines the accession number for the score type.
   def findAccession(name)
     if arr = @obo[name]
       arr
@@ -91,17 +89,18 @@ class Format
     end
   end
 	
-  # Conforms score name to mzIdentML format
+  # Conforms score name to mzIdentML format. Will most likely need to be extended.
   def conformScoreName(name, engine)
     base = 
       case engine
-      when "X! Tandem"
-        "xtandem"
-      when "MASCOT"
-        "mascot"
-      when "OMSSA"
-        "OMSSA"
+        when "X! Tandem"
+          "xtandem"
+        when "MASCOT"
+          "mascot"
+        when "OMSSA"
+          "OMSSA"
       end
+      
     [base, name].join(':')
   end
 end

@@ -3,18 +3,13 @@ The following is a list of known issues with Search2mzIdentML:
 Critical
 
 -Format.findAccession(name) won't find the id if the pepXML name isn't the same as the mzIdentML name. The only solution I know is to manually alter the pepxml_name values in oboe.yaml.
-
-
--Currently, doesn't pass the validator. (http://www-bs2.informatik.uni-tuebingen.de/services/OpenMS/analysisXML/index.php)
--Search2mzIdentML.convert currently does a strict conversion--it only writes required elements to the mzIdentML file (and implements no options)
-
-
-
+-Currently, Search2mzIdentML doesn't pass the validator (http://www-bs2.informatik.uni-tuebingen.de/services/OpenMS/analysisXML/index.php).
+-Search2mzIdentML.convert currently does a strict conversion--it only writes required elements to the mzIdentML file and implements no options.
 
 
 Less Critical
--PepXML.proteins doesn't return the same number of proteins that Mascot shows in its mzid file. Probably due to different cutoffs right now. May not be a problem. Not sure if alternative_proteins should be included.
 
+-PepXML.proteins doesn't return the same number of proteins that Mascot shows in its mzid file. Probably due to different cutoffs right now. May not be a problem. Not sure if alternative_proteins should be included.
 -Format#conformScoreName(name, engine) currently covers only three search engine names. Also, since I added both pepxml and mzid term names to oboe.yaml, this method isn't really needed, but it allows for the differentiation of expect score IDs.
 -Format#calMass(mass, charge) may be slightly off from the example mzid file, but I don't think it's a big deal.
 -Format.experiMass(mass, charge, diff) may be off from example mzid file, but I don't think it's a big deal.

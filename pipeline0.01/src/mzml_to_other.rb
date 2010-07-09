@@ -2,7 +2,7 @@ require 'rubygems'
 require "ms/msrun"
 
 #Converts mzXML files to a different format.
-class MzToOther
+class MzmlToOther
   #type == The extension type, e.g. mgf
   #file == A string containing the file location
   #hardklor == true or false, whether or not to run Hardklor. Doesn't work with mzML.
@@ -16,14 +16,10 @@ class MzToOther
   #based on the extension of file.
   def convert
     puts "\n----------------"
+    puts "Transforming #{File.extname(@file)} file to .#{@type} format..."
     
-    if @file.downcase.include? ".mzxml"
-      puts "Transforming mzXML file to #{@type} format..."
-      convert_mzXML
-    elsif @file.downcase.include? ".mzml"
-      puts "Transforming mzML file to #{@type} format..."
-      convert_mzML
-    end
+    convert_mzXML if @file.downcase.include? ".mzxml"
+    convert_mzML  if @file.downcase.include? ".mzml"
   end
   
   def convert_mzXML
@@ -37,16 +33,22 @@ class MzToOther
         end
       end
     else
+      # If ms-msrun can't do it, then this probably will.
       system("/usr/local/src/tpp-4.3.1/build/linux/MzXML2Search -#{@type} #{@file}")
     end
   end
   
   def convert_mzML
-    Ms::Msrun.open(@file) do |ms|
-      file = @file.chomp(".mzML") + ".#{@type}"
-      File.open(file, 'w') do |f|
-        f.puts eval "ms.to_#{@type}"
+    if @type == "mgf" || @type == "ms2"
+      Ms::Msrun.open(@file) do |ms|
+        file = @file.chomp(".mzML") + ".#{@type}"
+        File.open(file, 'w') do |f|
+          f.puts eval "ms.to_#{@type}"
+        end
       end
+    else
+      # If ms-msrun can't do it, then this probably will.
+      system("/usr/local/src/tpp-4.3.1/build/linux/MzXML2Search -#{@type} #{@file}")
     end
   end
   
@@ -55,7 +57,7 @@ class MzToOther
   #Optional. Currently, nothing is done with Hardklor output.
   def runHardklor
     puts "Running Hardklor..."
-    Dir.chdir("#{$path}../../hardklor/") do
+    Dir.chdir("#{$path}../../hardklor/") do  #Won't work unless hardklor is run from its directory
       outputFile = @file.chomp(".mzXML")
       exec("./hardklor #{@file} #{outputFile}.hk") if fork == nil
       Process.wait

@@ -2,10 +2,9 @@
 
 $path = "#{File.dirname($0)}/"
 
-require "#{$path}raw_to_mz.rb"
-require "#{$path}mz_to_other.rb"
+require "#{$path}raw_to_mzml.rb"
+require "#{$path}mzml_to_other.rb"
 require "#{$path}search.rb"
-require "#{$path}false_rate_discoverer.rb"
 require "#{$path}refiner.rb"
 require "#{$path}percolator.rb"
 require "#{$path}helper_methods.rb"
@@ -28,12 +27,12 @@ class Pipeline
   def run
     puts "\nHere we go!\n"
     
-    RawToMz.new("#{@file}").to_mzXML
-    #RawToMz.new("#{@file}").to_mzML
-    MzToOther.new("mgf", "#{@file}.mzXML", false).convert
-    MzToOther.new("ms2", "#{@file}.mzXML", false).convert
+    RawToMzml.new("#{@file}").to_mzML
+    MzmlToOther.new("mgf", "#{@file}.mzML", false).convert
+    MzmlToOther.new("ms2", "#{@file}.mzML", false).convert
     output = Search.new("#{@file}", @type, "trypsin", 1, :omssa => true, :xtandem => true, :tide => true, :mascot => true).run
-    Percolator.new(output, @type).run
+    output = Percolator.new(output, @type).run
+    Refiner.new(output, 0, "#{@file}.mzML").refine
     
     notifyCompletion
   end

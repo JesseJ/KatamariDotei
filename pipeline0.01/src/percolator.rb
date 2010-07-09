@@ -18,6 +18,7 @@ class Percolator
     revDatabase = extractDatabase(@type + "-r").chomp("fasta.reverse") + "yml"
     @proteins = Hash.new
     @decoyProteins = Hash.new
+    outputs = []
     
     File.open(database, "r").each_line do |line|
       parts = line.split(": ")
@@ -32,9 +33,12 @@ class Percolator
     @files.each do |pair|
       output = Search2Tab.new(PepXML.new(pair[0], pair[1], @proteins, @decoyProteins)).convert
       exec("percolator -j #{output}.tab > #{output}.psms") if fork == nil
+      outputs << "#{output}.psms"
     end
     
     waitForAllProcesses
+    
+    outputs
   end
 end
 

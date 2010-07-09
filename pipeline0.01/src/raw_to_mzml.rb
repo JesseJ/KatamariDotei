@@ -1,6 +1,6 @@
 
 #Transforms a .raw file to a mzXML or mzML file
-class RawToMz
+class RawToMzml
   #file == A string containing the file location
   def initialize(file)
     @file = file

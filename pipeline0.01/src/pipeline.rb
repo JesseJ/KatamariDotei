@@ -7,6 +7,7 @@ require "#{$path}mzml_to_other.rb"
 require "#{$path}search.rb"
 require "#{$path}refiner.rb"
 require "#{$path}percolator.rb"
+require "#{$path}combiner.rb"
 require "#{$path}helper_methods.rb"
 
 #file = "#{File.expand_path($path)}/../data/fast"
@@ -32,12 +33,15 @@ class Pipeline
     MzmlToOther.new("ms2", "#{@file}.mzML", false).convert
     output = Search.new("#{@file}", @type, "trypsin", 1, :omssa => true, :xtandem => true, :tide => true, :mascot => true).run
     output = Percolator.new(output, @type).run
-    Refiner.new(output, 0, "#{@file}.mzML").refine
+    #Refiner.new(output, 0, "#{@file}.mzML").refine
+    a = "#{$path}../data/test_"
+    file = Combiner.new(["#{a}tide_1.psms", "#{a}omssa_1.psms", "#{a}tandem_1.psms", "#{a}mascot_1.psms"], 1).combine
+    Refiner.new(file, 0.5, "#{@file}.mzML").refine
     
     notifyCompletion
   end
     
-  #Displays a randomly chosen exclamation of joy
+  #Displays a randomly chosen exclamation of joy.
   def notifyCompletion
     done = rand(13)
     puts "\nBoo-yah!" if done == 0

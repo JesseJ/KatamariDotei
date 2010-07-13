@@ -18,30 +18,11 @@ class MzmlToOther
     puts "\n----------------"
     puts "Transforming #{File.extname(@file)} file to .#{@type} format..."
     
-    convert_mzXML if @file.downcase.include? ".mzxml"
-    convert_mzML  if @file.downcase.include? ".mzml"
-  end
-  
-  def convert_mzXML
-    runHardklor if @hardklor
+    runHardklor if @hardklor && @file.downcase.include?(".mzxml")
     
     if @type == "mgf" || @type == "ms2"
       Ms::Msrun.open(@file) do |ms|
-        file = @file.chomp(".mzXML") + ".#{@type}"
-        File.open(file, 'w') do |f|
-          f.puts eval "ms.to_#{@type}"  #This is a dynamic method call.
-        end
-      end
-    else
-      # If ms-msrun can't do it, then this probably will.
-      system("/usr/local/src/tpp-4.3.1/build/linux/MzXML2Search -#{@type} #{@file}")
-    end
-  end
-  
-  def convert_mzML
-    if @type == "mgf" || @type == "ms2"
-      Ms::Msrun.open(@file) do |ms|
-        file = @file.chomp(".mzML") + ".#{@type}"
+        file = @file.chomp(File.extname(@file)) + ".#{@type}"
         File.open(file, 'w') do |f|
           f.puts eval "ms.to_#{@type}"
         end
@@ -52,13 +33,14 @@ class MzmlToOther
     end
   end
   
+  
   private
   
   #Optional. Currently, nothing is done with Hardklor output.
   def runHardklor
     puts "Running Hardklor..."
     Dir.chdir("#{$path}../../hardklor/") do  #Won't work unless hardklor is run from its directory
-      outputFile = @file.chomp(".mzXML")
+      outputFile = @file.chomp(File.extname(@file))
       exec("./hardklor #{@file} #{outputFile}.hk") if fork == nil
       Process.wait
     end

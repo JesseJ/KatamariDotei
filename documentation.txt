@@ -9,7 +9,7 @@ Because this is version 0.01 this doc is limited and guaranteed to change.
 Functions
 
 1. Takes .raw file and creates an mzXML or mzML file.
-2. Takes an mzXML file and creates a file in the format needed by search engines. Can run Hardklor on the mzXML file.
+2. Takes an mzML (or mzXML) file and creates a file in the format needed by search engines. Can run Hardklor on the mzXML file.
 3. Runs Mascot, X! Tandem, OMSSA, and Tide. Outputs pepXML files as their search results.
 4. Runs Percolator on the search results.
 
@@ -17,7 +17,7 @@ ________________________________________________________________________________
 
 DOCUMENTATION ON DEPENDENT PROGRAMS
 
-Pipeline uses many programs from the Trans-Proteomic Pipeline (TPP). The wiki can be viewed at http://tools.proteomecenter.org/wiki/index.php?title=Software:TPP
+The Pipeline uses some programs from the Trans-Proteomic Pipeline (TPP). The wiki can be viewed at http://tools.proteomecenter.org/wiki/index.php?title=Software:TPP
 
 ----------------------------------------------------------------------------------------------------------------------
 

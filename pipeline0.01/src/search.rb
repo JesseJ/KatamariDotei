@@ -14,9 +14,8 @@ class Search
   #enzyme == the enzyme to use in the search, e.g. trypsin
   #run == which run, or iteration, this is
   #opts: All option values are either true or false.
-  def initialize(file, database, enzyme, run, opts={})
+  def initialize(file, database, enzyme, opts={})
     @opts = opts
-    @run = run
     @enzyme = enzyme
     @database = database
     @file = file
@@ -26,7 +25,7 @@ class Search
   
   #Runs all the selected search engines and returns the names of the output files.
   def run
-    puts "\n----------------"
+    puts "\n--------------------------------"
     puts "Running search engines...\n\n"
     
     threads = []
@@ -78,10 +77,10 @@ class Search
         
     if decoy
       notes['protein, taxon'] = "#{@database}-r"
-      notes['output, path'] = "#{@file}-decoy_tandem_#{@run}.xml"
+      notes['output, path'] = "#{@file}-decoy_tandem.xml"
     else
       notes['protein, taxon'] = "#{@database}"
-      notes['output, path'] = "#{@file}-target_tandem_#{@run}.xml"
+      notes['output, path'] = "#{@file}-target_tandem.xml"
     end
                  
     xml.bioml do 
@@ -94,8 +93,8 @@ class Search
   end
     
   def runOMSSA
-    target = "#{@file}-target_omssa_#{@run}.pep.xml"
-    decoy = "#{@file}-decoy_omssa_#{@run}.pep.xml"
+    target = "#{@file}-target_omssa.pep.xml"
+    decoy = "#{@file}-decoy_omssa.pep.xml"
 		
     #Target search
     exec("#{$path}../../omssa/omssacl -fm #{@file}.mgf -op #{target} -e #{getOMSSAEnzyme} -d #{extractDatabase(@database)}") if fork == nil
@@ -110,8 +109,8 @@ class Search
   	database = extractDatabase(@database)
    	databaseR = extractDatabase(@database + "-r")
     path = "#{$path}../../crux/tide/"
-    tFile = "#{@file}-target_tide_#{@run}"
-    dFile = "#{@file}-decoy_tide_#{@run}"
+    tFile = "#{@file}-target_tide"
+    dFile = "#{@file}-decoy_tide"
     
     pidF = fork {exec("#{path}tide-index --fasta #{database} --enzyme #{@enzyme} --digestion full-digest")}
     pidR = fork {exec("#{path}tide-index --fasta #{databaseR} --enzyme #{@enzyme} --digestion full-digest")}
@@ -159,7 +158,7 @@ class Search
     end
     
     threads.each {|thread| thread.join}
-    @outputFiles << ["#{@file}-target_mascot_#{@run}.pep.xml", "#{@file}-decoy_mascot_#{@run}.pep.xml"]
+    @outputFiles << ["#{@file}-target_mascot.pep.xml", "#{@file}-decoy_mascot.pep.xml"]
   end
   
   #Not the best name. Just a factored-out method runMascot.
@@ -209,8 +208,8 @@ class Search
       form = export_page.form('Re-format')
       form.field_with(:name => 'export_format').options[2].select
       page = a.submit(form, form.buttons[1])
-      File.open("#{@file}-target_mascot_#{@run}.pep.xml", 'w') {|f| f.write(page.body)} if type == :target
-      File.open("#{@file}-decoy_mascot_#{@run}.pep.xml", 'w') {|f| f.write(page.body)} if type == :decoy
+      File.open("#{@file}-target_mascot.pep.xml", 'w') {|f| f.write(page.body)} if type == :target
+      File.open("#{@file}-decoy_mascot.pep.xml", 'w') {|f| f.write(page.body)} if type == :decoy
     end
   end
   
@@ -225,8 +224,8 @@ class Search
     
   def convertTandemOutput
     #Convert to pepXML format
-    file1 = "#{@file}-target_tandem_#{@run}.xml"
-    file2 = "#{@file}-decoy_tandem_#{@run}.xml"
+    file1 = "#{@file}-target_tandem.xml"
+    file2 = "#{@file}-decoy_tandem.xml"
     pepFile1 = file1.chomp(".xml") + ".pep.xml"
     pepFile2 = file2.chomp(".xml") + ".pep.xml"
     @outputFiles << [pepFile1, pepFile2]

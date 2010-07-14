@@ -4,15 +4,16 @@ class Refiner
   # file == combiner.rb output
   # cutoff == The cutoff value. Only those above the cutoff value are kept
   # mzFile == The mzML or mzXML file that was used
-  def initialize(file, cutoff, mzFile)
+  def initialize(file, cutoff, mzFile, run)
     @file = file
     @cutoff = cutoff
     @mzFile = mzFile
+    @run = run
   end
   
   # Determines which scans to include and creates a new (mgf and/or ms2) file.
   def refine
-    puts "\n----------------"
+    puts "\n--------------------------------"
     puts "Refining search...\n"
     
     write_to_msms(refine_scans)
@@ -38,9 +39,9 @@ class Refiner
   # Writes the given scans to mgf and ms2
   def write_to_msms(selected_scans)
     Ms::Msrun.open(@mzFile) do |ms|
-      fName = @mzFile.chomp(File.extname(@mzFile))
-      ms.to_mgf(:output => fName + ".ms2", :selected_scans => selected_scans)
-      ms.to_ms2(:output => fName + ".ms2", :selected_scans => selected_scans)
+      fName = @mzFile.chomp(File.extname(@mzFile)) + "_#{@run + 1}"
+      ms.to_mgf(:output => fName + ".mgf", :included_scans => selected_scans)
+      ms.to_ms2(:output => fName + ".ms2", :included_scans => selected_scans)
     end
   end
 end

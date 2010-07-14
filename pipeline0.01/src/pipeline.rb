@@ -15,33 +15,46 @@ file = "#{File.expand_path($path)}/../data/test"
 
 type = "human"
 
-#Main
+# This is the main class of the pipeline.
 class Pipeline
-  #This is the main class of the pipeline.
-  #file == A string containing the location of the raw file
-  #type == The type of input, e.g. human or bovin
-  def initialize(file, type)
+  # file == A string containing the location of the raw file
+  # type == The type of input, e.g. human or bovin
+  def initialize(file, database)
     @file = file
-    @type = type
+    @database = database
   end
     
   def run
     puts "\nHere we go!\n"
     
     RawToMzml.new("#{@file}").to_mzML
-    MzmlToOther.new("mgf", "#{@file}.mzML", false).convert
-    MzmlToOther.new("ms2", "#{@file}.mzML", false).convert
-    output = Search.new("#{@file}", @type, "trypsin", 1, :omssa => true, :xtandem => true, :tide => true, :mascot => true).run
-    output = Percolator.new(output, @type).run
-    #Refiner.new(output, 0, "#{@file}.mzML").refine
-    a = "#{$path}../data/test_"
-    file = Combiner.new(["#{a}tide_1.psms", "#{a}omssa_1.psms", "#{a}tandem_1.psms", "#{a}mascot_1.psms"], 1).combine
-    Refiner.new(file, 0.5, "#{@file}.mzML").refine
+    [1,2,3,4].each do |i|
+      MzmlToOther.new("mgf", "#{@file}.mzML", i, false).convert
+      MzmlToOther.new("ms2", "#{@file}.mzML", i, false).convert
+      output = Search.new("#{@file}_#{i}", @database, "trypsin", :omssa => true, :xtandem => true, :tide => true, :mascot => true).run
+      output = Percolator.new(output, @database).run
+      GC.start
+      file = Combiner.new(output, i).combine
+      Refiner.new(file, 0.8, "#{@file}.mzML", i).refine
+      GC.start
+    end
+    
+#    RawToMzml.new("#{@file}").to_mzML
+#    MzmlToOther.new("mgf", "#{@file}.mzML", 1, false).convert
+#    MzmlToOther.new("ms2", "#{@file}.mzML", 1, false).convert
+#    output = Search.new("#{@file}_1", @database, "trypsin", :omssa => true, :xtandem => true, :tide => true, :mascot => true).run
+#    output = Percolator.new(output, @database).run
+#    file = Combiner.new(output, 1).combine
+#    Refiner.new(file, 0.9, "#{@file}.mzML", 1).refine
+    
+#    a = "#{$path}../data/test_1_"
+#    file = Combiner.new(["#{a}tide.psms", "#{a}omssa.psms", "#{a}tandem.psms", "#{a}mascot.psms"], 1).combine
+#    Refiner.new(file, 0.8, "#{@file}.mzML", 1).refine
     
     notifyCompletion
   end
     
-  #Displays a randomly chosen exclamation of joy.
+  # Displays a randomly chosen exclamation of joy.
   def notifyCompletion
     done = rand(13)
     puts "\nBoo-yah!" if done == 0

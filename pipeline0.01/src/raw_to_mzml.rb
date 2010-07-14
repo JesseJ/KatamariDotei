@@ -8,7 +8,7 @@ class RawToMzml
   
   #Converts file to mzXML
   def to_mzXML
-    puts "\n----------------"
+    puts "\n--------------------------------"
     puts "Transforming raw file to mzXML format...\n\n"
     
     system("wine readw.exe --mzXML #{@file}.raw 2>/dev/null")
@@ -17,7 +17,7 @@ class RawToMzml
   #Converts file to mzML. There must also be msconvert_server.rb running on
   #a Windows machine with msconvert.exe for this to work.
   def to_mzML
-    puts "\n----------------"
+    puts "\n--------------------------------"
     puts "Transforming raw file to mzML format...\n\n"
     
     host = '192.168.101.180'  #The address of the Windows machine I'm using.

@@ -3323,6 +3323,9 @@
 - :pepxml_name: Mascot
   :id: MS:1001207
   :mzid_name: Mascot
+- :pepxml_name: MASCOT
+  :id: MS:1001207
+  :mzid_name: Mascot
 - :pepxml_name: Sequest
   :id: MS:1001208
   :mzid_name: Sequest

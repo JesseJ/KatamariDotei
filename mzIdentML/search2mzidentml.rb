@@ -10,7 +10,7 @@ class Search2mzIdentML
   
   #Starts the Nokogiri build process. Other methods build the different parts of the file. Root is depth 0
   def convert(opts={})
-    puts "Creating file..."
+    puts "Creating file...\n\n"
     
     builder = Nokogiri::XML::Builder.new(:encoding => 'UTF-8') do |xml|
       xml.mzIdentML(:id => "",
@@ -20,7 +20,8 @@ class Search2mzIdentML
         'xmlns:xsi' => "http://www.w3.org/2001/XMLSchema-instance",
         :creationDate => @format.date) {
           cvList(xml)
-          provider(xml)
+          analysisSoftwareList(xml)
+          #provider(xml)
           sequenceCollection(xml)
           analysisCollection(xml)
           analysisProtocolCollection(xml)
@@ -28,6 +29,7 @@ class Search2mzIdentML
         }
     end
     
+    @format.display_missed_mappings
     File.open(base_file + ".mzid", 'w') {|io| io.puts builder.to_xml}
   end
   
@@ -47,6 +49,18 @@ class Search2mzIdentML
       xml.cv(:id => "PSI-MS", :fullName => "Proteomics Standards Initiative Mass Spectrometry Vocabularies", :URI => "http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo", :version => "2.32.0")
       xml.cv(:id => "UNIMOD", :fullName => "UNIMOD", :URI => "http://www.unimod.org/obo/unimod.obo")
       xml.cv(:id => "UO", :fullName => "UNIT-ONTOLOGY", :URI => "http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo")
+    }
+  end
+  
+  #Depth 1
+  def analysisSoftwareList(xml)
+    xml.AnalysisSoftwareList {
+      xml.AnalysisSoftware(:id => @format.searchEngine) {
+        xml.SoftwareName {
+          array = @format.findAccession(@format.searchEngine)
+            xml.cvParam(:accession => array[0], :name => array[1], :cvRef => "PSI-MS")
+        }
+      }
     }
   end
   
@@ -74,7 +88,7 @@ class Search2mzIdentML
     proteins = @format.proteins
     
     proteins.each do |protein|
-      xml.DBSequence(:id => protein[2], :SearchDatabase_ref => @format.databaseName, :accession => protein[0]) {
+      xml.DBSequence(:id => protein[2], :SearchDatabase_ref => "SDB_1", :accession => protein[0]) {
         xml.cvParam(:accession => "MS:1001088", :name => "protein description", :cvRef => "PSI-MS", :value => protein[1])
       }
     end
@@ -96,7 +110,7 @@ class Search2mzIdentML
     xml.AnalysisCollection {
       xml.SpectrumIdentification(:id => "SI", :SpectrumIdentificationProtocol_ref => "SIP", :SpectrumIdentificationList_ref => "SIL_1", :activityDate => @format.date) {
         xml.InputSpectra(:SpectraData_ref => @format.file)
-        xml.SearchDatabase(:SearchDatabase_ref => @format.databaseName)
+        xml.SearchDatabase(:SearchDatabase_ref => "SDB_1")
       }
     }
   end
@@ -128,10 +142,21 @@ class Search2mzIdentML
   #Depth 1
   def dataCollection(xml)
     xml.DataCollection {
-      xml.Inputs {}
+      inputs(xml)
       xml.AnalysisData {
         xml.SpectrumIdentificationList(:id => "SIL_1", :numSequencesSearched => @format.numberOfSequences) {
           spectrumIdentificationResult(xml)
+        }
+      }
+    }
+  end
+  
+  #Depth 2
+  def inputs(xml)
+    xml.Inputs {
+      xml.SearchDatabase(:location => @format.database, :id => "SDB_1") {
+        xml.DatabaseName {
+          xml.userParam(:name => File.basename(@format.database))
         }
       }
     }

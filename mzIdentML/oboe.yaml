@@ -4085,6 +4085,9 @@
 - :pepxml_name: xtandem
   :id: MS:1001476
   :mzid_name: xtandem
+- :pepxml_name: X! Tandem
+  :id: MS:1001476
+  :mzid_name: xtandem
 - :pepxml_name: SpectraST
   :id: MS:1001477
   :mzid_name: SpectraST

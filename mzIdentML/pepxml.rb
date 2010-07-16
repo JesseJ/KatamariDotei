@@ -2,7 +2,10 @@ require "#{File.dirname($0)}/format.rb"
 require "#{File.dirname($0)}/natcmp.rb"
 require "ms/fasta.rb"
 
+# The pepXML implementation of Format
 class PepXML < Format
+  # file == a string containing the pepXML file location
+  # database == a string containing the FASTA database that was used by the search engine
   def initialize(file, database)
     super
     @type = "pepxml"
@@ -11,7 +14,7 @@ class PepXML < Format
     @sequences = 0
     @proteinIndices = []
     
-    #Nokogiri won't parse out the information of an XML file that uses namespaces unless you add xmlns, and vice versa.
+    # Nokogiri won't parse out the information of an XML file that uses namespaces unless you add xmlns, and vice versa.
     @xmlns = "xmlns:" if hasNamespace
     
     findAllPepLocations
@@ -34,27 +37,27 @@ class PepXML < Format
     @database
   end
   
-  #Retrieves the date in the pepXML file
+  # Retrieves the date in the pepXML file
   def date
     @doc.xpath("#{@xmlns}msms_pipeline_analysis/@date").to_s
   end
   
-  #Retrieves the number of database sequences
+  # Retrieves the number of database sequences
   def numberOfSequences
     @sequences
   end
   
-  #Retrieves the name of the search engine
+  # Retrieves the name of the search engine
   def searchEngine
     @engine
   end
   
-  #Simply returns 0 because I don't know how to obtain the threshold from pepXML
+  # Simply returns 0 because I don't know how to obtain the threshold from pepXML
   def threshold
     0
   end
   
-  #Retrieves all the proteins. Not sure if this is correct.
+  # Retrieves all the proteins. Not sure if this is correct.
   def proteins
     allHits = @doc.xpath("//#{@xmlns}search_hit/@protein|//#{@xmlns}search_hit/@protein_descr")
     pros = []
@@ -70,7 +73,7 @@ class PepXML < Format
     @pros
   end
   
-  #Retrieves all the peptides. Not sure if this is correct.
+  # Retrieves all the peptides. Not sure if this is correct.
   def peptides
     allHits = @doc.xpath("//#{@xmlns}search_hit/@peptide")
     peps = []
@@ -96,12 +99,12 @@ class PepXML < Format
     peps
   end
   
-  #Retrieves the name of the search database that was used.
+  # Retrieves the name of the search database that was used.
   def databaseName
     @databaseName
   end
   
-  #Retrieves the spectrum queries. Spectrum indexs not guarenteed to be correct.
+  # Retrieves the spectrum queries. Spectrum indexs not guarenteed to be correct.
   def results
     queries = @doc.xpath("//#{@xmlns}spectrum_query")
     indicies = @doc.xpath("//#{@xmlns}spectrum_query/@spectrum").collect {|index| index.to_s}
@@ -128,7 +131,7 @@ class PepXML < Format
   
   private
   
-  #Checks if the pepXML file used namespaces
+  # Checks if the pepXML file used namespaces
   def hasNamespace
     if @doc.xpath("msms_pipeline_analysis").to_s.length == 0
       true
@@ -137,7 +140,7 @@ class PepXML < Format
     end
   end
   
-  #Obtains the result items
+  # Obtains the result items
   def getItem(hit, rank, charge)
     mass = hit.xpath("./@calc_neutral_pep_mass").to_s.to_f
     diff = hit.xpath("./@massdiff").to_s.to_f
@@ -166,7 +169,7 @@ class PepXML < Format
     item
   end
   
-  #Obtains the peptideEvidence
+  # Obtains the peptideEvidence
   def getEvidence(hit, pep, id)
     pre = hit.xpath("./@peptide_prev_aa").to_s
     post = hit.xpath("./@peptide_next_aa").to_s
@@ -186,7 +189,7 @@ class PepXML < Format
     PepEvidence.new(id, startVal, endVal, pre, post, missedCleavages, false, ref)
   end
   
-  #Gets the start and end location of the peptide
+  # Gets the start and end location of the peptide
   def pepLocation(hit, pro, pep)
     @locations.each do |location|
       if location[0] == pep && location[1] == pro
@@ -197,14 +200,14 @@ class PepXML < Format
     return 0, 0    #In case it doesn't find anything
   end
   
-  #Obtains all peptide locations and puts them in an array in the format: [[peptide, protein, start, end]]
+  # Obtains all peptide locations and puts them in an array in the format: [[peptide, protein, start, end]]
   def findAllPepLocations
     hits = @doc.xpath("//#{@xmlns}search_hit")
     all = []
     @locations = []
     i = 0
     
-    #Parses out each peptide and protein
+    # Parses out each peptide and protein
     hits.each do |hit|
       all << [hit.xpath("./@peptide").to_s, proteinID(hit.xpath("./@protein").to_s)]
       i += 1
@@ -231,8 +234,8 @@ class PepXML < Format
     end
   end
   
-  #Not all pepXML files simply list the protein ID, so this method obtains it.
-  #Are there other cases to cover?
+  # Not all pepXML files simply list the protein ID, so this method obtains it.
+  # Are there other cases to cover?
   def proteinID(protein)
     #If a protein ID contains a "|", then it contains more than just the ID
     if protein.include?('|')
@@ -253,7 +256,7 @@ class PepXML < Format
   end
 end
 
-#For quickly getting the start and end indexes of a string
+# For quickly getting the start and end indexes of a string
 class String
   def scan_i seq
     pos = 0

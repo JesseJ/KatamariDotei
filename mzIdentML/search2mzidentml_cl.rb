@@ -39,9 +39,16 @@ require "#{File.dirname($0)}/pepxml.rb"
 #  format = PepXML.new(options[:infile], options[:database])
 #end
 
+if ARGV.size != 2
+  puts "\nusage: #{File.basename(__FILE__)} inputFile database"
+  puts "inputFile: The location of the file to turn into mzIdentML (Currently only supports pepXML)"
+  puts "database: The location of the FASTA database\n\n"
+  exit
+end
+
 begin
   format = PepXML.new(ARGV[0], ARGV[1])
   Search2mzIdentML.new(format).convert
-#rescue
-#  $stderr.print "\n\tError: #{$!}\n"
+rescue
+  $stderr.print "\n\tError: #{$!}\n"
 end

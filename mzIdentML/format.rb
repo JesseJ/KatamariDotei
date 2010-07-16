@@ -113,6 +113,12 @@ class Format
           "mascot"
         when "OMSSA"
           "OMSSA"
+        when "Tide"
+           "sequest"
+        when "Phenyx"
+          "Phenyx"
+        when "SpectraST"
+          "SpectraST"
       end
       
     [base, name].join(':')

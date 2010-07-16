@@ -1,14 +1,14 @@
 require "#{File.dirname($0)}/pepxml.rb"
 require 'nokogiri'
 
-#Creates an mzIdentML file from a file type created by a search engine, using the format classes such as PepXML.
+# Creates an mzIdentML file from a file type created by a search engine, using the format classes such as PepXML.
 class Search2mzIdentML
-  #format == a Format object
+  # format == a Format object
   def initialize(format)
     @format = format
   end
   
-  #Starts the Nokogiri build process. Other methods build the different parts of the file. Root is depth 0
+  # Starts the Nokogiri build process. Other methods build the different parts of the file. Root is depth 0
   def convert(opts={})
     puts "Creating file...\n\n"
     
@@ -43,7 +43,7 @@ class Search2mzIdentML
     end
   end
   
-  #Depth 1
+  # Depth 1
   def cvList(xml)
     xml.cvList {
       xml.cv(:id => "PSI-MS", :fullName => "Proteomics Standards Initiative Mass Spectrometry Vocabularies", :URI => "http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo", :version => "2.32.0")
@@ -52,7 +52,7 @@ class Search2mzIdentML
     }
   end
   
-  #Depth 1
+  # Depth 1
   def analysisSoftwareList(xml)
     xml.AnalysisSoftwareList {
       xml.AnalysisSoftware(:id => @format.searchEngine) {
@@ -64,7 +64,7 @@ class Search2mzIdentML
     }
   end
   
-  #Depth 1
+  # Depth 1
   def provider(xml)
     xml.Provider(:Software_ref => "search2mzIdentML.rb", :id => "PROVIDER") {
       xml.ContactRole(:Contact_ref => "PERSON_DOC_OWNER") {
@@ -75,7 +75,7 @@ class Search2mzIdentML
     }
   end
   
-  #Depth 1
+  # Depth 1
   def sequenceCollection(xml)
     xml.SequenceCollection {
       dBSequences(xml)
@@ -83,7 +83,7 @@ class Search2mzIdentML
     }
   end
   
-  #Depth 2
+  # Depth 2
   def dBSequences(xml)
     proteins = @format.proteins
     
@@ -94,7 +94,7 @@ class Search2mzIdentML
     end
   end
   
-  #Depth 2
+  # Depth 2
   def peptides(xml)
     peptides = @format.peptides
     
@@ -105,24 +105,24 @@ class Search2mzIdentML
     end
   end
   
-  #Depth 1
+  # Depth 1
   def analysisCollection(xml)
     xml.AnalysisCollection {
       xml.SpectrumIdentification(:id => "SI", :SpectrumIdentificationProtocol_ref => "SIP", :SpectrumIdentificationList_ref => "SIL_1", :activityDate => @format.date) {
-        xml.InputSpectra(:SpectraData_ref => @format.file)
+        xml.InputSpectra(:SpectraData_ref => File.basename(@format.file))
         xml.SearchDatabase(:SearchDatabase_ref => "SDB_1")
       }
     }
   end
   
-  #Depth 1
+  # Depth 1
   def analysisProtocolCollection(xml)
     xml.AnalysisProtocolCollection {
       SpectrumIdentificationProtocol(xml)
     }
   end
   
-  #Depth 2
+  # Depth 2
   def SpectrumIdentificationProtocol(xml)
     xml.SpectrumIdentificationProtocol(:id => "SIP", :AnalysisSoftware_ref => @format.searchEngine) {
       xml.SearchType {
@@ -139,7 +139,7 @@ class Search2mzIdentML
     }
   end
   
-  #Depth 1
+  # Depth 1
   def dataCollection(xml)
     xml.DataCollection {
       inputs(xml)
@@ -151,7 +151,7 @@ class Search2mzIdentML
     }
   end
   
-  #Depth 2
+  # Depth 2
   def inputs(xml)
     xml.Inputs {
       xml.SearchDatabase(:location => @format.database, :id => "SDB_1") {
@@ -162,13 +162,13 @@ class Search2mzIdentML
     }
   end
   
-  #Depth 4
+  # Depth 4
   def spectrumIdentificationResult(xml)
     results = @format.results
     i = 1
     
     results.each do |result|
-      xml.SpectrumIdentificationResult(:id => "SIR_#{i}", :spectrumID => "index=#{result.index}", :SpectraData_ref => @format.file) {
+      xml.SpectrumIdentificationResult(:id => "SIR_#{i}", :spectrumID => "index=#{result.index}", :SpectraData_ref => File.basename(@format.file)) {
         result.items.each do |item|
           ident = item.ident
           siiID = "SII_#{i}_#{ident.id}"
@@ -189,7 +189,7 @@ class Search2mzIdentML
     end
   end
   
-  #Depth 6
+  # Depth 6
   def spectrumIdentificationItemVals(xml, item, siiID)
     pepEv = item.pepEvidence
     

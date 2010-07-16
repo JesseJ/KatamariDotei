@@ -1,12 +1,12 @@
 require "#{$path}format.rb"
 require 'nokogiri'
 
-#A pepXML Format object.
+# A pepXML Format object.
 class PepXML < Format
-  #target == A string containing the file location of the target pepXML
-  #decoy == A string containing the file location of the decoy pepXML
-  #database == A hash of target {peptide => proteins}
-  #revDatabase == A hash of decoy {peptide => proteins}
+  # target == A string containing the file location of the target pepXML
+  # decoy == A string containing the file location of the decoy pepXML
+  # database == A hash of target {peptide => proteins}
+  # revDatabase == A hash of decoy {peptide => proteins}
   def initialize(target, decoy, database, revDatabase)
     super
   end

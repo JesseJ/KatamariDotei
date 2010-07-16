@@ -1,15 +1,15 @@
 require "#{$path}search2tab.rb"
 
-#Runs Percolator
+# Runs Percolator
 class Percolator
-  #files == The output from Search
-  #type == The type of database, e.g. human or bovin
+  # files == The output from Search
+  # type == The type of database, e.g. human or bovin
   def initialize(files, type)
     @files = files
     @type = type
   end
   
-  #Runs percolator on the given files
+  # Runs percolator on the given files
   def run
     puts "\n--------------------------------"
     puts "Running Percolator...\n\n"

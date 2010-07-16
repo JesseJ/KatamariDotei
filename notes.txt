@@ -72,6 +72,7 @@ KatamariShiteki (Clod Identification), KatamariDotei (Clod Identification) or Ka
 SmartPipe: Because Smartball can whiz back and forth right through pipes. Smartball reference.
 MasterPipe: Eh, sounds cool. Zelda reference.
 PeptideBaton: Like a music conductor, the user simply waves his baton (Enters a command) and the the orchestra (Program) plays the parts of the song (Runs the different programs). Windwaker reference.
+Leaning towards KatamariShiteki.
 
 
 9. DIFFERENT DATABASE FORMATS
@@ -92,3 +93,11 @@ Because the name of a database from the Mascot's selection is not necessarily th
 11. COST OF MZML
 
 The pipeline started off with using mzXML, but adding support for mzML came at the cost of greater complexity to setting up the pipeline. msconvert.exe is used to convert a raw file into mzML, and while I tried to get it running under wine, I just couldn't get it to work. Instead, a Windows computer has to be running msconvert_server.rb, so that the pipeline running on a Linux computer can communicate with the Windows computer via Ruby's socket library.
+
+
+12. FILE NAMING CONVENTIONS
+
+To make the automation easier (for me), the following naming conventions are used for the files:
+	A. Extensions are named as follows: .mzXML, .mzML, .pep.xml, .mzid
+	B. Search engine outputs have the original raw file name with the direction (either target or decoy), the search engine name (mascot, tandem, tide, or omssa), and the run number added to the file name, e.g. test_1-target_mascot.pep.xml
+	C. Combined psms files are named combined with the run number, e.g. combined_1.psms

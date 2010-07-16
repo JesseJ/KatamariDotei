@@ -12,6 +12,8 @@ Functions
 2. Takes an mzML (or mzXML) file and creates a file in the format needed by search engines. Can run Hardklor on the mzXML file.
 3. Runs Mascot, X! Tandem, OMSSA, and Tide. Outputs pepXML files as their search results.
 4. Runs Percolator on the search results.
+5. Combines Percolator output into one (Not finished).
+6. Allows for multiple search iterations (Currently hard-coded).
 
 _____________________________________________________________________________________________________________________________________
 

@@ -7,13 +7,13 @@ require 'mechanize'
 
 include Process
 
-#Runs the different search engines
+# Runs the different search engines
 class Search
-  #file == input file
-  #database == type of fasta database to use, e.g. "human"
-  #enzyme == the enzyme to use in the search, e.g. trypsin
-  #run == which run, or iteration, this is
-  #opts: All option values are either true or false.
+  # file == input file
+  # database == type of fasta database to use, e.g. "human"
+  # enzyme == the enzyme to use in the search, e.g. trypsin
+  # run == which run, or iteration, this is
+  # opts: All option values are either true or false.
   def initialize(file, database, enzyme, opts={})
     @opts = opts
     @enzyme = enzyme
@@ -23,7 +23,7 @@ class Search
     @outputFiles = []
   end
   
-  #Runs all the selected search engines and returns the names of the output files.
+  # Runs all the selected search engines and returns the names of the output files.
   def run
     puts "\n--------------------------------"
     puts "Running search engines...\n\n"
@@ -58,7 +58,7 @@ class Search
     convertTandemOutput
   end
     
-  #This is what I made before learning nokogiri. I could use nokogiri instead, but this is less code.
+  # This is what I made before learning nokogiri. I could use nokogiri instead, but this is less code.
   def createTandemInput(decoy)
     if decoy
       file = File.new("#{$path}../data/decoyTandemInput.xml", "w+")
@@ -161,7 +161,7 @@ class Search
     @outputFiles << ["#{@file}-target_mascot.pep.xml", "#{@file}-decoy_mascot.pep.xml"]
   end
   
-  #Not the best name. Just a factored-out method runMascot.
+  # Not the best name. Just a factored-out method from runMascot.
   def automateMascot(a, page, yml, type)
     form = page.form('mainSearch')
     form.USERNAME = yml["USERNAME"]
@@ -202,7 +202,7 @@ class Search
 #    page = a.submit(form, form.buttons.first)
     
     #An ugly solution
-    link = yml["URL"] + "export_dat_2.pl?file=#{mascotFile}&REPTYPE=export&_sigthreshold=0.05&REPORT=AUTO&_server_mudpit_switch=99999999&_ignoreionsscorebelow=0&_showsubsets=0&_showpopups=TRUE&_sortunassigned=scoredown&_requireboldred=0"
+    link = yml["URL"] + "export_dat_2.pl?file=#{mascotFile}&REPTYPE=export&_sigthreshold=0.00&REPORT=AUTO&_server_mudpit_switch=99999999&_ignoreionsscorebelow=0&_showsubsets=0&_sortunassigned=scoredown"
     
     a.get(link) do |export_page|
       form = export_page.form('Re-format')
@@ -213,7 +213,7 @@ class Search
     end
   end
   
-  #Broken code
+  # Broken code. I asked at groups.google.com/group/spctools-discuss if they could tell me why this doesn't work, but no one answered.
   def runSpectraST
     #Target search
     pid = fork {exec("/usr/local/src/tpp-4.3.1/build/linux/spectrast -cN #{$path}../data/#{@fileName} #{@file}.ms2")}

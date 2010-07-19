@@ -1,12 +1,12 @@
 
-#Transforms a .raw file to a mzXML or mzML file
+# Transforms a .raw file to a mzXML or mzML file
 class RawToMzml
-  #file == A string containing the file location
+  # file == A string containing the file location
   def initialize(file)
     @file = file
   end
   
-  #Converts file to mzXML
+  # Converts file to mzXML
   def to_mzXML
     puts "\n--------------------------------"
     puts "Transforming raw file to mzXML format...\n\n"
@@ -14,8 +14,8 @@ class RawToMzml
     system("wine readw.exe --mzXML #{@file}.raw 2>/dev/null")
   end
   
-  #Converts file to mzML. There must also be msconvert_server.rb running on
-  #a Windows machine with msconvert.exe for this to work.
+  # Converts file to mzML. There must also be msconvert_server.rb running on
+  # a Windows machine with msconvert.exe for this to work.
   def to_mzML
     puts "\n--------------------------------"
     puts "Transforming raw file to mzML format...\n\n"

@@ -1,4 +1,5 @@
 #!/usr/bin/ruby
+# This stable version is now horribly outdated, but since no one even uses it, I see no reason to update it. In fact, creating this version was probably a waste of my time.
 
 $path = "/home/jashi/pipeline/"
 $vpath = "/home/jashi/pipeline/pipeline0.01/"

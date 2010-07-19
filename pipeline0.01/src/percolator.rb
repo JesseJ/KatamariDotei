@@ -21,6 +21,8 @@ class Percolator
     outputs = []
     threads = []
     
+    #This, and the part for decoyProteins, takes quite some time. Unfortunately,
+    #I haven't found any way to speed it up more than this.
     File.open(database, "r").each_line do |line|
       parts = line.split(": ")
       @proteins[parts[0]] = parts[1]

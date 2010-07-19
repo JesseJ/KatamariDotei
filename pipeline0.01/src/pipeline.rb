@@ -51,11 +51,11 @@ class Pipeline
 #    file = Combiner.new(["#{a}tide.psms", "#{a}omssa.psms", "#{a}tandem.psms", "#{a}mascot.psms"], 1).combine
 #    Refiner.new(file, 0.8, "#{@file}.mzML", 1).refine
     
-    notifyCompletion
+    notify_the_user_that_the_program_has_finished
   end
     
   # Displays a randomly chosen exclamation of joy.
-  def notifyCompletion
+  def notify_the_user_that_the_program_has_finished
     done = rand(13)
     puts "\nBoo-yah!" if done == 0
     puts "\nOh-yeah!" if done == 1

@@ -36,7 +36,7 @@ class Search2mzIdentML
   
   private
   
-  # takes the input filename and the filetype type (tp)
+  # Takes the input filename and the filetype type (tp)
   def base_file
     if @format.type == "pepxml"
       @format.file.chomp('.pep.xml')
@@ -126,7 +126,7 @@ class Search2mzIdentML
   def SpectrumIdentificationProtocol(xml)
     xml.SpectrumIdentificationProtocol(:id => "SIP", :AnalysisSoftware_ref => @format.searchEngine) {
       xml.SearchType {
-        #Don't know of any value other than "ms-ms search"
+        #Don't know of any value other than "ms-ms search." Should probably fix this in the future.
         xml.cvParam(:accession => "MS:1001083", :name => "ms-ms search", :cvRef => "PSI-MS", :value => "")
       }
       xml.Threshold {

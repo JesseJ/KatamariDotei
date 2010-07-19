@@ -19,6 +19,7 @@ class Percolator
     @proteins = Hash.new
     @decoyProteins = Hash.new
     outputs = []
+    threads = []
     
     File.open(database, "r").each_line do |line|
       parts = line.split(": ")
@@ -31,19 +32,16 @@ class Percolator
     end
     
     @files.each do |pair|
-      output = Search2Tab.new(PepXML.new(pair[0], pair[1], @proteins, @decoyProteins)).convert
-      exec("percolator -j #{output}.tab > #{output}.psms") if fork == nil
-      outputs << "#{output}.psms"
+      threads << Thread.new {
+        output = Search2Tab.new(PepXML.new(pair[0], pair[1], @proteins, @decoyProteins)).convert
+        exec("percolator -j #{output}.tab > #{output}.psms") if fork == nil
+        outputs << "#{output}.psms"
+      }
     end
     
+    threads.each {|thread| thread.join}
     waitForAllProcesses
     
     outputs
   end
 end
-
-#YAML: 4:41 +extra
-#Own w/YAML: 2:47 +extra
-#modified tsv: 1:54
-#* method: 4:39 +extra
-#Own split: 3:14

@@ -1,7 +1,8 @@
+require 'socket'
 
 # Transforms a .raw file to a mzXML or mzML file
 class RawToMzml
-  # file == A string containing the file location
+  # file == A string containing the file location (Without extension)
   def initialize(file)
     @file = file
   end

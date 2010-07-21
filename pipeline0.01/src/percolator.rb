@@ -1,4 +1,5 @@
 require "#{$path}search2tab.rb"
+require "#{$path}helper_methods.rb"
 
 # Runs Percolator
 class Percolator

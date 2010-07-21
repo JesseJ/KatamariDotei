@@ -17,6 +17,7 @@ class MzIdentML < Format
     if @fileName == ""
       parts = @target.split("/")[-1].split("-")
       @fileName = "#{$path}../data/" + parts[0] + parts[1][6..parts[1].length-1].chomp(File.extname(@target))
+      @peptides = {}
     end
     
     @fileName
@@ -65,6 +66,7 @@ class MzIdentML < Format
   def parse
     #Target
     doc = nokogiriDoc(@target)
+    load_peptides(doc)
     
     doc.xpath("//xmlns:SpectrumIdentificationResult").each do |result|
       count = result.xpath(".//xmlns:SpectrumIdentificationItem").length
@@ -74,6 +76,7 @@ class MzIdentML < Format
     
     #Decoy
     doc = nokogiriDoc(@decoy)
+    load_peptides(doc)
     
     doc.xpath("//xmlns:SpectrumIdentificationResult").each do |result|
       count = result.xpath(".//xmlns:SpectrumIdentificationItem").length
@@ -99,8 +102,7 @@ class MzIdentML < Format
     end
     
     #Required Stuff
-    pep_ref = hit.xpath("./@Peptide_ref").to_s
-    pep = doc.xpath("//xmlns:Peptide[@id=\"#{pep_ref}\"]/xmlns:peptideSequence").text
+    pep = @peptides[hit.xpath("./@Peptide_ref").to_s]
     psm += pep + "\t"
     
     psm += proteins(pep, :target) if label == "1"
@@ -108,5 +110,13 @@ class MzIdentML < Format
     
     #id <tab> label <tab> charge <tab> score1 <tab> ... <tab> scoreN <tab> peptide <tab> proteinId1 <tab> .. <tab> proteinIdM 
     psm
+  end
+  
+  # Loads the peptides from the mzIdentML file into the peptides hash.
+  def load_peptides(doc)
+    @peptides = {}
+    doc.xpath("//xmlns:Peptide").each do |peptide|
+      @peptides[peptide.xpath("./@id").to_s] = peptide.xpath(".//xmlns:peptideSequence").text
+    end
   end
 end

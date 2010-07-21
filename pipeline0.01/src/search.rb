@@ -4,12 +4,13 @@ require 'fileutils'
 require 'nokogiri'
 require "#{$path}tide_converter.rb"
 require 'mechanize'
+require "#{$path}helper_methods.rb"
 
 include Process
 
 # Runs the different search engines
 class Search
-  # file == input file
+  # file == input file (without extension)
   # database == type of fasta database to use, e.g. "human"
   # enzyme == the enzyme to use in the search, e.g. trypsin
   # run == which run, or iteration, this is

@@ -10,7 +10,6 @@ require "#{$path}percolator.rb"
 require "#{$path}combiner.rb"
 require "#{$path}helper_methods.rb"
 
-#file = "#{File.expand_path($path)}/../data/fast"
 file = "#{File.expand_path($path)}/../data/test"
 
 type = "human"
@@ -39,13 +38,13 @@ class Pipeline
 #      GC.start
 #    end
     
-    RawToMzml.new("#{@file}").to_mzML
-    MzmlToOther.new("mgf", "#{@file}.mzML", 1, false).convert
-    MzmlToOther.new("ms2", "#{@file}.mzML", 1, false).convert
+#    RawToMzml.new("#{@file}").to_mzML
+#    MzmlToOther.new("mgf", "#{@file}.mzML", 1, false).convert
+#    MzmlToOther.new("ms2", "#{@file}.mzML", 1, false).convert
     output = Search.new("#{@file}_1", @database, "trypsin", :omssa => true, :xtandem => true, :tide => true, :mascot => true).run
     output = Percolator.new(output, @database).run
-    file = Combiner.new(output, 1).combine
-    Refiner.new(file, 0.9, "#{@file}.mzML", 1).refine
+#    file = Combiner.new(output, 1).combine
+#    Refiner.new(file, 0.9, "#{@file}.mzML", 1).refine
     
 #    a = "#{$path}../data/test_1_"
 #    file = Combiner.new(["#{a}tide.psms", "#{a}omssa.psms", "#{a}tandem.psms", "#{a}mascot.psms"], 1).combine
@@ -53,7 +52,7 @@ class Pipeline
     
     notify_the_user_that_the_program_has_finished_by_calling_this_long_method_name
   end
-    
+  
   # Displays a randomly chosen exclamation of joy.
   def notify_the_user_that_the_program_has_finished_by_calling_this_long_method_name
     done = rand(13)

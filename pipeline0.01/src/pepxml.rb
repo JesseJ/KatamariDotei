@@ -14,7 +14,7 @@ class PepXML < Format
   #This method can likely be simplified
   def fileWithoutExtras
     parts = @target.split("/")[-1].split("-")
-    fileName = "#{$path}../data/" + parts[0] + parts[1][6..parts[1].length-1].chomp(".pep.xml")
+    fileName = "#{$path}../data/percolator/" + parts[0] + parts[1][6..parts[1].length-1].chomp(".pep.xml")
     
     fileName
   end

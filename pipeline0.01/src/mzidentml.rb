@@ -16,7 +16,7 @@ class MzIdentML < Format
   def fileWithoutExtras
     if @fileName == ""
       parts = @target.split("/")[-1].split("-")
-      @fileName = "#{$path}../data/" + parts[0] + parts[1][6..parts[1].length-1].chomp(File.extname(@target))
+      @fileName = "#{$path}../data/percolator/" + parts[0] + parts[1][6..parts[1].length-1].chomp(File.extname(@target))
       @peptides = {}
     end
     

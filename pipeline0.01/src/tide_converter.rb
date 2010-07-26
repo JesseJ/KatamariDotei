@@ -22,7 +22,6 @@ class TideConverter
     tide.each_line {|line| hits << line.split}
     
     #Sort by spectrum index
-    #hits.sort! {|x,y| x[0].to_i <=> y[0].to_i}
     hits = hits.sort_by {|x| [x[0].to_i, x[2].to_i]}
     	
     #Group by spectrum

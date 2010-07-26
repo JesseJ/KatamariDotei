@@ -14,7 +14,9 @@
 			<ReAdW commandLine="readw.exe "/>
 		</mzXML>
 		<mzML>
-			<!-- See msconvert.rb on the Windows machine to alter -->
+			<!-- See msconvert_server.rb on the Windows machine to alter -->
+			<!-- The IP address of the Windows machine with msconvert_server.rb -->
+			<host ip="192.168.101.180">
 		</mzML>
 	</RawToMzml>
 

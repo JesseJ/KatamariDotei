@@ -10,8 +10,7 @@ require "#{$path}percolator.rb"
 require "#{$path}combiner.rb"
 require "#{$path}helper_methods.rb"
 
-file = "#{File.expand_path($path)}/../data/test"
-
+file = "#{$path}/../data/raw/test"
 type = "human"
 
 # This is the main class of the pipeline.
@@ -21,6 +20,8 @@ class Pipeline
   def initialize(file, database)
     @file = file
     @database = database
+    @fileName = File.basename(file)
+    @dataPath = "#{$path}/../data/"
   end
     
   def run
@@ -38,17 +39,13 @@ class Pipeline
 #      GC.start
 #    end
     
-#    RawToMzml.new("#{@file}").to_mzML
-#    MzmlToOther.new("mgf", "#{@file}.mzML", 1, false).convert
-#    MzmlToOther.new("ms2", "#{@file}.mzML", 1, false).convert
-    output = Search.new("#{@file}_1", @database, "trypsin", :omssa => true, :xtandem => true, :tide => true, :mascot => true).run
+    RawToMzml.new("#{@file}").to_mzML
+    MzmlToOther.new("mgf", "#{@dataPath}/spectra/#{@fileName}.mzML", 1, false).convert
+    MzmlToOther.new("ms2", "#{@dataPath}/spectra/#{@fileName}.mzML", 1, false).convert
+    output = Search.new("#{@dataPath}/spectra/#{@fileName}_1", @database, "trypsin", :omssa => true, :xtandem => true, :tide => true, :mascot => true).run
     output = Percolator.new(output, @database).run
-#    file = Combiner.new(output, 1).combine
-#    Refiner.new(file, 0.9, "#{@file}.mzML", 1).refine
-    
-#    a = "#{$path}../data/test_1_"
-#    file = Combiner.new(["#{a}tide.psms", "#{a}omssa.psms", "#{a}tandem.psms", "#{a}mascot.psms"], 1).combine
-#    Refiner.new(file, 0.8, "#{@file}.mzML", 1).refine
+    file = Combiner.new(output, 1).combine
+    Refiner.new(file, 0.9, "#{@dataPath}/spectra/#{@fileName}.mzML", 1).refine
     
     notify_the_user_that_the_program_has_finished_by_calling_this_long_method_name
   end

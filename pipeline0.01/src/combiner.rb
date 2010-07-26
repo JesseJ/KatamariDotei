@@ -16,7 +16,7 @@ class Combiner
     combined_hits = recalculate(all_hits)
     combined_hits = combined_hits.sort_by {|x| [x[0], x[4]]}
     
-    combined_file = "#{$path}../data/combined_#{@run}.psms"
+    combined_file = "#{$path}../data/results/combined_#{@run}.psms"
     File.open(combined_file, "w") do |file|
       combined_hits.each {|hit| file.print hit.join("\t") + "\n"}
     end

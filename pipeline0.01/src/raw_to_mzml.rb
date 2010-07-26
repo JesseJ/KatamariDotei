@@ -12,7 +12,7 @@ class RawToMzml
     puts "\n--------------------------------"
     puts "Transforming raw file to mzXML format...\n\n"
     
-    system("wine readw.exe --mzXML #{@file}.raw 2>/dev/null")
+    system("wine readw.exe --mzXML #{@file}.raw #{$path}../data/spectra/#{File.basename(@file + ".raw", ".raw")}.mzXML 2>/dev/null")
   end
   
   # Converts file to mzML. There must also be msconvert_server.rb running on
@@ -34,7 +34,7 @@ class RawToMzml
     client.print("\r\r\n\n")  #This is the delimiter for the server
     
     puts "Receiving mzML file"
-    File.open("#{$path}../data/#{fileName}.mzML", 'wb') {|io| io.print client.gets("\r\r\n\n")}
+    File.open("#{$path}../data/spectra/#{fileName}.mzML", 'wb') {|io| io.print client.gets("\r\r\n\n")}
     client.close
   end
 end

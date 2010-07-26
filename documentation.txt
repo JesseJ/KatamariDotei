@@ -1,20 +1,81 @@
-PIPELINE DOC v0.01 (June 2010)
+PIPELINE DOC v0.1 (July 2010)
 
-Pipeline 0.01 (June 2010): This is a testing version and not meant for release. There is, however, a "stable" version of this which can be run, but no guarantees are made.
+Pipeline 0.01 (June 2010): This is a testing version and not meant for release.
 
-Because this is version 0.01 this doc is limited and guaranteed to change.
+Because this is version 0.1, this doc is limited and guaranteed to change.
 
 ----------------------------------------------------------------------------------------------------------------------
 
-Functions
+Main Functions
 
 1. Takes .raw file and creates an mzXML or mzML file.
 2. Takes an mzML (or mzXML) file and creates a file in the format needed by search engines. Can run Hardklor on the mzXML file.
 3. Runs Mascot, X! Tandem, OMSSA, and Tide. Outputs pepXML files as their search results.
 4. Runs Percolator on the search results.
-5. Combines Percolator output into one (Not finished).
-6. Allows for multiple search iterations (Currently hard-coded).
+5. Combines Percolator output into one.
+6. Allows for multiple search iterations.
+7. 
 
+----------------------------------------------------------------------------------------------------------------------
+
+Detailed Documentation
+("o" means the feature is fully implemented, "x" means it's not yet fully implemented. If there's nothing, then it's a note, not a feature.)
+
+-User Interface
+x To run, the command line is used by specifying the location of the raw file and the type of database.
+x For more control, config.xml can be altered to the user's liking.
+
+-pipeline.rb
+x Takes the given raw file and performs all the main functions on it.
+x Can run any given number of refining iterations in between the mzml_to_other and the combiner steps, using the specified enzyme of each run for the search step.
+x Specifies which iteration a file belongs to by adding the run number to the file name
+
+-raw_to_mzml.rb
+o Takes a raw file and outputs an mzXML or mzML file. Which format it outputs depends on config.xml.
+When mzXML is chosen, ReAdW is used. ReAdW is run though wine, so it can be run on the same Linux machine.
+When mzML is chosen, msconvert is used. See notes.txt about this. We reccomend choosing mzML since this is the newer format.
+
+-mzml_to_other.rb
+o Takes an mzXML or mzML file and outputs an mgf or ms2 file.
+o Can run Kardklor on the mzXML file.
+Because both mgf and ms2 are needed for the search engines, both are created. John's ms-msrun gem is used for the conversion.
+
+-search.rb
+o Runs X! Tandem, OMSSA, MASCOT, and Tide. Which search engines are run can be chosen in config.xml.
+All search engine outputs end up as pepXML. The extension of pep.xml was chosen to be in align with TPP's standard.
+How OMSSA and Tide are run can be controlled through config.xml.
+Running MASCOT requires an internet connection to the MASCOT server. Mechanize is used to automate the search and conversion to pepXML. Its options are set through mascot.yaml.
+For automated search with MASCOT, forward and reverse databases have to be set up on the MASCOT server. database-Mascot.xml is used for mapping the name of the database file on the MASCOT server with the database ID.
+X! Tandem uses xml input files, so I'm unaware of how to nicely work that into config.xml. For now, users must manually alter tandem-linux/bin/default_input.xml. Tandem2XML is used to transform X! Tandem output to pepXML.
+
+-tide_converter.rb
+o Converts Tide output to pepXML.
+
+-percolator.rb
+o Takes the search engine outputs, creates .tab files from them, and runs Percolator on the .tab files.
+Can take either pepXML or mzIdentML. Currently hard-coded to take pepXML.
+Uses peptide-centric yaml files for determing what peptides match to which proteins.
+Currently the slowest part of the pipeline because of the yaml files. Using a DB might fix this, but currently unsure of how to implent it in Ruby.
+
+-format.rb
+Template for how to parse a file and create a .tab file. pepxml.rb and mzidentml.rb are implementations of this.
+
+-search2tab.rb
+o Creates a .tab file from the given Format object.
+
+-combiner.rb
+x Combines the Percolator outputs into a single file using some crazy math function.
+
+-refiner.rb
+o Creates a new mgf and ms2 file, removing the scans based by the given qValue cutoff.
+
+----------------------------------------------------------------------------------------------------------------------
+
+Use Cases
+
+o Run pipeline from anywhere with raw file from anywhere.
+x User-specified directory structure.
+x Different config files for different times.
 _____________________________________________________________________________________________________________________________________
 
 DOCUMENTATION ON DEPENDENT PROGRAMS
@@ -745,3 +806,126 @@ Options:
                                    the highest scoring PSM. q-values and PEPs 
                                    are only calculated on peptide level in such 
                                    case
+
+----------------------------------------------------------------------------------------------------------------------
+
+*msconvert*
+
+Usage: msconvert [options] [filemasks]
+Convert mass spec data file formats.
+
+Note: the use of mass spec vendor DLLs is not enabled in this 
+(non-MSVC) build, this means no Thermo, Bruker, Waters etc input.
+
+Return value: # of failed files.
+
+Options:
+  -f [ --filelist ] arg    : specify text file containing filenames
+  -o [ --outdir ] arg (=.) : set output directory [.]
+  -c [ --config ] arg      : configuration file (optionName=value)
+  -e [ --ext ] arg         : set extension for output files 
+                           [mzML|mzXML|mgf|txt]
+  --mzML                   : write mzML format [default]
+  --mzXML                  : write mzXML format
+  --mgf                    : write Mascot generic format
+  --text                   : write ProteoWizard internal text format
+  --ms2                    : write MS2 format
+  --cms2                   : write CMS2 format
+  -v [ --verbose ]         : display detailed progress information
+  --64                     : set default binary encoding to 64-bit precision 
+                           [default]
+  --32                     : set default binary encoding to 32-bit precision
+  --mz64                   : encode m/z values in 64-bit precision [default]
+  --mz32                   : encode m/z values in 32-bit precision
+  --inten64                : encode intensity values in 64-bit precision
+  --inten32                : encode intensity values in 32-bit precision 
+                           [default]
+  --noindex                : do not write index
+  -i [ --contactInfo ] arg : filename for contact info
+  -z [ --zlib ]            : use zlib compression for binary data
+  -g [ --gzip ]            : gzip entire output file (adds .gz to filename)
+  --filter arg             : add a spectrum list filter
+  --merge                  : create a single output file from multiple input 
+                           files by merging file-level metadata and 
+                           concatenating spectrum lists
+
+Filter options:
+
+index int_set
+msLevel int_set
+precursorRecalculation  (based on ms1 data)
+peakPicking prefer_vendor:<true|false>  int_set(MS levels)
+scanNumber int_set
+scanEvent int_set
+scanTime [scanTimeLow,scanTimeHigh]
+stripIT  (strip ion trap ms1 scans)
+metadataFixer  (add/replace TIC/BPI metadata)
+threshold <count|count-after-ties|absolute|bpi-relative|tic-relative|tic-cutoff> <threshold> <most-intense|least-intense>
+mzWindow [mzLow,mzHigh]
+defaultArrayLength int_set
+ETDFilter removePrecursor:<default:true|false>  removeChargeReduced:<default:true|false>  removeNeutralLoss:<default:true|false>  blanketRemoval:<default:true|false>  MatchingTolerance:(val <PPM|MZ>) (default:3.1 MZ)
+activation <ETD|CID|SA|HCD> (filter by precursor activation type)
+
+'int_set' means that a set of integers must be specified, as a list of intervals of the form [a,b] or a[-][b]
+
+
+Examples:
+
+# convert data.RAW to data.mzML
+msconvert data.RAW
+
+# convert data.RAW to data.mzXML
+msconvert data.RAW --mzXML
+
+# put output file in my_output_dir
+msconvert data.RAW -o my_output_dir
+
+# extract scan indices 5...10 and 20...25
+msconvert data.RAW --filter "index [5,10] [20,25]"
+
+# extract MS1 scans only
+msconvert data.RAW --filter "msLevel 1"
+
+# extract MS2 and MS3 scans only
+msconvert data.RAW --filter "msLevel 2-3"
+
+# extract MSn scans for n>1
+msconvert data.RAW --filter "msLevel 2-"
+
+# apply ETD precursor mass filter
+msconvert data.RAW --filter ETDFilter
+
+# keep only HCD spectra from a decision tree data file
+msconvert data.RAW --filter "activation HCD"
+
+# keep the top 42 peaks or samples (depending on whether spectra are centroid or profile):
+msconvert data.RAW --filter "threshold count 42 most-intense"
+
+# multiple filters: select scan numbers and recalculate precursors
+msconvert data.RAW --filter "scanNumber [500,1000]" --filter "precursorRecalculation"
+
+# multiple filters: apply peak picking and then keep the bottom 100 peaks:
+msconvert data.RAW --filter "peakPicking true 1-" --filter "threshold count 100 least-intense"
+
+# multiple filters: apply peak picking and then keep all peaks that are at least 50% of the intensity of the base peak:
+msconvert data.RAW --filter "peakPicking true 1-" --filter "threshold bpi-relative .5 most-intense"
+
+# use a configuration file
+msconvert data.RAW -c config.txt
+
+# example configuration file
+mzXML=true
+zlib=true
+filter="index [3,7]"
+filter="precursorRecalculation"
+
+
+Questions, comments, and bug reports:
+http://proteowizard.sourceforge.net
+support@proteowizard.org
+
+ProteoWizard release: 2.1.2114 (2010-7-9)
+ProteoWizard MSData: 2.1.2114 (2010-7-9)
+ProteoWizard Analysis: 2.1.2068 (2010-6-21)
+Build date: Jul  9 2010 20:59:53
+

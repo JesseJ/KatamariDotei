@@ -48,6 +48,7 @@ class MzmlToOther
   def runHardklor
     puts "Running Hardklor..."
     Dir.chdir("#{$path}../../hardklor/") do  #Hardklor won't work unless it's run from its directory. Lame.
+      
       outputFile = @file.chomp(File.extname(@file))
       exec("./hardklor #{@file} #{outputFile}.hk") if fork == nil
       Process.wait

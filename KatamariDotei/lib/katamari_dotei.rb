@@ -1,0 +1,75 @@
+#!/usr/bin/ruby
+
+$path = "#{File.dirname($0)}/"
+
+require "#{$path}raw_to_mzml.rb"
+require "#{$path}mzml_to_other.rb"
+require "#{$path}search.rb"
+require "#{$path}refiner.rb"
+require "#{$path}percolator.rb"
+require "#{$path}combiner.rb"
+require "#{$path}resolver.rb"
+require "#{$path}helper_methods.rb"
+
+file = "#{$path}/../data/raw/test"
+type = "human"
+
+# This is the main class of the pipeline.
+class KatamariDotei
+  # file == A string containing the location of the raw file
+  # type == The type of input, e.g. human or bovin
+  def initialize(file, database)
+    @file = file
+    @database = database
+    @fileName = File.basename(file)
+    @dataPath = "#{$path}/../data/"
+  end
+    
+  def run
+    puts "\nHere we go!\n"
+    
+#    RawToMzml.new("#{@file}").to_mzML
+#    [1,2,3,4].each do |i|
+#      MzmlToOther.new("mgf", "#{@file}.mzML", i, false).convert
+#      MzmlToOther.new("ms2", "#{@file}.mzML", i, false).convert
+#      output = Search.new("#{@file}_#{i}", @database, "trypsin", :omssa => true, :xtandem => true, :tide => true, :mascot => true).run
+#      output = Percolator.new(output, @database).run
+#      GC.start
+#      file = Combiner.new(output, i).combine
+#      Refiner.new(file, 0.8, "#{@file}.mzML", i).refine
+#      GC.start
+#    end
+    
+    RawToMzml.new("#{@file}").to_mzML
+    MzmlToOther.new("mgf", "#{@dataPath}/spectra/#{@fileName}.mzML", 1, false).convert
+    MzmlToOther.new("ms2", "#{@dataPath}/spectra/#{@fileName}.mzML", 1, false).convert
+    output = Search.new("#{@dataPath}/spectra/#{@fileName}_1", @database, "trypsin", :omssa => true, :xtandem => true, :tide => true, :mascot => true).run
+    output = Percolator.new(output, @database).run
+    file = Combiner.new(output, 1).combine
+    Refiner.new(file, 0.9, "#{@dataPath}/spectra/#{@fileName}.mzML", 1).refine
+    Resolver.new("/home/jashi/pipeline/pipeline0.01/data/results/combined_1.psms").resolve
+    
+    notify_the_user_that_the_program_has_finished_by_calling_this_long_method_name
+  end
+  
+  # Displays a randomly chosen exclamation of joy.
+  def notify_the_user_that_the_program_has_finished_by_calling_this_long_method_name
+    done = rand(13)
+    puts "\nBoo-yah!" if done == 0
+    puts "\nOh-yeah!" if done == 1
+    puts "\nYah-hoo!" if done == 2
+    puts "\nYeah-yuh!" if done == 3
+    puts "\nRock on!" if done == 4
+    puts "\n^_^" if done == 5
+    puts "\nRadical!" if done == 6
+    puts "\nAwesome!" if done == 7
+    puts "\nTubular!" if done == 8
+    puts "\nYay!" if done == 9
+    puts "\nGnarly!" if done == 10
+    puts "\nSweet!" if done == 11
+    puts "\nGroovy!" if done == 12
+    puts "--------------------------------\n"
+  end
+end
+
+KatamariDotei.new(file, type).run

@@ -23,3 +23,11 @@ end
 def extractDatabase(type)
   Nokogiri::XML(IO.read("#{$path}../../databases/taxonomy.xml")).xpath("//taxon[@label=\"#{type}\"]//file/@URL").to_s
 end
+
+# Returns true if the string s is true, false otherwise.
+def s_true(s)
+  s = s.strip.downcase
+  
+  return true if s == "t" || s == "true"
+  false
+end

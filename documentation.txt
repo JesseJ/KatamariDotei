@@ -22,13 +22,13 @@ Detailed Documentation
 ("o" means the feature is fully implemented, "x" means it's not yet fully implemented. If there's nothing, then it's a note, not a feature.)
 
 -User Interface
-x To run, the command line is used by specifying the location of the raw file and the type of database.
+o To run, the command line is used by specifying the location of the raw file and the type of database.
 x For more control, config.xml can be altered to the user's liking.
 
 -pipeline.rb
 x Takes the given raw file and performs all the main functions on it.
-x Can run any given number of refining iterations in between the mzml_to_other and the combiner steps, using the specified enzyme of each run for the search step.
-x Specifies which iteration a file belongs to by adding the run number to the file name
+o Can run any given number of refining iterations in between the mzml_to_other and the combiner steps, using the specified enzyme of each run for the search step.
+o Specifies which iteration a file belongs to by adding the run number to the file name
 
 -raw_to_mzml.rb
 o Takes a raw file and outputs an mzXML or mzML file. Which format it outputs depends on config.xml.

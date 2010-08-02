@@ -11,7 +11,7 @@ class Resolver
     File.open(@file, "r").each_line do |line|
       parts = line.split("\t")
       peptide = parts[4]
-      proteins = parts[5...-1]
+      proteins = parts[5..-1]
       
       @peptides << [peptide, proteins] unless proteins.empty?
       proteins.each {|x| @proteins << [x, peptide]}

@@ -72,7 +72,7 @@ KatamariShiteki (Clod Identification), KatamariDotei (Clod Identification) or Ka
 SmartPipe: Because Smartball can whiz back and forth right through pipes. Smartball reference.
 MasterPipe: Eh, sounds cool. Zelda reference.
 PeptideBaton: Like a music conductor, the user simply waves his baton (Enters a command) and the the orchestra (Program) plays the parts of the song (Runs the different programs). Windwaker reference.
-Leaning towards KatamariShiteki.
+Decided on KatamariDotei.
 
 
 9. DIFFERENT DATABASE FORMATS

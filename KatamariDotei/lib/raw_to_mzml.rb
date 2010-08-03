@@ -12,7 +12,8 @@ class RawToMzml
     puts "\n--------------------------------"
     puts "Transforming raw file to mzXML format...\n\n"
     
-    system("wine readw.exe --mzXML #{@file}.raw #{$path}../data/spectra/#{File.basename(@file + ".raw", ".raw")}.mzXML 2>/dev/null")
+    options = config_value("//ReAdW/@commandLine")
+    system("wine readw.exe #{options} --mzXML #{@file}.raw #{$path}../data/spectra/#{File.basename(@file + ".raw", ".raw")}.mzXML 2>/dev/null")
   end
   
   # Converts file to mzML. There must also be msconvert_server.rb running on
@@ -21,7 +22,7 @@ class RawToMzml
     puts "\n--------------------------------"
     puts "Transforming raw file to mzML format...\n\n"
     
-    host = '192.168.101.180'  #The address of the Windows machine I'm using.
+    host = config_value("//Host/@ip")  #The address of the Windows machine I'm using.
     port = 2000
     
     client = TCPSocket.open(host, port)

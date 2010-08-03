@@ -20,24 +20,29 @@ class KatamariDotei
   def initialize(file, database, config)
     @file = file
     @database = database
-    @config = config
     @fileName = File.basename(file)
     @dataPath = "#{$path}/../data/"
-    @doc = Nokogiri::XML(IO.read(config))
+    $config = Nokogiri::XML(IO.read(config))
   end
     
   def run
     puts "\nHere we go!\n"
     
-    RawToMzml.new("#{@file}").to_mzML
+    if config_value("//Format/@type") == "mzML"
+      RawToMzml.new("#{@file}").to_mzML
+    else
+      RawToMzml.new("#{@file}").to_mzXML
+    end
+    
     iterations.each do |i|
-      MzmlToOther.new("mgf", "#{@dataPath}/spectra/#{@fileName}.mzML", i[0], false).convert
-      MzmlToOther.new("ms2", "#{@dataPath}/spectra/#{@fileName}.mzML", i[0], false).convert
+      runHardklor = config_value("//Hardklor/@run")
+      MzmlToOther.new("mgf", "#{@dataPath}/spectra/#{@fileName}.mzML", i[0], runHardklor).convert
+      MzmlToOther.new("ms2", "#{@dataPath}/spectra/#{@fileName}.mzML", i[0], runHardklor).convert
       output = Search.new("#{@dataPath}/spectra/#{@fileName}_#{i[0]}", @database, i[1], selected_search_engines).run
       output = Percolator.new(output, @database).run
       GC.start
       file = Combiner.new(output, i[0]).combine
-      Refiner.new(file, @doc.xpath("//Refiner/@cutoff").to_s, "#{@dataPath}/spectra/#{@fileName}.mzML", i[0]).refine
+      Refiner.new(file, config_value("//Refiner/@cutoff").to_i, "#{@dataPath}/spectra/#{@fileName}.mzML", i[0]).refine
       GC.start
       Resolver.new(file).resolve
     end
@@ -51,17 +56,17 @@ class KatamariDotei
   # Obtains the iteration information from the config file.
   def iterations
     array = []
-    @doc.xpath("//Iteration").each {|x| array << [x.xpath("./@run").to_s.to_i, x.xpath("./@enzyme").to_s]}
+    $config.xpath("//Iteration").each {|x| array << [x.xpath("./@run").to_s.to_i, x.xpath("./@enzyme").to_s]}
     
     array
   end
   
   # Creates the hash that states which search engines to run.
   def selected_search_engines
-    {:omssa => s_true(@doc.xpath("//OMSSA/@run").to_s),
-     :xtandem => s_true(@doc.xpath("//XTandem/@run").to_s),
-     :tide => s_true(@doc.xpath("//Tide/@run").to_s),
-     :mascot => s_true(@doc.xpath("//Mascot/@run").to_s)}
+    {:omssa => s_true(config_value("//OMSSA/@run")),
+     :xtandem => s_true(config_value("//XTandem/@run")),
+     :tide => s_true(config_value("//Tide/@run")),
+     :mascot => s_true(config_value("//Mascot/@run"))}
   end
   
   # Displays a randomly chosen exclamation of joy.

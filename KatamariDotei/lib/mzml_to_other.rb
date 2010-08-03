@@ -50,7 +50,8 @@ class MzmlToOther
     Dir.chdir("#{$path}../../hardklor/") do  #Hardklor won't work unless it's run from its directory. Lame.
       
       outputFile = @file.chomp(File.extname(@file))
-      exec("./hardklor #{@file} #{outputFile}.hk") if fork == nil
+      options = config_value("//Hardklor/@commandLine")
+      exec("./hardklor #{@file} #{outputFile}.hk #{options}") if fork == nil
       Process.wait
     end
   end

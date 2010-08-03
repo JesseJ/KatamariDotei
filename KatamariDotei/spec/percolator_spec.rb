@@ -1,7 +1,7 @@
-$path = "#{File.dirname($0)}/../src/"  #This needs to be set since we're not running it from pipeline.rb
+$path = "#{File.dirname($0)}/../lib/"  #This needs to be set since we're not running it from pipeline.rb
 
 require "#{File.dirname($0)}/spec_helper"
-require "#{File.dirname($0)}/../src/percolator"
+require "#{File.dirname($0)}/../lib/percolator"
 
 describe 'RawToMzml' do
   before do

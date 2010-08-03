@@ -31,3 +31,8 @@ def s_true(s)
   return true if s == "t" || s == "true"
   false
 end
+
+# Takes an xpath string and returns the config value
+def config_value(path)
+  $config.xpath(path).to_s
+end

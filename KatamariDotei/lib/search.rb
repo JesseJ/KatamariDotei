@@ -99,12 +99,13 @@ class Search
   def runOMSSA
     target = "#{@searchFile}-target_omssa.pep.xml"
     decoy = "#{@searchFile}-decoy_omssa.pep.xml"
+    options = config_value("//OMSSA/@commandLine")
 		
     #Target search
-    exec("#{$path}../../omssa/omssacl -fm #{@spectraFile}.mgf -op #{target} -e #{getOMSSAEnzyme} -d #{extractDatabase(@database)}") if fork == nil
+    exec("#{$path}../../omssa/omssacl #{options} -fm #{@spectraFile}.mgf -op #{target} -e #{getOMSSAEnzyme} -d #{extractDatabase(@database)}") if fork == nil
 		
     #Decoy search
-    exec("#{$path}../../omssa/omssacl -fm #{@spectraFile}.mgf -op #{decoy} -e #{getOMSSAEnzyme} -d #{extractDatabase(@database + "-r")}") if fork == nil
+    exec("#{$path}../../omssa/omssacl #{options} -fm #{@spectraFile}.mgf -op #{decoy} -e #{getOMSSAEnzyme} -d #{extractDatabase(@database + "-r")}") if fork == nil
 		
     @outputFiles << [target, decoy]
   end
@@ -115,9 +116,11 @@ class Search
     path = "#{$path}../../crux/tide/"
     tFile = "#{@searchFile}-target_tide"
     dFile = "#{@searchFile}-decoy_tide"
+    indexOptions = config_value("//TideIndex/@commandLine")
+    searchOptions = config_value("//TideSearch/@commandLine")
     
-    pidF = fork {exec("#{path}tide-index --fasta #{database} --enzyme #{@enzyme} --digestion full-digest")}
-    pidR = fork {exec("#{path}tide-index --fasta #{databaseR} --enzyme #{@enzyme} --digestion full-digest")}
+    pidF = fork {exec("#{path}tide-index #{indexOptions} --fasta #{database} --enzyme #{@enzyme} --digestion full-digest")}
+    pidR = fork {exec("#{path}tide-index #{indexOptions} --fasta #{databaseR} --enzyme #{@enzyme} --digestion full-digest")}
     
     #tide-import-spectra
     pidB = fork {exec("#{path}tide-import-spectra --in #{@spectraFile}.ms2 -out #{@searchFile}-tide.spectrumrecords")}
@@ -125,12 +128,12 @@ class Search
     #Target tide-search
     waitForProcess(pidF)
     waitForProcess(pidB)
-    pidF = fork {exec("#{path}tide-search --proteins #{database}.protix --peptides #{database}.pepix --spectra #{@searchFile}-tide.spectrumrecords > #{tFile}.results")}
+    pidF = fork {exec("#{path}tide-search #{searchOptions} --proteins #{database}.protix --peptides #{database}.pepix --spectra #{@searchFile}-tide.spectrumrecords > #{tFile}.results")}
 		
     #Decoy tide-search
     waitForProcess(pidR)
     waitForProcess(pidB)
-    pidR = fork {exec("#{path}tide-search --proteins #{databaseR}.protix --peptides #{databaseR}.pepix --spectra #{@searchFile}-tide.spectrumrecords > #{dFile}.results")}
+    pidR = fork {exec("#{path}tide-search #{searchOptions} --proteins #{databaseR}.protix --peptides #{databaseR}.pepix --spectra #{@searchFile}-tide.spectrumrecords > #{dFile}.results")}
     
     waitForProcess(pidF)
     waitForProcess(pidR)

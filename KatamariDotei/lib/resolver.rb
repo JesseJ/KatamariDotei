@@ -1,16 +1,22 @@
 
-
+# Reduces proteins and peptides to the minimum unique peptides and proteins.
 class Resolver
+  # file == The combined.psms file
   def initialize(file)
     @file = file
     @proteins = []
     @peptides = []
   end
   
+  # Resolves the matter
   def resolve
+    puts "\n--------------------------------"
+    puts "Doing crazy shtuff...\n\n"
+    
     pepHash = Hash.new {|h,k| h[k] = []}
     proHash = Hash.new {|h,k| h[k] = []}
     
+    # Places proteins and peptides into hashes for mapping
     File.open(@file, "r").each_line do |line|
       parts = line.chomp.split("\t")
       peptide = parts[4]
@@ -22,9 +28,11 @@ class Resolver
       end unless proteins == nil
     end
     
+    # Transfers contents of hashes to arrays to allow for sorting
     pepHash.each {|key, value| @peptides << [key, value, 0]}
     proHash.each {|key, value| @proteins << [key, value, 0]}
     
+    # Count unique proteins and then sort accordingly
     0.upto(@peptides.length - 1).each do |i|
       @peptides[i][1].each {|protein| @peptides[i][2] += 1 if uniq?(@peptides, protein, i)}
     end
@@ -32,7 +40,7 @@ class Resolver
     @peptides = @peptides.sort_by {|item| [item[2], item[1].length]}
     @peptides.reverse!
     
-    
+    # Count unique peptides and then sort accordingly
     0.upto(@proteins.length - 1).each do |i|
       @proteins[i][1].each {|peptide| @proteins[i][2] += 1 if uniq?(@proteins, peptide, i)}
     end
@@ -62,6 +70,7 @@ class Resolver
   
   private
   
+  # Determines if the given value is unique amongst all values of the array
   def uniq?(array, value, i)
     array[i][1].delete_at(array[i][1].index(value))
     
@@ -77,12 +86,14 @@ class Resolver
     true
   end
   
+  # Resolves the matter for the given array
   def resolve_array(array)
-    pot_o_data = []
+    pot_o_data = []  #Holds the previously seen values
     
     array.each do |item|
       i = 0
       
+      # Removes duplicate values
       while i < item[1].length
         if pot_o_data.include? item[1][i]
           item[1].delete_at(i)
@@ -93,6 +104,7 @@ class Resolver
       end
     end
     
+    # Removes items with empty values and removes the uniq values counter
     i = 0
     while i < array.length
       if array[i][1].empty?
@@ -104,6 +116,7 @@ class Resolver
     end
   end
   
+  # Old stuff
   def resolve_peptides
     original_count = count_proteins(@peptides)
     i = 0

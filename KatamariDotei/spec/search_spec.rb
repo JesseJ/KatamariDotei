@@ -1,9 +1,7 @@
-$path = "#{File.dirname($0)}/../lib/"  #This needs to be set since we're not running it from pipeline.rb
-
 require "#{File.dirname($0)}/spec_helper"
 require "#{File.dirname($0)}/../lib/search"
 
-describe 'RawToMzml' do
+describe 'Search' do
   before do
     @search = Search.new("#{File.dirname($0)}/../data/spectra/test_1", "human", "trypsin", :omssa => true, :xtandem => true, :tide => true, :mascot => true)
   end

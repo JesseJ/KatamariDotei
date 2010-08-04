@@ -1,4 +1,5 @@
 require 'socket'
+require "#{$path}helper_methods.rb"
 
 # Transforms a .raw file to a mzXML or mzML file
 class RawToMzml

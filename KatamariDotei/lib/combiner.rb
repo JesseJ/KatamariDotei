@@ -39,7 +39,7 @@ class Combiner
         id = parts[0].split(".")[1..3].join(".")
         prob = parts[3]
         peptide = parts[4]
-        proteins = parts[5...-1].join("\t")
+        proteins = parts[5..-1].join("\t")
         
         all_hits << [id, file_name, 0, prob.to_f, peptide.chomp, proteins.chomp]
       end

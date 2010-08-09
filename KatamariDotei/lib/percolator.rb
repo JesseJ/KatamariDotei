@@ -1,5 +1,5 @@
-require "#{$path}format/search2tab.rb"
-require "#{$path}helper_methods.rb"
+require "format/search2tab"
+require "helper_methods"
 
 # Runs Percolator
 class Percolator
@@ -22,23 +22,19 @@ class Percolator
     outputs = []
     threads = []
     
-    #This, and the part for decoyProteins, takes quite some time. Unfortunately,
-    #I haven't found any way to speed it up more than this.
-    File.open(database, "r").each_line do |line|
-      parts = line.split(": ")
-      @proteins[parts[0]] = parts[1]
-    end
+    t = Time.now
     
-    File.open(revDatabase, "r").each_line do |line|
-      parts = line.split(": ")
-      @decoyProteins[parts[0]] = parts[1]
-    end
     
+   threads << Thread.new {load_target(':')}
+   threads << Thread.new {load_decoy(':')}
+    
+    threads.each {|thread| thread.join}
+    p Time.now - t
     options = config_value("//Percolator/@commandLine")
     
     @files.each do |pair|
       threads << Thread.new {
-        output = Search2Tab.new(PepXML.new(pair[0], pair[1], @proteins, @decoyProteins)).convert
+        output = Search2Tab.new(PercolatorInput::PepXML.new(pair[0], pair[1], @proteins, @decoyProteins)).convert
         exec("percolator #{options} -j #{output}.tab > #{output}.psms") if fork == nil
         outputs << "#{output}.psms"
       }
@@ -49,4 +45,24 @@ class Percolator
     
     outputs
   end
+  
+  def load_target(delim)
+    buffer = File.readlines(extractDatabase(@type).chomp("fasta") + "yml")
+    
+    buffer.each do |line|
+      index = line.index(delim)
+      @proteins[line[0,index]] = line[index+2,line.length-1]
+    end
+  end
+  
+  def load_decoy(delim)
+    buffer = File.readlines(extractDatabase(@type + "-r").chomp("fasta.reverse") + "yml")
+    
+    buffer.each do |line|
+      index = line.index(delim)
+      @decoyProteins[line[0,index]] = line[index+2,line.length-1]
+    end
+  end
 end
+#w/o threads: 47.234498187
+#w/ threads: 39.02959521 - 50.158238575 (A time above 47, like 50, seems rare)

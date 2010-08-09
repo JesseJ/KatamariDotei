@@ -1,15 +1,17 @@
 #!/usr/bin/ruby
 
-$path = "#{File.dirname($0)}/../lib/"
+$path = "#{File.expand_path(File.dirname(__FILE__))}/"
+$: << $path
 
-require "#{$path}raw_to_mzml.rb"
-require "#{$path}mzml_to_other.rb"
-require "#{$path}search.rb"
-require "#{$path}refiner.rb"
-require "#{$path}percolator.rb"
-require "#{$path}combiner.rb"
-require "#{$path}resolver.rb"
-require "#{$path}helper_methods.rb"
+require "raw_to_mzml"
+require "mzml_to_other"
+require "search"
+require "refiner"
+require "percolator"
+require "combiner"
+require "resolver"
+require "helper_methods"
+require "#{$path}../../mzIdentML/search2mzidentml.rb"
 require 'nokogiri'
 
 # This is the main class of the pipeline.
@@ -21,10 +23,10 @@ class KatamariDotei
     @file = file
     @database = database
     @fileName = File.basename(file)
-    @dataPath = "#{$path}/../data/"
+    @dataPath = "#{$path}../data/"
     $config = Nokogiri::XML(IO.read(config))
   end
-    
+  
   def run
     puts "\nHere we go!\n"
     
@@ -39,6 +41,7 @@ class KatamariDotei
       MzmlToOther.new("mgf", "#{@dataPath}/spectra/#{@fileName}.mzML", i[0], runHardklor).convert
       MzmlToOther.new("ms2", "#{@dataPath}/spectra/#{@fileName}.mzML", i[0], runHardklor).convert
       output = Search.new("#{@dataPath}/spectra/#{@fileName}_#{i[0]}", @database, i[1], selected_search_engines).run
+      convert_to_mzIdentML(output)
       output = Percolator.new(output, @database).run
       GC.start
       file = Combiner.new(output, i[0]).combine
@@ -67,6 +70,13 @@ class KatamariDotei
      :xtandem => s_true(config_value("//XTandem/@run")),
      :tide => s_true(config_value("//Tide/@run")),
      :mascot => s_true(config_value("//Mascot/@run"))}
+  end
+  
+  # Method name says it all
+  def convert_to_mzIdentML(files)
+    files.each do |pair|
+      pair.each {|file| Search2mzIdentML.new(PepXML.new(file, extractDatabase(@database))).convert}
+    end
   end
   
   # Displays a randomly chosen exclamation of joy.

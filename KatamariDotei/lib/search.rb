@@ -2,9 +2,9 @@ require 'builder'
 require 'rubygems'
 require 'fileutils'
 require 'nokogiri'
-require "#{$path}support/tide_converter.rb"
+require "support/tide_converter"
 require 'mechanize'
-require "#{$path}helper_methods.rb"
+require "helper_methods"
 
 include Process
 

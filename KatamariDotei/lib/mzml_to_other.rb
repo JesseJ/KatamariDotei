@@ -27,6 +27,8 @@ class MzmlToOther
         File.open(file, 'w') do |f|
           f.puts eval "ms.to_#{@type}"
         end
+        
+        return file
       end
     else
       # If ms-msrun can't do it, then this might. Do something here to include run number. Doesn't work with Refiner, so

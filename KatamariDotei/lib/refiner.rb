@@ -17,6 +17,7 @@ class Refiner
     puts "Refining search...\n"
     
     write_to_msms(refine_scans)
+    @mzFile.chomp(File.extname(@mzFile)) + "_#{@run}.mgf"
   end
   
   # Determines which scans to include.
@@ -39,7 +40,7 @@ class Refiner
   # Writes the given scans to mgf and ms2
   def write_to_msms(selected_scans)
     Ms::Msrun.open(@mzFile) do |ms|
-      fName = @mzFile.chomp(File.extname(@mzFile)) + "_#{@run + 1}"
+      fName = @mzFile.chomp(File.extname(@mzFile)) + "_#{@run}"
       ms.to_mgf(:output => fName + ".mgf", :included_scans => selected_scans)
       ms.to_ms2(:output => fName + ".ms2", :included_scans => selected_scans)
     end

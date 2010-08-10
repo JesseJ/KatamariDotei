@@ -2,8 +2,11 @@
 # Combines multiple .psms files into one .psms file using ....
 class Combiner
   # files == Percolator.run output
-  def initialize(files, run)
+  # raw_name == The name of the raw file
+  # run = The run number
+  def initialize(files, raw_name, run)
     @files = files
+    @raw_name = raw_name
     @run = run
   end
   
@@ -16,7 +19,7 @@ class Combiner
     combined_hits = recalculate(all_hits)
     combined_hits = combined_hits.sort_by {|x| [x[0], x[4]]}
     
-    combined_file = "#{$path}../data/results/combined_#{@run}.psms"
+    combined_file = "#{$path}../data/results/#{@raw_name}_combined_#{@run}.psms"
     File.open(combined_file, "w") do |file|
       combined_hits.each {|hit| file.print hit.join("\t") + "\n"}
     end
@@ -79,7 +82,7 @@ class Combiner
       end
     end
     
-    recalculate_qvalues(all_hits.uniq!)
+    recalculate_qvalues(all_hits.uniq)
   end
   
   # Recaluculates the qvalues.

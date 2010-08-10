@@ -1,5 +1,6 @@
 require "format/format.rb"
 require 'nokogiri'
+
 module PercolatorInput
   # A pepXML Format object.
   class PepXML < Format

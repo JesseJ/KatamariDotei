@@ -1,5 +1,6 @@
 require "format/format.rb"
 require 'nokogiri'
+
 module PercolatorInput
   # An mzIdentML Format object.
   class MzIdentML < Format

@@ -1,5 +1,6 @@
 #!/usr/bin/ruby
 
+Sample = Struct.new(:mzml, :mgfs, :searches, :percolator, :combined)
 $path = "#{File.expand_path(File.dirname(__FILE__))}/"
 $: << $path
 
@@ -19,37 +20,50 @@ class KatamariDotei
   # file == A string containing the location of the raw file
   # type == The type of input, e.g. human or bovin
   # config == The config file
-  def initialize(file, database, config)
-    @file = file
+  def initialize(files, database, config)
+    @files = files
     @database = database
-    @fileName = File.basename(file)
-    @dataPath = "#{$path}../data/"
+    @dataPath = File.expand_path("#{$path}../data/") + "/"
     $config = Nokogiri::XML(IO.read(config))
   end
   
   def run
     puts "\nHere we go!\n"
     
-    if config_value("//Format/@type") == "mzML"
-      RawToMzml.new("#{@file}").to_mzML
-    else
-      RawToMzml.new("#{@file}").to_mzXML
+    runHardklor = config_value("//Hardklor/@run")
+    mzType = config_value("//Format/@type")
+    samples = {}
+    
+    @files.each do |file|
+      fileName = File.basename(file).chomp(File.extname(file))
+      samples[fileName] = Sample.new(fileName, [], [], [], [])
+      iterations = get_iterations
+      
+      if mzType == "mzML"
+        RawToMzml.new("#{file}").to_mzML
+      else
+        RawToMzml.new("#{file}").to_mzXML
+      end
+      
+      mzFile = "#{@dataPath}spectra/#{fileName}.#{mzType}"
+      samples[fileName].mgfs << MzmlToOther.new("mgf", mzFile, iterations[0][0], s_true(runHardklor)).convert
+      MzmlToOther.new("ms2", mzFile, iterations[0][0], s_true(runHardklor)).convert
+      
+      iterations.each do |i|
+        GC.start  #Fork will fail if there's not enough memory. This is an attempt to help.
+        samples[fileName].searches << Search.new(samples[fileName].mgfs[-1].chomp(".mgf"), @database, i[1], selected_search_engines).run
+        convert_to_mzIdentML(samples[fileName].searches[-1])
+        GC.start
+        samples[fileName].percolator << Percolator.new(samples[fileName].searches[-1], @database).run
+        GC.start
+        samples[fileName].combined << Combiner.new(samples[fileName].percolator[-1], fileName, i[0]).combine
+        samples[fileName].mgfs << Refiner.new(samples[fileName].combined[-1], config_value("//Refiner/@cutoff").to_i, mzFile, iterations[i[2]+1][0]).refine if i[2] < iterations.length-1
+        GC.start
+      end
     end
     
-    iterations.each do |i|
-      runHardklor = config_value("//Hardklor/@run")
-      MzmlToOther.new("mgf", "#{@dataPath}/spectra/#{@fileName}.mzML", i[0], runHardklor).convert
-      MzmlToOther.new("ms2", "#{@dataPath}/spectra/#{@fileName}.mzML", i[0], runHardklor).convert
-      output = Search.new("#{@dataPath}/spectra/#{@fileName}_#{i[0]}", @database, i[1], selected_search_engines).run
-      convert_to_mzIdentML(output)
-      output = Percolator.new(output, @database).run
-      GC.start
-      file = Combiner.new(output, i[0]).combine
-      Refiner.new(file, config_value("//Refiner/@cutoff").to_i, "#{@dataPath}/spectra/#{@fileName}.mzML", i[0]).refine
-      GC.start
-      Resolver.new(file).resolve
-    end
-  
+    #Resolver.new(samples).resolve
+    
     tell_the_user_that_the_program_has_like_totally_finished_doing_its_thang_by_calling_this_butt_long_method_name_man
   end
   
@@ -57,9 +71,14 @@ class KatamariDotei
   private
   
   # Obtains the iteration information from the config file.
-  def iterations
+  def get_iterations
     array = []
-    $config.xpath("//Iteration").each {|x| array << [x.xpath("./@run").to_s.to_i, x.xpath("./@enzyme").to_s]}
+    i = 0
+    
+    $config.xpath("//Iteration").each do |x|
+      array << [x.xpath("./@run").to_s, x.xpath("./@enzyme").to_s, i]
+      i += 1
+    end
     
     array
   end

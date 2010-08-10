@@ -1,17 +1,17 @@
 
 # Reduces proteins and peptides to the minimum unique peptides and proteins.
 class Resolver
-  # file == The combined.psms file
-  def initialize(file)
-    @file = file
+  # files == The combined.psms files of each sample
+  def initialize(files)
+    @files = files
     @proteins = []
     @peptides = []
   end
   
-  # Resolves the matter
+  # Resolves isoforms
   def resolve
     puts "\n--------------------------------"
-    puts "Doing crazy shtuff...\n\n"
+    puts "Resolving isoforms...I think...\n\n"
     
     pepHash = Hash.new {|h,k| h[k] = []}
     proHash = Hash.new {|h,k| h[k] = []}

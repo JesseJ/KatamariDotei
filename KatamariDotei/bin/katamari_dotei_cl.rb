@@ -16,7 +16,6 @@ dbID = ""
 config = "#{File.dirname($0)}/../../config.xml"
 
 ARGV[0..-1].each do |param|
-  p param
    if param.downcase.include? ".raw"
      raw_files << param
    elsif param.downcase.include? ".xml"
@@ -27,6 +26,7 @@ ARGV[0..-1].each do |param|
 end
 
 # Run KatamariDotei on each of the given raw files
-raw_files.each do |raw_file|
-  KatamariDotei.new(raw_file.chomp(".raw").chomp(".RAW"), dbID, config).run
-end
+input_files = []
+raw_files.each {|raw_file| input_files << raw_file}
+
+KatamariDotei.new(input_files, dbID, config).run

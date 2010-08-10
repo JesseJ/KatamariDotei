@@ -14,7 +14,8 @@ class RawToMzml
     puts "Transforming raw file to mzXML format...\n\n"
     
     options = config_value("//ReAdW/@commandLine")
-    system("wine readw.exe #{options} --mzXML #{@file}.raw #{$path}../data/spectra/#{File.basename(@file + ".raw", ".raw")}.mzXML 2>/dev/null")
+    basename = File.basename(@file).chomp(File.extname(@file))
+    system("wine readw.exe #{options} --mzXML #{@file} #{$path}../data/spectra/#{basename}.mzXML 2>/dev/null")
   end
   
   # Converts file to mzML. There must also be msconvert_server.rb running on
@@ -23,16 +24,16 @@ class RawToMzml
     puts "\n--------------------------------"
     puts "Transforming raw file to mzML format...\n\n"
     
-    host = config_value("//Host/@ip")  #The address of the Windows machine I'm using.
+    host = config_value("//Host/@ip")
     port = 2000
     
     client = TCPSocket.open(host, port)
 
-    fileName = @file.split("/")[-1]
+    fileName = @file.split("/")[-1].chomp(File.extname(@file))
     
     puts "Sending raw file"
     client.puts fileName
-    client.print(File.open("#{@file}.raw", "rb") {|io| io.read})
+    client.print(File.open("#{@file}", "rb") {|io| io.read})
     client.print("\r\r\n\n")  #This is the delimiter for the server
     
     puts "Receiving mzML file"

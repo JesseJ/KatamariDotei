@@ -1,5 +1,5 @@
-require "#{File.dirname($0)}/format.rb"
-require "#{File.dirname($0)}/natcmp.rb"
+require "format.rb"
+require "natcmp.rb"
 require "ms/fasta.rb"
 
 # The pepXML implementation of Format

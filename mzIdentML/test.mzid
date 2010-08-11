@@ -9695,7 +9695,7 @@
   </AnalysisProtocolCollection>
   <DataCollection>
     <Inputs>
-      <SearchDatabase location="mzIdentML/../databases/uni_human_var_100517_fwd.fasta" id="SDB_1">
+      <SearchDatabase location="/home/jashi/pipeline/databases/uni_human_var_100517_fwd.fasta" id="SDB_1">
         <DatabaseName>
           <userParam name="uni_human_var_100517_fwd.fasta"/>
         </DatabaseName>

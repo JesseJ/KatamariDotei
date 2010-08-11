@@ -1,14 +1,14 @@
 
 # Reduces proteins and peptides to the minimum unique peptides and proteins.
 class Resolver
-  # files == The combined.psms files of each sample
-  def initialize(files)
-    @files = files
+  # samples == The combined.psms files of each sample
+  def initialize(samples)
+    @samples = samples
     @proteins = []
     @peptides = []
   end
   
-  # Resolves isoforms
+  # Resolves isoforms. Whatever those are.
   def resolve
     puts "\n--------------------------------"
     puts "Resolving isoforms...I think...\n\n"
@@ -17,15 +17,19 @@ class Resolver
     proHash = Hash.new {|h,k| h[k] = []}
     
     # Places proteins and peptides into hashes for mapping
-    File.open(@file, "r").each_line do |line|
-      parts = line.chomp.split("\t")
-      peptide = parts[4]
-      proteins = parts[5..-1]
-      
-      proteins.each do |protein|
-        pepHash[peptide] << protein
-        proHash[protein] << peptide
-      end unless proteins == nil
+    @samples.each do |key, value|
+      value.combined.each do |file|
+        File.open(file, "r").each_line do |line|
+          parts = line.chomp.split("\t")
+          peptide = parts[4]
+          proteins = parts[5..-1]
+          
+          proteins.each do |protein|
+            pepHash[peptide] << protein
+            proHash[protein] << peptide
+          end unless proteins == nil
+        end
+      end
     end
     
     # Transfers contents of hashes to arrays to allow for sorting

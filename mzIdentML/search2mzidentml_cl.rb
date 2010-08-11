@@ -3,7 +3,7 @@
 
 require 'optparse'
 require "#{File.dirname($0)}/search2mzidentml.rb"
-require "#{File.dirname($0)}/pepxml.rb"
+require "pepxml"
 
 #options = {:infile => "",
 #           :database => ""}

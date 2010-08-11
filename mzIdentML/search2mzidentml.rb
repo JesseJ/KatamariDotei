@@ -1,5 +1,8 @@
-require "#{File.dirname($0)}/pepxml.rb"
+$: << "#{File.expand_path(File.dirname(__FILE__))}/"
+
+require "pepxml"
 require 'nokogiri'
+
 
 # Creates an mzIdentML file from a file type created by a search engine, using the format classes such as PepXML.
 class Search2mzIdentML

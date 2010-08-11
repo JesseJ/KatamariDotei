@@ -1,4 +1,4 @@
-require "#{File.dirname($0)}/spect_id_result.rb"
+require "spect_id_result"
 require 'nokogiri'
 require 'set'
 
@@ -18,7 +18,7 @@ class Format
     
     @missedMappings = Set.new
     @obo = {}
-    yml = YAML.load_file "#{File.dirname($0)}/oboe.yaml"
+    yml = YAML.load_file File.expand_path(File.dirname(__FILE__) + "/oboe.yaml")
     yml.each {|x| @obo[x[:pepxml_name]] = [x[:id], x[:mzid_name]]}
   end
   

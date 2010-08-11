@@ -62,7 +62,7 @@ class KatamariDotei
       end
     end
     
-    #Resolver.new(samples).resolve
+    Resolver.new(samples).resolve
     
     tell_the_user_that_the_program_has_like_totally_finished_doing_its_thang_by_calling_this_butt_long_method_name_man
   end

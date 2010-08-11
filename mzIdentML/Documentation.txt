@@ -1,0 +1,13 @@
+Search2mzIdentML: The main program. Takes a Format object which it uses to obtain the information of the input file. It then proceeds to build the mzIdentML file via Nokogiri.
+
+Format: A base class for other file formats. Other formats are meant to inherit from this class, thus Format is basically useless by itself. Contains some methods that are applicable to all formats. Classes that inherit from Format are used as the means of obtaining information from a file to be used in Search2mzIdentML. Takes a string containing the location of the search engine output file and a string containing the location of the FASTA database that was used by the search engine.
+
+PepXML: The pepXML implementation of Format. Used to parse out information from a pepXML file to provide to Search2mzIdentML.
+
+search2mzidentml_cl.rb: The command line script to run Search2mzIdentML. Should be updated and more advanced if Search2mzIdentML is to support more files other than pepXML.
+
+SpectIdResult: A simple class for storing data.
+
+obo_convert.rb: Used to convert the psi-ms OBO file into a more machine-readable format. Creates the mzid_name and the pepxml_name to allow for conversion from pepxml names to mzid names. Sadly, pepxml names which differ from mzid names will have to be set by hand. Will be needed whenever psi-hupo updates the OBO.
+
+natcmp.rb: A class that provides natural sorting written by Alan Davies.

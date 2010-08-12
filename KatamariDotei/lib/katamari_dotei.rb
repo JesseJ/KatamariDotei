@@ -12,7 +12,7 @@ require "percolator"
 require "combiner"
 require "resolver"
 require "helper_methods"
-require "#{$path}../../mzIdentML/search2mzidentml.rb"
+require "#{$path}../../mzIdentML/lib/search2mzidentml.rb"
 require 'nokogiri'
 
 # This is the main class of the pipeline.
@@ -46,6 +46,7 @@ class KatamariDotei
       end
       
       mzFile = "#{@dataPath}spectra/#{fileName}.#{mzType}"
+      cutoff = config_value("//Refiner/@cutoff").to_i
       samples[fileName].mgfs << MzmlToOther.new("mgf", mzFile, iterations[0][0], s_true(runHardklor)).convert
       MzmlToOther.new("ms2", mzFile, iterations[0][0], s_true(runHardklor)).convert
       
@@ -57,7 +58,7 @@ class KatamariDotei
         samples[fileName].percolator << Percolator.new(samples[fileName].searches[-1], @database).run
         GC.start
         samples[fileName].combined << Combiner.new(samples[fileName].percolator[-1], fileName, i[0]).combine
-        samples[fileName].mgfs << Refiner.new(samples[fileName].combined[-1], config_value("//Refiner/@cutoff").to_i, mzFile, iterations[i[2]+1][0]).refine if i[2] < iterations.length-1
+        samples[fileName].mgfs << Refiner.new(samples[fileName].combined[-1], cutoff, mzFile, iterations[i[2]+1][0]).refine if i[2] < iterations.length-1
         GC.start
       end
     end

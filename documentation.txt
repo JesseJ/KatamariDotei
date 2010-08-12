@@ -1,6 +1,4 @@
-PIPELINE DOC v0.1 (July 2010)
-
-Pipeline 0.01 (June 2010): This is a testing version and not meant for release.
+KatamariDotei doc v0.1 (Aug 2010)
 
 Because this is version 0.1, this doc is limited and guaranteed to change.
 
@@ -14,7 +12,7 @@ Main Functions
 4. Runs Percolator on the search results.
 5. Combines Percolator output into one.
 6. Allows for multiple search iterations.
-7. 
+7. Determines minimum number of peptides and proteins
 
 ----------------------------------------------------------------------------------------------------------------------
 
@@ -23,10 +21,10 @@ Detailed Documentation
 
 -User Interface
 o To run, the command line is used by specifying the location of the raw file and the type of database.
-x For more control, config.xml can be altered to the user's liking.
+o For more control, config.xml can be altered to the user's liking.
 
 -pipeline.rb
-x Takes the given raw file and performs all the main functions on it.
+o Takes the given raw file and performs all the main functions on it.
 o Can run any given number of refining iterations in between the mzml_to_other and the combiner steps, using the specified enzyme of each run for the search step.
 o Specifies which iteration a file belongs to by adding the run number to the file name
 
@@ -75,7 +73,7 @@ Use Cases
 
 o Run pipeline from anywhere with raw file from anywhere.
 x User-specified directory structure.
-x Different config files for different times.
+o Different config files for different times.
 _____________________________________________________________________________________________________________________________________
 
 DOCUMENTATION ON DEPENDENT PROGRAMS

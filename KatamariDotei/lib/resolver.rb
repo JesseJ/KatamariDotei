@@ -1,12 +1,6 @@
 require 'set'
 require "helper_methods"
 
-if RUBY_VERSION < '1.9'
-  require 'ordered_hash'
-else
-  OrderedHash = Hash
-end
-
 PH = [:filename, :title, :aaseq, :pep, :qvalue, :search_engines, :charge, :prots]
 PeptideHit =  Struct.new(*PH) do
   def inspect
@@ -94,8 +88,7 @@ class Resolver
     official_filenames = []
     all_prots_by_id = {}
     peptide_hits = files.map do |file|
-      base = File.basename(file)
-      base = base.chomp(File.extname(base))
+      base = File.basename(file).chomp(File.extname(file))
       official_filenames << base
       IO.readlines(file).map do |line|
         t = line.chomp.split("\t")
@@ -108,7 +101,7 @@ class Resolver
           hit.pep = pep
           hit.qvalue = t[3].to_f
           hit.aaseq = t[4]
-          hit.prots = t[5..-1].map do |id| 
+          hit.prots = t[5..-1].map do |id|
             prot = 
               if all_prots_by_id.key?(id)
                 all_prots_by_id[id]
@@ -179,20 +172,13 @@ class Resolver
   # modifies the set
   # John Prince's method
   def minimum_proteins!(peptide_hits)
-  
-    # prot_to_pep and pep_to_prot  (all by id)
-    prot_to_peps = Hash.new{ |h,k| h[k] = Set.new }
-    pep_to_prots = {}
-  
-    peptide_hits.group_by(&:aaseq).each do |aaseq, hits|
-      prots = hits.first.prots
-      pep_to_prots[aaseq] = prots.map(&:id)
-      prots.each do |prot|
-        prot_to_peps[prot.id] << aaseq
-      end
-    end
-  
-    most_overlap = pep_to_prots.values.map(&:size).max
+    #peptide_hit responds to  .prots
+    #peptide_hit responds to  .aaseq
+    
+    #protein_hit responds to  .id
+    #protein_hit responds to  .peps
+    
+    prot_to_peps, most_overlap, pep_to_prots = prepare_data(peptide_hits)
   
     prot_to_peps_sorted = prot_to_peps.sort_by do |prot, peps|
       # e.g. [ 0, 3, 2, 5]
@@ -218,18 +204,42 @@ class Resolver
           false
         end
       end
-      if refined.size > 0
-        final_output_hash[prot] = refined
-      end
+      
+      final_output_hash[prot] = refined if refined.size > 0
     end
+    
     final_peps_to_prots = Hash.new{ |h,k| h[k] = [] }
     final_output_hash.each do |prot, peps|
-      peps.each do |pep|
-        final_peps_to_prots[pep] << prot
+      peps.each {|pep| final_peps_to_prots[pep] << prot}
+    end
+    
+    update_hits(peptide_hits, final_peps_to_prots)
+  end
+  
+  # INTRO: convert objects to lowest level hashes
+  # peptide aaseq => [protein id, protein id...]
+  # protein id => [aaseq, aaseq, aaseq...]
+  # prot_to_pep and pep_to_prot  (all by id)
+  def prepare_data(peptide_hits)
+    prot_to_peps = Hash.new{ |h,k| h[k] = Set.new }
+    pep_to_prots = {}
+  
+    peptide_hits.group_by(&:aaseq).each do |aaseq, hits|
+      prots = hits.first.prots
+      pep_to_prots[aaseq] = prots.map(&:id)
+      prots.each do |prot|
+        prot_to_peps[prot.id] << aaseq
       end
     end
   
-    # update the peptide hits with minimum_proteins and proteins with peptides
+    most_overlap = pep_to_prots.values.map(&:size).max
+    
+    return prot_to_peps, most_overlap, pep_to_prots
+  end
+  
+  # UPDATE CODE: update the peptide hits with new proteins and proteins with new peptide hits
+  # update the peptide hits with minimum_proteins and proteins with peptides
+  def update_hits(peptide_hits, final_peps_to_prots)
     peptide_hits.each do |pep|
       pep.prots = pep.prots.select do |prot| 
         prot.peps = []  # clear the peptides
@@ -243,6 +253,7 @@ class Resolver
         prot.peps.push(pep_hit)
       end
     end
+    
     peptide_hits
   end
 end

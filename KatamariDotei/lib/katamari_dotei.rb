@@ -32,6 +32,7 @@ class KatamariDotei
     
     runHardklor = config_value("//Hardklor/@run")
     mzType = config_value("//Format/@type")
+    cutoff = config_value("//Refiner/@cutoff").to_f
     samples = {}
     
     @files.each do |file|
@@ -46,7 +47,6 @@ class KatamariDotei
       end
       
       mzFile = "#{@dataPath}spectra/#{fileName}.#{mzType}"
-      cutoff = config_value("//Refiner/@cutoff").to_i
       samples[fileName].mgfs << MzmlToOther.new("mgf", mzFile, iterations[0][0], s_true(runHardklor)).convert
       MzmlToOther.new("ms2", mzFile, iterations[0][0], s_true(runHardklor)).convert
       

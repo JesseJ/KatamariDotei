@@ -33,8 +33,9 @@ class Percolator
     
     options = config_value("//Percolator/@commandLine")
     
+    
     @files.each do |pair|
-      threads << Thread.new {
+      threads << Thread.new {  #If fork keeps failing at this point because of not enough memory, then get rid of the threading here.
         output = Search2Tab.new(PercolatorInput::PepXML.new(pair[0], pair[1], @proteins, @decoyProteins)).convert
         exec("percolator #{options} -j #{output}.tab > #{output}.psms") if fork == nil
         outputs << "#{output}.psms"

@@ -2,6 +2,8 @@
 <!-- Provides a mapping between database IDs and Mascot database names -->
 <map>
 	<DB ID="human" mascot_name="UNI_human"/>
+	<DB ID="bovin" mascot_name="UNI_bovine"/>
 
 	<DB ID="human-r" mascot_name="UNI_human_rev"/>
+	<DB ID="bovin-r" mascot_name="UNI_bovine_rev"/>
 </map>

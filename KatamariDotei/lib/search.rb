@@ -8,6 +8,17 @@ require "helper_methods"
 
 include Process
 
+# This fixes a bug that occurs with larger files when running Mascot.
+module Net::HTTPHeader
+  def content_range
+    return nil unless @header['content-range']
+    return nil if @header['content-range'] == ["bytes *"]
+    m = %r<bytes\s+(\d+)-(\d+)/(\d+|\*)>i.match(self['Content-Range']) or
+        raise HTTPHeaderSyntaxError, 'wrong Content-Range format'
+    m[1].to_i .. m[2].to_i + 1
+  end
+end
+
 # Runs the different search engines
 class Search
   # file == input file (without extension)
@@ -226,7 +237,7 @@ class Search
     pid = fork {exec("/usr/local/src/tpp-4.3.1/build/linux/spectrast -cN #{$path}../data/#{@fileName} #{@file}.ms2")}
     
     waitForProcess(pid)
-    exec("/usr/local/src/tpp-4.3.1/build/linux/spectrast -sD #{@database} -sL #{$path}../data/#{@fileName}.splib #{@file}.mzXML") if fork == nil
+    exec("/usr/local/src/tpp-4.3.1/build/linux/spectrast -sD #{@database} -sL #{$path}../data/#{@fileName}.splib -sE pepXML #{@file}.ms2") if fork == nil
 	end
   
   def convertTandemOutput

@@ -25,7 +25,7 @@ class RawToMzml
     puts "Transforming raw file to mzML format...\n\n"
     
     host = config_value("//Host/@ip")
-    port = 2000
+    port = 2200  # Completely arbitrary
     
     client = TCPSocket.open(host, port)
 
@@ -33,11 +33,19 @@ class RawToMzml
     
     puts "Sending raw file"
     client.puts fileName
-    client.print(File.open("#{@file}", "rb") {|io| io.read})
-    client.print("\r\r\n\n")  #This is the delimiter for the server
+    data = IO.read("#{@file}")
+    client.print data
+    client.print "\r\r\n\n"  #This is the delimiter for the server
     
     puts "Receiving mzML file"
-    File.open("#{$path}../data/spectra/#{fileName}.mzML", 'wb') {|io| io.print client.gets("\r\r\n\n")}
+    file = File.open("#{$path}../data/spectra/#{fileName}.mzML", 'wb')
+    data = client.gets("\r\r\n\n")
+    file.print data
+    
     client.close
+    
+    # Clean-up
+    data = nil
+    file = nil
   end
 end

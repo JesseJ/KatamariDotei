@@ -25,7 +25,7 @@ class MzmlToOther
       Ms::Msrun.open(@file) do |ms|
         file = @file.chomp(File.extname(@file)) + "_#{@run}.#{@type}"
         File.open(file, 'w') do |f|
-          f.puts eval "ms.to_#{@type}"
+          f.puts eval("ms.to_#{@type}")
         end
         
         return file

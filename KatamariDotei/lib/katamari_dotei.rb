@@ -37,14 +37,11 @@ class KatamariDotei
     
     @files.each do |file|
       fileName = File.basename(file).chomp(File.extname(file))
+      puts "Commencing work on #{fileName}"
       samples[fileName] = Sample.new(fileName, [], [], [], [])
       iterations = get_iterations
       
-      if mzType == "mzML"
-        RawToMzml.new("#{file}").to_mzML
-      else
-        RawToMzml.new("#{file}").to_mzXML
-      end
+      create_mzML(mzType, file)
       
       mzFile = "#{@dataPath}spectra/#{fileName}.#{mzType}"
       samples[fileName].mgfs << MzmlToOther.new("mgf", mzFile, iterations[0][0], s_true(runHardklor)).convert
@@ -53,7 +50,7 @@ class KatamariDotei
       iterations.each do |i|
         GC.start  #Fork will fail if there's not enough memory. This is an attempt to help.
         samples[fileName].searches << Search.new(samples[fileName].mgfs[-1].chomp(".mgf"), @database, i[1], selected_search_engines).run
-        convert_to_mzIdentML(samples[fileName].searches[-1])
+       # convert_to_mzIdentML(samples[fileName].searches[-1])
         GC.start
         samples[fileName].percolator << Percolator.new(samples[fileName].searches[-1], @database).run
         GC.start
@@ -70,6 +67,15 @@ class KatamariDotei
   
   
   private
+  
+  
+  def create_mzML(mzType, file)
+    if mzType == "mzML"
+      RawToMzml.new("#{file}").to_mzML
+    else
+      RawToMzml.new("#{file}").to_mzXML
+    end
+  end
   
   # Obtains the iteration information from the config file.
   def get_iterations
@@ -95,8 +101,11 @@ class KatamariDotei
   # Method name says it all
   def convert_to_mzIdentML(files)
     files.each do |pair|
-      pair.each {|file| Search2mzIdentML.new(PepXML.new(file, extractDatabase(@database))).convert}
+      #pair.each {|file| Search2mzIdentML.new(PepXML.new(file, extractDatabase(@database))).convert}
+      pair.each {|file| exec("#{$path}../../mzIdentML/bin/search2mzidentml_cl.rb #{file} #{extractDatabase(@database)}") if fork == nil}
     end
+    
+    waitForAllProcesses
   end
   
   # Displays a randomly chosen exclamation of joy.

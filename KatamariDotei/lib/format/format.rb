@@ -9,13 +9,12 @@ module PercolatorInput  #This is to prevent confusion between this Format and mz
     #decoy == A string containing the file location of the decoy pepXML
     #database == A hash of target {peptide => proteins}
     #revDatabase == A hash of decoy {peptide => proteins}
-    def initialize(target, decoy, proteins, decoyProteins)
+    def initialize(target, decoy, proteins)
       @target = target
       @decoy = decoy
       
       @matches = []
       @proteins = proteins
-      @decoyProteins = decoyProteins
     end
     
     #Returns the file name without things like "target" or ".pep.xml" in the name
@@ -40,14 +39,9 @@ module PercolatorInput  #This is to prevent confusion between this Format and mz
     end
     
     #Obtains all the proteins that the given peptide maps to.
-    def proteins(peptide, type)
-      if type == :target
-        proteins = @proteins[peptide]
-        return proteins if proteins != nil
-      elsif type == :decoy
-        proteins = @decoyProteins[peptide]
-        return proteins if proteins != nil
-      end
+    def proteins(peptide)
+      proteins = @proteins[peptide]
+      return proteins if proteins != nil
       
       #Default value. Hopefully this case doesn't happen often.
       "NOMATCH"

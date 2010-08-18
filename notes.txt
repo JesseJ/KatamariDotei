@@ -100,4 +100,16 @@ The pipeline started off with using mzXML, but adding support for mzML came at t
 To make the automation easier (for me), the following naming conventions are used for the files:
 	A. Extensions are named as follows: .mzXML, .mzML, .pep.xml, .mzid
 	B. Search engine outputs have the original raw file name with the direction (either target or decoy), the search engine name (mascot, tandem, tide, or omssa), and the run number added to the file name, e.g. test_1-target_mascot.pep.xml
-	C. Combined psms files are named combined with the run number, e.g. combined_1.psms
+	C. Combined psms files are have the word "combined" with the run number, e.g. test_combined_1.psms
+
+
+13. RUBY AND LARGE FILES
+
+Trying to write concise code, I would write IO one-liners such as "File.open("#{fileName}.mzML", 'w') {|io| io.print client.gets}".
+This, however, led to strange errors and low processing speeds. Breaking them up into parts such as
+
+"file = File.open("#{fileName}.mzML", 'w')
+data = client.gets
+file.print data"
+
+solved the problem. So if you try tidying up the code and come across some lines of IO that could be reduced to fewer lines, DON'T DO IT!!!

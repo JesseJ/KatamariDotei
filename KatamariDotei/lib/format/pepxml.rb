@@ -8,7 +8,7 @@ module PercolatorInput
     # decoy == A string containing the file location of the decoy pepXML
     # database == A hash of target {peptide => proteins}
     # revDatabase == A hash of decoy {peptide => proteins}
-    def initialize(target, decoy, database, revDatabase)
+    def initialize(target, decoy, database)
       super
     end
     
@@ -87,26 +87,26 @@ module PercolatorInput
     def psm(query, label, rank)
       #Required Stuff
       spect = query.xpath("./@spectrum").to_s.chomp(" ")    #X! Tandem has a space at the end that messes things up
-      psm = "#{spect}.#{rank}" + "\t"                       #id = name.spectrum.spectrum.charge.rank
-      psm += label + "\t"
+      psm = []
+      psm << "#{spect}.#{rank}"                             #id = name.spectrum.spectrum.charge.rank
+      psm << label
       
       #Other stuff
       hit = query.xpath(".//#{@xmlns}search_hit[@hit_rank=\"#{rank}\"]")
-      psm += spect.split(".")[3] + "\t"
+      psm << spect[-1]
       
       hit.xpath(".//#{@xmlns}search_score").each do |score|
-        psm += score.xpath("./@value").to_s + "\t"
+        psm << score.xpath("./@value").to_s
       end
       
       #Required Stuff
       pep = hit.xpath("./@peptide").to_s
-      psm += pep + "\t"
+      psm << pep
       
-      psm += proteins(pep, :target) if label == "1"
-      psm += proteins(pep, :decoy) if label == "-1"
+      psm << proteins(pep)
       
       #id <tab> label <tab> charge <tab> score1 <tab> ... <tab> scoreN <tab> peptide <tab> proteinId1 <tab> .. <tab> proteinIdM 
-      psm
+      psm.join("\t")
     end
   end
 end

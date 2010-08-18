@@ -10,17 +10,15 @@ class Search2Tab
   
   # Converts the given file into a .tab file, returning the name of the file.
   def convert
-    tab = File.new("#{@format.fileWithoutExtras}.tab", "w")
+    name = @format.fileWithoutExtras
+    tab = File.new("#{name}.tab", "w")
     matches = @format.matches
     
     tab.puts @format.header
-    
-    matches.each do |match|
-      tab.puts match
-    end
+    matches.each {|match| tab.puts match}
     
     tab.close
     
-    return "#{@format.fileWithoutExtras}"
+    return name
   end
 end

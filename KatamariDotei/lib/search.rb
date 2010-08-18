@@ -237,7 +237,7 @@ class Search
     pid = fork {exec("/usr/local/src/tpp-4.3.1/build/linux/spectrast -cN #{$path}../data/#{@fileName} #{@file}.ms2")}
     
     waitForProcess(pid)
-    exec("/usr/local/src/tpp-4.3.1/build/linux/spectrast -sD #{@database} -sL #{$path}../data/#{@fileName}.splib -sE pepXML #{@file}.ms2") if fork == nil
+    exec("/usr/local/src/tpp-4.3.1/build/linux/spectrast -sD #{extractDatabase(@database)} -sL #{$path}../data/#{@fileName}.splib -sE pepXML #{@file}.ms2") if fork == nil
 	end
   
   def convertTandemOutput

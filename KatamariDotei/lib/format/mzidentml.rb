@@ -8,7 +8,7 @@ module PercolatorInput
     # decoy == A string containing the file location of the decoy pepXML
     # database == A hash of target {peptide => proteins}
     # revDatabase == A hash of decoy {peptide => proteins}
-    def initialize(target, decoy, database, revDatabase)
+    def initialize(target, decoy, database)
       super
       @fileName = ""
     end
@@ -106,8 +106,7 @@ module PercolatorInput
       pep = @peptides[hit.xpath("./@Peptide_ref").to_s]
       psm += pep + "\t"
       
-      psm += proteins(pep, :target) if label == "1"
-      psm += proteins(pep, :decoy) if label == "-1"
+      psm += proteins(pep)
       
       #id <tab> label <tab> charge <tab> score1 <tab> ... <tab> scoreN <tab> peptide <tab> proteinId1 <tab> .. <tab> proteinIdM 
       psm

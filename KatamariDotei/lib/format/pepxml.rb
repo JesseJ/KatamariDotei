@@ -73,6 +73,7 @@ module PercolatorInput
         count = query.xpath(".//#{@xmlns}search_hit").length
         1.upto(count) {|i| @matches << psm(query, "1", i)}
       end
+      GC.start  # More memory can be salvaged by placing this before the end, but speed greatly declines.
       
       #Decoy
       doc = nokogiriDoc(@decoy)
@@ -81,6 +82,7 @@ module PercolatorInput
         count = query.xpath(".//#{@xmlns}search_hit").length
         1.upto(count) {|i| @matches << psm(query, "-1", i)}
       end
+      GC.start
     end
     
     #Parses the pepXML file and returns an PSM object (A line for the .tab file)

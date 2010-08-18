@@ -15,18 +15,17 @@ class Percolator
     puts "\n--------------------------------"
     puts "Running Percolator...\n\n"
     
-    @proteins = Hash.new
     outputs = []
     threads = []
     tab_files = []
     
     # The format of the following function was chosen to rersult in the fastest processing time.
-    load_target(':')
+    proteins = load_target(':')
+    GC.start
     
     p "data loaded"
     @files.each do |pair|
-      tab_files << Search2Tab.new(PercolatorInput::PepXML.new(pair[0], pair[1], @proteins)).convert
-      p "Finished a file"
+      tab_files << Search2Tab.new(PercolatorInput::PepXML.new(pair[0], pair[1], proteins)).convert
       GC.start
     end
     
@@ -41,15 +40,17 @@ class Percolator
     outputs
   end
   
+  # returns a hash of peptides to proteins
   def load_target(delim)
+    proteins = {}
     buffer = File.readlines(extractDatabase(@type).chomp("fasta") + "yml")
     
     buffer.each do |line|
       index = line.index(delim)
-      @proteins[line[0,index]] = line[index+2,line.length-1]
+      proteins[line[0,index]] = line[index+2,line.length-1]
     end
     
     buffer = nil  #Fork will fail if there's not enough memory. This is an attempt to help.
-    GC.start
+    proteins
   end
 end

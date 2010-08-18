@@ -37,7 +37,7 @@ class KatamariDotei
     
     @files.each do |file|
       fileName = File.basename(file).chomp(File.extname(file))
-      puts "Commencing work on #{fileName}"
+      puts "\nCommencing work on #{fileName}"
       samples[fileName] = Sample.new(fileName, [], [], [], [])
       iterations = get_iterations
       
@@ -48,12 +48,9 @@ class KatamariDotei
       MzmlToOther.new("ms2", mzFile, iterations[0][0], s_true(runHardklor)).convert
       
       iterations.each do |i|
-        GC.start  #Fork will fail if there's not enough memory. This is an attempt to help.
         samples[fileName].searches << Search.new(samples[fileName].mgfs[-1].chomp(".mgf"), @database, i[1], selected_search_engines).run
        # convert_to_mzIdentML(samples[fileName].searches[-1])
-        GC.start
         samples[fileName].percolator << Percolator.new(samples[fileName].searches[-1], @database).run
-        GC.start
         samples[fileName].combined << Combiner.new(samples[fileName].percolator[-1], fileName, i[0]).combine
         samples[fileName].mgfs << Refiner.new(samples[fileName].combined[-1], cutoff, mzFile, iterations[i[2]+1][0]).refine if i[2] < iterations.length-1
         GC.start
@@ -101,7 +98,6 @@ class KatamariDotei
   # Method name says it all
   def convert_to_mzIdentML(files)
     files.each do |pair|
-      #pair.each {|file| Search2mzIdentML.new(PepXML.new(file, extractDatabase(@database))).convert}
       pair.each {|file| exec("#{$path}../../mzIdentML/bin/search2mzidentml_cl.rb #{file} #{extractDatabase(@database)}") if fork == nil}
     end
     

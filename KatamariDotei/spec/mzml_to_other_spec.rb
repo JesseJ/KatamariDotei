@@ -15,13 +15,13 @@ describe 'MzmlToOther' do
     MzmlToOther.new("mgf", "#{File.dirname($0)}/../data/spectra/test.mzXML", 1, false).convert
     MzmlToOther.new("ms2", "#{File.dirname($0)}/../data/spectra/test.mzXML", 1, false).convert
     
-    FileUtils::cmp(File.open("#{File.dirname($0)}/../data/spectra/test_1.mgf", "r"), File.open("#{File.dirname($0)}/mzXML-test_1-key.mgf", "r")).is true
-    FileUtils::cmp(File.open("#{File.dirname($0)}/../data/spectra/test_1.ms2", "r"), File.open("#{File.dirname($0)}/mzXML-test_1-key.ms2", "r")).is true
+    FileUtils::cmp(File.open("#{File.dirname($0)}/../data/spectra/test_1.mgf", "r"), File.open("#{File.dirname($0)}/test_files/mzXML-test_1-key.mgf", "r")).is true
+    FileUtils::cmp(File.open("#{File.dirname($0)}/../data/spectra/test_1.ms2", "r"), File.open("#{File.dirname($0)}/test_files/mzXML-test_1-key.ms2", "r")).is true
       
     MzmlToOther.new("mgf", "#{File.dirname($0)}/../data/spectra/test.mzML", 1, false).convert
     MzmlToOther.new("ms2", "#{File.dirname($0)}/../data/spectra/test.mzML", 1, false).convert
     
-    FileUtils::cmp(File.open("#{File.dirname($0)}/../data/spectra/test_1.mgf", "r"), File.open("#{File.dirname($0)}/mzML-test_1-key.mgf", "r")).is true
-    FileUtils::cmp(File.open("#{File.dirname($0)}/../data/spectra/test_1.ms2", "r"), File.open("#{File.dirname($0)}/mzML-test_1-key.ms2", "r")).is true
+    FileUtils::cmp(File.open("#{File.dirname($0)}/../data/spectra/test_1.mgf", "r"), File.open("#{File.dirname($0)}/test_files/mzML-test_1-key.mgf", "r")).is true
+    FileUtils::cmp(File.open("#{File.dirname($0)}/../data/spectra/test_1.ms2", "r"), File.open("#{File.dirname($0)}/test_files/mzML-test_1-key.ms2", "r")).is true
   end
 end

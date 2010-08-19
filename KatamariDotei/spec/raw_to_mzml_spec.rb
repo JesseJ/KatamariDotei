@@ -3,7 +3,7 @@ require "#{File.dirname($0)}/../lib/raw_to_mzml.rb"
 
 describe 'RawToMzml' do
   before do
-    @rawtmz = RawToMzml.new("#{File.dirname($0)}/../data/raw/test")
+    @rawtmz = RawToMzml.new("#{File.dirname($0)}/test_files/test.raw")
   end
   
   it 'takes a raw file and outputs an mzXML or mzML file' do

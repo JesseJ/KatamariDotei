@@ -33,7 +33,7 @@ class RawToMzml
     
     puts "Sending raw file"
     client.puts fileName
-    data = IO.read("#{@file}")
+    data = IO.read(@file)
     client.print data
     client.print "\r\r\n\n"  #This is the delimiter for the server
     
@@ -43,9 +43,5 @@ class RawToMzml
     file.print data
     
     client.close
-    
-    # Clean-up
-    data = nil
-    file = nil
   end
 end

@@ -49,8 +49,11 @@ class KatamariDotei
       
       iterations.each do |i|
         samples[fileName].searches << Search.new(samples[fileName].mgfs[-1].chomp(".mgf"), @database, i[1], selected_search_engines).run
-       # convert_to_mzIdentML(samples[fileName].searches[-1])
+        convert_to_mzIdentML(samples[fileName].searches[-1])
         samples[fileName].percolator << Percolator.new(samples[fileName].searches[-1], @database).run
+        p samples[fileName].percolator[-1]
+        p fileName
+        p i[0]
         samples[fileName].combined << Combiner.new(samples[fileName].percolator[-1], fileName, i[0]).combine
         samples[fileName].mgfs << Refiner.new(samples[fileName].combined[-1], cutoff, mzFile, iterations[i[2]+1][0]).refine if i[2] < iterations.length-1
         GC.start

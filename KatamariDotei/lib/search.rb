@@ -248,8 +248,8 @@ class Search
     pepFile2 = file2.chomp(".xml") + ".pep.xml"
     @outputFiles << [pepFile1, pepFile2]
     
-    exec("/usr/local/src/tpp-4.3.1/build/linux/Tandem2XML #{file1} #{pepFile1}") if fork == nil
-    exec("/usr/local/src/tpp-4.3.1/build/linux/Tandem2XML #{file2} #{pepFile2}") if fork == nil
+    exec("Tandem2XML #{file1} #{pepFile1}") if fork == nil
+    exec("Tandem2XML #{file2} #{pepFile2}") if fork == nil
   end
   
   def getOMSSAEnzyme

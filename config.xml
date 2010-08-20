@@ -16,7 +16,7 @@
 		<mzML>
 			<!-- See msconvert_server.rb on the Windows machine to alter -->
 			<!-- The IP address of the Windows machine with msconvert_server.rb -->
-			<host ip="192.168.101.180">
+			<host ip="192.168.101.180" />
 		</mzML>
 	</RawToMzml>
 

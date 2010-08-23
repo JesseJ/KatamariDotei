@@ -1,0 +1,624 @@
+<?xml version="1.0"?>
+<!DOCTYPE msms_pipeline_analysis PUBLIC "-//NCBI//pepXML/EN" "pepXML.dtd">
+<msms_pipeline_analysis date="2010-08-19T15:59:03" summary_xml="/home/jashi/pipeline/KatamariDotei/lib/../data/search/test_1-target_omssa.pep.xml">
+  <msms_run_summary base_name="/home/jashi/pipeline/KatamariDotei/lib/../data/search/test_1-target_omssa.pep.xml" raw_data_type="raw" raw_data=".mzXML">
+    <sample_enzyme name="Trypsin">
+      <specificity sense="C" cut="KR" no_cut="P"/>
+    </sample_enzyme>
+    <search_summary base_name="/home/jashi/pipeline/KatamariDotei/lib/../data/search/test_1-target_omssa.pep.xml" search_engine="OMSSA" precursor_mass_type="monoisotopic" fragment_mass_type="monoisotopic" out_data_type="n/a" out_data="n/a" search_id="1">
+      <search_database local_path="/home/jashi/pipeline/databases/uni_human_var_100517_fwd.fasta" size_in_db_entries="106159" type="AA"/>
+      <enzymatic_search_constraint enzyme="Trypsin" max_num_internal_cleavages="1" min_number_termini="2"/>
+    </search_summary>
+    <spectrum_query spectrum="test.2.2.2" start_scan="2" end_scan="2" precursor_neutral_mass="1110.63903808594" assumed_charge="2" index="1">
+      <search_result>
+        <search_hit hit_rank="1" peptide="AVLIAGQPGTGK" peptide_prev_aa="R" peptide_next_aa="T" protein="43024" num_tot_proteins="4" num_matched_ions="18" tot_num_ions="22" calc_neutral_pep_mass="1110.639" massdiff="-0.000000000000104" is_rejected="0" protein_descr="tr|B3KNL2|B3KNL2_HUMAN RuvB-like 2 (E. coli), isoform CRA_d OS=Homo sapiens GN=RUVBL2 PE=2 SV=1">
+          <alternative_protein protein="53449" protein_descr="tr|B4DW30|B4DW30_HUMAN cDNA FLJ56743, highly similar to RuvB-like 2 (EC 3.6.1.-) OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="26362" protein_descr="sp|Q9Y230|RUVB2_HUMAN RuvB-like 2 OS=Homo sapiens GN=RUVBL2 PE=1 SV=3"/>
+          <alternative_protein protein="37447" protein_descr="tr|B3KQ59|B3KQ59_HUMAN RuvB-like 2 (E. coli), isoform CRA_a OS=Homo sapiens GN=RUVBL2 PE=2 SV=1"/>
+          <search_score name="pvalue" value="0.00000000866069"/>
+          <search_score name="expect" value="0.00010530533398"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.5.5.2" start_scan="5" end_scan="5" precursor_neutral_mass="957.513000488281" assumed_charge="2" index="2">
+      <search_result>
+        <search_hit hit_rank="1" peptide="LVIEEAER" peptide_prev_aa="K" peptide_next_aa="S" protein="29886" num_tot_proteins="7" num_matched_ions="12" tot_num_ions="14" calc_neutral_pep_mass="957.514" massdiff="-0.000999999999966" is_rejected="0" protein_descr="sp|P50991|TCPD_HUMAN T-complex protein 1 subunit delta OS=Homo sapiens GN=CCT4 PE=1 SV=4">
+          <alternative_protein protein="57194" protein_descr="tr|B7Z2Z8|B7Z2Z8_HUMAN T-complex protein 1 subunit delta OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="57778" protein_descr="tr|A8K3C3|A8K3C3_HUMAN T-complex protein 1 subunit delta OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="61013" protein_descr="tr|B5MCQ1|B5MCQ1_HUMAN T-complex protein 1 subunit delta OS=Homo sapiens GN=CCT4 PE=3 SV=1"/>
+          <alternative_protein protein="72202" protein_descr="tr|B7Z8B1|B7Z8B1_HUMAN T-complex protein 1 subunit delta OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="91141" protein_descr="tr|B7Z9L0|B7Z9L0_HUMAN T-complex protein 1 subunit delta OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="102435" protein_descr="tr|B7Z2F4|B7Z2F4_HUMAN T-complex protein 1 subunit delta OS=Homo sapiens PE=2 SV=1"/>
+          <search_score name="pvalue" value="0.000000934401735"/>
+          <search_score name="expect" value="0.016537976300074"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.6.6.2" start_scan="6" end_scan="6" precursor_neutral_mass="1110.63903808594" assumed_charge="2" index="3">
+      <search_result>
+        <search_hit hit_rank="1" peptide="AVLIAGQPGTGK" peptide_prev_aa="R" peptide_next_aa="T" protein="43024" num_tot_proteins="4" num_matched_ions="16" tot_num_ions="22" calc_neutral_pep_mass="1110.639" massdiff="-0.000000000000104" is_rejected="0" protein_descr="tr|B3KNL2|B3KNL2_HUMAN RuvB-like 2 (E. coli), isoform CRA_d OS=Homo sapiens GN=RUVBL2 PE=2 SV=1">
+          <alternative_protein protein="53449" protein_descr="tr|B4DW30|B4DW30_HUMAN cDNA FLJ56743, highly similar to RuvB-like 2 (EC 3.6.1.-) OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="26362" protein_descr="sp|Q9Y230|RUVB2_HUMAN RuvB-like 2 OS=Homo sapiens GN=RUVBL2 PE=1 SV=3"/>
+          <alternative_protein protein="37447" protein_descr="tr|B3KQ59|B3KQ59_HUMAN RuvB-like 2 (E. coli), isoform CRA_a OS=Homo sapiens GN=RUVBL2 PE=2 SV=1"/>
+          <search_score name="pvalue" value="0.00000000047444"/>
+          <search_score name="expect" value="0.000005768720605"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.11.11.2" start_scan="11" end_scan="11" precursor_neutral_mass="957.513000488281" assumed_charge="2" index="4">
+      <search_result>
+        <search_hit hit_rank="1" peptide="LVIEEAER" peptide_prev_aa="K" peptide_next_aa="S" protein="72202" num_tot_proteins="7" num_matched_ions="12" tot_num_ions="14" calc_neutral_pep_mass="957.514" massdiff="-0.000999999999966" is_rejected="0" protein_descr="tr|B7Z8B1|B7Z8B1_HUMAN T-complex protein 1 subunit delta OS=Homo sapiens PE=2 SV=1">
+          <alternative_protein protein="29886" protein_descr="sp|P50991|TCPD_HUMAN T-complex protein 1 subunit delta OS=Homo sapiens GN=CCT4 PE=1 SV=4"/>
+          <alternative_protein protein="91141" protein_descr="tr|B7Z9L0|B7Z9L0_HUMAN T-complex protein 1 subunit delta OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="102435" protein_descr="tr|B7Z2F4|B7Z2F4_HUMAN T-complex protein 1 subunit delta OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="57194" protein_descr="tr|B7Z2Z8|B7Z2Z8_HUMAN T-complex protein 1 subunit delta OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="57778" protein_descr="tr|A8K3C3|A8K3C3_HUMAN T-complex protein 1 subunit delta OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="61013" protein_descr="tr|B5MCQ1|B5MCQ1_HUMAN T-complex protein 1 subunit delta OS=Homo sapiens GN=CCT4 PE=3 SV=1"/>
+          <search_score name="pvalue" value="0.000000431142475"/>
+          <search_score name="expect" value="0.007630790660759"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.20.20.2" start_scan="20" end_scan="20" precursor_neutral_mass="1424.69494628906" assumed_charge="2" index="5">
+      <search_result>
+        <search_hit hit_rank="1" peptide="APSTYGGGLSVSSSR" peptide_prev_aa="R" peptide_next_aa="F" protein="15337" num_tot_proteins="1" num_matched_ions="18" tot_num_ions="28" calc_neutral_pep_mass="1424.688" massdiff="0.006999999999936" is_rejected="0" protein_descr="sp|P02533|K1C14_HUMAN Keratin, type I cytoskeletal 14 OS=Homo sapiens GN=KRT14 PE=1 SV=4">
+          <search_score name="pvalue" value="0.000009586248007"/>
+          <search_score name="expect" value="0.10359858221198"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.21.21.2" start_scan="21" end_scan="21" precursor_neutral_mass="1290.623046875" assumed_charge="2" index="6">
+      <search_result>
+        <search_hit hit_rank="1" peptide="YSQYQQAIYK" peptide_prev_aa="K" peptide_next_aa="C" protein="76129" num_tot_proteins="8" num_matched_ions="15" tot_num_ions="18" calc_neutral_pep_mass="1290.625" massdiff="-0.001999999999953" is_rejected="0" protein_descr="tr|B4DY30|B4DY30_HUMAN cDNA FLJ54078, highly similar to Protein arginine N-methyltransferase 5 (EC 2.1.1.-) OS=Homo sapiens PE=2 SV=1">
+          <alternative_protein protein="88471" protein_descr="tr|D3DS33|D3DS33_HUMAN Protein arginine methyltransferase 5, isoform CRA_b OS=Homo sapiens GN=PRMT5 PE=4 SV=1"/>
+          <alternative_protein protein="92741" protein_descr="tr|B4DV00|B4DV00_HUMAN cDNA FLJ54039, highly similar to Protein arginine N-methyltransferase 5 (EC 2.1.1.-) OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="105550" protein_descr="tr|B4DX49|B4DX49_HUMAN cDNA FLJ54566, highly similar to Protein arginine N-methyltransferase 5 (EC2.1.1.-) OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="37185" protein_descr="tr|A8MZ91|A8MZ91_HUMAN Protein arginine methyltransferase 5, isoform CRA_d OS=Homo sapiens GN=PRMT5 PE=2 SV=1"/>
+          <alternative_protein protein="44570" protein_descr="tr|A8MTP3|A8MTP3_HUMAN Protein arginine methyltransferase 5, isoform CRA_c OS=Homo sapiens GN=PRMT5 PE=4 SV=1"/>
+          <alternative_protein protein="1406" protein_descr="sp|O14744|ANM5_HUMAN Protein arginine N-methyltransferase 5 OS=Homo sapiens GN=PRMT5 PE=1 SV=4"/>
+          <alternative_protein protein="52978" protein_descr="tr|B2RDD7|B2RDD7_HUMAN cDNA, FLJ96564, highly similar to Homo sapiens SKB1 homolog (S. pombe) (SKB1), mRNA OS=Homo sapiens PE=2 SV=1"/>
+          <search_score name="pvalue" value="0.00000853862248"/>
+          <search_score name="expect" value="0.11180472274661"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.25.25.2" start_scan="25" end_scan="25" precursor_neutral_mass="1424.69494628906" assumed_charge="2" index="7">
+      <search_result>
+        <search_hit hit_rank="1" peptide="APSTYGGGLSVSSSR" peptide_prev_aa="R" peptide_next_aa="F" protein="15337" num_tot_proteins="1" num_matched_ions="16" tot_num_ions="28" calc_neutral_pep_mass="1424.688" massdiff="0.006999999999936" is_rejected="0" protein_descr="sp|P02533|K1C14_HUMAN Keratin, type I cytoskeletal 14 OS=Homo sapiens GN=KRT14 PE=1 SV=4">
+          <search_score name="pvalue" value="0.000006162010746"/>
+          <search_score name="expect" value="0.066592850127093"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.26.26.2" start_scan="26" end_scan="26" precursor_neutral_mass="1290.623046875" assumed_charge="2" index="8">
+      <search_result>
+        <search_hit hit_rank="1" peptide="YSQYQQAIYK" peptide_prev_aa="K" peptide_next_aa="C" protein="76129" num_tot_proteins="8" num_matched_ions="14" tot_num_ions="18" calc_neutral_pep_mass="1290.625" massdiff="-0.001999999999953" is_rejected="0" protein_descr="tr|B4DY30|B4DY30_HUMAN cDNA FLJ54078, highly similar to Protein arginine N-methyltransferase 5 (EC 2.1.1.-) OS=Homo sapiens PE=2 SV=1">
+          <alternative_protein protein="88471" protein_descr="tr|D3DS33|D3DS33_HUMAN Protein arginine methyltransferase 5, isoform CRA_b OS=Homo sapiens GN=PRMT5 PE=4 SV=1"/>
+          <alternative_protein protein="92741" protein_descr="tr|B4DV00|B4DV00_HUMAN cDNA FLJ54039, highly similar to Protein arginine N-methyltransferase 5 (EC 2.1.1.-) OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="105550" protein_descr="tr|B4DX49|B4DX49_HUMAN cDNA FLJ54566, highly similar to Protein arginine N-methyltransferase 5 (EC2.1.1.-) OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="37185" protein_descr="tr|A8MZ91|A8MZ91_HUMAN Protein arginine methyltransferase 5, isoform CRA_d OS=Homo sapiens GN=PRMT5 PE=2 SV=1"/>
+          <alternative_protein protein="1406" protein_descr="sp|O14744|ANM5_HUMAN Protein arginine N-methyltransferase 5 OS=Homo sapiens GN=PRMT5 PE=1 SV=4"/>
+          <alternative_protein protein="44570" protein_descr="tr|A8MTP3|A8MTP3_HUMAN Protein arginine methyltransferase 5, isoform CRA_c OS=Homo sapiens GN=PRMT5 PE=4 SV=1"/>
+          <alternative_protein protein="52978" protein_descr="tr|B2RDD7|B2RDD7_HUMAN cDNA, FLJ96564, highly similar to Homo sapiens SKB1 homolog (S. pombe) (SKB1), mRNA OS=Homo sapiens PE=2 SV=1"/>
+          <search_score name="pvalue" value="0.000000074841643"/>
+          <search_score name="expect" value="0.000979976476426"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.29.29.3" start_scan="29" end_scan="29" precursor_neutral_mass="1764.92602539062" assumed_charge="3" index="9">
+      <search_result>
+        <search_hit hit_rank="1" peptide="LITQTFSHHNQLAQK" peptide_prev_aa="K" peptide_next_aa="T" protein="87684" num_tot_proteins="2" num_matched_ions="21" tot_num_ions="28" calc_neutral_pep_mass="1764.929" massdiff="-0.003000000000069" is_rejected="0" protein_descr="tr|Q9H2R7|Q9H2R7_HUMAN NPD011 OS=Homo sapiens GN=NUDC PE=2 SV=1">
+          <alternative_protein protein="20791" protein_descr="sp|Q9Y266|NUDC_HUMAN Nuclear migration protein nudC OS=Homo sapiens GN=NUDC PE=1 SV=1"/>
+          <search_score name="pvalue" value="0.000000195063668"/>
+          <search_score name="expect" value="0.001628391503959"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.41.41.3" start_scan="41" end_scan="41" precursor_neutral_mass="2018.03601074219" assumed_charge="3" index="10">
+      <search_result>
+        <search_hit hit_rank="1" peptide="IVAERPGTNSTGPAPMAPPR" peptide_prev_aa="K" peptide_next_aa="A" protein="71277" num_tot_proteins="3" num_matched_ions="35" tot_num_ions="38" calc_neutral_pep_mass="2018.037" massdiff="-0.000999999999942" is_rejected="0" protein_descr="tr|B2R8R5|B2R8R5_HUMAN cDNA, FLJ94025, highly similar to Homo sapiens tripartite motif-containing 28 (TRIM28), mRNA OS=Homo sapiens PE=2 SV=1">
+          <alternative_protein protein="30289" protein_descr="sp|Q13263-2|TIF1B_HUMAN Isoform 2 of Transcription intermediary factor 1-beta OS=Homo sapiens GN=TRIM28"/>
+          <alternative_protein protein="30288" protein_descr="sp|Q13263|TIF1B_HUMAN Transcription intermediary factor 1-beta OS=Homo sapiens GN=TRIM28 PE=1 SV=5"/>
+          <search_score name="pvalue" value="0.0"/>
+          <search_score name="expect" value="0.000000000000219"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.50.50.3" start_scan="50" end_scan="50" precursor_neutral_mass="2018.03601074219" assumed_charge="3" index="11">
+      <search_result>
+        <search_hit hit_rank="1" peptide="IVAERPGTNSTGPAPMAPPR" peptide_prev_aa="K" peptide_next_aa="A" protein="71277" num_tot_proteins="3" num_matched_ions="25" tot_num_ions="38" calc_neutral_pep_mass="2018.037" massdiff="-0.000999999999942" is_rejected="0" protein_descr="tr|B2R8R5|B2R8R5_HUMAN cDNA, FLJ94025, highly similar to Homo sapiens tripartite motif-containing 28 (TRIM28), mRNA OS=Homo sapiens PE=2 SV=1">
+          <alternative_protein protein="30289" protein_descr="sp|Q13263-2|TIF1B_HUMAN Isoform 2 of Transcription intermediary factor 1-beta OS=Homo sapiens GN=TRIM28"/>
+          <alternative_protein protein="30288" protein_descr="sp|Q13263|TIF1B_HUMAN Transcription intermediary factor 1-beta OS=Homo sapiens GN=TRIM28 PE=1 SV=5"/>
+          <search_score name="pvalue" value="0.000000265405639"/>
+          <search_score name="expect" value="0.001915167094628"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.67.67.3" start_scan="67" end_scan="67" precursor_neutral_mass="1721.3330078125" assumed_charge="3" index="12">
+      <search_result>
+        <search_hit hit_rank="1" peptide="NNLCPSGSNIISNLFK" peptide_prev_aa="K" peptide_next_aa="E" protein="98430" num_tot_proteins="2" num_matched_ions="21" tot_num_ions="30" calc_neutral_pep_mass="1719.861" massdiff="1.472000000000084" is_rejected="0" protein_descr="tr|A6NMH8|A6NMH8_HUMAN Putative uncharacterized protein CD81 OS=Homo sapiens GN=CD81 PE=4 SV=1">
+          <alternative_protein protein="4799" protein_descr="sp|P60033|CD81_HUMAN CD81 antigen OS=Homo sapiens GN=CD81 PE=1 SV=1"/>
+          <search_score name="pvalue" value="0.000005886228717"/>
+          <search_score name="expect" value="0.056231142936783"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.69.69.3" start_scan="69" end_scan="69" precursor_neutral_mass="1427.80102539062" assumed_charge="3" index="13">
+      <search_result>
+        <search_hit hit_rank="1" peptide="IIAHAQLLEQHR" peptide_prev_aa="R" peptide_next_aa="G" protein="86314" num_tot_proteins="2" num_matched_ions="27" tot_num_ions="22" calc_neutral_pep_mass="1427.801" massdiff="-0.000000000000069" is_rejected="0" protein_descr="tr|Q53SY7|Q53SY7_HUMAN Putative uncharacterized protein CAD (Fragment) OS=Homo sapiens GN=CAD PE=2 SV=1">
+          <alternative_protein protein="24407" protein_descr="sp|P27708|PYR1_HUMAN CAD protein OS=Homo sapiens GN=CAD PE=1 SV=3"/>
+          <search_score name="pvalue" value="0.000000000010502"/>
+          <search_score name="expect" value="0.000000124547896"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.73.73.3" start_scan="73" end_scan="73" precursor_neutral_mass="1721.32995605469" assumed_charge="3" index="14">
+      <search_result>
+        <search_hit hit_rank="1" peptide="NNLCPSGSNIISNLFK" peptide_prev_aa="K" peptide_next_aa="E" protein="4799" num_tot_proteins="2" num_matched_ions="25" tot_num_ions="30" calc_neutral_pep_mass="1719.861" massdiff="1.468999999999927" is_rejected="0" protein_descr="sp|P60033|CD81_HUMAN CD81 antigen OS=Homo sapiens GN=CD81 PE=1 SV=1">
+          <alternative_protein protein="98430" protein_descr="tr|A6NMH8|A6NMH8_HUMAN Putative uncharacterized protein CD81 OS=Homo sapiens GN=CD81 PE=4 SV=1"/>
+          <search_score name="pvalue" value="0.000000070854203"/>
+          <search_score name="expect" value="0.00067687019777"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.74.74.2" start_scan="74" end_scan="74" precursor_neutral_mass="1414.64099121094" assumed_charge="2" index="15">
+      <search_result>
+        <search_hit hit_rank="1" peptide="DQDLEPGAPSMGAK" peptide_prev_aa="R" peptide_next_aa="S" protein="29218" num_tot_proteins="2" num_matched_ions="15" tot_num_ions="26" calc_neutral_pep_mass="1414.64" massdiff="0.001000000000076" is_rejected="0" protein_descr="sp|P07814|SYEP_HUMAN Bifunctional aminoacyl-tRNA synthetase OS=Homo sapiens GN=EPRS PE=1 SV=5">
+          <alternative_protein protein="56611" protein_descr="tr|B4DP50|B4DP50_HUMAN cDNA FLJ58269, highly similar to Bifunctional aminoacyl-tRNA synthetase OS=Homo sapiens PE=2 SV=1"/>
+          <search_score name="pvalue" value="0.000082364308885"/>
+          <search_score name="expect" value="0.92256262382332"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.75.75.2" start_scan="75" end_scan="75" precursor_neutral_mass="1360.708984375" assumed_charge="2" index="16">
+      <search_result>
+        <search_hit hit_rank="1" peptide="IQTQPGYANTLR" peptide_prev_aa="R" peptide_next_aa="D" protein="63835" num_tot_proteins="5" num_matched_ions="16" tot_num_ions="22" calc_neutral_pep_mass="1360.711" massdiff="-0.00199999999994" is_rejected="0" protein_descr="tr|B2RE88|B2RE88_HUMAN cDNA, FLJ96465, highly similar to Homo sapiens solute carrier family 25 (mitochondrial carrier;phosphate carrier), member 3 (SLC25A3), nuclear gene encodingmitochondrial protein, transcript variant 1b, mRNA OS=Homo sapiens PE=2 SV=1">
+          <alternative_protein protein="70135" protein_descr="tr|Q8NCF7|Q8NCF7_HUMAN cDNA FLJ90278 fis, clone NT2RP1000325, highly similar to Phosphate carrier protein, mitochondrialprecursor OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="78776" protein_descr="tr|Q53HC3|Q53HC3_HUMAN Solute carrier family 25 member 3 isoform b variant (Fragment) OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="18656" protein_descr="sp|Q00325|MPCP_HUMAN Phosphate carrier protein, mitochondrial OS=Homo sapiens GN=SLC25A3 PE=1 SV=2"/>
+          <alternative_protein protein="18657" protein_descr="sp|Q00325-2|MPCP_HUMAN Isoform B of Phosphate carrier protein, mitochondrial OS=Homo sapiens GN=SLC25A3"/>
+          <search_score name="pvalue" value="0.000003310050681"/>
+          <search_score name="expect" value="0.037072567622669"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.78.78.2" start_scan="78" end_scan="78" precursor_neutral_mass="1360.708984375" assumed_charge="2" index="17">
+      <search_result>
+        <search_hit hit_rank="1" peptide="IQTQPGYANTLR" peptide_prev_aa="R" peptide_next_aa="D" protein="18656" num_tot_proteins="5" num_matched_ions="17" tot_num_ions="22" calc_neutral_pep_mass="1360.711" massdiff="-0.00199999999994" is_rejected="0" protein_descr="sp|Q00325|MPCP_HUMAN Phosphate carrier protein, mitochondrial OS=Homo sapiens GN=SLC25A3 PE=1 SV=2">
+          <alternative_protein protein="63835" protein_descr="tr|B2RE88|B2RE88_HUMAN cDNA, FLJ96465, highly similar to Homo sapiens solute carrier family 25 (mitochondrial carrier;phosphate carrier), member 3 (SLC25A3), nuclear gene encodingmitochondrial protein, transcript variant 1b, mRNA OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="18657" protein_descr="sp|Q00325-2|MPCP_HUMAN Isoform B of Phosphate carrier protein, mitochondrial OS=Homo sapiens GN=SLC25A3"/>
+          <alternative_protein protein="70135" protein_descr="tr|Q8NCF7|Q8NCF7_HUMAN cDNA FLJ90278 fis, clone NT2RP1000325, highly similar to Phosphate carrier protein, mitochondrialprecursor OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="78776" protein_descr="tr|Q53HC3|Q53HC3_HUMAN Solute carrier family 25 member 3 isoform b variant (Fragment) OS=Homo sapiens PE=2 SV=1"/>
+          <search_score name="pvalue" value="0.000000206407452"/>
+          <search_score name="expect" value="0.002311763466174"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.86.86.3" start_scan="86" end_scan="86" precursor_neutral_mass="1549.72399902344" assumed_charge="3" index="18">
+      <search_result>
+        <search_hit hit_rank="1" peptide="LLEMDGHNQDHLK" peptide_prev_aa="R" peptide_next_aa="L" protein="72684" num_tot_proteins="4" num_matched_ions="20" tot_num_ions="24" calc_neutral_pep_mass="1548.736" massdiff="0.987999999999933" is_rejected="0" protein_descr="tr|A8MY87|A8MY87_HUMAN Putative uncharacterized protein KSR1 OS=Homo sapiens GN=KSR1 PE=4 SV=1">
+          <alternative_protein protein="16284" protein_descr="sp|Q8IVT5-3|KSR1_HUMAN Isoform 3 of Kinase suppressor of Ras 1 OS=Homo sapiens GN=KSR1"/>
+          <alternative_protein protein="16283" protein_descr="sp|Q8IVT5-2|KSR1_HUMAN Isoform 2 of Kinase suppressor of Ras 1 OS=Homo sapiens GN=KSR1"/>
+          <alternative_protein protein="16282" protein_descr="sp|Q8IVT5|KSR1_HUMAN Kinase suppressor of Ras 1 OS=Homo sapiens GN=KSR1 PE=1 SV=2"/>
+          <search_score name="pvalue" value="0.000000277646913"/>
+          <search_score name="expect" value="0.003402840562409"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.88.88.2" start_scan="88" end_scan="88" precursor_neutral_mass="1142.61901855469" assumed_charge="2" index="19">
+      <search_result>
+        <search_hit hit_rank="1" peptide="FATHAAALSVR" peptide_prev_aa="R" peptide_next_aa="N" protein="62463" num_tot_proteins="5" num_matched_ions="17" tot_num_ions="20" calc_neutral_pep_mass="1142.619" massdiff="-0.000000000000085" is_rejected="0" protein_descr="tr|Q9BSV4|Q9BSV4_HUMAN SFPQ protein (Fragment) OS=Homo sapiens GN=SFPQ PE=2 SV=2">
+          <alternative_protein protein="63050" protein_descr="tr|Q6PIX2|Q6PIX2_HUMAN SFPQ protein (Fragment) OS=Homo sapiens GN=SFPQ PE=2 SV=1"/>
+          <alternative_protein protein="73763" protein_descr="tr|Q86VG2|Q86VG2_HUMAN Splicing factor proline/glutamine-rich (Polypyrimidine tract binding protein associated) OS=Homo sapiens GN=SFPQ PE=2 SV=1"/>
+          <alternative_protein protein="27442" protein_descr="sp|P23246|SFPQ_HUMAN Splicing factor, proline- and glutamine-rich OS=Homo sapiens GN=SFPQ PE=1 SV=2"/>
+          <alternative_protein protein="27443" protein_descr="sp|P23246-2|SFPQ_HUMAN Isoform F of Splicing factor, proline- and glutamine-rich OS=Homo sapiens GN=SFPQ"/>
+          <search_score name="pvalue" value="0.000006163494302"/>
+          <search_score name="expect" value="0.093906999185093"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.95.95.2" start_scan="95" end_scan="95" precursor_neutral_mass="1466.70495605469" assumed_charge="2" index="20">
+      <search_result>
+        <search_hit hit_rank="1" peptide="SLGPPQGEEDSVPR" peptide_prev_aa="R" peptide_next_aa="D" protein="23864" num_tot_proteins="2" num_matched_ions="18" tot_num_ions="26" calc_neutral_pep_mass="1466.701" massdiff="0.003999999999927" is_rejected="0" protein_descr="sp|P78527|PRKDC_HUMAN DNA-dependent protein kinase catalytic subunit OS=Homo sapiens GN=PRKDC PE=1 SV=3">
+          <alternative_protein protein="23865" protein_descr="sp|P78527-2|PRKDC_HUMAN Isoform 2 of DNA-dependent protein kinase catalytic subunit OS=Homo sapiens GN=PRKDC"/>
+          <search_score name="pvalue" value="0.000000101072384"/>
+          <search_score name="expect" value="0.001104114720663"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.101.101.2" start_scan="101" end_scan="101" precursor_neutral_mass="1466.70300292969" assumed_charge="2" index="21">
+      <search_result>
+        <search_hit hit_rank="1" peptide="SLGPPQGEEDSVPR" peptide_prev_aa="R" peptide_next_aa="D" protein="23864" num_tot_proteins="2" num_matched_ions="19" tot_num_ions="26" calc_neutral_pep_mass="1466.701" massdiff="0.001999999999975" is_rejected="0" protein_descr="sp|P78527|PRKDC_HUMAN DNA-dependent protein kinase catalytic subunit OS=Homo sapiens GN=PRKDC PE=1 SV=3">
+          <alternative_protein protein="23865" protein_descr="sp|P78527-2|PRKDC_HUMAN Isoform 2 of DNA-dependent protein kinase catalytic subunit OS=Homo sapiens GN=PRKDC"/>
+          <search_score name="pvalue" value="0.000000039003069"/>
+          <search_score name="expect" value="0.000427434632494"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.107.107.2" start_scan="107" end_scan="107" precursor_neutral_mass="1872.88500976562" assumed_charge="2" index="22">
+      <search_result>
+        <search_hit hit_rank="1" peptide="VQDLSAGGQGSLTDSGPER" peptide_prev_aa="R" peptide_next_aa="R" protein="31823" num_tot_proteins="2" num_matched_ions="30" tot_num_ions="36" calc_neutral_pep_mass="1872.881" massdiff="0.003999999999991" is_rejected="0" protein_descr="sp|P40222|TXLNA_HUMAN Alpha-taxilin OS=Homo sapiens GN=TXLNA PE=1 SV=3">
+          <alternative_protein protein="36622" protein_descr="tr|D3DPP6|D3DPP6_HUMAN Taxilin alpha, isoform CRA_a OS=Homo sapiens GN=TXLNA PE=2 SV=1"/>
+          <search_score name="pvalue" value="0.0"/>
+          <search_score name="expect" value="0.000000000000001"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.110.110.2" start_scan="110" end_scan="110" precursor_neutral_mass="1223.61694335938" assumed_charge="2" index="23">
+      <search_result>
+        <search_hit hit_rank="1" peptide="HIYYITGETK" peptide_prev_aa="K" peptide_next_aa="D" protein="57396" num_tot_proteins="8" num_matched_ions="14" tot_num_ions="18" calc_neutral_pep_mass="1223.619" massdiff="-0.002000000000038" is_rejected="0" protein_descr="tr|Q86U12|Q86U12_HUMAN Full-length cDNA clone CS0CAP007YF18 of Thymus of Homo sapiens (human) OS=Homo sapiens PE=2 SV=1">
+          <alternative_protein protein="61346" protein_descr="tr|Q2VPJ6|Q2VPJ6_HUMAN HSP90AA1 protein (Fragment) OS=Homo sapiens GN=HSP90AA1 PE=2 SV=1"/>
+          <alternative_protein protein="64937" protein_descr="tr|Q96HX7|Q96HX7_HUMAN HSP90AA1 protein (Fragment) OS=Homo sapiens GN=HSP90AA1 PE=2 SV=2"/>
+          <alternative_protein protein="68602" protein_descr="tr|Q8TBA7|Q8TBA7_HUMAN HSP90AA1 protein (Fragment) OS=Homo sapiens GN=HSP90AA1 PE=2 SV=2"/>
+          <alternative_protein protein="13871" protein_descr="sp|Q58FG0|HS905_HUMAN Putative heat shock protein HSP 90-alpha A5 OS=Homo sapiens GN=HSP90AA5P PE=1 SV=1"/>
+          <alternative_protein protein="13872" protein_descr="sp|P07900|HS90A_HUMAN Heat shock protein HSP 90-alpha OS=Homo sapiens GN=HSP90AA1 PE=1 SV=5"/>
+          <alternative_protein protein="13873" protein_descr="sp|P07900-2|HS90A_HUMAN Isoform HSP90AA1-2 of Heat shock protein HSP 90-alpha OS=Homo sapiens GN=HSP90AA1"/>
+          <alternative_protein protein="46153" protein_descr="tr|O75322|O75322_HUMAN Hsp89-alpha-delta-N OS=Homo sapiens PE=2 SV=1"/>
+          <search_score name="pvalue" value="0.000000190775146"/>
+          <search_score name="expect" value="0.002247712773585"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.116.116.2" start_scan="116" end_scan="116" precursor_neutral_mass="1872.88500976562" assumed_charge="2" index="24">
+      <search_result>
+        <search_hit hit_rank="1" peptide="VQDLSAGGQGSLTDSGPER" peptide_prev_aa="R" peptide_next_aa="R" protein="31823" num_tot_proteins="2" num_matched_ions="29" tot_num_ions="36" calc_neutral_pep_mass="1872.881" massdiff="0.003999999999991" is_rejected="0" protein_descr="sp|P40222|TXLNA_HUMAN Alpha-taxilin OS=Homo sapiens GN=TXLNA PE=1 SV=3">
+          <alternative_protein protein="36622" protein_descr="tr|D3DPP6|D3DPP6_HUMAN Taxilin alpha, isoform CRA_a OS=Homo sapiens GN=TXLNA PE=2 SV=1"/>
+          <search_score name="pvalue" value="0.0"/>
+          <search_score name="expect" value="0.000000000000024"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.119.119.2" start_scan="119" end_scan="119" precursor_neutral_mass="1223.61694335938" assumed_charge="2" index="25">
+      <search_result>
+        <search_hit hit_rank="1" peptide="HIYYITGETK" peptide_prev_aa="K" peptide_next_aa="D" protein="61346" num_tot_proteins="8" num_matched_ions="14" tot_num_ions="18" calc_neutral_pep_mass="1223.619" massdiff="-0.002000000000038" is_rejected="0" protein_descr="tr|Q2VPJ6|Q2VPJ6_HUMAN HSP90AA1 protein (Fragment) OS=Homo sapiens GN=HSP90AA1 PE=2 SV=1">
+          <alternative_protein protein="64937" protein_descr="tr|Q96HX7|Q96HX7_HUMAN HSP90AA1 protein (Fragment) OS=Homo sapiens GN=HSP90AA1 PE=2 SV=2"/>
+          <alternative_protein protein="68602" protein_descr="tr|Q8TBA7|Q8TBA7_HUMAN HSP90AA1 protein (Fragment) OS=Homo sapiens GN=HSP90AA1 PE=2 SV=2"/>
+          <alternative_protein protein="46153" protein_descr="tr|O75322|O75322_HUMAN Hsp89-alpha-delta-N OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="13871" protein_descr="sp|Q58FG0|HS905_HUMAN Putative heat shock protein HSP 90-alpha A5 OS=Homo sapiens GN=HSP90AA5P PE=1 SV=1"/>
+          <alternative_protein protein="57396" protein_descr="tr|Q86U12|Q86U12_HUMAN Full-length cDNA clone CS0CAP007YF18 of Thymus of Homo sapiens (human) OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="13872" protein_descr="sp|P07900|HS90A_HUMAN Heat shock protein HSP 90-alpha OS=Homo sapiens GN=HSP90AA1 PE=1 SV=5"/>
+          <alternative_protein protein="13873" protein_descr="sp|P07900-2|HS90A_HUMAN Isoform HSP90AA1-2 of Heat shock protein HSP 90-alpha OS=Homo sapiens GN=HSP90AA1"/>
+          <search_score name="pvalue" value="0.000000028249815"/>
+          <search_score name="expect" value="0.000332839324092"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.129.129.2" start_scan="129" end_scan="129" precursor_neutral_mass="1301.68298339844" assumed_charge="2" index="26">
+      <search_result>
+        <search_hit hit_rank="1" peptide="SVSLTGAPESVQK" peptide_prev_aa="R" peptide_next_aa="A" protein="11724" num_tot_proteins="2" num_matched_ions="18" tot_num_ions="24" calc_neutral_pep_mass="1301.683" massdiff="-0.000000000000007" is_rejected="0" protein_descr="sp|Q92945|FUBP2_HUMAN Far upstream element-binding protein 2 OS=Homo sapiens GN=KHSRP PE=1 SV=3">
+          <alternative_protein protein="11725" protein_descr="sp|Q92945-2|FUBP2_HUMAN Isoform 2 of Far upstream element-binding protein 2 OS=Homo sapiens GN=KHSRP"/>
+          <search_score name="pvalue" value="0.000000031562421"/>
+          <search_score name="expect" value="0.000413783339982"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.136.136.2" start_scan="136" end_scan="136" precursor_neutral_mass="1301.68298339844" assumed_charge="2" index="27">
+      <search_result>
+        <search_hit hit_rank="1" peptide="SVSLTGAPESVQK" peptide_prev_aa="R" peptide_next_aa="A" protein="11724" num_tot_proteins="2" num_matched_ions="17" tot_num_ions="24" calc_neutral_pep_mass="1301.683" massdiff="-0.000000000000007" is_rejected="0" protein_descr="sp|Q92945|FUBP2_HUMAN Far upstream element-binding protein 2 OS=Homo sapiens GN=KHSRP PE=1 SV=3">
+          <alternative_protein protein="11725" protein_descr="sp|Q92945-2|FUBP2_HUMAN Isoform 2 of Far upstream element-binding protein 2 OS=Homo sapiens GN=KHSRP"/>
+          <search_score name="pvalue" value="0.000000036110605"/>
+          <search_score name="expect" value="0.000473410027098"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.159.159.2" start_scan="159" end_scan="159" precursor_neutral_mass="1202.63903808594" assumed_charge="2" index="28">
+      <search_result>
+        <search_hit hit_rank="1" peptide="FAAATGATPIAGR" peptide_prev_aa="K" peptide_next_aa="F" protein="65007" num_tot_proteins="4" num_matched_ions="21" tot_num_ions="24" calc_neutral_pep_mass="1202.64" massdiff="-0.001000000000104" is_rejected="0" protein_descr="tr|Q96RS2|Q96RS2_HUMAN Laminin receptor-like protein LAMRL5 OS=Homo sapiens GN=LAMR1P15 PE=2 SV=1">
+          <alternative_protein protein="73032" protein_descr="tr|A6NE09|A6NE09_HUMAN Putative uncharacterized protein ENSP00000346598 OS=Homo sapiens PE=3 SV=1"/>
+          <alternative_protein protein="73156" protein_descr="tr|C9J9K3|C9J9K3_HUMAN Putative uncharacterized protein RPSA OS=Homo sapiens GN=RPSA PE=3 SV=1"/>
+          <alternative_protein protein="26217" protein_descr="sp|P08865|RSSA_HUMAN 40S ribosomal protein SA OS=Homo sapiens GN=RPSA PE=1 SV=4"/>
+          <search_score name="pvalue" value="0.000000001461391"/>
+          <search_score name="expect" value="0.000020653833319"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.162.162.3" start_scan="162" end_scan="162" precursor_neutral_mass="1571.81896972656" assumed_charge="3" index="29">
+      <search_result>
+        <search_hit hit_rank="1" peptide="KLDPGSEETQTLVR" peptide_prev_aa="R" peptide_next_aa="E" protein="9552" num_tot_proteins="4" num_matched_ions="23" tot_num_ions="26" calc_neutral_pep_mass="1571.817" massdiff="0.00199999999996" is_rejected="0" protein_descr="sp|P26641|EF1G_HUMAN Elongation factor 1-gamma OS=Homo sapiens GN=EEF1G PE=1 SV=3">
+          <alternative_protein protein="40467" protein_descr="tr|Q53YD7|Q53YD7_HUMAN EEF1G protein OS=Homo sapiens GN=EEF1G PE=2 SV=1"/>
+          <alternative_protein protein="58817" protein_descr="tr|B4DUP0|B4DUP0_HUMAN cDNA FLJ59433, highly similar to Elongation factor 1-gamma OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="61605" protein_descr="tr|B4DTG2|B4DTG2_HUMAN cDNA FLJ56389, highly similar to Elongation factor 1-gamma OS=Homo sapiens PE=2 SV=1"/>
+          <search_score name="pvalue" value="0.000000942023799"/>
+          <search_score name="expect" value="0.009824366195059"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.165.165.2" start_scan="165" end_scan="165" precursor_neutral_mass="1567.76293945312" assumed_charge="2" index="30">
+      <search_result>
+        <search_hit hit_rank="1" peptide="QAVTNPNNTFYATK" peptide_prev_aa="R" peptide_next_aa="R" protein="13020" num_tot_proteins="4" num_matched_ions="22" tot_num_ions="26" calc_neutral_pep_mass="1567.764" massdiff="-0.00100000000008" is_rejected="0" protein_descr="sp|P38646|GRP75_HUMAN Stress-70 protein, mitochondrial OS=Homo sapiens GN=HSPA9 PE=1 SV=2">
+          <alternative_protein protein="45821" protein_descr="tr|B7Z4V2|B7Z4V2_HUMAN cDNA FLJ51907, highly similar to Stress-70 protein, mitochondrial OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="57535" protein_descr="tr|Q8N1C8|Q8N1C8_HUMAN HSPA9 protein (Fragment) OS=Homo sapiens GN=HSPA9 PE=2 SV=1"/>
+          <alternative_protein protein="83549" protein_descr="tr|B7Z1V7|B7Z1V7_HUMAN cDNA FLJ51811, highly similar to Stress-70 protein, mitochondrial OS=Homo sapiens PE=2 SV=1"/>
+          <search_score name="pvalue" value="0.000000004792536"/>
+          <search_score name="expect" value="0.000051543725255"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.167.167.2" start_scan="167" end_scan="167" precursor_neutral_mass="1202.64099121094" assumed_charge="2" index="31">
+      <search_result>
+        <search_hit hit_rank="1" peptide="FAAATGATPIAGR" peptide_prev_aa="K" peptide_next_aa="F" protein="26217" num_tot_proteins="4" num_matched_ions="20" tot_num_ions="24" calc_neutral_pep_mass="1202.64" massdiff="0.001000000000076" is_rejected="0" protein_descr="sp|P08865|RSSA_HUMAN 40S ribosomal protein SA OS=Homo sapiens GN=RPSA PE=1 SV=4">
+          <alternative_protein protein="65007" protein_descr="tr|Q96RS2|Q96RS2_HUMAN Laminin receptor-like protein LAMRL5 OS=Homo sapiens GN=LAMR1P15 PE=2 SV=1"/>
+          <alternative_protein protein="73032" protein_descr="tr|A6NE09|A6NE09_HUMAN Putative uncharacterized protein ENSP00000346598 OS=Homo sapiens PE=3 SV=1"/>
+          <alternative_protein protein="73156" protein_descr="tr|C9J9K3|C9J9K3_HUMAN Putative uncharacterized protein RPSA OS=Homo sapiens GN=RPSA PE=3 SV=1"/>
+          <search_score name="pvalue" value="0.000000001074432"/>
+          <search_score name="expect" value="0.000015181725645"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.168.168.3" start_scan="168" end_scan="168" precursor_neutral_mass="1571.81896972656" assumed_charge="3" index="32">
+      <search_result>
+        <search_hit hit_rank="1" peptide="KLDPGSEETQTLVR" peptide_prev_aa="R" peptide_next_aa="E" protein="9552" num_tot_proteins="4" num_matched_ions="24" tot_num_ions="26" calc_neutral_pep_mass="1571.817" massdiff="0.00199999999996" is_rejected="0" protein_descr="sp|P26641|EF1G_HUMAN Elongation factor 1-gamma OS=Homo sapiens GN=EEF1G PE=1 SV=3">
+          <alternative_protein protein="58817" protein_descr="tr|B4DUP0|B4DUP0_HUMAN cDNA FLJ59433, highly similar to Elongation factor 1-gamma OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="61605" protein_descr="tr|B4DTG2|B4DTG2_HUMAN cDNA FLJ56389, highly similar to Elongation factor 1-gamma OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="40467" protein_descr="tr|Q53YD7|Q53YD7_HUMAN EEF1G protein OS=Homo sapiens GN=EEF1G PE=2 SV=1"/>
+          <search_score name="pvalue" value="0.000000010473696"/>
+          <search_score name="expect" value="0.000109230174608"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.170.170.2" start_scan="170" end_scan="170" precursor_neutral_mass="1567.76293945312" assumed_charge="2" index="33">
+      <search_result>
+        <search_hit hit_rank="1" peptide="QAVTNPNNTFYATK" peptide_prev_aa="R" peptide_next_aa="R" protein="45821" num_tot_proteins="4" num_matched_ions="21" tot_num_ions="26" calc_neutral_pep_mass="1567.764" massdiff="-0.00100000000008" is_rejected="0" protein_descr="tr|B7Z4V2|B7Z4V2_HUMAN cDNA FLJ51907, highly similar to Stress-70 protein, mitochondrial OS=Homo sapiens PE=2 SV=1">
+          <alternative_protein protein="57535" protein_descr="tr|Q8N1C8|Q8N1C8_HUMAN HSPA9 protein (Fragment) OS=Homo sapiens GN=HSPA9 PE=2 SV=1"/>
+          <alternative_protein protein="13020" protein_descr="sp|P38646|GRP75_HUMAN Stress-70 protein, mitochondrial OS=Homo sapiens GN=HSPA9 PE=1 SV=2"/>
+          <alternative_protein protein="83549" protein_descr="tr|B7Z1V7|B7Z1V7_HUMAN cDNA FLJ51811, highly similar to Stress-70 protein, mitochondrial OS=Homo sapiens PE=2 SV=1"/>
+          <search_score name="pvalue" value="0.000000003575969"/>
+          <search_score name="expect" value="0.000038459546215"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.172.172.3" start_scan="172" end_scan="172" precursor_neutral_mass="2184.041015625" assumed_charge="3" index="34">
+      <search_result>
+        <search_hit hit_rank="1" peptide="SLAGSSGPGASSGTSGDHGELVVR" peptide_prev_aa="K" peptide_next_aa="I" protein="36149" num_tot_proteins="7" num_matched_ions="25" tot_num_ions="46" calc_neutral_pep_mass="2184.038" massdiff="0.003000000000168" is_rejected="0" protein_descr="tr|D3DWK3|D3DWK3_HUMAN Eukaryotic translation elongation factor 1 delta (Guanine nucleotide exchange protein), isoform CRA_c OS=Homo sapiens GN=EEF1D PE=3 SV=1">
+          <alternative_protein protein="9550" protein_descr="sp|P29692|EF1D_HUMAN Elongation factor 1-delta OS=Homo sapiens GN=EEF1D PE=1 SV=5"/>
+          <alternative_protein protein="48077" protein_descr="tr|Q9H7G6|Q9H7G6_HUMAN cDNA: FLJ20897 fis, clone ADKA03573 OS=Homo sapiens PE=1 SV=1"/>
+          <alternative_protein protein="49231" protein_descr="tr|B2RAR6|B2RAR6_HUMAN cDNA, FLJ95068, highly similar to Homo sapiens eukaryotic translation elongation factor 1 delta (guanine nucleotide exchange protein) (EEF1D), transcript variant 1, mRNA OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="55539" protein_descr="tr|Q71RH4|Q71RH4_HUMAN FP1047 OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="84693" protein_descr="tr|D3DWK1|D3DWK1_HUMAN Eukaryotic translation elongation factor 1 delta (Guanine nucleotide exchange protein), isoform CRA_b OS=Homo sapiens GN=EEF1D PE=3 SV=1"/>
+          <alternative_protein protein="9551" protein_descr="sp|P29692-2|EF1D_HUMAN Isoform 2 of Elongation factor 1-delta OS=Homo sapiens GN=EEF1D"/>
+          <search_score name="pvalue" value="0.000011128794168"/>
+          <search_score name="expect" value="0.066182938917088"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.176.176.3" start_scan="176" end_scan="176" precursor_neutral_mass="1656.86901855469" assumed_charge="3" index="35">
+      <search_result>
+        <search_hit hit_rank="1" peptide="QLEEQEEALRQQR" peptide_prev_aa="R" peptide_next_aa="A" protein="8699" num_tot_proteins="1" num_matched_ions="19" tot_num_ions="24" calc_neutral_pep_mass="1655.826" massdiff="1.042999999999914" is_rejected="0" protein_descr="sp|Q9BTC0|DIDO1_HUMAN Death-inducer obliterator 1 OS=Homo sapiens GN=DIDO1 PE=1 SV=5">
+          <search_score name="pvalue" value="0.000067490768804"/>
+          <search_score name="expect" value="0.62847403910689"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.178.178.2" start_scan="178" end_scan="178" precursor_neutral_mass="1166.6650390625" assumed_charge="2" index="36">
+      <search_result>
+        <search_hit hit_rank="1" peptide="GTEITHAVVIK" peptide_prev_aa="K" peptide_next_aa="K" protein="105958" num_tot_proteins="12" num_matched_ions="15" tot_num_ions="20" calc_neutral_pep_mass="1166.666" massdiff="-0.001000000000036" is_rejected="0" protein_descr="tr|C9J1F3|C9J1F3_HUMAN Putative uncharacterized protein EIF3CL OS=Homo sapiens GN=EIF3CL PE=4 SV=1">
+          <alternative_protein protein="54944" protein_descr="tr|B4E1D5|B4E1D5_HUMAN cDNA FLJ54400, highly similar to Eukaryotic translation initiation factor 3 subunit 8 OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="84964" protein_descr="tr|B4DDN4|B4DDN4_HUMAN cDNA FLJ54488, highly similar to Eukaryotic translation initiation factor 3 subunit 8 OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="85177" protein_descr="tr|B4DVQ5|B4DVQ5_HUMAN cDNA FLJ55450, highly similar to Eukaryotic translation initiation factor 3 subunit 8 OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="86645" protein_descr="tr|A1KYQ7|A1KYQ7_HUMAN Cell migration-inducing protein 17 OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="89078" protein_descr="tr|B5ME19|B5ME19_HUMAN Putative uncharacterized protein EIF3CL OS=Homo sapiens GN=EIF3CL PE=4 SV=1"/>
+          <alternative_protein protein="9679" protein_descr="sp|Q99613|EIF3C_HUMAN Eukaryotic translation initiation factor 3 subunit C OS=Homo sapiens GN=EIF3C PE=1 SV=1"/>
+          <alternative_protein protein="90501" protein_descr="tr|B3KNZ4|B3KNZ4_HUMAN cDNA FLJ30804 fis, clone FEBRA2001267, highly similar to Eukaryotic translation initiation factor 3 subunit 8 OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="94748" protein_descr="tr|C9JJ55|C9JJ55_HUMAN Putative uncharacterized protein EIF3CL OS=Homo sapiens GN=EIF3CL PE=4 SV=1"/>
+          <alternative_protein protein="95047" protein_descr="tr|B4DRU0|B4DRU0_HUMAN cDNA FLJ55750, highly similar to Eukaryotic translation initiation factor 3 subunit 8 OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="100252" protein_descr="tr|B4E2Z6|B4E2Z6_HUMAN cDNA FLJ54404, highly similar to Eukaryotic translation initiation factor 3 subunit 8 OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="103083" protein_descr="tr|B4DVU3|B4DVU3_HUMAN cDNA FLJ53378, highly similar to Eukaryotic translation initiation factor 3 subunit 8 OS=Homo sapiens PE=2 SV=1"/>
+          <search_score name="pvalue" value="0.00000039366073"/>
+          <search_score name="expect" value="0.005223484230845"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.180.180.3" start_scan="180" end_scan="180" precursor_neutral_mass="2184.0380859375" assumed_charge="3" index="37">
+      <search_result>
+        <search_hit hit_rank="1" peptide="SLAGSSGPGASSGTSGDHGELVVR" peptide_prev_aa="K" peptide_next_aa="I" protein="36149" num_tot_proteins="7" num_matched_ions="27" tot_num_ions="46" calc_neutral_pep_mass="2184.038" massdiff="0.000000000000011" is_rejected="0" protein_descr="tr|D3DWK3|D3DWK3_HUMAN Eukaryotic translation elongation factor 1 delta (Guanine nucleotide exchange protein), isoform CRA_c OS=Homo sapiens GN=EEF1D PE=3 SV=1">
+          <alternative_protein protein="9551" protein_descr="sp|P29692-2|EF1D_HUMAN Isoform 2 of Elongation factor 1-delta OS=Homo sapiens GN=EEF1D"/>
+          <alternative_protein protein="9550" protein_descr="sp|P29692|EF1D_HUMAN Elongation factor 1-delta OS=Homo sapiens GN=EEF1D PE=1 SV=5"/>
+          <alternative_protein protein="48077" protein_descr="tr|Q9H7G6|Q9H7G6_HUMAN cDNA: FLJ20897 fis, clone ADKA03573 OS=Homo sapiens PE=1 SV=1"/>
+          <alternative_protein protein="49231" protein_descr="tr|B2RAR6|B2RAR6_HUMAN cDNA, FLJ95068, highly similar to Homo sapiens eukaryotic translation elongation factor 1 delta (guanine nucleotide exchange protein) (EEF1D), transcript variant 1, mRNA OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="55539" protein_descr="tr|Q71RH4|Q71RH4_HUMAN FP1047 OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="84693" protein_descr="tr|D3DWK1|D3DWK1_HUMAN Eukaryotic translation elongation factor 1 delta (Guanine nucleotide exchange protein), isoform CRA_b OS=Homo sapiens GN=EEF1D PE=3 SV=1"/>
+          <search_score name="pvalue" value="0.000013022227884"/>
+          <search_score name="expect" value="0.077859900520199"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.196.196.2" start_scan="196" end_scan="196" precursor_neutral_mass="1203.52502441406" assumed_charge="2" index="38">
+      <search_result>
+        <search_hit hit_rank="1" peptide="FAAATGATPIAGR" peptide_prev_aa="K" peptide_next_aa="F" protein="73032" num_tot_proteins="4" num_matched_ions="21" tot_num_ions="24" calc_neutral_pep_mass="1202.64" massdiff="0.885000000000091" is_rejected="0" protein_descr="tr|A6NE09|A6NE09_HUMAN Putative uncharacterized protein ENSP00000346598 OS=Homo sapiens PE=3 SV=1">
+          <alternative_protein protein="73156" protein_descr="tr|C9J9K3|C9J9K3_HUMAN Putative uncharacterized protein RPSA OS=Homo sapiens GN=RPSA PE=3 SV=1"/>
+          <alternative_protein protein="26217" protein_descr="sp|P08865|RSSA_HUMAN 40S ribosomal protein SA OS=Homo sapiens GN=RPSA PE=1 SV=4"/>
+          <alternative_protein protein="65007" protein_descr="tr|Q96RS2|Q96RS2_HUMAN Laminin receptor-like protein LAMRL5 OS=Homo sapiens GN=LAMR1P15 PE=2 SV=1"/>
+          <search_score name="pvalue" value="0.000000106237697"/>
+          <search_score name="expect" value="0.001464805365005"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.199.199.2" start_scan="199" end_scan="199" precursor_neutral_mass="1203.52502441406" assumed_charge="2" index="39">
+      <search_result>
+        <search_hit hit_rank="1" peptide="FAAATGATPIAGR" peptide_prev_aa="K" peptide_next_aa="F" protein="65007" num_tot_proteins="4" num_matched_ions="18" tot_num_ions="24" calc_neutral_pep_mass="1202.64" massdiff="0.885000000000091" is_rejected="0" protein_descr="tr|Q96RS2|Q96RS2_HUMAN Laminin receptor-like protein LAMRL5 OS=Homo sapiens GN=LAMR1P15 PE=2 SV=1">
+          <alternative_protein protein="73032" protein_descr="tr|A6NE09|A6NE09_HUMAN Putative uncharacterized protein ENSP00000346598 OS=Homo sapiens PE=3 SV=1"/>
+          <alternative_protein protein="73156" protein_descr="tr|C9J9K3|C9J9K3_HUMAN Putative uncharacterized protein RPSA OS=Homo sapiens GN=RPSA PE=3 SV=1"/>
+          <alternative_protein protein="26217" protein_descr="sp|P08865|RSSA_HUMAN 40S ribosomal protein SA OS=Homo sapiens GN=RPSA PE=1 SV=4"/>
+          <search_score name="pvalue" value="0.000023461999157"/>
+          <search_score name="expect" value="0.323494044375677"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.201.201.3" start_scan="201" end_scan="201" precursor_neutral_mass="1743.88403320312" assumed_charge="3" index="40">
+      <search_result>
+        <search_hit hit_rank="1" peptide="NDTKEDVFVHQTAIK" peptide_prev_aa="R" peptide_next_aa="K" protein="78342" num_tot_proteins="13" num_matched_ions="26" tot_num_ions="28" calc_neutral_pep_mass="1743.88" massdiff="0.004000000000015" is_rejected="0" protein_descr="tr|Q7KZ24|Q7KZ24_HUMAN Nuclease sensitive element binding protein-1 OS=Homo sapiens PE=2 SV=1">
+          <alternative_protein protein="49526" protein_descr="tr|C9JHJ9|C9JHJ9_HUMAN Putative uncharacterized protein ENSP00000403004 OS=Homo sapiens PE=4 SV=1"/>
+          <alternative_protein protein="94260" protein_descr="tr|B2RCC2|B2RCC2_HUMAN cDNA, FLJ95978, highly similar to Homo sapiens Y box binding protein 2 (YBX2), mRNA OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="56158" protein_descr="tr|Q05D43|Q05D43_HUMAN YBX1 protein (Fragment) OS=Homo sapiens GN=YBX1 PE=2 SV=1"/>
+          <alternative_protein protein="57648" protein_descr="tr|Q59EB5|Q59EB5_HUMAN CSDA protein variant (Fragment) OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="61110" protein_descr="tr|Q96GD7|Q96GD7_HUMAN CSDA protein OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="8220" protein_descr="sp|P16989|DBPA_HUMAN DNA-binding protein A OS=Homo sapiens GN=CSDA PE=1 SV=4"/>
+          <alternative_protein protein="33262" protein_descr="sp|P67809|YBOX1_HUMAN Nuclease-sensitive element-binding protein 1 OS=Homo sapiens GN=YBX1 PE=1 SV=3"/>
+          <alternative_protein protein="33263" protein_descr="sp|Q9Y2T7|YBOX2_HUMAN Y-box-binding protein 2 OS=Homo sapiens GN=YBX2 PE=1 SV=2"/>
+          <alternative_protein protein="8221" protein_descr="sp|P16989-2|DBPA_HUMAN Isoform 2 of DNA-binding protein A OS=Homo sapiens GN=CSDA"/>
+          <alternative_protein protein="8222" protein_descr="sp|P16989-3|DBPA_HUMAN Isoform 3 of DNA-binding protein A OS=Homo sapiens GN=CSDA"/>
+          <alternative_protein protein="38074" protein_descr="tr|Q6PKI6|Q6PKI6_HUMAN YBX1 protein (Fragment) OS=Homo sapiens GN=YBX1 PE=2 SV=1"/>
+          <alternative_protein protein="42255" protein_descr="tr|D3DTP1|D3DTP1_HUMAN Y box binding protein 2, isoform CRA_a OS=Homo sapiens GN=YBX2 PE=4 SV=1"/>
+          <search_score name="pvalue" value="0.000000003520919"/>
+          <search_score name="expect" value="0.000031818544038"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.207.207.2" start_scan="207" end_scan="207" precursor_neutral_mass="1380.64697265625" assumed_charge="2" index="41">
+      <search_result>
+        <search_hit hit_rank="1" peptide="ALEESNYELEGK" peptide_prev_aa="R" peptide_next_aa="I" protein="15332" num_tot_proteins="1" num_matched_ions="13" tot_num_ions="22" calc_neutral_pep_mass="1380.642" massdiff="0.004999999999935" is_rejected="0" protein_descr="sp|P13645|K1C10_HUMAN Keratin, type I cytoskeletal 10 OS=Homo sapiens GN=KRT10 PE=1 SV=6">
+          <search_score name="pvalue" value="0.000048258574056"/>
+          <search_score name="expect" value="0.569306398135112"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.214.214.2" start_scan="214" end_scan="214" precursor_neutral_mass="1380.64294433594" assumed_charge="2" index="42">
+      <search_result>
+        <search_hit hit_rank="1" peptide="ALEESNYELEGK" peptide_prev_aa="R" peptide_next_aa="I" protein="15332" num_tot_proteins="1" num_matched_ions="18" tot_num_ions="22" calc_neutral_pep_mass="1380.642" massdiff="0.001000000000029" is_rejected="0" protein_descr="sp|P13645|K1C10_HUMAN Keratin, type I cytoskeletal 10 OS=Homo sapiens GN=KRT10 PE=1 SV=6">
+          <search_score name="pvalue" value="0.000000000119747"/>
+          <search_score name="expect" value="0.000001411340728"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.222.222.3" start_scan="222" end_scan="222" precursor_neutral_mass="1865.95703125" assumed_charge="3" index="43">
+      <search_result>
+        <search_hit hit_rank="1" peptide="IEDSTGLNRPGPAPLSSR" peptide_prev_aa="R" peptide_next_aa="K" protein="29845" num_tot_proteins="2" num_matched_ions="29" tot_num_ions="34" calc_neutral_pep_mass="1865.96" massdiff="-0.002999999999893" is_rejected="0" protein_descr="sp|Q9BQ70|TCF25_HUMAN Transcription factor 25 OS=Homo sapiens GN=TCF25 PE=1 SV=1">
+          <alternative_protein protein="44287" protein_descr="tr|Q9H7D3|Q9H7D3_HUMAN NULP1, isoform CRA_c OS=Homo sapiens GN=NULP1 PE=2 SV=1"/>
+          <search_score name="pvalue" value="0.000000009009721"/>
+          <search_score name="expect" value="0.00007422208054"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.226.226.2" start_scan="226" end_scan="226" precursor_neutral_mass="1538.7490234375" assumed_charge="2" index="44">
+      <search_result>
+        <search_hit hit_rank="1" peptide="YESLTDPSKLDSGK" peptide_prev_aa="R" peptide_next_aa="E" protein="81427" num_tot_proteins="13" num_matched_ions="19" tot_num_ions="26" calc_neutral_pep_mass="1538.747" massdiff="0.002000000000024" is_rejected="0" protein_descr="tr|B5MDL9|B5MDL9_HUMAN Putative uncharacterized protein ENSP00000371882 OS=Homo sapiens PE=4 SV=2">
+          <alternative_protein protein="57588" protein_descr="tr|Q5T9W8|Q5T9W8_HUMAN Heat shock protein 90kDa alpha (Cytosolic), class B member 1 (Fragment) OS=Homo sapiens GN=HSP90AB1 PE=2 SV=1"/>
+          <alternative_protein protein="102490" protein_descr="tr|Q86SX1|Q86SX1_HUMAN Full-length cDNA 5-PRIME end of clone CS0DN005YI08 of Adult brain of Homo sapiens (human) (Fragment) OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="13261" protein_descr="sp|Q58FF8|H90B2_HUMAN Putative heat shock protein HSP 90-beta 2 OS=Homo sapiens GN=HSP90AB2P PE=1 SV=2"/>
+          <alternative_protein protein="13262" protein_descr="sp|Q58FF7|H90B3_HUMAN Putative heat shock protein HSP 90-beta-3 OS=Homo sapiens GN=HSP90AB3P PE=5 SV=1"/>
+          <alternative_protein protein="13872" protein_descr="sp|P07900|HS90A_HUMAN Heat shock protein HSP 90-alpha OS=Homo sapiens GN=HSP90AA1 PE=1 SV=5"/>
+          <alternative_protein protein="13874" protein_descr="sp|P08238|HS90B_HUMAN Heat shock protein HSP 90-beta OS=Homo sapiens GN=HSP90AB1 PE=1 SV=4"/>
+          <alternative_protein protein="13873" protein_descr="sp|P07900-2|HS90A_HUMAN Isoform HSP90AA1-2 of Heat shock protein HSP 90-alpha OS=Homo sapiens GN=HSP90AA1"/>
+          <alternative_protein protein="61346" protein_descr="tr|Q2VPJ6|Q2VPJ6_HUMAN HSP90AA1 protein (Fragment) OS=Homo sapiens GN=HSP90AA1 PE=2 SV=1"/>
+          <alternative_protein protein="66161" protein_descr="tr|B4DMA2|B4DMA2_HUMAN cDNA FLJ54023, highly similar to Heat shock protein HSP 90-beta OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="72864" protein_descr="tr|B4DTA5|B4DTA5_HUMAN cDNA FLJ57431, highly similar to Heat shock protein HSP 90-alpha OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="74014" protein_descr="tr|O14942|O14942_HUMAN Heat shock protein beta (Fragment) OS=Homo sapiens PE=4 SV=1"/>
+          <alternative_protein protein="74363" protein_descr="tr|Q6PK50|Q6PK50_HUMAN HSP90AB1 protein (Fragment) OS=Homo sapiens GN=HSP90AB1 PE=2 SV=1"/>
+          <search_score name="pvalue" value="0.000000005993203"/>
+          <search_score name="expect" value="0.000060813033839"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.230.230.2" start_scan="230" end_scan="230" precursor_neutral_mass="1538.74499511719" assumed_charge="2" index="45">
+      <search_result>
+        <search_hit hit_rank="1" peptide="YESLTDPSKLDSGK" peptide_prev_aa="R" peptide_next_aa="E" protein="57588" num_tot_proteins="13" num_matched_ions="16" tot_num_ions="26" calc_neutral_pep_mass="1538.747" massdiff="-0.002000000000109" is_rejected="0" protein_descr="tr|Q5T9W8|Q5T9W8_HUMAN Heat shock protein 90kDa alpha (Cytosolic), class B member 1 (Fragment) OS=Homo sapiens GN=HSP90AB1 PE=2 SV=1">
+          <alternative_protein protein="61346" protein_descr="tr|Q2VPJ6|Q2VPJ6_HUMAN HSP90AA1 protein (Fragment) OS=Homo sapiens GN=HSP90AA1 PE=2 SV=1"/>
+          <alternative_protein protein="66161" protein_descr="tr|B4DMA2|B4DMA2_HUMAN cDNA FLJ54023, highly similar to Heat shock protein HSP 90-beta OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="72864" protein_descr="tr|B4DTA5|B4DTA5_HUMAN cDNA FLJ57431, highly similar to Heat shock protein HSP 90-alpha OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="74014" protein_descr="tr|O14942|O14942_HUMAN Heat shock protein beta (Fragment) OS=Homo sapiens PE=4 SV=1"/>
+          <alternative_protein protein="13261" protein_descr="sp|Q58FF8|H90B2_HUMAN Putative heat shock protein HSP 90-beta 2 OS=Homo sapiens GN=HSP90AB2P PE=1 SV=2"/>
+          <alternative_protein protein="13262" protein_descr="sp|Q58FF7|H90B3_HUMAN Putative heat shock protein HSP 90-beta-3 OS=Homo sapiens GN=HSP90AB3P PE=5 SV=1"/>
+          <alternative_protein protein="13872" protein_descr="sp|P07900|HS90A_HUMAN Heat shock protein HSP 90-alpha OS=Homo sapiens GN=HSP90AA1 PE=1 SV=5"/>
+          <alternative_protein protein="13874" protein_descr="sp|P08238|HS90B_HUMAN Heat shock protein HSP 90-beta OS=Homo sapiens GN=HSP90AB1 PE=1 SV=4"/>
+          <alternative_protein protein="13873" protein_descr="sp|P07900-2|HS90A_HUMAN Isoform HSP90AA1-2 of Heat shock protein HSP 90-alpha OS=Homo sapiens GN=HSP90AA1"/>
+          <alternative_protein protein="74363" protein_descr="tr|Q6PK50|Q6PK50_HUMAN HSP90AB1 protein (Fragment) OS=Homo sapiens GN=HSP90AB1 PE=2 SV=1"/>
+          <alternative_protein protein="81427" protein_descr="tr|B5MDL9|B5MDL9_HUMAN Putative uncharacterized protein ENSP00000371882 OS=Homo sapiens PE=4 SV=2"/>
+          <alternative_protein protein="102490" protein_descr="tr|Q86SX1|Q86SX1_HUMAN Full-length cDNA 5-PRIME end of clone CS0DN005YI08 of Adult brain of Homo sapiens (human) (Fragment) OS=Homo sapiens PE=2 SV=1"/>
+          <search_score name="pvalue" value="0.000000044152469"/>
+          <search_score name="expect" value="0.000447661882608"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.232.232.2" start_scan="232" end_scan="232" precursor_neutral_mass="1415.77099609375" assumed_charge="2" index="46">
+      <search_result>
+        <search_hit hit_rank="1" peptide="LAQAAQSSVATITR" peptide_prev_aa="K" peptide_next_aa="L" protein="30399" num_tot_proteins="2" num_matched_ions="17" tot_num_ions="26" calc_neutral_pep_mass="1415.774" massdiff="-0.003000000000042" is_rejected="0" protein_descr="sp|Q9Y490|TLN1_HUMAN Talin-1 OS=Homo sapiens GN=TLN1 PE=1 SV=3">
+          <alternative_protein protein="61183" protein_descr="tr|Q5TCU6|Q5TCU6_HUMAN Talin 1 OS=Homo sapiens GN=TLN1 PE=2 SV=1"/>
+          <search_score name="pvalue" value="0.000004295761697"/>
+          <search_score name="expect" value="0.049053302822964"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.237.237.3" start_scan="237" end_scan="237" precursor_neutral_mass="1432.72094726562" assumed_charge="3" index="47">
+      <search_result>
+        <search_hit hit_rank="1" peptide="HKLDVTSVEDYK" peptide_prev_aa="K" peptide_next_aa="A" protein="57362" num_tot_proteins="13" num_matched_ions="21" tot_num_ions="22" calc_neutral_pep_mass="1432.72" massdiff="0.001000000000004" is_rejected="0" protein_descr="tr|B4DZY9|B4DZY9_HUMAN cDNA FLJ59103, highly similar to T-complex protein 1 subunit epsilon OS=Homo sapiens PE=2 SV=1">
+          <alternative_protein protein="29887" protein_descr="sp|P48643|TCPE_HUMAN T-complex protein 1 subunit epsilon OS=Homo sapiens GN=CCT5 PE=1 SV=1"/>
+          <alternative_protein protein="103105" protein_descr="tr|B4DYD8|B4DYD8_HUMAN cDNA FLJ52362, highly similar to T-complex protein 1 subunit epsilon OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="69084" protein_descr="tr|B4DXI1|B4DXI1_HUMAN cDNA FLJ54333, highly similar to T-complex protein 1 subunit epsilon OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="76001" protein_descr="tr|B4DDU6|B4DDU6_HUMAN cDNA FLJ50442, highly similar to T-complex protein 1 subunit epsilon OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="45954" protein_descr="tr|B4DX08|B4DX08_HUMAN cDNA FLJ58784, highly similar to T-complex protein 1 subunit epsilon OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="45965" protein_descr="tr|B4DYC8|B4DYC8_HUMAN cDNA FLJ52361, highly similar to T-complex protein 1 subunit epsilon OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="50295" protein_descr="tr|A8K2X8|A8K2X8_HUMAN cDNA FLJ78433, highly similar to Homo sapiens chaperonin containing TCP1, subunit 5 (epsilon) (CCT5), mRNA OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="87673" protein_descr="tr|Q96GI1|Q96GI1_HUMAN Putative uncharacterized protein (Fragment) OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="91145" protein_descr="tr|B7ZAR1|B7ZAR1_HUMAN cDNA, FLJ79275, highly similar to T-complex protein 1 subunit epsilon OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="91399" protein_descr="tr|Q9BU08|Q9BU08_HUMAN Putative uncharacterized protein (Fragment) OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="53477" protein_descr="tr|B4DZT5|B4DZT5_HUMAN cDNA FLJ53116, highly similar to T-complex protein 1 subunit epsilon OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="94946" protein_descr="tr|B4DE30|B4DE30_HUMAN cDNA FLJ51711, highly similar to T-complex protein 1 subunit epsilon OS=Homo sapiens PE=2 SV=1"/>
+          <search_score name="pvalue" value="0.000000587313577"/>
+          <search_score name="expect" value="0.006594356843794"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.238.238.2" start_scan="238" end_scan="238" precursor_neutral_mass="1091.57104492188" assumed_charge="2" index="48">
+      <search_result>
+        <search_hit hit_rank="1" peptide="VHIEIGPDGR" peptide_prev_aa="R" peptide_next_aa="V" protein="47035" num_tot_proteins="9" num_matched_ions="14" tot_num_ions="18" calc_neutral_pep_mass="1091.572" massdiff="-0.001000000000087" is_rejected="0" protein_descr="tr|D3DWQ2|D3DWQ2_HUMAN Heterogeneous nuclear ribonucleoprotein H1 (H), isoform CRA_a OS=Homo sapiens GN=HNRPH1 PE=4 SV=1">
+          <alternative_protein protein="13716" protein_descr="sp|P31943|HNRH1_HUMAN Heterogeneous nuclear ribonucleoprotein H OS=Homo sapiens GN=HNRNPH1 PE=1 SV=4"/>
+          <alternative_protein protein="13717" protein_descr="sp|P55795|HNRH2_HUMAN Heterogeneous nuclear ribonucleoprotein H2 OS=Homo sapiens GN=HNRNPH2 PE=1 SV=1"/>
+          <alternative_protein protein="13742" protein_descr="sp|P52597|HNRPF_HUMAN Heterogeneous nuclear ribonucleoprotein F OS=Homo sapiens GN=HNRNPF PE=1 SV=3"/>
+          <alternative_protein protein="75282" protein_descr="tr|B4DP00|B4DP00_HUMAN cDNA FLJ58205, highly similar to Heterogeneous nuclear ribonucleoprotein H&apos; OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="87374" protein_descr="tr|B4DFK9|B4DFK9_HUMAN cDNA FLJ57964, highly similar to Heterogeneous nuclear ribonucleoprotein H&apos; OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="89795" protein_descr="tr|Q68DG4|Q68DG4_HUMAN Putative uncharacterized protein DKFZp686A15170 (Fragment) OS=Homo sapiens GN=DKFZp686A15170 PE=2 SV=1"/>
+          <alternative_protein protein="105416" protein_descr="tr|B4DKS8|B4DKS8_HUMAN cDNA FLJ57121, highly similar to Heterogeneous nuclear ribonucleoprotein F OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="58751" protein_descr="tr|B4DP51|B4DP51_HUMAN cDNA FLJ54533, highly similar to Heterogeneous nuclear ribonucleoprotein H OS=Homo sapiens PE=2 SV=1"/>
+          <search_score name="pvalue" value="0.00000004786941"/>
+          <search_score name="expect" value="0.000663182805429"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.240.240.2" start_scan="240" end_scan="240" precursor_neutral_mass="1069.623046875" assumed_charge="2" index="49">
+      <search_result>
+        <search_hit hit_rank="1" peptide="KGDIIQLQR" peptide_prev_aa="K" peptide_next_aa="R" protein="29218" num_tot_proteins="3" num_matched_ions="13" tot_num_ions="16" calc_neutral_pep_mass="1069.625" massdiff="-0.001999999999953" is_rejected="0" protein_descr="sp|P07814|SYEP_HUMAN Bifunctional aminoacyl-tRNA synthetase OS=Homo sapiens GN=EPRS PE=1 SV=5">
+          <alternative_protein protein="84086" protein_descr="tr|Q3KQZ8|Q3KQZ8_HUMAN EPRS protein (Fragment) OS=Homo sapiens GN=EPRS PE=2 SV=1"/>
+          <alternative_protein protein="87411" protein_descr="tr|B4DKX5|B4DKX5_HUMAN cDNA FLJ56021, highly similar to Bifunctional aminoacyl-tRNA synthetase[Includes: Glutamyl-tRNA synthetase (EC 6.1.1.17) (Fragment) OS=Homo sapiens PE=2 SV=1"/>
+          <search_score name="pvalue" value="0.000002152849921"/>
+          <search_score name="expect" value="0.034073155697778"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.243.243.3" start_scan="243" end_scan="243" precursor_neutral_mass="1432.72094726562" assumed_charge="3" index="50">
+      <search_result>
+        <search_hit hit_rank="1" peptide="HKLDVTSVEDYK" peptide_prev_aa="K" peptide_next_aa="A" protein="29887" num_tot_proteins="13" num_matched_ions="23" tot_num_ions="22" calc_neutral_pep_mass="1432.72" massdiff="0.001000000000004" is_rejected="0" protein_descr="sp|P48643|TCPE_HUMAN T-complex protein 1 subunit epsilon OS=Homo sapiens GN=CCT5 PE=1 SV=1">
+          <alternative_protein protein="45954" protein_descr="tr|B4DX08|B4DX08_HUMAN cDNA FLJ58784, highly similar to T-complex protein 1 subunit epsilon OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="45965" protein_descr="tr|B4DYC8|B4DYC8_HUMAN cDNA FLJ52361, highly similar to T-complex protein 1 subunit epsilon OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="50295" protein_descr="tr|A8K2X8|A8K2X8_HUMAN cDNA FLJ78433, highly similar to Homo sapiens chaperonin containing TCP1, subunit 5 (epsilon) (CCT5), mRNA OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="53477" protein_descr="tr|B4DZT5|B4DZT5_HUMAN cDNA FLJ53116, highly similar to T-complex protein 1 subunit epsilon OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="57362" protein_descr="tr|B4DZY9|B4DZY9_HUMAN cDNA FLJ59103, highly similar to T-complex protein 1 subunit epsilon OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="69084" protein_descr="tr|B4DXI1|B4DXI1_HUMAN cDNA FLJ54333, highly similar to T-complex protein 1 subunit epsilon OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="76001" protein_descr="tr|B4DDU6|B4DDU6_HUMAN cDNA FLJ50442, highly similar to T-complex protein 1 subunit epsilon OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="87673" protein_descr="tr|Q96GI1|Q96GI1_HUMAN Putative uncharacterized protein (Fragment) OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="91145" protein_descr="tr|B7ZAR1|B7ZAR1_HUMAN cDNA, FLJ79275, highly similar to T-complex protein 1 subunit epsilon OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="91399" protein_descr="tr|Q9BU08|Q9BU08_HUMAN Putative uncharacterized protein (Fragment) OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="94946" protein_descr="tr|B4DE30|B4DE30_HUMAN cDNA FLJ51711, highly similar to T-complex protein 1 subunit epsilon OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="103105" protein_descr="tr|B4DYD8|B4DYD8_HUMAN cDNA FLJ52362, highly similar to T-complex protein 1 subunit epsilon OS=Homo sapiens PE=2 SV=1"/>
+          <search_score name="pvalue" value="0.000000009992661"/>
+          <search_score name="expect" value="0.000112197592814"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+    <spectrum_query spectrum="test.244.244.2" start_scan="244" end_scan="244" precursor_neutral_mass="1091.57104492188" assumed_charge="2" index="51">
+      <search_result>
+        <search_hit hit_rank="1" peptide="VHIEIGPDGR" peptide_prev_aa="R" peptide_next_aa="V" protein="13716" num_tot_proteins="9" num_matched_ions="14" tot_num_ions="18" calc_neutral_pep_mass="1091.572" massdiff="-0.001000000000087" is_rejected="0" protein_descr="sp|P31943|HNRH1_HUMAN Heterogeneous nuclear ribonucleoprotein H OS=Homo sapiens GN=HNRNPH1 PE=1 SV=4">
+          <alternative_protein protein="13717" protein_descr="sp|P55795|HNRH2_HUMAN Heterogeneous nuclear ribonucleoprotein H2 OS=Homo sapiens GN=HNRNPH2 PE=1 SV=1"/>
+          <alternative_protein protein="13742" protein_descr="sp|P52597|HNRPF_HUMAN Heterogeneous nuclear ribonucleoprotein F OS=Homo sapiens GN=HNRNPF PE=1 SV=3"/>
+          <alternative_protein protein="58751" protein_descr="tr|B4DP51|B4DP51_HUMAN cDNA FLJ54533, highly similar to Heterogeneous nuclear ribonucleoprotein H OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="75282" protein_descr="tr|B4DP00|B4DP00_HUMAN cDNA FLJ58205, highly similar to Heterogeneous nuclear ribonucleoprotein H&apos; OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="87374" protein_descr="tr|B4DFK9|B4DFK9_HUMAN cDNA FLJ57964, highly similar to Heterogeneous nuclear ribonucleoprotein H&apos; OS=Homo sapiens PE=2 SV=1"/>
+          <alternative_protein protein="47035" protein_descr="tr|D3DWQ2|D3DWQ2_HUMAN Heterogeneous nuclear ribonucleoprotein H1 (H), isoform CRA_a OS=Homo sapiens GN=HNRPH1 PE=4 SV=1"/>
+          <alternative_protein protein="89795" protein_descr="tr|Q68DG4|Q68DG4_HUMAN Putative uncharacterized protein DKFZp686A15170 (Fragment) OS=Homo sapiens GN=DKFZp686A15170 PE=2 SV=1"/>
+          <alternative_protein protein="105416" protein_descr="tr|B4DKS8|B4DKS8_HUMAN cDNA FLJ57121, highly similar to Heterogeneous nuclear ribonucleoprotein F OS=Homo sapiens PE=2 SV=1"/>
+          <search_score name="pvalue" value="0.000000276173213"/>
+          <search_score name="expect" value="0.003826103695345"/>
+        </search_hit>
+      </search_result>
+    </spectrum_query>
+  </msms_run_summary>
+</msms_pipeline_analysis>

@@ -2,10 +2,12 @@ require 'rubygems'
 require "ms/msrun"
 
 # Converts mzXML files to a different format.
+#
+# @author Jesse Jashinsky (Aug 2010)
 class MzmlToOther
-  # type == The extension type, e.g. mgf
-  # file == A string containing the file location
-  # hardklor == true or false, whether or not to run Hardklor. Doesn't work with mzML.
+  # @param [String] type the type to convert to, e.g. mgf or ms2
+  # @param [String] the location of the mzML file
+  # @param [Boolean] hardklor whether or not to run Hardklor. Doesn't work with mzML.
   def initialize(type, file, run, hardklor)
     @type = type
     @file = file
@@ -13,8 +15,10 @@ class MzmlToOther
     @run = run
   end
   
-  # Converts file into type. Determines whether to run convert_mzXML or convert_mzML
+  # Converts the mzML file into the given type. Determines whether to run convert_mzXML or convert_mzML
   # based on the extension of file.
+  #
+  # @return [String] the location of the new file
   def convert
     puts "\n--------------------------------"
     puts "Transforming #{File.extname(@file)} file to .#{@type} format..."

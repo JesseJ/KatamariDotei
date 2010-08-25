@@ -14,8 +14,11 @@ Protein = Struct.new(:id, :description, :peps, :spectral_counts, :unique_peptide
 end
 
 # Reduces proteins and peptides to the minimum unique peptides and proteins.
+#
+# @author Jesse Jashinsky (Aug 2010)
+# @todo Change to prince's method and do something with the output.
 class Resolver
-  # samples == The combined.psms files of each sample
+  # @param [Array(String)] samples contains the location of the combined.psms files of all the runs for each sample
   def initialize(samples)
     @samples = samples
     @proteins = []
@@ -73,6 +76,8 @@ class Resolver
   end
   
   # An adaptation of John Prince's code for resolving peptides.
+  #
+  # @author John Prince (July 2010)
   def prince_resolve
     puts "\n--------------------------------"
     puts "Resolving isoforms...\n\n"

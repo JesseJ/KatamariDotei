@@ -12,7 +12,10 @@ if ARGV.size != 1
     exit
 end
 
-#Performs all the necessary formatting of databases for the Pipeline.
+# Performs all the necessary formatting of databases for the Pipeline.
+#
+# @author Jesse Jashinsky (Aug 2010)
+# @todo Add function to take care of updating taxonomy.xml and creation of the reverse folder if none exists. Is it possible to automate the adding of the Mascot databases?
 class DatabaseFormatter
   #fileName == The name of the file in the databases folder
   def initialize(fileName)
@@ -32,38 +35,6 @@ class DatabaseFormatter
     
     puts "Creating yaml files..."
     exec("#{$path}../../ms-error_rate/bin/fasta_to_peptide_centric_db.rb #{targetDatabase}") if fork == nil
-    exec("#{$path}../../ms-error_rate/bin/fasta_to_peptide_centric_db.rb #{decoyDatabase}") if fork == nil
-    
-    begin
-      Process.wait while true
-  
-    rescue SystemCallError
-    end
-    
-#    puts "Creating sqlite databases. You should go do something else, because this will take a while."
-#    create_database(targetDatabase.chomp("fasta"))
-#    create_database(targetDatabase.chomp("fasta.reverse"))
-  end
-  
-  def create_database(name)
-    array = []
-    
-    File.open(name + "yml", "r").each_line do |line|
-      parts = line.split(": ")
-      array << [parts[0], parts[1]]
-    end
-    
-    db = Amalgalite::Database.new("#{name}db")
-    db.execute("CREATE TABLE peps(peptide, proteins)")
-#    array.each {|x| db.execute("INSERT INTO peps(peptide, proteins) VALUES('#{x[0]}', '#{x[1]}')"); p x}
-    
-    db.prepare("INSERT INTO peps(peptide, proteins) VALUES(?, ?)") do |stmt|
-      array.each do |x|
-        p x
-        stmt.execute(x[0], x[1])
-      end
-    end
-
   end
 end
 

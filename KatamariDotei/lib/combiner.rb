@@ -1,9 +1,12 @@
 
 # Combines multiple .psms files into one .psms file using ....
+#
+# @author Jesse Jashinsky (Aug 2010)
+# @todo Create specialized statistical function for combining files. Currently employs averaging.
 class Combiner
-  # files == Percolator.run output
-  # raw_name == The name of the raw file
-  # run = The run number
+  # @param [Array(String)] files Percolator.run output
+  # @param [String] raw_name the name of the raw file
+  # @param [String] run the run or iteration
   def initialize(files, raw_name, run)
     @files = files
     @raw_name = raw_name
@@ -11,6 +14,8 @@ class Combiner
   end
   
   # Combines the files and writes it to a new psms file, returns the new file name.
+  #
+  # @return [String] the combined psms file
   def combine
     puts "\n--------------------------------"
     puts "Combining search engine hits...\n"

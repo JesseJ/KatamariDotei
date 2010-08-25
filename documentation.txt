@@ -17,6 +17,10 @@ Main Functions
 ----------------------------------------------------------------------------------------------------------------------
 
 Detailed Documentation
+
+Ruby Files
+--------------------------------
+
 ("o" means the feature is fully implemented, "x" means it's not yet fully implemented. If there's nothing, then it's a note, not a feature.)
 
 -User Interface
@@ -66,6 +70,37 @@ x Combines the Percolator outputs into a single file using some crazy math funct
 
 -refiner.rb
 o Creates a new mgf and ms2 file, removing the scans based by the given qValue cutoff.
+
+-katamari_dotei_cl.rb
+o The command line interface for the program. Takes an arbitry number of raw files, a databaseID, and an optional configFile (The config file defaults to the original config.xml if none specified)
+
+-database_formatter.rb
+x When a new database is added to the program, run this to handle everything that needs to be done for the database to be used by KatamariDotei.
+
+
+yardoc is used to create docs from the program as well. They can be created by going to the KatamariDotei directory, and from the command line, run "yardoc lib/".
+
+
+Other Files
+--------------------------------
+
+-databases folder
+All FASTA database files go here. Within the databases folder is also the reverse folder, where all the reversed databases go.
+
+--taxonomy.xml
+A mapping of databaseIDs to their files. Was originally needed by X! Tandem, but was extended to be used by KatamariDotei.
+
+-mascot folder
+Contains files for automating the Mascot process.
+
+--database-Mascot.xml
+Mascot's names of databases aren't necessarily the same as the original file name, so this file provides a mapping of databaseIDs to mascot names. Needs to be updated whenever a new FASTA database is added.
+
+--mascot.yaml
+This is the input file for automating Mascot in KatamariDotei's search. Edit this file for your preferred settings.
+
+-tandem-linux/enzymes.xml
+This file was created for providing a mapping between enzyme names and their symbols for use in X! Tandem.
 
 ----------------------------------------------------------------------------------------------------------------------
 

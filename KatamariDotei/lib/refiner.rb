@@ -1,9 +1,11 @@
 
 # Is used to refine the input to search engines. A part of the iterative process of searching.
+#
+# @author Jesse Jashinsky (Aug 2010)
 class Refiner
-  # file == combiner.rb output
-  # cutoff == The cutoff value. Only those above the cutoff value are kept
-  # mzFile == The mzML or mzXML file that was used
+  # @param [String] file Combiner.combine output
+  # @param [String] cutoff the cutoff value. Only those above the cutoff value are kept
+  # @param [String] mzFile the location of the mzML file that was used
   def initialize(file, cutoff, mzFile, run)
     @file = file
     @cutoff = cutoff
@@ -11,7 +13,9 @@ class Refiner
     @run = run
   end
   
-  # Determines which scans to include and creates a new (mgf and/or ms2) file.
+  # Determines which scans to include and creates a new mgf and/or ms2 file.
+  #
+  # @return [String] the location of the new mgf file
   def refine
     puts "\n--------------------------------"
     puts "Refining search...\n"
@@ -21,15 +25,15 @@ class Refiner
   end
   
   # Determines which scans to include.
+  #
+  # @return [Array(Number)] the selected scans to include
   def refine_scans
     selected_scans = []  #Scans to use in the next search iteration.
     
     File.open(@file, "r").each do |line|
       parts = line.split("\t")
       spectrum = parts[0].split(".")[1].to_i
-      score = parts[1].to_i
       qvalue = parts[2].to_f
-      prob = parts[3].to_f
       
       selected_scans << spectrum if qvalue > @cutoff
     end

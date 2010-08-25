@@ -2,15 +2,17 @@ require 'socket'
 require "helper_methods"
 
 # Transforms a .raw file to a mzXML or mzML file
+#
+# @author Jesse Jashinsky (Aug 2010)
 class RawToMzml
-  # file == A string containing the file location (Without extension)
+  # @param [String] file the file location of the .raw file (Without extension)
   def initialize(file)
     @file = file
   end
   
   # Converts file to mzXML
   def to_mzXML
-    puts "\n--------------------------------"
+    puts "\n--------------------------------"  # These puts statements at the begining of each class is my way of showing the progress of the program to the user.
     puts "Transforming raw file to mzXML format...\n\n"
     
     options = config_value("//ReAdW/@commandLine")

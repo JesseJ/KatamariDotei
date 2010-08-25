@@ -6,8 +6,10 @@ require "ms/fasta.rb"
 #end
 
 
-#This will reverse the given protein database so it can be used for decoy searches.
-#Does some possibly unnecessary sequence text formatting
+# This will reverse the given protein database so it can be used for decoy searches.
+# Does some possibly unnecessary sequence text formatting
+#
+# @author Jesse Jashinsky (Aug 2010)
 class ReverseDatabase
   #input == The fasta file
   #output == The name of the output file

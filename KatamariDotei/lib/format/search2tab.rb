@@ -2,8 +2,10 @@ require "#{$path}format/pepxml.rb"
 require "#{$path}format/mzidentml.rb"
 
 # Turns a search engine output (e.g. pepXML) into a tab-delimited file for Percolator.
+#
+# @author Jesse Jashinsky (Aug 2010)
 class Search2Tab
-  # format == A Format object
+  # @param [Format] format a Format object
   def initialize(format)
     @format = format
   end
@@ -14,6 +16,7 @@ class Search2Tab
     tab = File.new("#{name}.tab", "w")
     matches = @format.matches
     
+    # The tab files requires a header followed by spectral matches.
     tab.puts @format.header
     matches.each {|match| tab.puts match}
     

@@ -19,13 +19,18 @@ module Net::HTTPHeader
   end
 end
 
-# Runs the different search engines
+# Runs the different search engines.
+#
+# @author Jesse Jashinsky (Aug 2010)
 class Search
-  # file == input file (without extension)
-  # database == type of fasta database to use, e.g. "human"
-  # enzyme == the enzyme to use in the search, e.g. trypsin
-  # run == which run, or iteration, this is
-  # opts: All option values are either true or false.
+  # @param [String] file the location of the input file (without the extension)
+  # @param [String] database type of fasta database to use, e.g. "human" or "bovin"
+  # @param [String] enzyme the enzyme to use in the search, e.g. trypsin
+  # @param [String] run which run, or iteration, this is
+  # @option opts [Boolean] :omssa whether or not to run OMSSA
+  # @option opts [Boolean] :tide whether or not to run Tide
+  # @option opts [Boolean] :xtandem whether or not to run X! Tandem
+  # @option opts [Boolean] :mascot whether or not to run Mascot
   def initialize(file, database, enzyme, opts={})
     @opts = opts
     @enzyme = enzyme
@@ -39,6 +44,8 @@ class Search
   end
   
   # Runs all the selected search engines and returns the names of the output files.
+  #
+  # @return [Array(String, String)] the file locations of the search results in the form of [[target, decoy], ...]
   def run
     puts "\n--------------------------------"
     puts "Running search engines...\n\n"
@@ -56,6 +63,9 @@ class Search
     
     @outputFiles
   end
+  
+  
+  private
   
   def runTandem
     #Target search
@@ -208,10 +218,10 @@ class Search
     form.file_uploads.first.file_name = @spectraFile + ".mgf"
     
     puts "Running #{type} Mascot..."
-    page = a.submit(form, form.buttons.first)
+    page = a.submit(form, form.buttons.first)  #Pressing the submit button
     uri = page.links[0].uri.to_s.split("=")
     mascotFile = uri[uri.length-1].gsub("/", "%2F")
-    page = page.links[0].click
+    page = page.links[0].click  #Go to the results page
     
     puts "Transforming #{type} Mascot output..."
     #Doesn't work for some reason
@@ -219,7 +229,7 @@ class Search
 #    form.REPTYPE = "export"
 #    page = a.submit(form, form.buttons.first)
     
-    #An ugly solution
+    # An ugly solution to get to the conversion page
     link = yml["URL"] + "export_dat_2.pl?file=#{mascotFile}&REPTYPE=export&_sigthreshold=0.00&REPORT=AUTO&_server_mudpit_switch=99999999&_ignoreionsscorebelow=0&_showsubsets=0&_sortunassigned=scoredown"
     
     a.get(link) do |export_page|
@@ -252,14 +262,17 @@ class Search
     exec("Tandem2XML #{file2} #{pepFile2}") if fork == nil
   end
   
+  # @return [String] the enzyme for OMSSA
   def getOMSSAEnzyme
     Nokogiri::XML(IO.read("#{$path}../../omssa/OMSSA.xsd")).xpath("//xs:enumeration[@value=\"#{@enzyme}\"]/@ncbi:intvalue").to_s
   end
 	
+  # @return [String] the enzyme for X! Tandem
   def getTandemEnzyme
     Nokogiri::XML(IO.read("#{$path}../../tandem-linux/enzymes.xml")).xpath("//enzyme[@name=\"#{@enzyme}\"]/@symbol").to_s
   end
 	
+  # @return [String] the database name for Mascot
   def getMascotDatabaseName(id)
     Nokogiri::XML(IO.read("#{$path}../../mascot/database-Mascot.xml")).xpath("//DB[@ID=\"#{id}\"]/@mascot_name").to_s
   end

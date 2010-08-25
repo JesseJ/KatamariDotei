@@ -3,32 +3,37 @@ require 'nokogiri'
 
 module PercolatorInput
   # A pepXML Format object.
+  #
+  # @author Jesse Jashinsky (Aug 2010)
   class PepXML < Format
-    # target == A string containing the file location of the target pepXML
-    # decoy == A string containing the file location of the decoy pepXML
-    # database == A hash of target {peptide => proteins}
-    # revDatabase == A hash of decoy {peptide => proteins}
-    def initialize(target, decoy, database)
+    # @param [String] target the file location of the target pepXML
+    # @param [String] decoy the file location of the decoy pepXML
+    # @param [Hash] proteins a hash of peptides to proteins
+    def initialize(target, decoy, proteins)
       super
     end
     
-    #This method can likely be simplified
+    # @return [String] file location without extension and target
     def fileWithoutExtras
       parts = @target.split("/")[-1].split("-")
-      fileName = "#{$path}../data/percolator/" + parts[0] + parts[1][6..parts[1].length-1].chomp(".pep.xml")
+      fileName = "#{$path}../data/percolator/" + parts[0] + parts[1][6..-1].chomp(".pep.xml")
       
       fileName
     end
-      
+    
+    # @return [String] the target file location
     def target
       @target
     end
     
+    # @return [String] the decoy file location
     def decoy
       @decoy
     end
     
-    #Creates and returns a header for the tab file.
+    # Creates and returns a header for the tab file.
+    #
+    # @return [String] the header
     def header
       temp = ""
       result = "SpecId\tLabel\tCharge\t"
@@ -44,7 +49,8 @@ module PercolatorInput
       
       result += "Peptide\t" + "Proteins"
     end
-  
+    
+    # @return [Array(String)] an array of spectral matches
     def matches
       parse if @matches == []
       
@@ -54,7 +60,8 @@ module PercolatorInput
     
     private
     
-    #Returns a Nokogiri object
+    # @param [String] file the location of the pepXML file
+    # @return [Nokogiri] a Nokogiri object
     def nokogiriDoc(file)
       doc = Nokogiri::XML(IO.read("#{file}"))
           
@@ -64,7 +71,7 @@ module PercolatorInput
       doc
     end
     
-    #Parses out everyhting in the pepXML file
+    # Parses out everyhting in the pepXML file
     def parse
       #Target
       doc = nokogiriDoc(@target)
@@ -85,7 +92,11 @@ module PercolatorInput
       GC.start
     end
     
-    #Parses the pepXML file and returns an PSM object (A line for the .tab file)
+    # Parses the pepXML file and returns an PSM object (A line for the .tab file)
+    #
+    # @param [Nokogiri] query a Nokogiri object from a search query
+    # @param [String] label a string of either a 1 or a -1
+    # @param [Number] rank the rank of the search hit
     def psm(query, label, rank)
       #Required Stuff
       spect = query.xpath("./@spectrum").to_s.chomp(" ")    #X! Tandem has a space at the end that messes things up

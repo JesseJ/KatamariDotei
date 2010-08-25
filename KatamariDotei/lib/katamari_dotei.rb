@@ -16,17 +16,20 @@ require "#{$path}../../mzIdentML/lib/search2mzidentml.rb"
 require 'nokogiri'
 
 # This is the main class of the pipeline.
+#
+# @author Jesse Jashinsky (Aug 2010)
 class KatamariDotei
-  # file == A string containing the location of the raw file
-  # type == The type of input, e.g. human or bovin
-  # config == The config file
-  def initialize(files, database, config)
+  # @param [String] files the location of the raw file
+  # @param [String] dbID the type of input, e.g. human or bovin
+  # @param [String] config the location of the xml config file
+  def initialize(files, dbID, config)
     @files = files
-    @database = database
+    @dbID = dbID
     @dataPath = File.expand_path("#{$path}../data/") + "/"
     $config = Nokogiri::XML(IO.read(config))
   end
   
+  # Begins and runs the pipeline process.
   def run
     puts "\nHere we go!\n"
     
@@ -48,12 +51,9 @@ class KatamariDotei
       MzmlToOther.new("ms2", mzFile, iterations[0][0], s_true(runHardklor)).convert
       
       iterations.each do |i|
-        samples[fileName].searches << Search.new(samples[fileName].mgfs[-1].chomp(".mgf"), @database, i[1], selected_search_engines).run
+        samples[fileName].searches << Search.new(samples[fileName].mgfs[-1].chomp(".mgf"), @dbID, i[1], selected_search_engines).run
         convert_to_mzIdentML(samples[fileName].searches[-1])
-        samples[fileName].percolator << Percolator.new(samples[fileName].searches[-1], @database).run
-        p samples[fileName].percolator[-1]
-        p fileName
-        p i[0]
+        samples[fileName].percolator << Percolator.new(samples[fileName].searches[-1], @dbID).run
         samples[fileName].combined << Combiner.new(samples[fileName].percolator[-1], fileName, i[0]).combine
         samples[fileName].mgfs << Refiner.new(samples[fileName].combined[-1], cutoff, mzFile, iterations[i[2]+1][0]).refine if i[2] < iterations.length-1
         GC.start
@@ -68,7 +68,9 @@ class KatamariDotei
   
   private
   
-  
+  # Creates either an mzXML file or an mzML file.
+  #
+  # @param [String] mzType the type of file to create, i.e. "mzML" or "mzXML"
   def create_mzML(mzType, file)
     if mzType == "mzML"
       RawToMzml.new("#{file}").to_mzML
@@ -78,6 +80,8 @@ class KatamariDotei
   end
   
   # Obtains the iteration information from the config file.
+  #
+  # @return [Array(String, String)] an array of iteration information, currently holding [[run, enzyme], ...]
   def get_iterations
     array = []
     i = 0
@@ -99,11 +103,14 @@ class KatamariDotei
   end
   
   # Method name says it all
+  #
+  # @param [Array(String, String)] files an array of the files to convert in the format of [[target, decoy], ...]
   def convert_to_mzIdentML(files)
     files.each do |pair|
-      pair.each {|file| exec("#{$path}../../mzIdentML/bin/search2mzidentml_cl.rb #{file} #{extractDatabase(@database)}") if fork == nil}
+      pair.each {|file| exec("#{$path}../../mzIdentML/bin/search2mzidentml_cl.rb #{file} #{extractDatabase(@dbID)}") if fork == nil}
     end
     
+    # Wait for the conversion to finish before moving on.
     waitForAllProcesses
   end
   

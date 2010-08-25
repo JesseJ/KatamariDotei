@@ -6,7 +6,7 @@ loop { # Servers run forever
   
   filename = client.gets.chomp
   
-  #A small attempt at preventing shell injection. Do we even need security on this?
+  # A small attempt at preventing shell injection. Do we even need security on this?
   if filename.include?("|") || filename.include?("&") || filename.include?("/") || filename.include?(".exe")
     client.puts "Get lost, hacker!"
     client.close
@@ -14,13 +14,13 @@ loop { # Servers run forever
   end
   
   puts "Reading contents of #{filename}.raw"
-  raw_data = client.gets("\r\r\n\n").chomp("\r\r\n\n")
+  raw_data = client.gets("\r\r\n\n").chomp("\r\r\n\n")  # "\r\r\n\n" is the delimiter of the data stream.
   file = File.open(filename + ".raw", 'wb')
   file.print raw_data
   file.close
   
   puts "Converting #{filename}"
-  #It's lame to have a script run a script, but it's the only way to get this to work.
+  # It's lame to have a script run a script, but it's the only way to get this to work.
   system "scriptit.bat " + filename + ".raw"
   
   puts "Sending contents of #{filename}.mzML"

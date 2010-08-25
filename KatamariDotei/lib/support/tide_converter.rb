@@ -1,6 +1,8 @@
 require 'nokogiri'
 
-#Converts Tide output to pepXML.
+# Converts Tide output to pepXML.
+#
+# @author Jesse Jashinsky (Aug 2010)
 class TideConverter
   #file == A string containing the location of the tide output file
   #database == A string containing the location of the database

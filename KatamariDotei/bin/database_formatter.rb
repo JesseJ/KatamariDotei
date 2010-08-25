@@ -17,12 +17,12 @@ end
 # @author Jesse Jashinsky (Aug 2010)
 # @todo Add function to take care of updating taxonomy.xml and creation of the reverse folder if none exists. Is it possible to automate the adding of the Mascot databases?
 class DatabaseFormatter
-  #fileName == The name of the file in the databases folder
+  # @param [String] fileName the name of the file in the databases folder
   def initialize(fileName)
     @fileName = fileName
   end
   
-  #Performs all the formatting.
+  # Performs all the formatting.
   def formatDatabase
     puts "Creating reversed database..."
     targetDatabase = "#{$path}../../databases/#{@fileName}"

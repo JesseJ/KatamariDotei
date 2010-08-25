@@ -4,9 +4,9 @@ require 'nokogiri'
 #
 # @author Jesse Jashinsky (Aug 2010)
 class TideConverter
-  #file == A string containing the location of the tide output file
-  #database == A string containing the location of the database
-  #enzyme == The name of the enzyme
+  # @param [String] file the location of the tide output file
+  # @param [String] database the location of the database
+  # @param [String] enzyme the name of the enzyme
   def initialize(file, database, enzyme)
     @file = file
     @database = database
@@ -14,25 +14,26 @@ class TideConverter
     @fileName = file.split("/")[-1]
   end
   
-  #Converts file to pepXML
+  # Converts the file to pepXML.
   def convert
     file = File.new("#{@file}.pep.xml", "w+")
     tide = File.open("#{@file}.results", "r")
     hits = []
     data = []
     
+    # Parse the file
     tide.each_line {|line| hits << line.split}
     
-    #Sort by spectrum index
+    # Sort by spectrum index
     hits = hits.sort_by {|x| [x[0].to_i, x[2].to_i]}
     	
-    #Group by spectrum
+    # Group by spectrum
     i = 0
     while i < hits.length
       spectrum = []
       hit = hits[i]
     		
-      #hit = [spectrum, pre_mass, charge, xCorr, peptide]
+      # hit = [spectrum, pre_mass, charge, xCorr, peptide]
       while i < hits.length && hits[i][0] == hit[0] && hits[i][2] == hit[2]
     	  spectrum << hits[i]
     	  i += 1
@@ -41,12 +42,20 @@ class TideConverter
       data << spectrum.sort {|x,y| y[3].to_f <=> x[3].to_f}
     end
     
+    # Create the pepXML file
     file.puts buildPepXML(data).to_xml
    	
     tide.close
     file.close
   end
   
+  
+  private
+  
+  # Builds the pepXML file.
+  #
+  # @param [Array] data an array of spectrums
+  # @return [Nokogiri] the Nokogiri builder object
   def buildPepXML(data)
     time = Time.new
     
@@ -67,9 +76,10 @@ class TideConverter
     builder
   end
   
-  
-  private
-    
+  # Builds the spectrum queries of the pepXML file.
+  #
+  # @param [Nokogiri] xml the object to build on
+  # @param [Array] data an array of spectrums
   def buildSpectrumQueries(xml, data)
     data.each do |spectrum|
       index = spectrum[0][0].to_s

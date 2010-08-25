@@ -11,14 +11,14 @@ require "ms/fasta.rb"
 #
 # @author Jesse Jashinsky (Aug 2010)
 class ReverseDatabase
-  #input == The fasta file
-  #output == The name of the output file
+  # @param [String] input location of the fasta file
+  # @param [String] output the location of the output file
   def initialize(input, output)
     @input = input
     @output = output
   end
   
-  #Creates a reversed database from input.
+  # Creates a reversed database.
   def reverseDatabase
     File.open("#{@output}", 'w') do |out|
       fasta = Ms::Fasta.open("#{@input}")

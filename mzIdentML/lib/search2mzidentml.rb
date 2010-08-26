@@ -3,15 +3,18 @@ $: << "#{File.expand_path(File.dirname(__FILE__))}/"
 require "formats/pepxml"
 require 'nokogiri'
 
-
 # Creates an mzIdentML file from a file type created by a search engine, using the format classes such as PepXML.
+#
+# @author Jesse Jashinsky (Aug 2010)
 class Search2mzIdentML
-  # format == a Format object
+  # @param [String] format a Format object
   def initialize(format)
     @format = format
   end
   
   # Starts the Nokogiri build process. Other methods build the different parts of the file. Root is depth 0
+  #
+  # @option opts [] currently does nothing
   def convert(opts={})
     puts "Creating file...\n\n"
     
@@ -24,7 +27,7 @@ class Search2mzIdentML
         :creationDate => @format.date) {
           cvList(xml)
           analysisSoftwareList(xml)
-          #provider(xml)
+          #provider(xml)  #Doesn't pass the validator, so I'm leaving it out.
           sequenceCollection(xml)
           analysisCollection(xml)
           analysisProtocolCollection(xml)
@@ -46,7 +49,7 @@ class Search2mzIdentML
     end
   end
   
-  # Depth 1
+  # Depth 1. This method name, as well as all the other ones like it, are named after the sections they create.
   def cvList(xml)
     xml.cvList {
       xml.cv(:id => "PSI-MS", :fullName => "Proteomics Standards Initiative Mass Spectrometry Vocabularies", :URI => "http://psidev.cvs.sourceforge.net/viewvc/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo", :version => "2.32.0")

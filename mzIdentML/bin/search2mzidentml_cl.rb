@@ -2,8 +2,9 @@
 #This file should have a better name
 
 require 'optparse'
-require "#{File.dirname($0)}/../lib/search2mzidentml.rb"
+require "#{File.expand_path(File.dirname(__FILE__))}/../lib/search2mzidentml.rb"
 
+# I made a formal optparse command line below, but I had trouble with it, and decided to go with the simpler method.
 #options = {:infile => "",
 #           :database => ""}
 #format = ""

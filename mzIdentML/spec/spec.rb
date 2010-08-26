@@ -35,6 +35,10 @@ describe 'PepXML2mzIdentML' do
     FileUtils::cmp(tide, tide_key).is true
     FileUtils::cmp(omssa, omssa_key).is true
     
+    
+    # I thought it would be cool to run the mzIdentML file through the validator as an additional test,
+    # but I couldn't get it to work for some reason.
+    
 #    agent = Mechanize.new {|agent| agent.user_agent_alias = 'Linux Firefox'}
 #    
 #    agent.get("http://www-bs2.informatik.uni-tuebingen.de/services/OpenMS/analysisXML/index.php") do |page|

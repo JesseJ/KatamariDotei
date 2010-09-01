@@ -6,11 +6,11 @@ Sample = Struct.new(:mzml, :mgfs, :searches, :percolator, :combined)
 describe 'Resolver' do
   before do
     samples = {}
-    samples["combined_1"] = Sample.new([], [], [], [], ["/home/jashi/pipeline/KatamariDotei/spec/test_files/combined_1.psms"])
+    samples["combined_1"] = Sample.new([], [], [], [], [%[#{File.expand_path(File.join(File.dirname(__FILE__), "..", "spec/test_files/combined_1.psms"))}]])
     @r1 = Resolver.new(samples)
     
     samples = {}
-    samples["combined_2"] = Sample.new([], [], [], [], ["/home/jashi/pipeline/KatamariDotei/spec/test_files/combined_2.psms"])
+    samples["combined_2"] = Sample.new([], [], [], [], [%[#{File.expand_path(File.join(File.dirname(__FILE__), "..", "spec/test_files/combined_2.psms"))}]])
     @r2 = Resolver.new(samples)
     
     @peps1 = [["DDDD", ["PEP005", "PEP003", "PEP001"]], ["CCCC", ["PEP004"]], ["BBBB", ["PEP002"]], ["EEEE", ["PEP111"]]]
@@ -20,13 +20,13 @@ describe 'Resolver' do
   end
   
   it 'Finds the minimum number of proteins and peptides' do
-#    peps, pros = @r1.resolve
-#    peps.is @peps1
-#    pros.is @pros1
-#    
-#    peps, pros = @r2.resolve
-#    peps.is @peps2
-#    pros.is @pros2
+    peps, pros = @r1.resolve
+    peps.is @peps1
+    pros.is @pros1
+    
+    peps, pros = @r2.resolve
+    peps.is @peps2
+    pros.is @pros2
     puts @r1.prince_resolve
   end
 end

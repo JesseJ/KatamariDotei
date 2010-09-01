@@ -1,0 +1,3 @@
+task :test do |t|
+  system('ruby spec/resolver_spec.rb')
+end

@@ -2,7 +2,7 @@
 <!-- In command lines, essential parts are automated, which are mentioned in the comments. Altering those parts of the command lines could break the program. -->
 <!-- For programs that are optional to run, you can specify to run them by stating either run="true" or run="false" -->
 
-<KatamariShiteki>
+<KatamariDotei>
 
 	<RawToMzml>
 		<!-- The format element specifies which format you want the raw file turned into: mzXML or mzML -->
@@ -51,7 +51,7 @@
 		<Iteration run="1" enzyme="trypsin"/>
 	</Iterations>
 
-</KatamariShiteki>
+</KatamariDotei>
 
 
 

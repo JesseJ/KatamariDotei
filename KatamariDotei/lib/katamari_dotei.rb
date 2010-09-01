@@ -47,8 +47,10 @@ class KatamariDotei
       create_mzML(mzType, file)
       
       mzFile = "#{@dataPath}spectra/#{fileName}.#{mzType}"
-      samples[fileName].mgfs << MzmlToOther.new("mgf", mzFile, iterations[0][0], s_true(runHardklor)).convert
-      MzmlToOther.new("ms2", mzFile, iterations[0][0], s_true(runHardklor)).convert
+      # run Hardklor??
+      # s_true(runHardklor)
+      samples[fileName].mgfs << Ms::Msrun::Search.convert(:mgf, mzFile, :run_id => iterations[0][0])
+      Ms::Msrun::Search.convert(:ms2, mzFile, :run_id => iterations[0][0])
       
       iterations.each do |i|
         samples[fileName].searches << Search.new(samples[fileName].mgfs[-1].chomp(".mgf"), @dbID, i[1], selected_search_engines).run

@@ -34,9 +34,7 @@ end
 # @return [Boolean] true if the string s is true, false otherwise.
 def s_true(s)
   s = s.strip.downcase
-  
-  return true if s == "t" || s == "true"
-  false
+  (s == "t") || (s == "true")
 end
 
 # Refactored method for the xml config file.

@@ -1,0 +1,7 @@
+= KatamariDotei
+
+Description goes here.
+
+== Copyright
+
+see LICENSE for details.
